@@ -2,12 +2,113 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Yummy - [Page Name]</title>
+    <title> Yummy </title>
+    <meta name = "description" content = "This is our Recipe Finder Website!"/>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body {
+			font-family: Arial, sans-serif;
+			padding: 20px;
+			justify-content: center;
+		}
+		  .container {
+            position: relative;
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        .container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+		.form{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 80%;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+			transform: translate(-50% , -50%);
+			background-color:rgba(255, 255, 255, 0.8) ;
+		}
+		.form-details{
+			margin-bottom: 20px;
+		}
+	label {
+            display: block;
+            margin-bottom: 5px;
+            color: grey;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+     	button {
+            width: 100%;
+            padding: 12px;
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+     	button : hover{
+     		background-color: babyblue;
+     	}
+	</style>
+    
 </head>
 <body>
     <div id="navbar"></div>
+<h1>Welcome to our Recipes Finder Website YUMMY!!😊</h1>
 
+	<div class="container">
+		<img src="E:\RCC Course\photos\food.jpg" >
+
+		<div class="form">
+			<form action = "/submit" method="POST">
+				<div class="form-details">
+					<label>Username</label>
+			    	<input type="text" required placeholder="enter your username" name="user">
+			    </div>
+				<br>
+				<div class="form-details"
+					<label for ="password"> Password </label>
+					<input type="text" id="password" placeholder="enter 8 characters" name="password" required minlength="5" maxlength="8">
+				</div>
+				<br>
+				<div class="form-details">
+					<label for = "confirm"> Confirm Password </label>
+					<input type="confirm" id="confirm" name="Confirm Password" required placeholder="confirm your password" minlength="5" maxlength="8">
+				</div>	
+				<br>
+				<div class="form-details">
+					<label for = "email"> Email </label>
+					<input type="email" id="email" name="email" placeholder=" enter your email">
+				</div>
+				
+				<br>
+				<button type="submit">Create Account</button>
+			</form>
+		</div>			
+	</div>
     <main>
     </main>
 </body>
