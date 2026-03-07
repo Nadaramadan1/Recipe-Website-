@@ -1,14 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Yummy - [Page Name]</title>
+    <title>Yummy - Edit-recipe</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id="navbar"></div>
+    <h1> Edit-recipe</h1>
+    <hr>
+    <form>
+        <div><label>Recipe ID</label><br>
+            <input type="text" name="recipe name" value="1" required>
+            <br>
+        </div>
+        <div>
+            <lebel>course</lebel> <br>
+            <select name="coures name">
+                <option>Main-Course</option>
+                <option>Appetizers</option>
+                <option>Dessert</option>
 
+            </select>
+            <br>
+
+        </div>
+        <div>
+            <h3>Ingredients</h3>
+
+            <label>Ingredient 1</label>
+            <input type="text" name="ingredient1" value="Lettuce">
+            <label>Quantity</label>
+            <input type="text" name="quantity1" value="1 cup">
+            <br><br>
+
+            <label>Ingredient 2</label>
+            <input type="text" name="ingredient2" value="Tomato">
+            <label>Quantity</label>
+            <input type="text" name="quantity2" value="1">
+            <br><br>
+
+            <label>Ingredient 3</label>
+            <input type="text" name="ingredient3" value="Cucumber">
+            <label>Quantity</label>
+            <input type="text" name="quantity3" value="1">
+            <br><br>
+
+            <label>Description</label><br>
+            <textarea name="description" rows="4" cols="40">
+Cut vegetables and mix with olive oil and lemon juice.
+</textarea>
+
+            <br><br>
+
+            <button type="sumbit">Update Recipe</button>
+    </form>
     <main>
     </main>
 </body>
+
 </html>
