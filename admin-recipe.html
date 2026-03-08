@@ -1,57 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <title>Yummy - Admin Recipes</title>
     <link rel="stylesheet" href="style.css">
 
-</head>
+  </head>
 
-<body>
-    <div id="navbar"></div>
+  <body>
+    <div id="navbar">
+    <nav class="main-nav">
+        <div class="logo">Yummy 🍲</div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="favorites.html">Favorites</a></li>
+            <li><a href="admin-recipe.html">Admin</a></li>
+            <li><a href="add-recipe.html">Add Recipe</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+        </ul>
+    </nav>
+</div>
     <h1> Recipe Finder</h1>
     <hr>
     <table border="1" width="80" algin="center">
-        <tr>
-            <th>ID</th>
-            <th>RECIBE NAME</th>
-            <th>COURSE</th>
-            <th>ACTIONS</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>pasta</td>
-            <td>Main-course</td>
-            <td> <a href="recipe-details.html">view</a>
-                <a href="edit-recipe.html">Edit</a>
-                <button>Delete</button>
-            </td>
+      <tr>
+        <th>ID</th>
+        <th>RECIBE NAME</th>
+        <th>COURSE</th>
+        <th>ACTIONS</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>pasta</td>
+        <td>Main-course</td>
+            <td class="actions-cell">
+    <a href="recipe-details.html" class="btn-main btn-view">View</a>
+    <a href="edit-recipe.html" class="btn-main btn-edit">Edit</a>
+    <button class="btn-main btn-delete">Delete</button>
+</td>
 
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>cake</td>
-            <td>Dessert</td>
-            <td> <a href="recipe-details.html">view</a>
-                <a href="edit-recipe.html">Edit</a>
-                <button>Delete</button>
-            </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>cake</td>
+        <td>Dessert</td>
+            <td class="actions-cell">
+    <a href="recipe-details.html" class="btn-main btn-view">View</a>
+    <a href="edit-recipe.html" class="btn-main btn-edit">Edit</a>
+    <button class="btn-main btn-delete">Delete</button>
+</td>
 
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Salad</td>
-            <td>Apptizers</td>
-            <td> <a href="recipe-details.html">view</a>
-                <a href="edit-recipe.html">Edit</a>
-                <button>Delete</button>
-            </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Salad</td>
+        <td>Apptizers</td>
+            <td class="actions-cell">
+    <a href="recipe-details.html" class="btn-main btn-view">View</a>
+    <a href="edit-recipe.html" class="btn-main btn-edit">Edit</a>
+    <button class="btn-main btn-delete">Delete</button>
+</td>
 
-        </tr>
+      </tr>
     </table>
     <main>
     </main>
-</body>
+  </body>
 
 </html>

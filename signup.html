@@ -1,121 +1,59 @@
 <!DOCTYPE html>
-<html lang ="en">
+<html lang="en">
 <head>
-<meta charset="utf-8" />
-	<title>Yummy - SignUp</title>
-	<meta name = "description" content = "This is our Recipes Finder Website!"/>
-	<link rel="stylesheet" href="style.css">
-	<style>
-		*{
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
-		body {
-			font-family: Arial, sans-serif;
-			padding: 20px;
-			justify-content: center;
-		}
-		  .container {
-            position: relative;
-            width: 800px;
-            margin: 0 auto;
-        }
-
-        .container img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-		.form{
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			width: 80%;
-			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-			transform: translate(-50% , -50%);
-			background-color:rgba(255, 255, 255, 0.8) ;
-			padding: 30px;
-			border-radius: 10px;
-		}
-		.form-details{
-			margin-bottom: 20px;
-		}
-		h1{
-			text-align: center;
-		}
-
-		label {
-            display: block;
-            margin-bottom: 5px;
-            color: grey;
-            font-weight: bold;
-            font-size: 20px;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-        input[type="password"] {
-            font-family: Arial, sans-serif;
-        }
-     	button {
-            width: 100%;
-            padding: 12px;
-            background-color: #e67e22;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-     	button:hover{
-     		background-color: babyblue;
-     	}
-	</style>
+    <meta charset="UTF-8">
+    <title>Yummy - Sign Up</title>
+    <meta name="description" content="This is our Recipes Finder Website!">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<h1>Welcome to our Recipes Finder Website!!😊</h1>
+    <div id="navbar">
+        <nav class="main-nav">
+            <div class="logo">Yummy 🍲</div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+                <li><a href="admin-recipe.html">Admin</a></li>
+                <li><a href="add-recipe.html">Add Recipe</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
 
-	<div class="container">
-		<img src="E:\Lectures\WEB Projects\food.jpg" >
+    <div class="signup-page-wrapper">
+    <h1 class="welcome-msg">Welcome to YUMMY! 😊</h1>
 
-		<div class="form">
-			<form action = "/submit" method="POST">
-				<div class="form-details">
-					<label>Username</label>
-			    	<input type="text" required placeholder="enter your username" name="user">
-			    </div>
-				<br>
-				<div class="form-details">
-					<label for ="password"> Password </label>
-					<input type="password" id="password" placeholder="enter 8 characters" name="password" required minlength="5" maxlength="8">
-				</div>
-				<br>
-				<div class="form-details">
-					<label for = "confirm"> Confirm Password </label>
-					<input type="password" id="confirm" name="Confirm Password" required placeholder="confirm your password" minlength="5" maxlength="8">
-				</div>	
-				<br>
-				<div class="form-details">
-					<label for = "email"> Email </label>
-					<input type="email" id="email" name="email" placeholder=" enter your email">
-				</div>
-				
-				<br>
-				<button type="submit">Create Account</button>
-			</form>
-		</div>			
-	</div>
-	
+    <div class="signup-container">
+        <div class="signup-image">
+            <img src="food.jpg" alt="Delicious Food">
+        </div>
 
-</body>
-</html>
+        <div class="form-section">
+            <form action="/submit" method="POST">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" class="form-input" required placeholder="Enter your username" name="user">
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-input" placeholder="Min 5 characters" name="password" required minlength="5" maxlength="8">
+                </div>
+
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" class="form-input" name="confirm_password" required placeholder="Confirm your password">
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-input" name="email" placeholder="Enter your email">
+                </div>
+
+                <button type="submit" class="btn-main">Create Account</button>
+            </form>
+        </div>
+    </div>
+</div>
