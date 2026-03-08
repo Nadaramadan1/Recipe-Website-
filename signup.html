@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang ="en">
 <head>
-    <meta charset="UTF-8">
-    <title> Yummy </title>
-    <meta name = "description" content = "This is our Recipe Finder Website!"/>
-    <link rel="stylesheet" href="style.css">
-
-    <style>
+<meta charset="utf-8" />
+	<title>Yummy - SignUp</title>
+	<meta name = "description" content = "This is our Recipes Finder Website!"/>
+	<link rel="stylesheet" href="style.css">
+	<style>
 		*{
 			margin: 0;
 			padding: 0;
@@ -38,16 +37,22 @@
 			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 			transform: translate(-50% , -50%);
 			background-color:rgba(255, 255, 255, 0.8) ;
+			padding: 30px;
+			border-radius: 10px;
 		}
 		.form-details{
 			margin-bottom: 20px;
 		}
-	label {
+		h1{
+			text-align: center;
+		}
+
+		label {
             display: block;
             margin-bottom: 5px;
             color: grey;
             font-weight: bold;
-            font-size: 14px;
+            font-size: 20px;
         }
 
         input {
@@ -56,6 +61,9 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 14px;
+        }
+        input[type="password"] {
+            font-family: Arial, sans-serif;
         }
      	button {
             width: 100%;
@@ -69,18 +77,16 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-     	button : hover{
+     	button:hover{
      		background-color: babyblue;
      	}
 	</style>
-    
 </head>
 <body>
-    <div id="navbar"></div>
-<h1>Welcome to our Recipes Finder Website YUMMY!!😊</h1>
+	<h1>Welcome to our Recipes Finder Website!!😊</h1>
 
 	<div class="container">
-		<img src="E:\RCC Course\photos\food.jpg" >
+		<img src="E:\Lectures\WEB Projects\food.jpg" >
 
 		<div class="form">
 			<form action = "/submit" method="POST">
@@ -89,14 +95,14 @@
 			    	<input type="text" required placeholder="enter your username" name="user">
 			    </div>
 				<br>
-				<div class="form-details"
+				<div class="form-details">
 					<label for ="password"> Password </label>
-					<input type="text" id="password" placeholder="enter 8 characters" name="password" required minlength="5" maxlength="8">
+					<input type="password" id="password" placeholder="enter 8 characters" name="password" required minlength="5" maxlength="8">
 				</div>
 				<br>
 				<div class="form-details">
 					<label for = "confirm"> Confirm Password </label>
-					<input type="confirm" id="confirm" name="Confirm Password" required placeholder="confirm your password" minlength="5" maxlength="8">
+					<input type="password" id="confirm" name="Confirm Password" required placeholder="confirm your password" minlength="5" maxlength="8">
 				</div>	
 				<br>
 				<div class="form-details">
@@ -109,7 +115,7 @@
 			</form>
 		</div>			
 	</div>
-    <main>
-    </main>
+	
+
 </body>
 </html>
