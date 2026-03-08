@@ -255,6 +255,35 @@ table th {
   justify-content: center;
 }
 
+.login-page-wrapper {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.login-container {
+  display: flex;
+  background: white;
+  width: 900px;
+  max-width: 95%;
+  border-radius: 15px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.login-image {
+  flex: 1;
+}
+
+.login-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* ============================================================
    9. EDIT & ADD RECIPE SPECIALS
    ============================================================ */
