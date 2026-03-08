@@ -1,12 +1,15 @@
+/* ============================================================
+   1. DESIGN SYSTEM & VARIABLES
+   ============================================================ */
 :root {
-  --primary-color: #cc702e;
-  --primary-hover: #d35400;
-  --bg-color: #f4f4f9;
-  --card-bg: #ffffff;
-  --text-main: #2d3436;
-  --text-muted: #636e72;
-  --error-color: #e74c3c;
-  --info-color: #3498db;
+  --primary-color: #e67e22; /* البرتقالي الأساسي - هوية المشروع */
+  --primary-hover: #d35400; /* برتقالي أغمق للهوفر */
+  --bg-color: #f4f4f9; /* لون الخلفية العام */
+  --card-bg: #ffffff; /* لون الكروت والفورم */
+  --text-main: #2d3436; /* لون النصوص الأساسي */
+  --text-muted: #636e72; /* لون النصوص الثانوية */
+  --error-color: #e74c3c; /* اللون الأحمر للحذف */
+  --info-color: #3498db; /* اللون الأزرق للعرض */
 
   --border-radius: 12px;
   --input-radius: 8px;
@@ -15,7 +18,9 @@
   --transition: all 0.3s ease;
 }
 
-/* 2. Global Reset */
+/* ============================================================
+   2. GLOBAL RESET
+   ============================================================ */
 * {
   margin: 0;
   padding: 0;
@@ -36,9 +41,11 @@ h1 {
   font-size: 2.5rem;
 }
 
-/* 3. Navigation Bar - موحد لكل الصفحات */
+/* ============================================================
+   3. NAVIGATION BAR
+   ============================================================ */
 #navbar {
-  background-color: #f77205d4;
+  background-color: var(--primary-color);
   padding: 1rem 2rem;
   box-shadow: var(--shadow-sm);
 }
@@ -78,9 +85,12 @@ h1 {
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
+/* ============================================================
+   4. UNIVERSAL BUTTONS 
+   ============================================================ */
 button,
 .btn-main {
-  background-color: #ffa500 !important;
+  background-color: var(--primary-color) !important;
   color: white !important;
   padding: 12px 25px;
   border: none;
@@ -95,20 +105,35 @@ button,
 
 button:hover,
 .btn-main:hover {
-  background-color: #ff8c00 !important;
+  background-color: var(--primary-hover) !important;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
 }
-.btn-view {
-  background-color: #ffa500 !important;
-}
-.btn-edit {
-  background-color: #ffa500 !important;
-}
+
+
+.btn-view,
+.btn-edit,
 .btn-delete {
-  background-color: #ffa500 !important;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  width: auto;
 }
 
+.btn-view {
+  background-color: #e67e22 !important;
+}
+.btn-edit {
+  background-color: #e67e22 !important;
+}
+.btn-delete {
+  background-color: #e67e22 !important;
+}
+
+/* ============================================================
+   5. FORMS & INPUTS
+   ============================================================ */
 .form-input {
   width: 100%;
   padding: 12px;
@@ -125,7 +150,16 @@ button:hover,
   box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.1);
 }
 
-/* 5. Recipes Cards (recipe-details.html) */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--text-main);
+}
+
+/* ============================================================
+   6. RECIPES CARDS 
+   ============================================================ */
 .recipes-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -148,23 +182,9 @@ button:hover,
   transform: translateY(-5px);
 }
 
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.course-tag {
-  background: #fdf2e9;
-  color: var(--primary-color);
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-/* 6. Admin Table Style */
+/* ============================================================
+   7. TABLES
+   ============================================================ */
 table {
   width: 90%;
   max-width: 1100px;
@@ -187,178 +207,24 @@ table th {
   background-color: var(--primary-color);
   color: white;
   text-transform: uppercase;
-  font-size: 14px;
 }
 
 .actions-cell {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   justify-content: center;
 }
 
-.btn-view {
-  background-color: #ffa500;
-}
-.btn-edit {
-  background-color: #ffa500;
-}
-.btn-delete {
-  background-color: #ffa500;
-}
-
-.btn-view,
-.btn-edit,
-.btn-delete {
-  padding: 6px 12px;
-  border-radius: 4px;
-  color: white !important;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 600;
-  border: none;
-}
-
-/* 7. Edit/Add Recipe Form Card */
-.form-page-container {
-  display: flex;
-  justify-content: center;
-  padding: 40px 20px;
-}
-
-.form-card {
-  background: var(--card-bg);
-  width: 100%;
-  max-width: 700px;
-  padding: 40px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-lg);
-}
-
-.ingredient-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 15px;
-  background: #fffcf9;
-  padding: 15px;
-  border-radius: 8px;
-  border: 1px dashed var(--primary-color);
-  margin-bottom: 20px;
-}
-/*signup style*/
-.container {
-  position: relative;
-  width: 800px;
-  margin: 0 auto;
-}
-
-.container img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-.form {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80%;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 30px;
-  border-radius: 10px;
-}
-.form-details {
-  margin-bottom: 20px;
-}
-h1 {
-  text-align: center;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-  color: grey;
-  font-weight: bold;
-  font-size: 20px;
-}
-
-input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 14px;
-}
-input[type="password"] {
-  font-family: Arial, sans-serif;
-}
-button {
-  width: 100%;
-  padding: 12px;
-  background-color: #ffa500;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-button:hover {
-  background-color: #ff8c00;
-}
-.signup-page-wrapper {
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.signup-container {
-  display: flex;
-  background: white;
-  max-width: 900px;
-  width: 100%;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.signup-image {
-  flex: 1;
-}
-
-.signup-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.form-container {
-  flex: 1;
-  padding: 40px;
-}
-
-.form-details {
-  margin-bottom: 20px;
-}
-
-.form-input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  margin-top: 5px;
-}
+/* ============================================================
+   8. SIGNUP & LOGIN 
+   ============================================================ */
 .signup-page-wrapper {
   min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 40px 20px;
 }
 
 .signup-container {
@@ -373,7 +239,6 @@ button:hover {
 
 .signup-image {
   flex: 1;
-  background-color: #eee;
 }
 
 .signup-image img {
@@ -390,84 +255,15 @@ button:hover {
   justify-content: center;
 }
 
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: var(--text-main);
-}
-
-/*admin style*/
-.btn-main {
-  width: 100%;
-  margin-top: 10px;
-}
-
-button,
-.btn-main {
-  background-color: #ffa500 !important;
-  color: white !important;
-  padding: 12px 25px;
-  border: none;
-  border-radius: var(--input-radius);
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: var(--transition);
-  display: inline-block;
-  text-decoration: none;
-  text-align: center;
-}
-
-button:hover,
-.btn-main:hover {
-  background-color: #ff8c00 !important;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
-}
-
-.btn-view {
-  background-color: #ffa500 !important;
-}
-.btn-edit {
-  background-color: #ffa500 !important;
-}
-.btn-delete {
-  background-color: #ffa500 !important;
-}
-
-.actions-cell {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-}
-/*edit style*/
-
-.page-wrapper {
-  display: flex;
-  justify-content: center;
-  padding: 40px 20px;
-  background-color: var(--bg-color);
-}
-
-.edit-card {
-  background: white;
-  padding: 30px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-lg);
-  width: 100%;
-  max-width: 700px;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-top: 20px;
+/* ============================================================
+   9. EDIT & ADD RECIPE SPECIALS
+   ============================================================ */
+.ingredients-section {
+  margin: 20px 0;
+  padding: 15px;
+  background: #fdf2e9;
+  border-radius: 8px;
+  border: 1px dashed var(--primary-color);
 }
 
 .ingredient-row {
@@ -476,14 +272,7 @@ button:hover,
   margin-bottom: 10px;
 }
 
-.ingredients-section {
-  margin: 20px 0;
-  padding: 15px;
-  background: #fdf2e9;
-  border-radius: 8px;
-}
-
 textarea.form-input {
   resize: vertical;
-  font-family: inherit;
+  min-height: 120px;
 }
