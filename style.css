@@ -394,3 +394,71 @@ table tr:hover td {
 .btn-view-mod { background-color: #db7434 !important; }
 .btn-edit-mod { background-color: #db7434 !important; }
 .btn-delete-mod { background-color: #db7434 !important; }
+/* ============================================================
+   11. SEARCH PAGE
+   ============================================================ */
+.search-page-wrapper {
+    background: var(--card-bg); 
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    max-width: 600px;
+    margin: 50px auto; 
+}
+
+.search-form label {
+    display: inline-block; 
+    width: 180px; 
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.search-form .form-input {
+    display: inline-block;
+    width: 300px !important; 
+    vertical-align: middle;
+}
+
+.search-form br {
+    display: block;
+    margin: 10px 0;
+    content: "";
+}
+
+.search-form .btn-main {
+    margin-top: 20px;
+    width: 150px;
+}
+
+.cover-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    padding: 40px;
+    background-color: var(--primary-color); 
+    min-height: 80vh;
+}
+
+.id-card {
+    text-align: center;
+    border-top: 5px solid var(--text-main); 
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    transition: var(--transition);
+}
+
+.id-card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.id-card h3 {
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+.id-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
