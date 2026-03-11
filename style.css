@@ -462,3 +462,84 @@ table tr:hover td {
     color: var(--text-muted);
     font-size: 0.9rem;
 }
+/* ============================================================
+   12. ADD RECIPE PAGE
+   ============================================================ */
+.add-recipe-card {
+    background: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    max-width: 700px;
+}
+
+.form-row {
+    margin-bottom: 20px;
+}
+
+.form-row label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-row input[type="number"],
+.form-row input[type="text"],
+.form-row select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.ingredient-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.ingredient-group label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+.ingredient-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.description-section {
+    margin-top: 20px;
+}
+
+.description-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.description-section textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+.form-actions {
+    margin-top: 30px;
+    text-align: right;
+}
+
+.form-actions .btn-main {
+    margin-left: 10px;
+    cursor: pointer;
+}
