@@ -543,3 +543,107 @@ table tr:hover td {
     margin-left: 10px;
     cursor: pointer;
 }
+
+/* ============================================================
+   12.Home Page Style
+   ============================================================ */
+.hero-home-container {
+    height: 90vh; 
+    /* Dark Overlay for better text readability */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('home.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white; 
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.hero-content {
+    max-width: 850px;
+    padding: 20px;
+}
+
+.hungry-title {
+    font-size: 5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-shadow: 2px 4px 15px rgba(0,0,0,0.6);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.hero-subtext {
+    font-size: 1.5rem;
+    font-weight: 300;
+    opacity: 0.9;
+    text-shadow: 1px 2px 8px rgba(0,0,0,0.5);
+    margin-bottom: 35px;
+    line-height: 1.4;
+}
+
+.btn-main.hero-btn {
+    padding: 18px 45px;
+    font-size: 1.2rem;
+    background: var(--primary-color) !important;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 10px 30px rgba(230, 126, 34, 0.4);
+    transition: var(--transition);
+}
+
+.btn-main.hero-btn:hover {
+    background-color: #ff9f43 !important;
+    transform: scale(1.05);
+}
+
+/* ============================================================
+   QUICK ACCESS SECTION (Cards)
+   ============================================================ */
+.quick-access-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 40px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.home-card {
+    background: var(--card-bg);
+    border: 1px solid #eee;
+    padding: 40px 30px;
+    width: 320px;
+    text-align: center;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+.home-card:hover {
+    transform: translateY(-12px);
+    border-color: var(--primary-color);
+    box-shadow: 0 15px 35px rgba(230, 126, 34, 0.15);
+}
+
+.card-icon {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+.home-card h3 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.home-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
