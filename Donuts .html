@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset=" UTF-8" />
+    <title>Donuts</title>
+    <link rel="stylesheet" href="bakery-style.css" />
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <div class="banner">
+        <img src="bakeryimages/Dountsbanner.png" style=" width: 100%;
+            height: 420px;
+            margin-bottom: 30px;">
+
+    </div>
+
+    <BR>
+    <BR>
+
+    <h2 class="h2">OUR Recipes </h2>
+
+
+    <div class="recipes-container">
+
+        <div class="recipe-card" id="GlazedDonuts">
+            <h2>Glazed Donuts 🍩</h2>
+            <p>Soft, fluffy, and melt-in-your-mouth homemade donuts with a silk glaze.</p>
+            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'GlazedDonutscard')">View
+                Recipes</a>
+        </div>
+
+        <div class="recipe-card" id="ChocolateDonuts">
+            <h2>Chocolate Donuts 🍫</h2>
+            <p>Rich chocolate frosting on a golden fried donut, the perfect sweet treat.</p>
+            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'ChocolateDonutscard')">View
+                Recipes</a>
+        </div>
+
+        <div class="recipe-card" id="FilledDonuts">
+            <h2>Filled Donuts 🍓</h2>
+            <p>Deliciously sugar-coated donuts filled with creamy custard or fresh jam.</p>
+            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'FilledDonutscard')">View Recipes</a>
+        </div>
+
+    </div>
+
+    <div class="detials-card" id="GlazedDonutscard">
+        <div class="recipe-content-box">
+            <h2 style="text-align: center;">Classic Glazed Donuts</h2>
+            <h3>Ingredients</h3>
+            <ul class="recipe-list">
+                <li>Dough: 500g Flour, 1/4 cup Sugar, 1 cup Warm Milk, 1 Egg, 50g Butter.</li>
+                <li>Glaze: 2 cups Powdered Sugar, 1/4 cup Milk, 1 tsp Vanilla.</li>
+                <li>Yeast: 1 tbsp Instant yeast.</li>
+            </ul>
+            <p><strong>Preparation Steps:</strong></p>
+            <ul class="recipe-list">
+                <li><b>Knead🥣:</b> Mix dough ingredients and knead for 10 mins until smooth.</li>
+                <li><b>Proof⏳:</b> Let it rise for 1.5 hours in a warm place until doubled.</li>
+                <li><b>Cut & Fry🔥:</b> Cut into rings, let rise 30 mins, then fry in hot oil until golden.</li>
+                <li><b>Dip✨:</b> Dip the warm donuts into the glaze and let them set on a rack.</li>
+            </ul>
+            <button class="btn-main">Add to Favorites</button>
+        </div>
+    </div>
+
+    <div class="detials-card" id="ChocolateDonutscard">
+        <div class="recipe-content-box">
+            <h2 style="text-align: center;">Rich Chocolate Donuts</h2>
+            <h3>Ingredients</h3>
+            <ul class="recipe-list">
+                <li>Dough: Standard donut dough (same as classic).</li>
+                <li>Frosting: 1/2 cup Dark Chocolate chips, 1/4 cup Heavy Cream, 1 tbsp Butter.</li>
+                <li>Topping: Colorful sprinkles or chocolate shavings.</li>
+            </ul>
+            <p><strong>Preparation Steps:</strong></p>
+            <ul class="recipe-list">
+                <li><b>Base🍩:</b> Prepare and fry your donuts as usual. Let them cool completely.</li>
+                <li><b>Ganache🍫:</b> Melt chocolate, cream, and butter together until silky smooth.</li>
+                <li><b>Frost✨:</b> Dip the top of each donut into the chocolate ganache.</li>
+                <li><b>Decorate🎨:</b> Add sprinkles immediately before the chocolate sets.</li>
+            </ul>
+            <button class="btn-main">Add to Favorites</button>
+        </div>
+    </div>
+
+    <div class="detials-card" id="FilledDonutscard">
+        <div class="recipe-content-box">
+            <h2 style="text-align: center;">Creamy Filled Donuts</h2>
+            <h3>Ingredients</h3>
+            <ul class="recipe-list">
+                <li>Dough: No-hole donuts (round balls).</li>
+                <li>Filling: Strawberry jam, Vanilla Custard, or Nutella.</li>
+                <li>Coating: 1/2 cup Granulated sugar.</li>
+            </ul>
+            <p><strong>Preparation Steps:</strong></p>
+            <ul class="recipe-list">
+                <li><b>Shape🍩:</b> Cut dough into solid circles (no holes). Fry until puffy.</li>
+                <li><b>Sugar Coat✨:</b> Toss the hot donuts in granulated sugar until fully covered.</li>
+                <li><b>Fill🍓:</b> Use a piping bag with a small tip to poke a hole and fill with jam or custard.</li>
+                <li><b>Serve😋:</b> Best enjoyed fresh when the filling is still cool and the donut is warm!</li>
+            </ul>
+            <button class="btn-main">Add to Favorites</button>
+        </div>
+    </div>
+
+
+    <script>
+
+        let currentCard = null;
+
+        function openCard(event, cardId) {
+            if (event) event.stopPropagation();
+
+
+            if (currentCard) {
+                currentCard.style.display = "none";
+            }
+
+
+            const targetCard = document.getElementById(cardId);
+
+            if (targetCard) {
+                targetCard.style.display = "block";
+                currentCard = targetCard;
+            }
+        }
+
+        window.onclick = function (event) {
+            if (currentCard && currentCard.style.display === "block") {
+                if (event.target !== currentCard && !currentCard.contains(event.target)) {
+                    currentCard.style.display = "none";
+                    currentCard = null;
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
