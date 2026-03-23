@@ -29,21 +29,21 @@
 
      <div class="recipes-container">
 
-          <div class="recipe-card" id="Baguette">
+          <div class="recipe-card" id="Baguette" onclick="openCard(event, 'Baguettecard')">
                <h2>Classic French Baguette 🥖</h2>
 
                <p>A golden, crackly crust with a light, airy interior—the authentic taste of France in every bite</p>
                <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'Baguettecard')">View Recipes</a>
           </div>
 
-          <div class="recipe-card" id="Sourdough">
+          <div class="recipe-card" id="Sourdough" onclick="openCard(event, 'Sourdoughcard')">
                <h2>Natural Sourdough🥐</h2>
                <p>Slow-fermented for deep flavor and a chewy texture, crafted with natural wild yeast for a healthy,
                     artisan loaf.</p>
                <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'Sourdoughcard')">View Recipes</a>
           </div>
 
-          <div class="recipe-card" id="Focaccia">
+          <div class="recipe-card" id="Focaccia" onclick="openCard(event, 'Focacciacard')">
                <h2>Herbed Focaccia 🍪🤎</h2>
                <p>Soft Italian flatbread infused with premium olive oil and aromatic herbs, perfect for dipping or
                     sharing..</p>
@@ -138,6 +138,7 @@
           let currentCard = null;
 
           function openCard(event, cardId) {
+
                if (event) event.stopPropagation();
 
 
