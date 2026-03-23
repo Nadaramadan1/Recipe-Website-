@@ -18,7 +18,7 @@
         <div class="main-content">
             <h1>Freshly Baked at Home</h1>
             <p>Delicious recipes & cookies hub – made with love in your kitchen</p>
-            <a href="#recipes" class="btn">View Recipes</a>
+            <a href="javascript:void(0)" class="btn-main" onclick="onClick()">View Recipes</a>
         </div>
     </section>
     <BR>
@@ -63,7 +63,20 @@
         </div>
     </section>
 
-   
 
+    <script>
+
+
+        function onClick() {
+            window.scrollBy({
+                top: 700,
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
+
+
+
+    </script>
 
 </body>
