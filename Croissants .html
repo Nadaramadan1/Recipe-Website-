@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset=" UTF-8" />
+    <title>Croissant</title>
+    <link rel="stylesheet" href="bakery-style.css" />
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <div class="banner">
+        <img src="bakeryimages/Croissantsbanner.png" style=" width: 100%;
+            height: 420px;
+            margin-bottom: 30px;">
+
+    </div>
+
+    <BR>
+    <BR>
+
+    <h2 class="h2">OUR Recipes </h2>
+
+
+    <div class="recipes-container">
+        <div class="recipe-card" id="ButterCroissant" onclick="openCard(event, 'ButterCroissantcard')">
+            <h2>Butter Croissant</h2>
+            <p>A classic French delight with a rich, buttery flavor and a delicate, flaky texture.</p>
+            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'ButterCroissantcard')">View
+                Recipes</a>
+        </div>
+
+        <div class="recipe-card" id="PainauChocolat" onclick="openCard(event, 'PainauChocolatcard')">
+            <h2>Pain au Chocolat</h2>
+            <p>Irresistible buttery layers filled with premium dark chocolate for a sweet morning treat.</p>
+            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'PainauChocolatcard')">View
+                Recipes</a>
+        </div>
+
+        <div class="recipe-card" id="StrawberryDanish" onclick="openCard(event, 'StrawberryDanishcard')">
+            <h2>Strawberry Custard Danish</h2>
+            <p>Sweet, creamy custard topped with fresh strawberries on a crispy pastry bed.</p>
+            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'StrawberryDanishcard')">View
+                Recipes</a>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="detials-card" id="ButterCroissantcard">
+        <div class="recipe-content-box">
+            <h2 style="text-align: center;">Classic Butter Croissant</h2>
+            <h3>Ingredients</h3>
+            <ul class="recipe-list">
+                <li>Dough: 500g Bread flour, 60g Sugar, 10g Salt, 10g Yeast.</li>
+                <li>Butter Block: 250g Cold high-quality unsalted butter.</li>
+                <li>Liquid: 150ml Cold milk + 150ml Cold water.</li>
+            </ul>
+            <p><strong>Preparation Steps:</strong></p>
+            <ul class="recipe-list">
+                <li><b>Lamination🥣:</b> Wrap the cold butter block inside the dough. Perform 3 "letter folds".</li>
+                <li><b>Chill⏳:</b> Chill the dough for 30 mins between every fold to keep the layers intact.</li>
+                <li><b>Shape🥐:</b> Cut into long triangles, roll tightly, and let them proof for 2 hours.</li>
+                <li><b>Bake🔥:</b> Brush with egg wash and bake at 190°C for 20 mins until deep golden and flaky.</li>
+            </ul>
+            <button class="btn-main">Add to Favorites</button>
+        </div>
+    </div>
+
+    <div class="detials-card" id="PainauChocolatcard">
+        <div class="recipe-content-box">
+            <h2 style="text-align: center;">Pain au Chocolat</h2>
+            <h3>Ingredients</h3>
+            <ul class="recipe-list">
+                <li>Pastry: Same laminated croissant dough (above).</li>
+                <li>Filling: High-quality dark chocolate batons (2 sticks per pastry).</li>
+                <li>Glaze: 1 Egg + 1 tbsp milk (Egg wash).</li>
+            </ul>
+            <p><strong>Preparation Steps:</strong></p>
+            <ul class="recipe-list">
+                <li><b>Cut✨:</b> Cut the laminated dough into equal rectangles (about 8x12 cm).</li>
+                <li><b>Assemble🍫:</b> Place one chocolate stick, fold, place the second, and roll.</li>
+                <li><b>Proof⌛:</b> Let them rise in a warm, draft-free place until they double in size.</li>
+                <li><b>Bake🔥:</b> Bake at 190°C for 18-22 mins. The layers should be visible and crispy.</li>
+            </ul>
+            <button class="btn-main">Add to Favorites</button>
+        </div>
+    </div>
+
+    <div class="detials-card" id="StrawberryDanishcard">
+        <div class="recipe-content-box">
+            <h2 style="text-align: center;">Strawberry Custard Danish</h2>
+            <h3>Ingredients</h3>
+            <ul class="recipe-list">
+                <li>Base: Laminated pastry dough.</li>
+                <li>Custard: 2 Egg yolks, 1 cup Milk, 2 tbsp Sugar, 1 tbsp Cornstarch.</li>
+                <li>Topping: Fresh strawberries and apricot glaze (for shine).</li>
+            </ul>
+            <p><strong>Preparation Steps:</strong></p>
+            <ul class="recipe-list">
+                <li><b>Custard🥣:</b> Cook milk, sugar, and starch until thick. Cool completely.</li>
+                <li><b>Shape🎨:</b> Cut dough into squares, fold corners to center to create a "well".</li>
+                <li><b>Fill🍓:</b> Pipe a circle of custard in the center and add fresh strawberry slices.</li>
+                <li><b>Bake🔥:</b> Bake at 200°C for 15-18 mins. Brush edges with honey or jam while hot.</li>
+            </ul>
+            <button class="btn-main">Add to Favorites</button>
+        </div>
+    </div>
+
+    <script>
+
+        let currentCard = null;
+
+        function openCard(event, cardId) {
+            if (event) event.stopPropagation();
+
+
+            if (currentCard) {
+                currentCard.style.display = "none";
+            }
+
+
+            const targetCard = document.getElementById(cardId);
+
+            if (targetCard) {
+                targetCard.style.display = "block";
+                currentCard = targetCard;
+            }
+        }
+
+        window.onclick = function (event) {
+            if (currentCard && currentCard.style.display === "block") {
+                if (event.target !== currentCard && !currentCard.contains(event.target)) {
+                    currentCard.style.display = "none";
+                    currentCard = null;
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

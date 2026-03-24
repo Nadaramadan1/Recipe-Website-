@@ -1,0 +1,423 @@
+/* General Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #e6daca;
+    color: #4a3c31;
+    line-height: 1.6;
+}
+
+/* Main Banner Section */
+.main {
+    background-image: url("bakeryimages/bakery12.png");
+    background-color: #e2d8ce;
+    text-align: center;
+    height: 656px;
+    padding-bottom: 0ch;
+    height: 1100x;
+    /* Fixed as per original */
+    width: 1500px;
+}
+
+.main h1 {
+    font-size: 50px;
+    text-align: center;
+    padding: 160px;
+    padding-bottom: 0px;
+    height: 50px;
+}
+
+.main p {
+    font-size: 20px;
+    text-align: center;
+    padding: 70px;
+    padding-bottom: 50px;
+}
+
+.main a {
+    padding: 18px 40px;
+    text-align: center;
+    border-radius: 50px;
+    margin-right: 100px;
+    background-color: #4b1f11;
+    color: #dcb8a0;
+    font: 19px;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.main a:hover {
+    transform: translateY(-5px);
+}
+
+/* Recipes Grid Container */
+.recipes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.h2 {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+/* Recipe Card Shared Styles */
+.recipe-card {
+    height: 400px;
+    background: #f8f1e9;
+    border-radius: 40px;
+    padding: 25px;
+    box-shadow: 0px 0px 2px white;
+    background-size: 400px 500px;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 0px 0px 3px black;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Recipe Card Buttons */
+.recipe-card a {
+    margin-top: auto;
+    align-self: center;
+    margin-top: 250px;
+    margin-left: 90PX;
+    padding: 10px 30px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #4b1f11;
+    color: #dcb8a0;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.recipe-card a:hover {
+    transform: translateY(-5px);
+}
+
+/* Category Images (Shared Background Settings) */
+#bread,
+#Croissants,
+#cookies,
+#Donuts,
+#Macarons,
+#Cinnamon,
+#Baguette,
+#Sourdough,
+#Focaccia,
+#ButterCroissant,
+#PainauChocolat,
+#StrawberryDanish {
+    background-size: 400px 500px;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 0px 0px 3px black;
+}
+
+/* Main Categories Backgrounds */
+#bread {
+    background-image: url(bakeryimages/Breads.jpeg);
+}
+
+#Croissants {
+    background-image: url(bakeryimages/Croissants.jpeg);
+}
+
+#cookies {
+    background-image: url(bakeryimages/cookies.jpeg);
+}
+
+#Donuts {
+    background-image: url(bakeryimages/Dounts.png);
+}
+
+#Macarons {
+    background-image: url(bakeryimages/macron.jpeg);
+}
+
+#Cinnamon {
+    background-image: url(bakeryimages/Cinnamon.png);
+}
+
+/* Bread Section */
+#Baguette,
+#Baguettecard {
+    background-image: url(bakeryimages/Baguette.jpeg);
+}
+
+#Sourdough,
+#Sourdoughcard {
+    background-image: url(bakeryimages/Sourdough.jpeg);
+}
+
+#Focaccia,
+#Focacciacard {
+    background-image: url(bakeryimages/Focaccia1.jpeg);
+}
+
+/* Cinnamon Section */
+#ClassicCinnamon,
+#ClassicCinnamoncard {
+    background-image: url(bakeryimages//classicCinnamon.jpeg);
+}
+
+#PecanCinnamon,
+#PecanCinnamoncard {
+    background-image: url(bakeryimages/PecanCinnamon.jpeg);
+}
+
+#ChocolateCinnamon,
+#ChocolateCinnamoncard {
+    background-image: url(bakeryimages/ChocolateCinnamon.jpeg);
+}
+
+/* Cookies Section */
+#ChocolateCookies,
+#ChocolateCookiescard {
+    background-image: url(bakeryimages/chocolatcookie.jpeg);
+}
+
+#ButterBiscuits,
+#ButterBiscuitscard {
+    background-image: url(bakeryimages/butterbiscuit.jpeg);
+}
+
+#OatmealCookies,
+#OatmealCookiescard {
+    background-image: url(bakeryimages/oatmlcookie.jpeg);
+}
+
+/* Croissant Section */
+#ButterCroissant,
+#ButterCroissantcard {
+    background-image: url(bakeryimages/butter.jpeg);
+}
+
+#PainauChocolat,
+#PainauChocolatcard {
+    background-image: url(bakeryimages/Chocolat.jpeg);
+}
+
+#StrawberryDanish,
+#StrawberryDanishcard {
+    background-image: url(bakeryimages/Danish.jpeg);
+}
+
+/* Donuts Section */
+#GlazedDonuts,
+#GlazedDonutscard {
+    background-image: url(bakeryimages/GlazedDonuts.jpeg);
+}
+
+#ChocolateDonuts,
+#ChocolateDonutscard {
+    background-image: url(bakeryimages/Chocolatdounts.jpeg);
+}
+
+#FilledDonuts,
+#FilledDonutscard {
+    background-image: url(bakeryimages/filledDounts.jpeg);
+}
+
+/* Macarons Section */
+#VanillaMacarons,
+#VanillaMacaronscard {
+    background-image: url(bakeryimages/vanillamacron.jpeg);
+}
+
+#RaspberryMacrons,
+#RaspberryMacronscard {
+    background-image: url(bakeryimages/RaspberryMacarons.jpeg);
+}
+
+#PistachioMacarons,
+#PistachioMacaronscard {
+    background-image: url(bakeryimages/PistachioMacarons.jpeg);
+}
+
+
+
+/*  cards*/
+.detials-card {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    height: 600px;
+    width: 500px;
+    border-radius: 40px;
+    padding: 25px;
+    background-size: cover;
+    background-position: center;
+
+}
+
+
+
+.recipe-content-box {
+    margin-top: 85px;
+    color: black;
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 40px;
+    padding: 20px;
+    text-shadow: 0px 0px 10px white;
+}
+
+.btn-main {
+    margin-top: auto;
+    align-self: center;
+    margin-top: 40px;
+    margin-left: 150PX;
+    padding: 10px 30px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #4b1f11;
+    color: #dcb8a0;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+
+@media only screen and (max-width: 800px) {
+
+    .main {
+        width: 100%;
+        height: auto;
+        background-size: cover;
+        background-position: center;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .main h1 {
+        font-size: 28px;
+        padding: 40px 10px;
+    }
+
+    .main p {
+        font-size: 16px;
+        padding: 20px 10px;
+    }
+
+    .main a {
+        margin: 20px auto;
+        display: table;
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .detials-card {
+        width: 90%;
+        height: auto;
+        max-height: 80vh;
+    }
+
+    .recipe-card {
+        height: 400px;
+        padding: 10px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .recipe-card a {
+        margin: 120px auto;
+        display: table;
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+
+    .recipes-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+        height: fit-content;
+    }
+
+    #bread,
+    #Croissants,
+    #cookies,
+    #Donuts,
+    #Macarons,
+    #Cinnamon,
+    #Baguette,
+    #Sourdough,
+    #Focaccia,
+    #ButterCroissant,
+    #PainauChocolat,
+    #StrawberryDanish,
+
+    #PistachioMacarons,
+    #VanillaMacarons,
+    #RaspberryMacrons,
+    #FilledDonuts,
+    #GlazedDonuts,
+    #ChocolateDonuts,
+    #ClassicCinnamon,
+    #PecanCinnamon,
+    #ChocolateCinnamon,
+    #ChocolateCookies,
+    #ButterBiscuits,
+    #OatmealCookies {
+
+
+        background-size: cover;
+        background-position: center;
+
+
+        background-repeat: no-repeat;
+        color: white;
+        text-shadow: 0px 0px 3px black;
+
+
+    }
+
+   
+  
+    .detials-card {
+        width: 90%;       
+        height: 800px;     
+        max-height: 80vh; 
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .recipe-content-box {
+        margin-top: 20px;
+        height: auto;  
+        padding: 15px;
+        border-radius: 20px;
+        font-size: 14px;  
+    }
+
+    .btn-main {
+        margin: 20px auto;   
+        display: table;
+        font-size: 14px;    
+        padding: 8px 20px;   
+        border-radius: 15px;
+    }
+
+
+}
+
+
+
