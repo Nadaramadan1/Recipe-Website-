@@ -333,13 +333,13 @@ body {
 
     .recipe-card {
         height: 300px;
-        padding: 15px;
+        padding: 10px;
         background-size: cover;
         background-position: center;
     }
 
     .recipe-card a {
-        margin: 150px auto;
+        margin: 120px auto;
         display: table;
         font-size: 14px;
         padding: 8px 20px;
@@ -349,6 +349,7 @@ body {
         grid-template-columns: 1fr;
         gap: 15px;
         padding: 10px;
+        height: fit-content;
     }
 
     #bread,
@@ -389,6 +390,34 @@ body {
 
     }
 
+   
+  
+    .detials-card {
+        width: 90%;       
+        height: auto;     
+        max-height: 80vh; 
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .recipe-content-box {
+        margin-top: 20px;
+        height: auto;    
+        padding: 15px;
+        border-radius: 20px;
+        font-size: 14px;  
+    }
+
+    .btn-main {
+        margin: 20px auto;   
+        display: table;
+        font-size: 14px;    
+        padding: 8px 20px;   
+        border-radius: 15px;
+    }
 
 
 }
+
+
+
