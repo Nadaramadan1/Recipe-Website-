@@ -332,7 +332,7 @@ body {
     }
 
     .recipe-card {
-        height: 300px;
+        height: 400px;
         padding: 10px;
         background-size: cover;
         background-position: center;
@@ -394,7 +394,7 @@ body {
   
     .detials-card {
         width: 90%;       
-        height: auto;     
+        height: 800px;     
         max-height: 80vh; 
         padding: 15px;
         border-radius: 20px;
@@ -402,7 +402,7 @@ body {
 
     .recipe-content-box {
         margin-top: 20px;
-        height: auto;    
+        height: auto;  
         padding: 15px;
         border-radius: 20px;
         font-size: 14px;  
