@@ -278,6 +278,14 @@ body {
     padding: 20px;
     text-shadow: 0px 0px 10px white;
 }
+.recipe-content-box p ,h3{
+    color:#643305;
+  
+}
+.recipe-content-box ul{
+    
+    list-style: none;
+}
 
 .btn-main {
     margin-top: auto;
