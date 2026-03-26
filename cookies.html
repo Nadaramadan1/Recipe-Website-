@@ -69,7 +69,7 @@
                 <li><b>Chill⏳:</b> Refrigerate the dough for at least 30 mins (This is the secret!).</li>
                 <li><b>Bake🔥:</b> Scoop onto tray and bake at 175°C for 10-12 mins until edges are golden.</li>
             </ul>
-            <button class="btn-main">Add to Favorites</button>
+            <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
         </div>
     </div>
 
@@ -91,7 +91,7 @@
                 <li><b>Chill⏳:</b> Let them rest in the fridge for 15 mins to keep their shape.</li>
                 <li><b>Bake🔥:</b> Bake at 160°C for 15-20 mins until pale golden. They should melt in your mouth!</li>
             </ul>
-            <button class="btn-main">Add to Favorites</button>
+            <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
         </div>
     </div>
 
@@ -113,13 +113,19 @@
                 <li><b>Scoop🍪:</b> Place large scoops on the baking sheet.</li>
                 <li><b>Bake🔥:</b> Bake at 180°C for 12-14 mins until the centers are still slightly soft.</li>
             </ul>
-            <button class="btn-main">Add to Favorites</button>
+            <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
         </div>
     </div>
 
 
 
     <script>
+        function changecolor(element) {
+            element.style.color = "red";
+
+            element.title = "Added Successfully! ✨";
+
+        }
 
         let currentCard = null;
 

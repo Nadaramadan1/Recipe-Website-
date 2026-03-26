@@ -78,7 +78,7 @@
                          crunchy crust.</li>
 
                </ul>
-               <button class="btn-main">Add to Favorites</button>
+               <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
           </div>
      </div>
 
@@ -105,7 +105,7 @@
                     <li> <b>Bake🔥:</b> Bake in a preheated Dutch oven at 230°C for 20 mins (lid on) and 20 mins (lid
                          off).</li>
                </ul>
-               <button class="btn-main">Add to Favorites</button>
+               <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
           </div>
      </div>
 
@@ -130,10 +130,17 @@
                     <li> <b>Garnish🌿:</b> Drizzle generously with olive oil and sprinkle rosemary and flaky salt.</li>
                     <li> <b>Bake🔥:</b> Bake at 220°C for 20-25 minutes until the bottom is golden and crispy.</li>
                </ul>
-               <button class="btn-main">Add to Favorites</button>
+               <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
           </div>
      </div>
      <script>
+
+          function changecolor(element) {
+               element.style.color = "red";
+
+               element.title = "Added Successfully! ✨";
+
+          }
 
           let currentCard = null;
 
