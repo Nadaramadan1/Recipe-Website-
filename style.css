@@ -683,15 +683,13 @@ table tr:hover td {
                         Side Bar
    ============================================================ */
 
-/* اللينكات الأصلية (تفضل ظاهرة بالبرتقالي) */
 .nav-links {
-    display: flex !important; /* تأكيد ظهورها */
+    display: flex !important; 
     list-style: none;
 }
 
-/* القائمة الجانبية الجديدة (dropdown-menu) */
 .dropdown-menu {
-    display: none; /* مخفية في البداية */
+    display: none; 
     position: absolute;
     top: 70px;
     left: 20px;
@@ -705,7 +703,6 @@ table tr:hover td {
     min-width: 200px;
 }
 
-/* الكلاس اللي بيظهرها لما ندوس على الشرط */
 .dropdown-menu.show {
     display: block !important;
 }
@@ -722,7 +719,6 @@ table tr:hover td {
     color: white !important;
 }
 
-/* شكل أيقونة الثلاث شرط */
 .menu-icon {
     cursor: pointer;
     margin-right: 15px;
@@ -730,13 +726,9 @@ table tr:hover td {
 .bar {
     width: 25px;
     height: 3px;
-    background-color: white; /* لون أبيض فوق البرتقالي */
+    background-color: white; 
     margin: 5px 0;
 }
-
-
-
-
 
 
 /* ============================================================
