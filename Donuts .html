@@ -12,6 +12,21 @@
 </head>
 
 <body>
+ <div id="navbar">
+        <nav class="main-nav">
+            <div class="logo">Yummy 🍲</div> 
+            <ul class="nav-links">
+                <li><a href="cover.html" >Team</a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+                <li><a href="admin-recipe.html">Admin</a></li>
+                <li><a href="add-recipe.html">Add Recipe</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <div class="banner">
         <img src="bakeryimages/Dountsbanner.png" style=" width: 100%;
@@ -66,7 +81,7 @@
                 <li><b>Cut & Fry🔥:</b> Cut into rings, let rise 30 mins, then fry in hot oil until golden.</li>
                 <li><b>Dip✨:</b> Dip the warm donuts into the glaze and let them set on a rack.</li>
             </ul>
-            <button class="btn-main">Add to Favorites</button>
+            <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
         </div>
     </div>
 
@@ -86,7 +101,7 @@
                 <li><b>Frost✨:</b> Dip the top of each donut into the chocolate ganache.</li>
                 <li><b>Decorate🎨:</b> Add sprinkles immediately before the chocolate sets.</li>
             </ul>
-            <button class="btn-main">Add to Favorites</button>
+            <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
         </div>
     </div>
 
@@ -106,12 +121,19 @@
                 <li><b>Fill🍓:</b> Use a piping bag with a small tip to poke a hole and fill with jam or custard.</li>
                 <li><b>Serve😋:</b> Best enjoyed fresh when the filling is still cool and the donut is warm!</li>
             </ul>
-            <button class="btn-main">Add to Favorites</button>
+            <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
         </div>
     </div>
 
 
     <script>
+
+        function changecolor(element) {
+            element.style.color = "red";
+
+            element.title = "Added Successfully! ✨";
+
+        }
 
         let currentCard = null;
 

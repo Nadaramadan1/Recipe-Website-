@@ -12,6 +12,22 @@
 </head>
 
 <body>
+     <div id="navbar">
+        <nav class="main-nav">
+            <div class="logo">Yummy 🍲</div> 
+            <ul class="nav-links">
+                <li><a href="cover.html" >Team</a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+                <li><a href="admin-recipe.html">Admin</a></li>
+                <li><a href="add-recipe.html">Add Recipe</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
+
 
     <div class="banner">
         <img src="bakeryimages/macronbanner.png" style=" width: 100%;
@@ -28,7 +44,7 @@
 
     <div class="recipes-container">
 
-        <div class="recipe-card" id="VanillaMacarons"  onclick="openCard(event, 'VanillaMacaronscard')">
+        <div class="recipe-card" id="VanillaMacarons" onclick="openCard(event, 'VanillaMacaronscard')">
             <h2>Vanilla Macarons </h2>
             <p>Classic French shells filled with a smooth and creamy vanilla bean ganache.</p>
             <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'VanillaMacaronscard')">View
@@ -38,15 +54,17 @@
         <div class="recipe-card" id="PistachioMacarons" onclick="openCard(event, 'PistachioMacaronscard')">
             <h2>Pistachio Macarons </h2>
             <p>Authentic nutty flavor with a light, crisp shell and rich pistachio filling.</p>
-            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'PistachioMacaronscard')">view Recipes</a>
+            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'PistachioMacaronscard')">view
+                Recipes</a>
         </div>
 
         <div class="recipe-card" id="RaspberryMacrons" onclick="openCard(event, 'RaspberryMacronscard')">
             <h2>Raspberry Macarons </h2>
             <p>Delicate almond shells with a tangy and sweet fresh raspberry center.</p>
-            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'RaspberryMacronscard')">view Recipes</a>
+            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'RaspberryMacronscard')">view
+                Recipes</a>
         </div>
-        
+
 
     </div>
 
@@ -65,7 +83,7 @@
                 <li><b>Bake🔥:</b> Bake at 150°C for 14-16 mins. Let them cool completely before removing.</li>
                 <li><b>Fill🍦:</b> Sandwich two shells with the creamy vanilla ganache.</li>
             </ul>
-            <button class="btn-main">Add to Favorites</button>
+            <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
         </div>
     </div>
 
@@ -85,7 +103,7 @@
                 <li><b>Bake🔥:</b> Bake at 150°C. The "feet" should be stable and not sticky.</li>
                 <li><b>Nutty Fill🟢:</b> Use the pistachio-infused ganache for a rich, nutty center.</li>
             </ul>
-            <button class="btn-main">Add to Favorites</button>
+            <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
         </div>
     </div>
 
@@ -105,11 +123,18 @@
                 </li>
                 <li><b>Mature⏳:</b> Store in the fridge for 24 hours for the best chewy texture.</li>
             </ul>
-            <button class="btn-main">Add to Favorites</button>
+            <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
         </div>
     </div>
 
     <script>
+
+        function changecolor(element) {
+            element.style.color = "red";
+
+            element.title = "Added Successfully! ✨";
+
+        }
 
         let currentCard = null;
 

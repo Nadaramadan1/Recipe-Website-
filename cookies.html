@@ -12,6 +12,21 @@
 </head>
 
 <body>
+ <div id="navbar">
+        <nav class="main-nav">
+            <div class="logo">Yummy 🍲</div> 
+            <ul class="nav-links">
+                <li><a href="cover.html" >Team</a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+                <li><a href="admin-recipe.html">Admin</a></li>
+                <li><a href="add-recipe.html">Add Recipe</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <div class="banner">
         <img src="bakeryimages/cookiesbanner.png" style="  width: 100%;
@@ -69,7 +84,7 @@
                 <li><b>Chill⏳:</b> Refrigerate the dough for at least 30 mins (This is the secret!).</li>
                 <li><b>Bake🔥:</b> Scoop onto tray and bake at 175°C for 10-12 mins until edges are golden.</li>
             </ul>
-            <button class="btn-main">Add to Favorites</button>
+            <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
         </div>
     </div>
 
@@ -91,7 +106,7 @@
                 <li><b>Chill⏳:</b> Let them rest in the fridge for 15 mins to keep their shape.</li>
                 <li><b>Bake🔥:</b> Bake at 160°C for 15-20 mins until pale golden. They should melt in your mouth!</li>
             </ul>
-            <button class="btn-main">Add to Favorites</button>
+            <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
         </div>
     </div>
 
@@ -113,13 +128,19 @@
                 <li><b>Scoop🍪:</b> Place large scoops on the baking sheet.</li>
                 <li><b>Bake🔥:</b> Bake at 180°C for 12-14 mins until the centers are still slightly soft.</li>
             </ul>
-            <button class="btn-main">Add to Favorites</button>
+            <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
         </div>
     </div>
 
 
 
     <script>
+        function changecolor(element) {
+            element.style.color = "red";
+
+            element.title = "Added Successfully! ✨";
+
+        }
 
         let currentCard = null;
 

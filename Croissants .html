@@ -12,6 +12,22 @@
 </head>
 
 <body>
+     <div id="navbar">
+        <nav class="main-nav">
+            <div class="logo">Yummy 🍲</div> 
+            <ul class="nav-links">
+                <li><a href="cover.html" >Team</a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+                <li><a href="admin-recipe.html">Admin</a></li>
+                <li><a href="add-recipe.html">Add Recipe</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
+
 
     <div class="banner">
         <img src="bakeryimages/Croissantsbanner.png" style=" width: 100%;
@@ -67,7 +83,7 @@
                 <li><b>Shape🥐:</b> Cut into long triangles, roll tightly, and let them proof for 2 hours.</li>
                 <li><b>Bake🔥:</b> Brush with egg wash and bake at 190°C for 20 mins until deep golden and flaky.</li>
             </ul>
-            <button class="btn-main">Add to Favorites</button>
+            <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
         </div>
     </div>
 
@@ -87,7 +103,7 @@
                 <li><b>Proof⌛:</b> Let them rise in a warm, draft-free place until they double in size.</li>
                 <li><b>Bake🔥:</b> Bake at 190°C for 18-22 mins. The layers should be visible and crispy.</li>
             </ul>
-            <button class="btn-main">Add to Favorites</button>
+            <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
         </div>
     </div>
 
@@ -107,12 +123,18 @@
                 <li><b>Fill🍓:</b> Pipe a circle of custard in the center and add fresh strawberry slices.</li>
                 <li><b>Bake🔥:</b> Bake at 200°C for 15-18 mins. Brush edges with honey or jam while hot.</li>
             </ul>
-            <button class="btn-main">Add to Favorites</button>
+            <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
         </div>
     </div>
 
     <script>
 
+        function changecolor(element) {
+            element.style.color = "red";
+
+            element.title = "Added Successfully! ✨";
+
+        }
         let currentCard = null;
 
         function openCard(event, cardId) {
