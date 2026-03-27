@@ -1,0 +1,92 @@
+:root {
+    --primary-color: #c2a07b;     /* بيج/بني فاتح (يناسب الكوفي) */
+  --primary-hover: #a88e75;     /* أغمق بسيط */
+
+  --bg-color: #faf8f5;          /* خلفية فاتحة جدًا */
+  --card-bg: #ffffff;
+
+  --text-main: #3e3e3e;
+  --text-muted: #7a7a7a;
+}
+.hero-drinks {
+  height: 90vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('drinksimages/coffeee.jpeg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-title {
+  font-size: 2rem;
+  font-weight: bold;
+  max-width: 800px;
+}
+.hero-content {
+  max-width: 800px;
+  padding: 20px;
+}
+
+ 
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  opacity: 0.9;
+}
+body {
+  background-color:#faf8f5; 
+}
+h2{
+    text-align:center ;
+}
+#coffee{
+    background-image:url(drinksimages/coffeee.jpeg) ;
+    background-position: center;
+    background-size: cover;
+}
+#juices{
+     background-image:url(drinksimages/juices.jpeg) ;
+    background-position: center;
+    background-size: cover;
+}
+#hot_drinks{
+    background-image:url(drinksimages/hotdrinks.jpeg) ;
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+#Cappuccino{
+    background-image:url(drinksimages/Cappuccino.jpeg) ;
+    background-position: center;
+    background-size: cover;
+}
+
+#icedcoffee{
+     background-image:url(drinksimages/Caramel\ Hazelnut\ Iced\ Coffee.jpeg) ;
+    background-position: center;
+    background-size: cover;
+}
+#arabcoffee{
+     background-image:url(drinksimages/arabcoffe.jpeg) ;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.recipe-card {
+    height: 400px;
+    background: #faf8f5;
+    border-radius: 40px;
+    padding: 25px;
+    box-shadow: 0px 0px 2px white;
+     
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 0px 0px 3px black;
+}
