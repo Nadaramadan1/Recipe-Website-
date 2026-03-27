@@ -6,21 +6,38 @@
     <link rel="stylesheet" href="Style.css">
 </head>
 <body>
-    <div id="navbar">
-        <nav class="main-nav">
-            <div class="logo">Yummy 🍲</div> 
-            <ul class="nav-links">
-                <li><a href="cover.html">Team</a></li>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="search.html">Search</a></li>
-                <li><a href="favorites.html">Favorites</a></li>
-                <li><a href="admin-recipe.html">Admin</a></li>
-                <li><a href="add-recipe.html">Add Recipe</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="signup.html">Sign Up</a></li>
-            </ul>
-        </nav>
-    </div>
+   <div id="navbar">
+    <nav class="main-nav">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <div class="logo">Yummy 🍲</div> 
+
+        <ul class="nav-links">
+            <li><a href="cover.html">Team</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="favorites.html">Favorites</a></li>
+            <li><a href="admin-recipe.html">Admin</a></li>
+            <li><a href="add-recipe.html">Add Recipe</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+        
+        </ul>
+
+        <ul class="dropdown-menu" id="side-menu">
+            <li><a href="main-dish.html">Main Dish</a></li>
+            <li><a href="Healthy Food.html">Healthy Food</a></li>
+            <li><a href="dessert.html">Dessert</a></li>
+            <li><a href="bakery.html">Bakery</a></li>
+            <li><a href="juices.html">Juices</a></li>
+            <li><a href="appetizers.html">Appetizers</a></li>
+        </ul>
+    </nav>
+</div>
 
     <main class="hero-home-container">
         <div class="hero-content">
@@ -49,6 +66,6 @@
             <p>Feeling cozy or adventurous? Find the perfect dish for your vibe.</p>
         </div>
     </section>
-
+<script src="main.js"></script>
 </body>
 </html>

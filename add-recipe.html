@@ -9,7 +9,6 @@
 
 <body>
     <div id="navbar">
-
         <nav class="main-nav">
             <div class="logo">Yummy 🍲</div>
             <ul class="nav-links">
@@ -28,53 +27,69 @@
     <div class="page-wrapper">
         <div class="add-recipe-card">
             <h1>Add New Recipe</h1>
-            <form>
+            <form id="recipe-form">
                 <div class="form-row">
-                    <label for="recipe id">Recipe ID:</label>
-                    <input id="recipe id" type="number" name="id" required>
+                    <label for="recipe_id">Recipe ID:</label>
+                    <input id="recipe_id" type="number" name="id" required>
                 </div>
 
                 <div class="form-row">
-                    <label for="recipe name">Recipe Name:</label>
-                    <input id="recipe name" type="text" name="name" required>
+                    <label for="recipe_name">Recipe Name:</label>
+                    <input id="recipe_name" type="text" name="name" required>
                 </div>
 
                 <div class="form-row">
-                    <label for="dish type">Select Dish Type:</label>
-                    <select id="dish type" name="course" required>
+                    <label for="dish_type">Select Dish Type:</label>
+                    <select id="dish_type" name="course" required>
+                        <option value="healthy">Healthy Food</option>
                         <option value="appetizers">Appetizers</option>
                         <option value="main-course">Main-course</option>
                         <option value="dessert">Dessert</option>
                     </select>
                 </div>
 
+                <div class="form-row">
+                    <label for="recipe_time">Time (mins):</label>
+                    <input id="recipe_time" type="number" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="recipe_calories">Calories (kcal):</label>
+                    <input id="recipe_calories" type="number" required>
+                </div>
+
                 <hr>
                 <h2>Ingredients</h2>
 
-                <div class="ingredient-group">
-                    <label>ID:</label> <input type="number" name="ingredient id" required>
-                    <label>Name:</label> <input type="text" name="ingredient name" required>
-                    <label>Qty:</label> <input type="text" name="ingredient quantity" required>
+                <div class="ingredient_group">
+                    <label>ID:</label> <input type="number" name="ingredient id">
+                    <label>Name:</label> <input type="text" name="ingredient name">
+                    <label>Qty:</label> <input type="text" name="ingredient quantity">
                 </div>
 
-                <div class="ingredient-group">
-                    <label>ID:</label> <input type="number" name="ingredient id" required>
-                    <label>Name:</label> <input type="text" name="ingredient name" required>
-                    <label>Qty:</label> <input type="text" name="ingredient quantity" required>
+                <div class="ingredient_group">
+                    <label>ID:</label> <input type="number" name="ingredient id">
+                    <label>Name:</label> <input type="text" name="ingredient name">
+                    <label>Qty:</label> <input type="text" name="ingredient quantity">
                 </div>
 
-                <div class="ingredient-group">
-                    <label>ID:</label> <input type="number" name="ingredient id" required>
-                    <label>Name:</label> <input type="text" name="ingredient name" required>
-                    <label>Qty:</label> <input type="text" name="ingredient quantity" required>
+                <div class="ingredient_group">
+                    <label>ID:</label> <input type="number" name="ingredient id">
+                    <label>Name:</label> <input type="text" name="ingredient name">
+                    <label>Qty:</label> <input type="text" name="ingredient quantity">
                 </div>
 
                 <hr>
-                <div class="description-section">
+                <div class="description_section">
+                    <label for="recipe_ingredients">Ingredients (Separator with commas):</label>
+                    <textarea rows="3" id="recipe_ingredients" placeholder="e.g. Tomato, Lettuce, Olive Oil..."></textarea>
+                </div>
+
+                <hr>
+                <div class="description_section">
                     <label for="discription">Recipe Description:</label>
                     <textarea rows="5" name="discription" id="discription"></textarea>
                 </div>
-
                 <div class="form-actions">
                     <input type="submit" value="Add Recipe" class="btn-main">
                     <input type="reset" value="Reset" class="btn-main" style="background: #ccc; border: none;">
@@ -82,6 +97,9 @@
             </form>
         </div>
     </div>
+
+    <script src="main.js"></script>
 </body>
 
 </html>
+               

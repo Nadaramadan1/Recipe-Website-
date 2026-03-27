@@ -1,0 +1,253 @@
+/* --- 1. DESIGN SYSTEM & VARIABLES (Healthy Theme) --- */
+:root {
+  /* سيكولوجية الألوان: أخضر طبيعي هادئ */
+  --healthy-primary: #27ae60; /* الأخضر الأساسي */
+  --healthy-hover: #219150;    /* أخضر أغمق قليلاً */
+  --healthy-bg: #f9fdfb;       /* خلفية بيضاء بلمسة خضراء خفيفة جداً */
+  --text-dark: #2c3e50;         /* لون نص داكن مريح (ليس أسود قاتم) */
+  --text-light: #7f8c8d;        /* نصوص ثانوية هادئة */
+  --white: #ffffff;
+  
+  /* ألوان المشروع الأصلي لاستخدامها بذكاء */
+  --yummy-orange: #e67e22; /* نستخدمه للأزرار فقط */
+
+  --radius-lg: 15px;
+  --radius-md: 8px;
+  --shadow-subtle: 0 4px 15px rgba(0,0,0,0.05); /* ظل خفيف جداً */
+  --shadow-hover: 0 10px 25px rgba(39, 174, 96, 0.1); /* ظل أخضر خفيف عند الهوفر */
+  --transition: all 0.3s ease;
+}
+
+/* --- 2. GLOBAL RESET & BASE --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.healthy-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--healthy-bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- 3. HERO SECTION (Like Home Page Structure) --- */
+.healthy-hero {
+  height: 70vh; /* طول الهيرو */
+  /* سيكولوجية الصور: صورة طبيعية منعشة ومضاءة جيداً */
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), 
+              url('https://images.unsplash.com/photo-1490818696649-08e58a9030ac?q=80&w=1600&auto=format&fit=crop') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column; /* لوضع النافبار فوق المحتوى */
+  color: var(--white);
+  position: relative;
+}
+
+/* النافبار فوق الصورة */
+#navbar {
+  background: transparent; /* شفاف فوق الصورة */
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo { font-size: 1.8rem; font-weight: bold; }
+
+.nav-links { display: flex; list-style: none; }
+.nav-links li { margin-left: 25px; }
+.nav-links a { text-decoration: none; color: rgba(255,255,255,0.8); font-weight: 500; transition: var(--transition); }
+.nav-links a:hover, .nav-links a.active { color: var(--white); border-bottom: 2px solid var(--healthy-primary); padding-bottom: 5px; }
+
+/* محتوى الهيرو (الترحيب) */
+.hero-content {
+  flex: 1; /* تأخذ باقي المساحة المتاحة */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* توسيط عمودي */
+  align-items: center; /* توسيط أفقي */
+  text-align: center;
+}
+
+.healthy-title {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 15px;
+  text-shadow: 2px 4px 10px rgba(0,0,0,0.3);
+}
+
+.hero-subtext {
+  font-size: 1.5rem;
+  font-weight: 300;
+  opacity: 0.9;
+  max-width: 600px;
+}
+
+/* --- 4. DIET TABS SECTION (سيكولوجية التنظيم) --- */
+.diet-tabs-section {
+  padding: 60px 0 30px;
+  text-align: center;
+}
+
+.healthy-heading, .section-heading {
+  color: var(--healthy-primary);
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+}
+
+.diet-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: var(--white);
+  border: 2px solid var(--healthy-primary);
+  color: var(--healthy-primary);
+  padding: 10px 25px;
+  border-radius: 50px; /* شكل بيضاوي مريح */
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 1rem;
+}
+
+.tab-btn:hover, .tab-btn.active {
+  background-color: var(--healthy-primary);
+  color: var(--white);
+  box-shadow: 0 5px 15px rgba(39, 174, 96, 0.2);
+}
+
+/* --- 5. RECIPES GRID & CARDS (Home Page Style) --- */
+.healthy-main-content {
+  padding: 30px 0 80px;
+}
+
+.healthy-recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* مرونة عالية */
+  gap: 30px;
+}
+
+.healthy-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+  transition: var(--transition);
+  border: 1px solid #eee; /* حدود خفيفة جداً */
+  position: relative;
+}
+
+.healthy-card:hover {
+  transform: translateY(-8px); /* حركة خفيفة للأعلى */
+  box-shadow: var(--shadow-hover);
+}
+
+/* صورة الكارت والبادج */
+.card-image-wrapper {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* تحافظ على تناسق الصور */
+  transition: var(--transition);
+}
+
+.healthy-card:hover .card-image-wrapper img {
+  transform: scale(1.05); /* زووم خفيف عند الهوفر */
+}
+
+.diet-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: rgba(39, 174, 96, 0.9); /* أخضر شفاف */
+  color: var(--white);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* معلومات الكارت */
+.card-info {
+  padding: 25px;
+}
+
+.card-info h3 {
+  color: var(--text-dark);
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.card-info p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  height: 50px; /* طول ثابت للنص لتناسق الكروت */
+  overflow: hidden;
+}
+
+/* الوقت والسعرات */
+.card-meta {
+  display: flex;
+  gap: 20px;
+  color: var(--healthy-primary);
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.card-meta i { margin-right: 5px; }
+
+/* زرار الأكشن - سيكولوجية اللون البرتقالي */
+.btn-healthy-action {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: var(--yummy-orange) !important; /* لون المشروع الأصلي للطاقة والتحفيز */
+  color: var(--white) !important;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  font-weight: bold;
+  transition: var(--transition);
+}
+
+.btn-healthy-action:hover {
+  background-color: #d35400 !important; /* برتقالي أغمق */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+}
+
+/* --- 6. FOOTER --- */
+.healthy-footer {
+  background-color: #2c3e50; /* لون داكن للتباين */
+  color: var(--white);
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: auto;
+  opacity: 0.8;
+}

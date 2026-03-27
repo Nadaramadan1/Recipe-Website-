@@ -503,7 +503,7 @@ table tr:hover td {
     box-sizing: border-box;
 }
 
-.ingredient-group {
+.ingredient_group {
     display: flex;
     gap: 15px;
     margin-bottom: 15px;
@@ -512,30 +512,30 @@ table tr:hover td {
     border-radius: 8px;
 }
 
-.ingredient-group label {
+.ingredient_group label {
     display: inline-block;
     margin-bottom: 5px;
     font-weight: normal;
 }
 
-.ingredient-group input {
+.ingredient_group input {
     width: 100%;
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 
-.description-section {
+.description_section {
     margin-top: 20px;
 }
 
-.description-section label {
+.description_section label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
 }
 
-.description-section textarea {
+.description_section textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -656,3 +656,61 @@ table tr:hover td {
     color: var(--text-muted);
     font-size: 0.95rem;
 }
+
+/* ============================================================
+                        Side Bar
+   ============================================================ */
+
+/* اللينكات الأصلية (تفضل ظاهرة بالبرتقالي) */
+.nav-links {
+    display: flex !important; /* تأكيد ظهورها */
+    list-style: none;
+}
+
+/* القائمة الجانبية الجديدة (dropdown-menu) */
+.dropdown-menu {
+    display: none; /* مخفية في البداية */
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    background-color: white;
+    border: 1px solid var(--primary-color);
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+    list-style: none;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    min-width: 200px;
+}
+
+/* الكلاس اللي بيظهرها لما ندوس على الشرط */
+.dropdown-menu.show {
+    display: block !important;
+}
+
+.dropdown-menu li a {
+    color: var(--text-main) !important;
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+    background-color: var(--primary-color);
+    color: white !important;
+}
+
+/* شكل أيقونة الثلاث شرط */
+.menu-icon {
+    cursor: pointer;
+    margin-right: 15px;
+}
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white; /* لون أبيض فوق البرتقالي */
+    margin: 5px 0;
+}
+
+
+
