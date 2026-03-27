@@ -3,13 +3,6 @@
     padding: 0;
 }
 
-/* CSS HEX
---golden-chestnut: #BC8143ff;
-
---coffee-bean: #130201ff;
---ochre: #CC761Aff;
-
-*/
 :root{
     --fern: #62783Bff;
     --wheat: #E8D2A8ff;
@@ -26,7 +19,7 @@
 
 body {
     font-family: 'Segoe UI', system-ui, sans-serif;
-    background: linear-gradient(45deg, var(--golden-chestnut),var(--rich-mahogany), gold);
+    background: linear-gradient(45deg, var(--golden-chestnut));
     color: var(--dark-walnut);
     line-height: 1.6;
 }
@@ -38,7 +31,6 @@ body {
     text-align: center;
     height: 630px;
     padding-bottom: 0ch;
-    /*height: 1100px;*/
     width: 1550px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -144,10 +136,20 @@ body {
 #spinachartichokedip,
 #chickenwings,
 #jalapenopoppers,
+#stuffedmushrooms,
+#Crostini,
+#CharcuterieBoard,
+#Sliders,
+#ShrimpCocktail,
 #deviledeggscard,
 #spinachartichokedipcard,
 #chickenwingscard,
-#jalapenopopperscard
+#jalapenopopperscard,
+#stuffedmushroomscard,
+#Crostinicard,
+#CharcuterieBoardcard,
+#Sliderscard,
+#ShrimpCocktailcard
 {
     background-size: cover;
     background-repeat: no-repeat;
@@ -175,6 +177,35 @@ body {
 #jalapenopoppers,
 #jalapenopopperscard {
     background-image: url(appetizersimgs/pic4.jpg);
+}
+
+#stuffedmushrooms,
+#stuffedmushroomscard{
+    background-image: url(appetizersimgs/mushroom.jpeg);
+}
+
+#Crostini,
+#Crostinicard{
+    background-image: url(appetizersimgs/pic5.jpeg);
+
+}
+
+#CharcuterieBoardcard,
+#CharcuterieBoard{
+    background-image: url(appetizersimgs/pic7.jpeg);
+
+}
+
+#Sliders,
+#Sliderscard{
+     background-image: url(appetizersimgs/pic6.jpeg);
+
+}
+
+#ShrimpCocktail,
+#ShrimpCocktailcard{
+     background-image: url(appetizersimgs/pic8.jpeg);
+
 }
 
 /*Cards*/
@@ -229,7 +260,27 @@ body {
     
 }
 
+.heart {
+     margin-top: auto;
+    align-self: center;
+    margin-top: 20px;
+    margin-left: 170PX;
+    padding: 0px 30px;
+    font-size: 40px;
+    color: white;   
+    cursor: pointer;
+    text-shadow: 0 0 1px #4b1f11; 
+    transition: all 0.3s ease;
+    display: inline-block;
+     text-align: center;
+    border-radius: 20px;
+    background-color: #4b1f11;
+}
 
+
+.heart:hover {
+   transform: translateY(-5px);
+}
 
 @media only screen and (max-width: 800px) {
 
@@ -292,10 +343,20 @@ body {
     #spinachartichokedip,
     #chickenwings,
     #jalapenopoppers,
+    #stuffedmushrooms,
+    #Crostini,
+    #CharcuterieBoard,
+    #Sliders,
+    #ShrimpCocktail,
     #deviledeggscard,
     #spinachartichokedipcard,
     #chickenwingscard,
-    #jalapenopopperscard 
+    #jalapenopopperscard,
+    #stuffedmushroomscard,
+    #Crostinicard,
+    #CharcuterieBoardcard,
+    #Sliderscard,
+    #ShrimpCocktailcard
     {
         background-size: cover;
         background-position: center;

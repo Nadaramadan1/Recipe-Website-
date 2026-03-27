@@ -102,8 +102,47 @@
 			<p>Spicy, creamy and fried or baked cheese-filled peppers.</p>
 			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'jalapenopopperscard')">View Recipes</a>
 		</div>
-	</div>
+
+		<!--  -->
+		<div class="recipes-card" id="stuffedmushrooms" onclick="openCard(event, 'stuffedmushroomscard')">
+			<h2>Stuffed Mushrooms</h2>
+
+			<p>Bite-sized Savory mushroom caps filled with an herb and cheese breadcrumb mixture..</p>
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'stuffedmushroomscard')">View Recipes</a>
+		</div>
+
+		<!--  -->
+		<div class="recipes-card" id="Crostini" onclick="openCard(event, 'Crostinicard')">
+			<h2>Crostini</h2>
+
+			<p>Toasted bread topped with tomatoes, herbs, or cheese.</p>
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'Crostinicard')">View Recipes</a>
+		</div>
 <!--  -->
+		<div class="recipes-card" id="CharcuterieBoard" onclick="openCard(event, 'CharcuterieBoardcard')">
+			<h2>Charcuterie Board</h2>
+
+			<p>Curated boards of cheeses, meats, crackers, and fruits that allow for easy customization.</p>
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'CharcuterieBoardcard')">View Recipes</a>
+		</div>
+	<!--  -->
+		<div class="recipes-card" id="Sliders" onclick="openCard(event, 'Sliderscard')">
+			<h2>Sliders</h2>
+
+			<p>Miniature sandwiches, such as ham and cheese, that can be made in bulk.</p>
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'Sliderscard')">View Recipes</a>
+		</div>
+
+		<!--  -->
+		<div class="recipes-card" id="ShrimpCocktail" onclick="openCard(event, 'ShrimpCocktailcard')">
+			<h2>Shrimp Cocktail</h2>
+
+			<p>Sophisticated, refreshing, and protein-rich starter that has remained a party staple for decades</p>
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'ShrimpCocktailcard')">View Recipes</a>
+		</div>
+	</div>
+
+<!-- Details cards -->
 	<div class="details-card" id="deviledeggscard">
 		<div class="recipe-content-box">
 			<h2 style="text-align: center;">Deviled Eggs</h2>
@@ -124,7 +163,7 @@
 				<li> Spoon or pipe this creamy mixture back into the egg white hollows and finish with a light sprinkle of paprika. </li>
 			</ul>
 
-			<button class="btn-main">Add to Favorite</button>
+               <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
 		</div>
 	</div>
 
@@ -150,7 +189,7 @@
 				<li> Bake at 350°F(175°C) for about 25 min until the cheese is bubbly and lightly browned on top. </li>
 			</ul>
 
-			<button class="btn-main">Add to Favorite</button>
+               <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
 		</div>
 	</div>
 
@@ -174,7 +213,7 @@
 				<li> Once the wings are cooked and crispy , toss them in the sauce until fully coated. </li>
 			</ul>
 
-			<button class="btn-main">Add to Favorite</button>
+               <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
 		</div>
 	</div>
 
@@ -197,11 +236,135 @@
 				<li> Bake at 400°F(200°C) for 15-20 min until the peppers are tender and the topping is golden. </li>
 			</ul>
 
-			<button class="btn-main">Add to Favorite</button>
+               <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
+		</div>
+	</div>
+
+<div class="details-card" id="stuffedmushroomscard">
+		<div class="recipe-content-box">
+			<h2 style="text-align: center;">Stuffed Mushrooms</h2>
+
+			<h3>Ingredients</h3>
+			<ul class="recipe-list">
+				<li>1 lb large white or cremini mushrooms</li>
+				<li>1/2 cup breadcrumbs</li>
+				<li>1/4 cup grated Parmesan cheese</li>
+				<li>2 cloves garlic (minced)</li>
+				<li>2 tbsp butter or olive oil</li>
+			</ul>
+
+			<p><strong>Preparation Steps:</strong></p>
+			<ul class="recipe-list">
+				<li> Remove the stems from large white or cremini mushrooms and finely chop the stems. </li>
+				<li> Sauté the chopped stems with garlic and herbs, then mix with breadcrumbs and Parmesan cheese. </li>
+				<li> Fill the mushroom caps with the mixture and bake at 375°F(190°C)for 20 minutes until the caps are tender and the stuffing is browned.</li>
+			</ul>
+
+               <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
+		</div>
+	</div>
+
+	<div class="details-card" id="Crostinicard">
+		<div class="recipe-content-box">
+			<h2 style="text-align: center;">Crostini</h2>
+
+			<h3>Ingredients</h3>
+			<ul class="recipe-list">
+				<li>1 baguette (sliced and toasted)</li>
+				<li>4–6 Roma tomatoes (diced)</li>
+				<li>Fresh basil leaves (chopped)</li>
+				<li>2 cloves garlic (minced)</li>
+				<li>Extra virgin olive oil and balsamic glaze</li>
+			</ul>
+
+			<p><strong>Preparation Steps:</strong></p>
+			<ul class="recipe-list">
+				<li> Dice fresh tomatoes and toss them with minced garlic, chopped basil, balsamic vinegar, and olive oil, then let the mixture sit for at least 15 minutes to meld flavors. </li>
+				<li> Slice a baguette into rounds, brush them with olive oil, and toast them in the oven until golden. </li>
+				<li> Spoon the tomato mixture onto the warm bread just before serving to keep it crisp. </li>
+			</ul>
+
+               <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
 		</div>
 	</div>
 
 
+	<div class="details-card" id="CharcuterieBoardcard">
+		<div class="recipe-content-box">
+			<h2 style="text-align: center;">Charcuterie Board</h2>
+
+			<h3>Ingredients</h3>
+			<ul class="recipe-list">
+				<li>Assorted cured meats (salami, prosciutto)</li>
+				<li>Various cheeses (brie, sharp cheddar, gouda)</li>
+				<li>Crackers or sliced baguette</li>
+				<li>Fresh fruits (grapes, berries, apple slices)</li>
+				<li>Nuts, olives, or jam</li>
+			</ul>
+
+			<p><strong>Preparation Steps:</strong></p>
+			<ul class="recipe-list">
+				<li> Start by placing small bowls for jams, olives, or nuts on a large wooden board or platter. </li>
+				<li> Arrange a variety of sliced meats like prosciutto or salami alongside assorted cheeses like brie, cheddar, and gouda. </li>
+				<li> SFill in the remaining spaces with crackers, fresh fruit like grapes or berries, and sprigs of herbs for a decorative touch. </li>
+			</ul>
+
+               <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
+		</div>
+	</div>
+
+	<div class="details-card" id="Sliderscard">
+		<div class="recipe-content-box">
+			<h2 style="text-align: center;">Sliders</h2>
+
+			<h3>Ingredients</h3>
+			<ul class="recipe-list">
+				<li>1 pack (12 count) dinner rolls </li>
+				<li>1/2 lb deli meat (ham or turkey)</li>
+				<li>1/2 lb sliced cheese (Swiss or provolone)</li>
+				<li>Melted butter with garlic powder and poppy seeds (for the glaze)</li>
+			</ul>
+
+			<p><strong>Preparation Steps:</strong></p>
+			<ul class="recipe-list">
+				<li> Slice a pack of dinner rolls in half horizontally without separating the individual buns and place the bottom half in a baking dish. </li>
+				<li> Layer on deli meats like ham and slices of cheese, then replace the top half of the rolls. </li>
+				<li> Brush the tops with melted butter seasoned with garlic or poppy seeds and bake at 350°F(175°C) for 15–20 minutes until the cheese is melted. </li>
+			</ul>
+
+               <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
+		</div>
+    </div>
+
+    <div class="details-card" id="ShrimpCocktailcard">
+		<div class="recipe-content-box">
+			<h2 style="text-align: center;">Shrimp Cocktail</h2>
+
+			<h3>Ingredients</h3>
+			<ul class="recipe-list">
+				<li>1 lb large shrimp (peeled and deveined, tails left on)</li>
+				<li>1 cup ketchup (the base for the sauce)</li>
+				<li>1–3 tbsp prepared horseradish (adjust for desired heat)</li>
+				<li>M1 tbsp lemon juice (freshly squeezed)</li>
+				<li>1 tsp Worcestershire sauce</li>
+				<li><b>For the poaching liquid:</b> Water, lemon slices, bay leaves, salt, and black peppercorns</li>
+				<li><b>Optional:</b>A dash of hot sauce or chili sauce for extra zing.</li>
+			</ul>
+
+			<p><strong>Preparation Steps:</strong></p>
+			<ul class="recipe-list">
+				<li> Bring a pot of water to a boil with the lemon slices, bay leaves, salt, and peppercorns.  </li>
+				<li> Add the shrimp and poach them gently for about 3–5 minutes until they turn pink and opaque. </li>
+				<li> BImmediately transfer the cooked shrimp to an ice bath to stop the cooking and ensure they stay firm and snappy </li>
+				<li>For the cocktail sauce, whisk together the ketchup, horseradish, lemon juice, Worcestershire sauce, and any optional spices in a small bowl.</li>
+				<li>Chill both the shrimp and the sauce in the refrigerator for at least an hour before serving. Arrange the cold shrimp around the edge of a bowl or glass filled with the sauce and garnish with fresh lemon wedges.</li>
+			</ul>
+
+               <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
+		</div>
+	</div>
+
+		
 
 	<script>
 		let currentCard = null;
@@ -236,6 +399,14 @@
                 behavior: 'smooth'
             });
         }
+
+
+          function changecolor(element) {
+               element.style.color = "red";
+
+               element.title = "Added Successfully! ✨";
+
+          }
 
 	</script>
 
