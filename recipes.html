@@ -6,11 +6,74 @@
     <title>Yummy-Recipes</title>
     <link rel="stylesheet" href="Style.css">
 </head>
+<style>
 
-<body>
-    <div id="navbar">
+    .recipes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+/* Recipe Card Shared Styles */
+.recipe {
+    height: 400px;
+    border-radius: 40px;
+    padding: 25px;
+    margin-top: -20px;
+    background-color: #4b1f11;
+    box-shadow: 0px 0px 2px white;
+    background-size: 400px 500px;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 0px 0px 3px black;
+}
+
+.recipe:hover {
+    transform: translateY(-5px);
+}
+
+/* Recipe Card Buttons */
+.recipe a {
+    margin-top: auto;
+    align-self: center;
+    margin-top: 250px;
+    background-color: #4b1f11;
+    margin-left: 10PX;
+    padding: 10px 30px;
+    text-align: center;
+    border-radius: 20px;
+    
+    color: #dcb8a0;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.recipe a:hover {
+    transform: translateY(-5px);
+}
+
+   .nav-links a {
+            color: black;
+
+        }
+
+        #bakery{
+            background-image: url(bakeryimages/bakery1.jpeg);
+        }
+       
+</style>
+
+<body style="background-color: #f2e7df; text-align: center;">
+    <div id="navbar" style="background-color: rgb(245, 226, 213);">
         <nav class="main-nav">
-            <div class="logo">Yummy 🍲</div>
+            <div class="logo" style="color: #d35400;">Yummy 🍲</div>
             <ul class="nav-links">
                 <li><a href="cover.html">Team</a></li>
                 <li><a href="home.html">Home</a></li>
@@ -27,30 +90,46 @@
 
 
 
+    <section class="recipes-container">
 
-
-    <div class="recipes-container">
-
-        <div class="recipe-card">
-            <h2>Pasta 🍝</h2>
-            <p>Easy pasta with tomato sauce.</p>
-            <a href="recipe-details.html" class="btn-main">View Recipe</a>
+         <div class="recipe" id="maindish">
+            <h2> Main Dishes</h2>
+            
+            <a href="Cinnamon.html" class="btn-main" target="_blank">View Recipes</a>
         </div>
-
-        <div class="recipe-card">
-            <h2>Cake 🍰</h2>
-            <p>Delicious cake for dessert.</p>
-            <a href="recipe-details.html" class="btn-main">View Recipe</a>
-        </div>
-
-        <div class="recipe-card">
-            <h2>Salad 🥗</h2>
-            <p>Healthy salad.</p>
-            <a href="recipe-details.html" class="btn-main">View Recipe</a>
+  <div class="recipe" id="heelthy food">
+            <h2>Healthy Food</h2>
+           
+            <a href="Healthy Food.html" class="btn-main" target="_blank">View Recipes</a>
         </div>
 
 
-    </div>
+        <div class="recipe" id="bakery">
+            <h2>Bakery </h2>
+
+           
+            <a href="bakery.html" class="btn-main" target="_blank" style="background-color: #4b1f11 !important" >View Recipes</a>
+        </div>
+
+      
+        
+        <div class="recipe" id="dessert">
+            <h2>Desserts </h2>
+           
+            <a href="macrons.html" class="btn-main" target="_blank">View Recipes</a>
+        </div>
+        <div class="recipe" id="appetizers">
+            <h2> appetizers</h2>
+           
+            <a href="appetizers.html" class="btn-main" target="_blank">View Recipes</a>
+        </div>
+        <div class="recipe" id="drinks">
+            <h2>Drinks</h2>
+           
+            <a href="drinks.html" class="btn-main " target="_blank">View Recipes</a>
+        </div>
+    </section>
+
 
 
 
