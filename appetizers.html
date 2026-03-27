@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="appetizers.css">
+	<title>Appetizers</title>
+
+	<style>
+		#navbar {
+	  background-color: var(--dark-walnut);
+	  padding: 1rem 2rem;
+	  box-shadow: var(--shadow-sm);
+	}
+
+		.main-nav {
+		  display: flex;
+		  justify-content: space-between;
+		  align-items: center;
+		  max-width: 1200px;
+		  margin: 0 auto;
+		}
+		.logo {
+		  color: #fff;
+		  font-size: 1.5rem;
+		  font-weight: bold;
+		}
+
+		.nav-links {
+		  display: flex;
+		  list-style: none;
+		}
+		.nav-links li {
+  			margin-left: 20px;
+		}
+
+		.nav-links a {
+		  color: #ecf0f1;
+		  text-decoration: none;
+		  font-weight: 500;
+		  transition: var(--transition);
+		}
+
+		.nav-links a:hover {
+		  color: white;
+		  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);}
+	</style>
+</head>
+
+<body>
+	<div id="navbar">
+        <nav class="main-nav">
+            <div class="logo">Yummy 🍲</div> 
+            <ul class="nav-links">
+                <li><a href="cover.html">Team</a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+                <li><a href="admin-recipe.html">Admin</a></li>
+                <li><a href="add-recipe.html">Add Recipe</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="main">
+        <div class="main-content">
+            <h1>Bite-Sized made with love</h1>
+            <p>Savor the artistry in every bite.</p>
+            <a href="javascript:void(0)" class="btn-main" onclick="onClick()">View Recipes</a>
+        </div>
+    </section>
+
+	<h2 class="h2"> Our Recipes </h2>
+	<div class="recipes-container">
+		
+		<div class="recipes-card" id="deviledeggs" onclick="openCard(event, 'deviledeggscard')">
+			<h2>Deviled Eggs</h2>
+
+			<p>A classic creamy finger-food often topped with paprika or bacon.</p>
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'deviledeggscard')">View Recipes</a>
+		</div>
+<!--  -->
+		<div class="recipes-card" id="spinachartichokedip" onclick="openCard(event, 'spinachartichokedipcard')">
+			<h2>Spinach Artichoke Dip</h2>
+
+			<p>A warm cheesy and reliable crowd-pleaser often served with chips or bread.</p>
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'spinachartichokedipcard')">View Recipes</a>
+		</div>
+<!--  -->
+		<div class="recipes-card" id="chickenwings" onclick="openCard(event, 'chickenwingscard')">
+			<h2>Chicken Wings</h2>
+
+			<p>A classic creamy finger-food often topped with paprika or bacon.</p>
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'chickenwingscard')">View Recipes</a>
+		</div>
+<!--  -->
+		<div class="recipes-card" id="jalapenopoppers" onclick="openCard(event, 'jalapenopopperscard')">
+			<h2>Jalapeno Poppers</h2>
+
+			<p>Spicy, creamy and fried or baked cheese-filled peppers.</p>
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'jalapenopopperscard')">View Recipes</a>
+		</div>
+	</div>
+<!--  -->
+	<div class="details-card" id="deviledeggscard">
+		<div class="recipe-content-box">
+			<h2 style="text-align: center;">Deviled Eggs</h2>
+
+			<h3>Ingredients</h3>
+			<ul class="recipe-list">
+				<li>6-12 large eggs</li>
+				<li>Mayonnaise : 1/4 to 1/2 cup</li>
+				<li>Mustard : yellow or Dijon, 1-2 tsp</li>
+				<li>Salt & Pepper</li>
+				<li>Paprika for garnish</li>
+			</ul>
+
+			<p><strong>Preparation Steps:</strong></p>
+			<ul class="recipe-list">
+				<li> Boil eggs for 10-20 min,then cool in an ice bath before peeling and halving lengthwise. </li>
+				<li> Scoop out the yolks and mash them with wuth mayonnaise, mustared ,salt,pepper until smooth. </li>
+				<li> Spoon or pipe this creamy mixture back into the egg white hollows and finish with a light sprinkle of paprika. </li>
+			</ul>
+
+			<button class="btn-main">Add to Favorite</button>
+		</div>
+	</div>
+
+	<div class="details-card" id="spinachartichokedipcard">
+		<div class="recipe-content-box">
+			<h2 style="text-align: center;">Spinach Artichoke Dip</h2>
+
+			<h3>Ingredients</h3>
+			<ul class="recipe-list">
+				<li>10 oz frozen chopped spinach</li>
+				<li>14 oz can artichoke hearts</li>
+				<li>8 oz cream cheese</li>
+				<li>1/2 cup sour cream or Greek yogurt</li>
+				<li>1/2 cup mayonnaise</li>
+				<li>1 cup shredded mozzarella and 1/2 cup grated Parmesan</li>
+				<li>Garlic : 1 tsp minced or powder</li>
+			</ul>
+
+			<p><strong>Preparation Steps:</strong></p>
+			<ul class="recipe-list">
+				<li> Combine softened cream cheese,sour cream and mayonnaise with chooped spinach and drained artichoke hearts. </li>
+				<li> Stir in shredded mozzarella and Parmesan, then season with garlic powder and red pepper flakes. </li>
+				<li> Bake at 350°F(175°C) for about 25 min until the cheese is bubbly and lightly browned on top. </li>
+			</ul>
+
+			<button class="btn-main">Add to Favorite</button>
+		</div>
+	</div>
+
+	<div class="details-card" id="chickenwingscard">
+		<div class="recipe-content-box">
+			<h2 style="text-align: center;">Chicken Wings</h2>
+
+			<h3>Ingredients</h3>
+			<ul class="recipe-list">
+				<li>2-3 Ibs chicken wings</li>
+				<li>1/2 cup Buffalo hot sauce</li>
+				<li>unsalted butter : 1/4 to 1/2 cup</li>
+				<li>Garlic powder : 1/2 to 1 tsp</li>
+				<li>Salt & Pepper</li>
+			</ul>
+
+			<p><strong>Preparation Steps:</strong></p>
+			<ul class="recipe-list">
+				<li> Pat chicken wings dry and bake them on a wise rack at 425°F(220°C) for about 45-60 min , turning halfway through for even crisping. </li>
+				<li> While they bake, whisk together melted butter and hot sauce in a large bowl . </li>
+				<li> Once the wings are cooked and crispy , toss them in the sauce until fully coated. </li>
+			</ul>
+
+			<button class="btn-main">Add to Favorite</button>
+		</div>
+	</div>
+
+	<div class="details-card" id="jalapenopopperscard">
+		<div class="recipe-content-box">
+			<h2 style="text-align: center;">Jalapeno Poppers</h2>
+
+			<h3>Ingredients</h3>
+			<ul class="recipe-list">
+				<li>10-12 fresh jalapenos (halved and seeded).</li>
+				<li>8 oz cream cheese.</li>
+				<li>1 cup shredded cheese.</li>
+				<li><b>Optional: </b> 10-12 slices of bacon (to wrap) or Panko breadcrumbs.</li>
+			</ul>
+
+			<p><strong>Preparation Steps:</strong></p>
+			<ul class="recipe-list">
+				<li> Slice Fresh Jalapenos in half lengthwise and remove the seeds and membranes to control the heat. </li>
+				<li> Fill each half with a mixture of cream cheese and shredded cheddar, then top with breadcrumbsor wrap in a half-slice of bacon. </li>
+				<li> Bake at 400°F(200°C) for 15-20 min until the peppers are tender and the topping is golden. </li>
+			</ul>
+
+			<button class="btn-main">Add to Favorite</button>
+		</div>
+	</div>
+
+
+
+	<script>
+		let currentCard = null;
+		function openCard(event, cardId){
+			if(event) 
+				event.stopPropagation();
+
+			if(currentCard)
+				currentCard.style.display = "none";
+
+			const targetCard = document.getElementById(cardId);
+
+			if(targetCard){
+				targetCard.style.display = "block";
+				currentCard = targetCard;
+			}
+		}
+
+		window.onclick = function(event){
+			if(currentCard && currentCard.style.display === "block"){
+				if(event.target !== currentCard && !currentCard.contains(event.target)){
+					currentCard.style.display = "none";
+					currentCard = null;
+				}
+			}
+		}
+
+		 function onClick() {
+            window.scrollBy({
+                top: 740,
+                
+                behavior: 'smooth'
+            });
+        }
+
+	</script>
+
+</body>
+</html>
