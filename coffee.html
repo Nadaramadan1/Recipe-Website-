@@ -24,46 +24,163 @@
             </ul>
         </nav>
     </div>
-    <section class="hero-drinks">
+    <section class="hero coffee-hero">
         <div class="hero-content">
             <h1 class="hero-title">
                 Coffee time!
-
-
             </h1>
+            <br>
+            <a href="#recipesss" class="btn-main">View Recipes</a>
             <br>
         </div>
     </section>
     <br>
-    <h2>Recipes</h2>
+
+    <h2 id="recipesss">Recipes</h2>
     <div class="recipes-container">
 
         <div class="recipe-card" id="Cappuccino">
             <h2> French Vanilla Cappuccino</h2>
             <p></p>
-            <a href="coffee.html" class="btn-main">View Recipe</a>
+            <!-- <a href="coffee.html" class="btn-main">View Recipe</a> -->
+            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'cappuccino-card')">View
+                Recipes</a>
         </div>
 
         <div class="recipe-card" id="icedcoffee">
             <h2>Caramel Hazelnut Iced Coffee</h2>
             <p> </p>
-            <a href="recipe-details.html" class="btn-main">View Recipes</a>
+            <!-- <a href="recipe-details.html" class="btn-main">View Recipes</a> -->
+            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'icedcoffee-card')">View
+                Recipes</a>
         </div>
 
         <div class="recipe-card" id="arabcoffee">
             <h2>Arab Coffee</h2>
             <p> </p>
-            <a href="recipe-details.html" class="btn-main">View Recipes</a>
+            <!-- <a href="recipe-details.html" class="btn-main">View Recipes</a> -->
+            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'arabcoffee-card')">View
+                Recipes</a>
         </div>
 
-
     </div>
-    <div class="details-card">
+    <!-- ☕ French Vanilla Cappuccino -->
+    <div class="details-card" id="cappuccino-card" style="background-image: url('drinksimages/Cappuccino.jpeg');">
+        <div class="recipe-content-box">
+            <h2>French Vanilla Cappuccino</h2>
 
+            <h3>Ingredients</h3>
+            <ul class="recipe-list">
+                <li>1 cup espresso (or strong coffee)</li>
+                <li>1/2 cup milk</li>
+                <li>1 tbsp French vanilla syrup</li>
+                <li>Milk foam</li>
+                <li>Sugar (optional)</li>
+            </ul>
+            <p><strong>Preparation Steps:</strong></p>
+            <ul class="recipe-list">
+                <li><b>Brew ☕:</b> Prepare espresso or strong coffee.</li>
+                <li><b>Heat 🥛:</b> Warm the milk without boiling.</li>
+                <li><b>Mix 🍯:</b> Add vanilla syrup to the coffee.</li>
+                <li><b>Pour ✨:</b> Add milk and top with foam.</li>
+                <li><b>Serve 🎉:</b> Add sugar if desired and enjoy.</li>
+            </ul>
+
+        </div>
     </div>
 
 
+    <!-- 🧊 Caramel Hazelnut Iced Coffee -->
+    <div class="details-card" id="icedcoffee-card"
+        style="background-image: url('drinksimages/Caramel\ Hazelnut\ Iced\ Coffee.jpeg');">
+        <div class="recipe-content-box">
+            <h2>Caramel Hazelnut Iced Coffee</h2>
 
+            <h3>Ingredients</h3>
+            <ul class="recipe-list">
+                <li>1 cup cold coffee</li>
+                <li>Ice cubes</li>
+                <li>1 tbsp caramel syrup</li>
+                <li>1 tbsp hazelnut syrup</li>
+                <li>1/4 cup milk</li>
+                <li>Whipped cream (optional)</li>
+            </ul>
+            <p><strong>Preparation Steps:</strong></p>
+            <ul class="recipe-list">
+                <li><b>Ice ❄️:</b> Fill a glass with ice cubes.</li>
+                <li><b>Pour ☕:</b> Add cold coffee.</li>
+                <li><b>Flavor 🍯:</b> Add caramel & hazelnut syrup.</li>
+                <li><b>Mix 🥄:</b> Add milk and stir well.</li>
+                <li><b>Top 🎂:</b> Add whipped cream if desired.</li>
+            </ul>
+
+
+        </div>
+    </div>
+
+
+    <!-- ☕ Arab Coffee -->
+    <div class="details-card" id="arabcoffee-card" style="background-image: url('drinksimages/arabcoffe.jpeg');">
+        <div class="recipe-content-box">
+            <h2>Arab Coffee</h2>
+
+            <h3>Ingredients</h3>
+            <ul class="recipe-list">
+                <li>2 cups water</li>
+                <li>2 tbsp Arabic coffee</li>
+                <li>1/2 tsp cardamom</li>
+                <li>Saffron (optional)</li>
+                <li>Dates (for serving)</li>
+            </ul>
+            <p><strong>Preparation Steps:</strong></p>
+            <ul class="recipe-list">
+                <li><b>Boil 🔥:</b> Bring water to boil.</li>
+                <li><b>Add ☕:</b> Add coffee and simmer.</li>
+                <li><b>Flavor 🌿:</b> Add cardamom & saffron.</li>
+                <li><b>Settle ⏳:</b> Let it rest before pouring.</li>
+                <li><b>Serve 🫖:</b> Pour gently and serve with dates.</li>
+            </ul>
+
+        </div>
+    </div>
+
+    <script>
+
+        function changecolor(element) {
+            element.style.color = "red";
+
+            element.title = "Added Successfully! ✨";
+
+        }
+
+        let currentCard = null;
+
+        function openCard(event, cardId) {
+            if (event) event.stopPropagation();
+
+
+            if (currentCard) {
+                currentCard.style.display = "none";
+            }
+
+
+            const targetCard = document.getElementById(cardId);
+
+            if (targetCard) {
+                targetCard.style.display = "block";
+                currentCard = targetCard;
+            }
+        }
+
+        window.onclick = function (event) {
+            if (currentCard && currentCard.style.display === "block") {
+                if (event.target !== currentCard && !currentCard.contains(event.target)) {
+                    currentCard.style.display = "none";
+                    currentCard = null;
+                }
+            }
+        }
+    </script>
 
 
 

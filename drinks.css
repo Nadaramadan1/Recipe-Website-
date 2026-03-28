@@ -1,92 +1,232 @@
-:root {
-    --primary-color: #c2a07b;     /* بيج/بني فاتح (يناسب الكوفي) */
-  --primary-hover: #a88e75;     /* أغمق بسيط */
+* {
+  margin: 0;
+  padding: 0;
+}
 
-  --bg-color: #faf8f5;          /* خلفية فاتحة جدًا */
+:root {
+  --primary-color: #564736;
+  /* بيج/بني فاتح (يناسب الكوفي) */
+  --primary-hover: #c7935e;
+  /* أغمق بسيط */
+
+  --bg-color: #faf8f5;
+  /* خلفية فاتحة جدًا */
   --card-bg: #ffffff;
+
 
   --text-main: #3e3e3e;
   --text-muted: #7a7a7a;
 }
-.hero-drinks {
-  height: 90vh;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-              url('drinksimages/coffeee.jpeg');
+
+.hero {
+  height: 600px;
+  position: relative;
+
   background-size: cover;
   background-position: center;
+
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+
   color: white;
 }
 
-.hero-title {
-  font-size: 2rem;
-  font-weight: bold;
-  max-width: 800px;
+/* Overlay عشان النص يبان */
+.hero .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  /* غامق خفيف */
+  top: 0;
+  left: 0;
 }
+
+/* المحتوى */
 .hero-content {
+  position: relative;
+  z-index: 2;
   max-width: 800px;
   padding: 20px;
 }
 
+/* العنوان */
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* الوصف */
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
  
 
-.hero-subtitle {
-  font-size: 1.3rem;
-  opacity: 0.9;
+/* صور مختلفة لكل صفحة */
+.drinks-hero{
+  background-image: url("drinksimages/drinks.png");
 }
+
+.coffee-hero {
+  background-image: url("drinksimages/coffeee.jpeg");
+}
+
+.juice-hero {
+  background-image: url("drinksimages/juices.jpeg");
+}
+
 body {
-  background-color:#faf8f5; 
+  background-color: #faf8f5;
+
 }
-h2{
-    text-align:center ;
+
+h2 {
+  text-align: center;
 }
-#coffee{
-    background-image:url(drinksimages/coffeee.jpeg) ;
-    background-position: center;
-    background-size: cover;
+
+#coffee {
+  background-image: url(drinksimages/coffeee.jpeg);
+  background-position: center;
+  background-size: cover;
 }
-#juices{
-     background-image:url(drinksimages/juices.jpeg) ;
-    background-position: center;
-    background-size: cover;
+
+#juices {
+  background-image: url(drinksimages/juices.jpeg);
+  background-position: center;
+  background-size: cover;
 }
-#hot_drinks{
-    background-image:url(drinksimages/hotdrinks.jpeg) ;
-    background-position: center;
-    background-size: cover;
+
+#hot_drinks {
+  background-image: url(drinksimages/hotdrinks.jpeg);
+  background-position: center;
+  background-size: cover;
 }
 
 
 
-#Cappuccino{
-    background-image:url(drinksimages/Cappuccino.jpeg) ;
-    background-position: center;
-    background-size: cover;
+#Cappuccino {
+  background-image: url(drinksimages/Cappuccino.jpeg);
+  background-position: center;
+  background-size: cover;
 }
 
-#icedcoffee{
-     background-image:url(drinksimages/Caramel\ Hazelnut\ Iced\ Coffee.jpeg) ;
-    background-position: center;
-    background-size: cover;
-}
-#arabcoffee{
-     background-image:url(drinksimages/arabcoffe.jpeg) ;
-    background-position: center;
-    background-size: cover;
+#icedcoffee {
+  background-image: url(drinksimages/Caramel\ Hazelnut\ Iced\ Coffee.jpeg);
+  background-position: center;
+  background-size: cover;
 }
 
+#arabcoffee {
+  background-image: url(drinksimages/arabcoffe.jpeg);
+  background-position: center;
+  background-size: cover;
+}
+
+#Smoothie {
+  background-image: url(drinksimages/Smoothie.jpeg);
+  background-position: center;
+  background-size: cover;
+}
+
+#smothie2 {
+  background-image: url(drinksimages/Pineapple\ Mango\ Smoothie.jpeg);
+  background-position: center;
+  background-size: cover;
+}
+
+#strawberrylemo {
+  background-image: url(drinksimages/Strawberry\ Lemonade.jpeg);
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+
+.recipe-content-box {
+  margin-top: 20px;
+
+  height: auto;
+  padding: 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  overflow-y: auto;
+}
 
 .recipe-card {
-    height: 400px;
-    background: #faf8f5;
-    border-radius: 40px;
-    padding: 25px;
-    box-shadow: 0px 0px 2px white;
-     
-    background-repeat: no-repeat;
-    color: white;
-    text-shadow: 0px 0px 3px black;
+  height: 400px;
+  background: #faf8f5;
+  border-radius: 40px;
+  box-shadow: 0px 0px 10px black;
+  background-repeat: no-repeat;
+  color: white;
+  text-shadow: 0px 0px 10px black;
+  display: flex;
+  flex-direction: column;
+  /* يخلي العناصر تحت بعض */
+  align-items: center;
+  /* يوسّطهم */
+  justify-content: space-between;
+  /* يخلي الزرار ينزل تحت */
+
+  padding: 20px;
+  text-align: center;
+}
+
+.details-card {
+  display: none;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-position: center;
+  background-image: no-repeat;
+  background-size: cover;
+
+  height: 500px;
+  width: 400px;
+  border-radius: 40px;
+  padding: 25px;
+  background-size: cover;
+  background-position: center;
+  z-index: 1000;
+
+}
+
+
+.recipe-content-box {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: black;
+  height: 380px;
+  background-color: rgba(235, 230, 230, 0.614);
+  border-radius: 40px;
+  padding: 20px;
+  text-shadow: 0px 0px 10px rgb(255, 255, 255);
+}
+
+.details-card span {
+  cursor: pointer;
+  font-size: 18px;
+  color: red;
+  width: 90%;
+  height: auto;
+}
+
+
+
+.btn-main {
+  margin-top: 10px;
+  /* مسافة فوق الزرار */
+  display: inline-block;
+}
+
+html {
+  scroll-behavior: smooth;
 }

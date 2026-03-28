@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Yummy -juice </title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="drinks.css">
+</head>
+
+<body>
+    <div id="navbar">
+        <nav class="main-nav">
+            <div class="logo">Yummy 🍲</div>
+            <ul class="nav-links">
+                <li><a href="cover.html">Team</a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+                <li><a href="admin-recipe.html">Admin</a></li>
+                <li><a href="add-recipe.html">Add Recipe</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
+    <section class="hero juice-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+               Refresh your day!
+            </h1>
+            <br>
+            <a href="#recipesss" class="btn-main">View Recipes</a>
+            <br>
+        </div>
+    </section>
+    <br>
+
+    <h2 id="recipesss">Recipes</h2>
+    <div class="recipes-container">
+
+        <div class="recipe-card" id="Smoothie">
+            <h2> Berry Blast Smoothie</h2>
+            <p></p>
+            <!-- <a href="coffee.html" class="btn-main">View Recipe</a> -->
+            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'smoothie-card')">View
+                Recipe</a>
+        </div>
+
+        <div class="recipe-card" id="smothie2">
+            <h2>Pineapple Mango Smoothie</h2>
+            <p> </p>
+            <!-- <a href="recipe-details.html" class="btn-main">View Recipes</a> -->
+            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'smothie2-card')">View
+                Recipe</a>
+        </div>
+
+        <div class="recipe-card" id="strawberrylemo">
+            <h2>Strawberry Lemonade🍓</h2>
+            <p></p>
+            <!-- <a href="recipe-details.html" class="btn-main">View Recipes</a> -->
+            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'strawberrylemo-card')">View
+                Recipes</a>
+        </div>
+
+    </div>
+
+    <div class="details-card" id="smoothie-card" style="background-image: url('drinksimages/Smoothie.jpeg');">
+        <div class="recipe-content-box">
+            <h2>French Vanilla Cappuccino</h2>
+
+            <h3>Ingredients</h3>
+            <ul class="recipe-list">
+                <li>1 cup mixed berries (blueberries, strawberries, raspberries)</li>
+                <li>1 banana</li>
+                <li>1/2 cup Greek yogurt</li>
+                <li>1 tablespoon honey (optional)</li>
+                <li> 1 cup almond milk </li>
+            </ul>
+            <p><strong> Steps:</strong></p>
+            <ul class="recipe-list">
+
+                <li>all the ingredients in your blender.</li>
+                <li> Blend until smooth.</li>
+                <li>Top with a few extra berries or granola for added crunch!</li>
+
+            </ul>
+
+        </div>
+    </div>
+
+
+    <!-- 🧊 Caramel Hazelnut Iced Coffee -->
+    <div class="details-card" id="smothie2-card"
+        style="background-image: url('drinksimages/Pineapple\ Mango\ Smoothie.jpeg');">
+        <div class="recipe-content-box">
+            <h2>Pineapple Mango Smoothie🥭</h2>
+
+            <h3>Ingredients</h3>
+            <ul class="recipe-list">
+
+
+                <li> 1 cup frozen mango chunks</li>
+                <li>3/4 cup frozen pineapple chunks</li>
+                <li> 1/4 cup light coconut milk (plus more if needed)</li>
+
+            </ul>
+            <p><strong>Steps:</strong></p>
+            <ul class="recipe-list">
+
+
+                <li>Gather all your ingredients.</li>
+                <li> Add mango, pineapple, and coconut milk into a high-powered blender.</li>
+                <li>Blend on high for 1–2 minutes until smooth and creamy.</li>
+                <li>If the smoothie is too thick, add a little more coconut milk.</li>
+                <li> Pour into a glass.</li>
+                <li> Serve immediately and enjoy your tropical smoothie!</li>
+
+            </ul>
+
+
+        </div>
+    </div>
+
+
+  
+    <div class="details-card" id="strawberrylemo-card" style="background-image: url('drinksimages/Strawberry\ Lemonade.jpeg');">
+        <div class="recipe-content-box">
+            <h2>Strawberry Lemonade🍓🍋</h2>
+
+        <h3>Ingredients</h3>
+        <ul class="recipe-list">
+
+            <li>1 cup fresh strawberries (sliced)</li>
+            <li>1/2 cup fresh lemon juice</li>
+            <li>2–3 tablespoons honey or sugar</li>
+            <li>2 cups cold water</li>
+            <li>Ice cubes</li>
+
+        </ul>
+
+        <p><strong>Steps:</strong></p>
+        <ul class="recipe-list">
+
+            <li>Gather all your ingredients.</li>
+            <li>Wash and slice the strawberries.</li>
+            <li>Blend the strawberries until smooth.</li>
+            <li>Add lemon juice, water, and honey/sugar.</li>
+            <li>Mix or blend again until well combined.</li>
+            <li>Pour over ice in a glass.</li>
+            <li>Serve cold and enjoy!</li>
+
+        </ul>
+        </div>
+    </div>
+
+    <script>
+
+        function changecolor(element) {
+            element.style.color = "red";
+
+            element.title = "Added Successfully! ✨";
+
+        }
+
+        let currentCard = null;
+
+        function openCard(event, cardId) {
+            if (event) event.stopPropagation();
+
+
+            if (currentCard) {
+                currentCard.style.display = "none";
+            }
+
+
+            const targetCard = document.getElementById(cardId);
+
+            if (targetCard) {
+                targetCard.style.display = "block";
+                currentCard = targetCard;
+            }
+        }
+
+        window.onclick = function (event) {
+            if (currentCard && currentCard.style.display === "block") {
+                if (event.target !== currentCard && !currentCard.contains(event.target)) {
+                    currentCard.style.display = "none";
+                    currentCard = null;
+                }
+            }
+        }
+    </script>
+
+
+
+</body>
