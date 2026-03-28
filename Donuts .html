@@ -6,6 +6,7 @@
     <meta charset=" UTF-8" />
     <title>Donuts</title>
     <link rel="stylesheet" href="bakery-style.css" />
+    <script src="bakery-java.js"></script>
     <style>
 
     </style>
@@ -126,43 +127,7 @@
     </div>
 
 
-    <script>
-
-        function changecolor(element) {
-            element.style.color = "red";
-
-            element.title = "Added Successfully! ✨";
-
-        }
-
-        let currentCard = null;
-
-        function openCard(event, cardId) {
-            if (event) event.stopPropagation();
-
-
-            if (currentCard) {
-                currentCard.style.display = "none";
-            }
-
-
-            const targetCard = document.getElementById(cardId);
-
-            if (targetCard) {
-                targetCard.style.display = "block";
-                currentCard = targetCard;
-            }
-        }
-
-        window.onclick = function (event) {
-            if (currentCard && currentCard.style.display === "block") {
-                if (event.target !== currentCard && !currentCard.contains(event.target)) {
-                    currentCard.style.display = "none";
-                    currentCard = null;
-                }
-            }
-        }
-    </script>
+    
 
 </body>
 
