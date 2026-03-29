@@ -1,6 +1,7 @@
 /* ============================================================
    1. DESIGN SYSTEM & VARIABLES
    ============================================================ */
+
 :root {
   --primary-color: #e67e22;
   /* البرتقالي الأساسي - هوية المشروع */
@@ -25,7 +26,6 @@
   --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.05);
   --transition: all 0.3s ease;
 }
-
 /* ============================================================
    2. GLOBAL RESET
    ============================================================ */
@@ -581,7 +581,7 @@ table tr:hover td {
 .hero-home-container {
   height: 90vh;
   /* Dark Overlay for better text readability */
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('home.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('home-page.png');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -757,7 +757,7 @@ table tr:hover td {
   border-radius: 50px;
 
 
-  background-color: #4b1f11;
+  background-color:#5d4037;
   color: #dcb8a0;
 
   font-family: 'Dancing Script', cursive;

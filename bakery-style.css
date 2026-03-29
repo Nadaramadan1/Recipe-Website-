@@ -1,49 +1,48 @@
-
-
 /* ============================================================
    . NAVIGATION BAR
    ============================================================ */
 #navbar {
-  
-  padding: 13px ;
-  box-shadow: var(--shadow-sm);
-  background-color: rgb(208, 189, 177);
+
+    padding: 13px;
+    box-shadow: var(--shadow-sm);
+    background-color: #4b1f11;
 }
 
 .main-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .logo {
-  color: #d35400;
-  font-size: 1.5rem;
-  font-weight: bold;
+    color: rgb(234, 221, 212);
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .nav-links {
-  display: flex;
-  list-style: none;
+    display: flex;
+    list-style: none;
 }
 
 .nav-links li {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 
 .nav-links a {
-  color: black;
-  text-decoration: none;
-  font-weight: 500;
-  transition: var(--transition);
-  display: inline-block;
+    color: rgb(234, 221, 212);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    display: inline-block;
 }
 
-.nav-links a:hover { transform: translateY(-1.5px);
-  
-  text-shadow: 0 0 15px rgb(255, 255, 255,0.5);
+.nav-links a:hover {
+    transform: translateY(-1.5px);
+
+    text-shadow: 0 0 15px rgb(255, 255, 255, 0.5);
 }
 
 /* General Reset & Base Styles */
@@ -325,37 +324,41 @@ body {
     padding: 20px;
     text-shadow: 0px 0px 10px white;
 }
-.recipe-content-box p ,h3{
-    color:#643305;
-  
+
+.recipe-content-box p,
+h3 {
+    color: #643305;
+
 }
-.recipe-content-box ul{
-    
+
+.recipe-content-box ul {
+
     list-style: none;
 }
 
 
 .heart {
-     margin-top: auto;
+    margin-top: auto;
     align-self: center;
     margin-top: 20px;
     margin-left: 170PX;
     padding: 0px 30px;
     font-size: 40px;
-    color: white;   
+    color: white;
     cursor: pointer;
-    text-shadow: 0 0 1px #4b1f11; 
+    text-shadow: 0 0 1px #4b1f11;
     transition: all 0.3s ease;
     display: inline-block;
-     text-align: center;
+    text-align: center;
     border-radius: 20px;
     background-color: #4b1f11;
 }
 
 
 .heart:hover {
-   transform: translateY(-5px);
+    transform: translateY(-5px);
 }
+
 @media only screen and (max-width: 800px) {
 
     .main {
@@ -449,34 +452,31 @@ body {
 
     }
 
-   
-  
+
+
     .detials-card {
-        width: 90%;       
-        height: 800px;     
-        max-height: 80vh; 
+        width: 90%;
+        height: 800px;
+        max-height: 80vh;
         padding: 15px;
         border-radius: 20px;
     }
 
     .recipe-content-box {
         margin-top: 20px;
-        height: auto;  
+        height: auto;
         padding: 15px;
         border-radius: 20px;
-        font-size: 14px;  
+        font-size: 14px;
     }
 
     .btn-main {
-        margin: 20px auto;   
+        margin: 20px auto;
         display: table;
-        font-size: 14px;    
-        padding: 8px 20px;   
+        font-size: 14px;
+        padding: 8px 20px;
         border-radius: 15px;
     }
 
 
 }
-
-
-
