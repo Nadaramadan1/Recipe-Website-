@@ -10,7 +10,7 @@
          function changecolor(element) {
           if( element.style.color == "red"){
                 element.style.color = "white";
-                 element.title = "add to favorite! ✨";
+                 element.title = "add to favorite";
           }else{
                element.style.color = "red";
 
