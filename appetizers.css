@@ -233,6 +233,7 @@ body {
     border-radius: 40px;
     padding: 20px;
     text-shadow: 0px 0px 10px white;
+    overflow-y: scroll;
 }
 .recipe-content-box p ,h3{
     color:#643305;
@@ -370,7 +371,6 @@ body {
         max-height: 80vh; 
         padding: 15px;
         border-radius: 20px;
-        overflow: hidden;
     }
 
     .recipe-content-box {
@@ -379,7 +379,7 @@ body {
         padding: 15px;
         border-radius: 20px;
         font-size: 14px;  
-        overflow-y: auto; 
+        overflow-y: scroll; 
     }
 
     .btn-main {
