@@ -3,19 +3,36 @@
   padding: 0;
 }
 
-:root {
-  --primary-color: #564736;
-  /* بيج/بني فاتح (يناسب الكوفي) */
-  --primary-hover: #c7935e;
-  /* أغمق بسيط */
+/* :root {
+  --primary-color: #5b4e3f;
+  
+  --primary-hover: #b78f66;
+  
 
-  --bg-color: #faf8f5;
-  /* خلفية فاتحة جدًا */
+  --bg-color: #f1dcbe;
+   
   --card-bg: #ffffff;
 
 
-  --text-main: #3e3e3e;
+  --text-main:#2e2720;
   --text-muted: #7a7a7a;
+} */
+
+ :root {
+   
+  --primary-color: #f2a86c;       
+  --primary-hover: #b06d3d;       
+
+ 
+  --bg-color: #ffe0c3; 
+  --card-bg: #fff8f2;            
+
+  
+  --text-main: #291c0e;           
+  --text-muted: #7a7a7a;         
+ 
+  --border-light: #f1c6a8;
+  --shadow: rgba(0, 0, 0, 0.1);
 }
 
 .hero {
@@ -29,7 +46,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-
+   
   color: white;
 }
 
@@ -54,9 +71,13 @@
 
 /* العنوان */
 .hero-title {
+  /* margin-top: 5px; */
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 15px;
+  color: var(--text-main);
+
+  text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.3);
 }
 
 /* الوصف */
@@ -65,19 +86,22 @@
   margin-bottom: 20px;
 }
 
- 
+
 
 /* صور مختلفة لكل صفحة */
-.drinks-hero{
-  background-image: url("drinksimages/drinks.png");
+.drinks-hero {
+  background-image: url("drinksimages/drink.jpeg");
 }
 
 .coffee-hero {
-  background-image: url("drinksimages/coffeee.jpeg");
+  background-image: url("drinksimages/coffeh.png");
 }
 
 .juice-hero {
-  background-image: url("drinksimages/juices.jpeg");
+  background-image: url("drinksimages/juce.png");
+}
+.hot-drinks-hero{
+  background-image: url(drinksimages/hotdrinksh.png);
 }
 
 body {
@@ -89,63 +113,98 @@ h2 {
   text-align: center;
 }
 
-#coffee {
-  background-image: url(drinksimages/coffeee.jpeg);
+#coffee,
+#juices,
+#hot_drinks,
+#Cappuccino,
+#icedcoffee,
+#arabcoffee,
+#Smoothie,
+#smothie2,
+#strawberrylemo,
+#arabcoffee-card,
+#icedcoffee-card,
+#cappuccino-card,
+#strawberrylemo-card,
+#smothie2-card,
+#smoothie-card,
+#hot-chocolate-card,
+#hot-chocolate,
+#turkish-tea-card,
+#turkish-tea,
+#Hibiscus-tea,
+#Hibiscus-tea-card
+{
   background-position: center;
   background-size: cover;
+}
+
+
+
+
+#coffee {
+  background-image: url(drinksimages/coffeee.jpeg);
+
 }
 
 #juices {
   background-image: url(drinksimages/juices.jpeg);
-  background-position: center;
-  background-size: cover;
+
 }
 
 #hot_drinks {
   background-image: url(drinksimages/hotdrinks.jpeg);
-  background-position: center;
-  background-size: cover;
+
 }
 
 
-
-#Cappuccino {
+#Cappuccino,
+#cappuccino-card {
   background-image: url(drinksimages/Cappuccino.jpeg);
-  background-position: center;
-  background-size: cover;
+
 }
 
-#icedcoffee {
+#icedcoffee,
+#icedcoffee-card {
   background-image: url(drinksimages/Caramel\ Hazelnut\ Iced\ Coffee.jpeg);
-  background-position: center;
-  background-size: cover;
+
 }
 
-#arabcoffee {
+#arabcoffee,
+#arabcoffee-card {
   background-image: url(drinksimages/arabcoffe.jpeg);
-  background-position: center;
-  background-size: cover;
+
 }
 
-#Smoothie {
+#Smoothie,
+#smoothie-card {
   background-image: url(drinksimages/Smoothie.jpeg);
-  background-position: center;
-  background-size: cover;
+
 }
 
-#smothie2 {
+#smothie2,
+#smothie2-card {
   background-image: url(drinksimages/Pineapple\ Mango\ Smoothie.jpeg);
-  background-position: center;
-  background-size: cover;
+
 }
 
-#strawberrylemo {
+#strawberrylemo,
+#strawberrylemo-card {
   background-image: url(drinksimages/Strawberry\ Lemonade.jpeg);
-  background-position: center;
-  background-size: cover;
+
 }
-
-
+#hot-chocolate,
+#hot-chocolate-card{
+  background-image: url(drinksimages/Hot\ Chocolate.jpeg);
+}
+#turkish-tea,
+#turkish-tea-card{
+  background-image: url(drinksimages/Turkishtea.jpeg);
+}
+#Hibiscus-tea,
+#Hibiscus-tea-card{
+  background-image: url(drinksimages/Hibiscustea.jpeg);
+}
 
 
 .recipe-content-box {
@@ -162,7 +221,7 @@ h2 {
   height: 400px;
   background: #faf8f5;
   border-radius: 40px;
-  box-shadow: 0px 0px 10px black;
+  /* box-shadow: 0px 0px 10px black; */
   background-repeat: no-repeat;
   color: white;
   text-shadow: 0px 0px 10px black;
@@ -174,8 +233,10 @@ h2 {
   justify-content: space-between;
   /* يخلي الزرار ينزل تحت */
 
-  padding: 20px;
-  text-align: center;
+  padding: 25px;
+  text-align: right;
+
+
 }
 
 .details-card {
@@ -188,14 +249,14 @@ h2 {
   background-position: center;
   background-image: no-repeat;
   background-size: cover;
-
-  height: 500px;
-  width: 400px;
+  z-index: 1000;
+  height: 600px;
+  width: 500px;
   border-radius: 40px;
   padding: 25px;
   background-size: cover;
   background-position: center;
-  z-index: 1000;
+
 
 }
 
@@ -204,11 +265,16 @@ h2 {
   margin-top: 50px;
   margin-bottom: 50px;
   color: black;
-  height: 380px;
+  height: 500px;
   background-color: rgba(235, 230, 230, 0.614);
   border-radius: 40px;
   padding: 20px;
   text-shadow: 0px 0px 10px rgb(255, 255, 255);
+
+
+
+
+
 }
 
 .details-card span {
