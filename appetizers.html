@@ -41,9 +41,22 @@
 		  transition: var(--transition);
 		}
 
-		.nav-links a:hover {
+		.nav-links a:hover ,  
+		.nav-links li button#backbutton:hover {
 		  color: white;
 		  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);}
+
+	    .nav-links li button#backbutton {
+			border: none;
+		    font-family: inherit;
+		    font-size: inherit;
+		    cursor: pointer;
+		    outline: none;		    
+		    color: white; 			    
+		    text-decoration: none;
+		    transition: 0.3s;			    		   
+		    background-color: var(--dark-walnut);			    
+		}
 	</style>
 </head>
 
@@ -52,14 +65,12 @@
         <nav class="main-nav">
             <div class="logo">Yummy 🍲</div> 
             <ul class="nav-links">
-                <li><a href="cover.html">Team</a></li>
+                <li><button id="backbutton" type="button">Go Back</button></li>
                 <li><a href="home.html">Home</a></li>
                 <li><a href="search.html">Search</a></li>
                 <li><a href="favorites.html">Favorites</a></li>
                 <li><a href="admin-recipe.html">Admin</a></li>
-                <li><a href="add-recipe.html">Add Recipe</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="add-recipe.html">Add Recipe</a></li>           
             </ul>
         </nav>
     </div>
@@ -402,11 +413,33 @@
 
 
           function changecolor(element) {
-               element.style.color = "red";
+              const isRed = element.style.color === "red";
 
-               element.title = "Added Successfully! ✨";
-
+              if (isRed) {
+              	element.style.color= "white";
+              	
+              }
+              else{
+              	element.style.color = "red";
+                element.title = "Added Successfully! ✨";
+              }
           }
+
+          document.addEventListener("DOMContentLoaded", () => {
+   			 const backBtn = document.getElementById("backbutton");
+    
+   			 if (backBtn) {
+      			backBtn.addEventListener("click", () => {
+            // Check if there is a previous page to go back to
+           			if (document.referrer !== "") {
+               			 window.location.href = document.referrer;
+                  } else {
+                // If no history, send them to your recipes page
+               		 window.location.href = "recipes.html"; 
+			            }
+			        });
+			    }
+			});
 
 	</script>
 
