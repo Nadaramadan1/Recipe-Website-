@@ -1,31 +1,29 @@
 /* ============================================================
    1. DESIGN SYSTEM & VARIABLES
    ============================================================ */
-
 :root {
-  --primary-color: #e67e22;
-  /* البرتقالي الأساسي - هوية المشروع */
-  --primary-hover: #d35400;
-  /* برتقالي أغمق للهوفر */
-  --bg-color: #f4f4f9;
-  /* لون الخلفية العام */
-  --card-bg: #ffffff;
-  /* لون الكروت والفورم */
-  --text-main: #2d3436;
-  /* لون النصوص الأساسي */
-  --text-muted: #636e72;
-  /* لون النصوص الثانوية */
-  --error-color: #e74c3c;
-  /* اللون الأحمر للحذف */
-  --info-color: #3498db;
-  /* اللون الأزرق للعرض */
+ 
+  --cashmere-brown: #B79986;   /* لون الناف بار: بني "كاشمير" هادئ وراقي */
+  --silk-white:  #f2e7df;       /* لون الخلفية: أوف وايت حريري) */
+  --biscuit-glaze: #DCC4B5;    /* لون الأزرار: درجة بسكويت فاتحة */
+  --dark-oak: #4E443F;         /* لون النصوص: خشب بلوط داكن ) */
+  --pure-white: #ffffff;       /* لون الكروت */
 
+  /* التوزيع الوظيفي */
+  --primary-color: var(--cashmere-brown);
+  --primary-hover: var(--biscuit-glaze);
+  --bg-color: var(--silk-white);
+  --card-bg: var(--pure-white);
+  --text-main: var(--dark-oak);
+  --text-muted: #8E827C;
+
+  /* التأثيرات الهادئة */
   --border-radius: 12px;
-  --input-radius: 8px;
-  --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 8px 20px rgba(183, 153, 134, 0.1);
   --transition: all 0.3s ease;
 }
+
+
 /* ============================================================
    2. GLOBAL RESET
    ============================================================ */
@@ -581,7 +579,7 @@ table tr:hover td {
 .hero-home-container {
   height: 90vh;
   /* Dark Overlay for better text readability */
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('home-page.png');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('photos/home-page.png');
   background-size: cover;
   background-position: center;
   display: flex;
