@@ -1,11 +1,12 @@
 /* ============================================================
    . NAVIGATION BAR
    ============================================================ */
+   
 #navbar {
 
     padding: 13px;
     box-shadow: var(--shadow-sm);
-    background-color: #4b1f11;
+    background-color: #5d4037;
 }
 
 .main-nav {
