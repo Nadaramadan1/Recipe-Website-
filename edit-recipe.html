@@ -62,4 +62,40 @@
             </form>
         </div>
     </div>
+
+
+
+    <script>
+    // 1. Get the ID from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const recipeId = urlParams.get('id');
+
+    // 2. Load the recipes from storage
+    let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+    let recipeToEdit = recipes.find(r => r.id == recipeId);
+
+    // 3. Fill the form if the recipe exists
+    if (recipeToEdit) {
+        document.getElementById('recipeName').value = recipeToEdit.name;
+        document.getElementById('recipeCourse').value = recipeToEdit.course;
+        document.getElementById('recipeIngredients').value = recipeToEdit.ingredients || "";
+    }
+
+    // 4. Save the changes
+    document.getElementById('editRecipeForm').onsubmit = function(e) {
+        e.preventDefault();
+        
+        // Update the specific recipe in the array
+        recipeToEdit.name = document.getElementById('recipeName').value;
+        recipeToEdit.course = document.getElementById('recipeCourse').value;
+        recipeToEdit.ingredients = document.getElementById('recipeIngredients').value;
+
+        // Save back to localStorage
+        localStorage.setItem('recipes', JSON.stringify(recipes));
+        
+        // Go back to the Admin list
+        window.location.href = 'admin-recipe.html';
+    };
+</script>
+
 </body>

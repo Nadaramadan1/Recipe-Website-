@@ -24,6 +24,57 @@
     </div>
 
     <div class="page-wrapper">
+    <div class="edit-card">
+        <h2>Add New Recipe</h2>
+        <form id="addRecipeForm">
+            <div class="form-grid">
+                <input type="text" id="recipeName" class="form-input" placeholder="Recipe Name" required>
+                <select id="recipeCourse" class="form-input">
+                    <option value="Main-course">Main-course</option>
+                    <option value="Dessert">Dessert</option>
+                    <option value="Appetizers">Appetizers</option>
+                </select>
+            </div>
+            
+            <div class="ingredients-section">
+                <h4>Ingredients</h4>
+                <textarea id="recipeIngredients" class="form-input" placeholder="List ingredients here..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-main">Save Recipe</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.getElementById('addRecipeForm').onsubmit = function(e) {
+        e.preventDefault();
+        
+        // 1. Get existing recipes
+        let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+        
+        // 2. Build the new recipe object with ingredients
+        const newRecipe = {
+            id: Date.now(),
+            name: document.getElementById('recipeName').value,
+            course: document.getElementById('recipeCourse').value,
+            ingredients: document.getElementById('recipeIngredients').value // Added this
+        };
+
+        // 3. Save to localStorage
+        recipes.push(newRecipe);
+        localStorage.setItem('recipes', JSON.stringify(recipes));
+        
+        // 4. Go to Admin page
+        window.location.href = 'admin-recipe.html';
+    };
+</script>
+
+
+
+
+    <!--*************************************************************************** -->
+    <!-- <div class="page-wrapper">
         <div class="add-recipe-card">
             <h1>Add New Recipe</h1>
             <form id="recipe-form">
@@ -97,7 +148,7 @@
         </div>
     </div>
 
-    <script src="main.js"></script>
+    <script src="main.js"></script> -->
 </body>
 
 </html>

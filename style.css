@@ -408,6 +408,9 @@ table tr:hover td {
   border-radius: 25px !important;
   margin: 0 5px;
   min-width: 80px;
+  opacity: 1 !important;
+    cursor: pointer;
+
 }
 
 .btn-view-mod {

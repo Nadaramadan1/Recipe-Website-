@@ -35,8 +35,10 @@
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
+            <tbody id ="recipeTableBody">
+
+                
+                <!-- <tr>
                     <td>1</td>
                     <td><strong>Pasta</strong></td>
                     <td>Main-course</td>
@@ -65,13 +67,58 @@
                         <a href="edit-recipe.html" class="btn-main btn-edit">Edit</a>
                         <button class="btn-main btn-delete">Delete</button>
                     </td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
     </div>
 
-    <main>
-        </main>
+    
+<script>
+    function displayRecipes() {
+        const tableBody = document.getElementById('recipeTableBody');
+        let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+        
+        tableBody.innerHTML = ""; 
+
+        recipes.forEach((recipe, index) => {
+            tableBody.innerHTML += `
+                <tr>
+                    <td>${index + 1}</td>
+                    <td><strong>${recipe.name}</strong></td>
+                    <td>${recipe.course}</td>
+                    <td class="actions-cell">
+                        <!-- Updated to call the correct function names -->
+                        <button class="btn-admin btn-view-mod" onclick="viewRecipe(${recipe.id})">View</button>
+                        <button class="btn-admin btn-edit-mod" onclick="editRecipe(${recipe.id})">Edit</button>
+                        <button class="btn-admin btn-delete-mod" onclick="deleteRecipe(${recipe.id})">Delete</button>
+                    </td>
+                </tr>
+            `;
+        });
+    }
+
+    
+    function viewRecipe(id) {
+        window.location.href = `recipe-details.html?id=${id}`;
+    }
+
+    function editRecipe(id) {
+        window.location.href = `edit-recipe.html?id=${id}`;
+    }
+        
+    function deleteRecipe(id) {
+        if(confirm("Delete this recipe?")) {
+            let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+            recipes = recipes.filter(r => r.id != id); 
+            localStorage.setItem('recipes', JSON.stringify(recipes));
+            displayRecipes();
+        }
+    }
+
+    displayRecipes();
+</script>
+
+    
 </body>
 
 </html>
