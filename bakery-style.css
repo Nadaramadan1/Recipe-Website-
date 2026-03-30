@@ -40,11 +40,24 @@
     display: inline-block;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links li button#backbutton:hover{
     transform: translateY(-1.5px);
 
     text-shadow: 0 0 15px rgb(255, 255, 255, 0.5);
 }
+
+ .nav-links li button#backbutton {
+	border: none;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    outline: none;		    
+    color: white; 			    
+    text-decoration: none;
+    transition: 0.3s;			    		   
+    background-color: var(--dark-walnut);			    
+	}
 
 /* General Reset & Base Styles */
 * {

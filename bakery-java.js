@@ -53,3 +53,19 @@
                     }
                }
           }
+     
+          document.addEventListener("DOMContentLoaded", () => {
+   			 const backBtn = document.getElementById("backbutton");
+    
+   			 if (backBtn) {
+      			backBtn.addEventListener("click", () => {
+            // Check if there is a previous page to go back to
+           			if (document.referrer !== "") {
+               			 window.location.href = document.referrer;
+                  } else {
+                // If no history, send them to your recipes page
+               		 window.location.href = "recipes.html"; 
+			            }
+			        });
+			    }
+			});
