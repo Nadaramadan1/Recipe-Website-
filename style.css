@@ -128,16 +128,16 @@ button:hover,
 }
 
 .btn-view {
-  background-color: #e67e22 !important;
+ background-color: var(--cashmere-brown) !important;
 }
 
 .btn-edit {
-  background-color: #e67e22 !important;
+background-color: var(--cashmere-brown) !important;
 }
 
 .btn-delete {
-  background-color: #e67e22 !important;
-}
+    background-color: #A68B8B !important;
+  }
 
 /* ============================================================
    5. FORMS & INPUTS
@@ -411,15 +411,15 @@ table tr:hover td {
 }
 
 .btn-view-mod {
-  background-color: #db7434 !important;
+ background-color: var(--dusty-latte) !important;
 }
 
 .btn-edit-mod {
-  background-color: #db7434 !important;
+  background-color: var(--dusty-latte) !important;
 }
 
 .btn-delete-mod {
-  background-color: #db7434 !important;
+  background-color: #A68B8B !important;
 }
 
 /* ============================================================
@@ -627,7 +627,7 @@ table tr:hover td {
 }
 
 .btn-main.hero-btn:hover {
-  background-color: #ff9f43 !important;
+  background-color: #ff9f43 ;
   transform: scale(1.05);
 }
 
