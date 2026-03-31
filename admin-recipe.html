@@ -78,7 +78,7 @@
     <script>
 
         let recipes = [
- { id: "BeefSteakcard", name: "Beef Steak 🥩", course: "maindish/beef" },
+            { id: "BeefSteakcard", name: "Beef Steak 🥩", course: "maindish/beef" },
             { id: "BeefTacoscard", name: "Beef Tacos 🌮", course: "maindish/beef" },
             { id: "BeefStewcard", name: "Beef Stew 🍲", course: "maindish/beef" },
             { id: "FriedChickencard", name: "Fried Chicken 🍗", course: "maindish/chicken" },
@@ -141,9 +141,9 @@
             { id: "FrenchVanillaCappuccinocard", name: "French Vanilla Cappuccino", course: "Drinks/coffee" },
             { id: "CaramelHazelnutIcedCoffeecard", name: "Caramel Hazelnut Iced Coffee", course: "Drinks/coffee" },
             { id: "ArabCoffeecard", name: "Arab Coffee", course: "Drinks/coffee" },
-            { id: "BerryBlastSmoothiecard", name: "Berry Blast Smoothie🍸", course: "Drinks/fresh juices& smothie" },
-            { id: "PineappleMangoSmoothiecard", name: "Pineapple Mango Smoothie", course: "Drinks/fresh juices& smothie" },
-            { id: "StrawberryLemonadecard", name: "Strawberry Lemonade🍓", course: "Drinks/fresh juices& smothie" },
+            { id: "BerryBlastSmoothiecard", name: "Berry Blast Smoothie🍸", course: "Drinks/fresh juices& smoothie" },
+            { id: "PineappleMangoSmoothiecard", name: "Pineapple Mango Smoothie", course: "Drinks/fresh juices& smoothie" },
+            { id: "StrawberryLemonadecard", name: "Strawberry Lemonade🍓", course: "Drinks/fresh juices& smoothie" },
             { id: "HotChocolatecard", name: "Hot Chocolate🍫", course: "Drinks/Hot drinks" },
             { id: "TurkishTeacard", name: "Turkish Tea🍃", course: "Drinks/Hot drinks" },
             { id: "HerbalHibiscusTeacard", name: "Herbal Hibiscus Tea🌺🌹", course: "Drinks/Hot drinks" },
@@ -151,51 +151,56 @@
         
            
         ];
+// ************************************************************
+     
+    function displayRecipes() {
+        const tableBody = document.getElementById('recipeTableBody');
+        
+        // Get existing recipes from storage or use manual ones if storage is empty
+        let storedRecipes = JSON.parse(localStorage.getItem('recipes'));
+        
+        if (!storedRecipes || storedRecipes.length === 0) {
+            localStorage.setItem('recipes', JSON.stringify(manualRecipes));
+            storedRecipes = manualRecipes;
+        }
 
-        localStorage.setItem("recipes", JSON.stringify(recipes));
-
-        function displayRecipes() {
-            const tableBody = document.getElementById('recipeTableBody');
-            let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
-
-            tableBody.innerHTML = "";
-
-            recipes.forEach((recipe, index) => {
-                tableBody.innerHTML += `
+        let rowsHTML = "";
+        storedRecipes.forEach((recipe, index) => {
+            rowsHTML += `
                 <tr>
                     <td>${index + 1}</td>
                     <td><strong>${recipe.name}</strong></td>
                     <td>${recipe.course}</td>
                     <td class="actions-cell">
-                        <!-- Updated to call the correct function names -->
-                        <button class="btn-admin btn-view-mod" onclick="viewRecipe(${recipe.id})">View</button>
-                        <button class="btn-admin btn-edit-mod" onclick="editRecipe(${recipe.id})">Edit</button>
-                        <button class="btn-admin btn-delete-mod" onclick="deleteRecipe(${recipe.id})">Delete</button>
+                        <button class="btn-admin btn-view-mod" onclick="viewRecipe('${recipe.id}')">View</button>
+                        <button class="btn-admin btn-edit-mod" onclick="editRecipe('${recipe.id}')">Edit</button>
+                        <button class="btn-admin btn-delete-mod" onclick="deleteRecipe('${recipe.id}')">Delete</button>
                     </td>
-                </tr>
-            `;
-            });
+                </tr>`;
+        });
+        tableBody.innerHTML = rowsHTML;
+    }
+
+    // Global functions for the buttons
+    function viewRecipe(id) {
+        window.location.href = `recipe-details.html?id=${id}`;
+    }
+
+    function editRecipe(id) {
+        window.location.href = `edit-recipe.html?id=${id}`;
+    }
+
+    function deleteRecipe(id) {
+        if (confirm("Are you sure you want to delete this recipe?")) {
+            let recipes = JSON.parse(localStorage.getItem('recipes'));
+            recipes = recipes.filter(r => r.id !== id);
+            localStorage.setItem('recipes', JSON.stringify(recipes));
+            displayRecipes(); // Refresh the table
         }
+    }
 
-
-        function viewRecipe(id) {
-            window.location.href = `recipe-details.html?id=${id}`;
-        }
-
-        function editRecipe(id) {
-            window.location.href = `edit-recipe.html?id=${id}`;
-        }
-
-        function deleteRecipe(id) {
-            if (confirm("Delete this recipe?")) {
-                let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
-                recipes = recipes.filter(r => r.id != id);
-                localStorage.setItem('recipes', JSON.stringify(recipes));
-                displayRecipes();
-            }
-        }
-
-        displayRecipes();
+    displayRecipes();
+    
     </script>
 
 

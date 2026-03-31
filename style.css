@@ -409,16 +409,16 @@ table tr:hover td {
   margin: 0 5px;
   min-width: 80px;
   opacity: 1 !important;
-    cursor: pointer;
+  cursor: pointer;
 
 }
 
 .btn-view-mod {
- background-color: var(--dusty-latte) !important;
+ background-color: #A68B8B !important;
 }
 
 .btn-edit-mod {
-  background-color: var(--dusty-latte) !important;
+  background-color: #A68B8B !important;
 }
 
 .btn-delete-mod {
