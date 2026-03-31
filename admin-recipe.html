@@ -18,14 +18,16 @@
                 <li><a href="favorites.html">Favorites</a></li>
                 <li><a href="admin-recipe.html">Admin</a></li>
                 <li><a href="add-recipe.html">Add Recipe</a></li>
-              
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+
             </ul>
         </nav>
     </div>
 
     <div class="page-wrapper" style="display: block; text-align: center;">
         <h1>Recipe Finder</h1>
-        
+
         <table>
             <thead>
                 <tr>
@@ -35,9 +37,9 @@
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody id ="recipeTableBody">
+            <tbody id="recipeTableBody">
 
-                
+
                 <!-- <tr>
                     <td>1</td>
                     <td><strong>Pasta</strong></td>
@@ -72,16 +74,94 @@
         </table>
     </div>
 
-    
-<script>
-    function displayRecipes() {
-        const tableBody = document.getElementById('recipeTableBody');
-        let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
-        
-        tableBody.innerHTML = ""; 
 
-        recipes.forEach((recipe, index) => {
-            tableBody.innerHTML += `
+    <script>
+
+        let recipes = [
+ { id: "BeefSteakcard", name: "Beef Steak 🥩", course: "maindish/beef" },
+            { id: "BeefTacoscard", name: "Beef Tacos 🌮", course: "maindish/beef" },
+            { id: "BeefStewcard", name: "Beef Stew 🍲", course: "maindish/beef" },
+            { id: "FriedChickencard", name: "Fried Chicken 🍗", course: "maindish/chicken" },
+            { id: "ChickenCurrycard", name: "Chicken Curry 🍛", course: "maindish/chicken" },
+            { id: "GrilledChickencard", name: "Grilled Chicken 🍗", course: "maindish/chicken" },
+            { id: "SpaghettiCarbonaracard", name: " Spaghetti Carbonara 🍝", course: "maindish/pasta" },
+            { id: "PastaPestocard", name: "Pasta Pesto 🌿", course: "maindish/pasta" },
+            { id: "Lasagnacard", name: "Lasagna 🍲", course: "maindish/pasta" },
+            { id: " GrilledSalmoncard", name: "Grilled Salmon 🐟", course: "maindish/seefood" },
+            { id: "ShrimpPastacard", name: "Shrimp Pasta 🍤", course: "maindish/seefood" },
+            { id: "FishCurrycard", name: "Fish Curry 🐠", course: "maindish/seefood" },
+            { id: "Burgercard", name: " Burger 🍔", course: "maindish/fastfood" },
+            { id: "FrenchFriescard", name: "French Fries 🍟", course: "maindish/fastfood" },
+            { id: "Pizzacard", name: "Pizza 🍕", course: "maindish/fastfood" },
+            { id: "VeggieStir-Frycard", name: "Veggie Stir-Fry 🥗", course: "maindish/Vegetarian" },
+            { id: "VegetableCurrycard", name: "Vegetable Curry 🍛", course: "maindish/Vegetarian" },
+            { id: "QuinoaSaladcard", name: "Quinoa Salad 🥗", course: "maindish/Vegetarian" },
+
+            { id: "SalmonAvocadocard", name: "Grilled Salmon & Avocado", course: "Healthy/Keto" },
+            { id: "QuinoaBowlcard", name: "Quinoa Buddha Bowl", course: "Healthy/Vegan" },
+            { id: "HerbChickencard", name: "Lemon Herb Chicken", course: "Healthy/Protein" },
+            { id: "Zoodlescard", name: "Zucchini Noodles (Zoodles)", course: "Healthy/Gluten-Free" },
+
+            { id: "Baguettecard", name: "Classic French Baguette 🥖", course: "Bakery/Bread" },
+            { id: "Sourdoughcard", name: "Natural Sourdough 🥐", course: "Bakery/Bread" },
+            { id: "Focacciacard", name: "Herbed Focaccia 🍪", course: "Bakery/Bread" },
+            { id: "ButterCroissantcard", name: "Butter Croissant", course: "Bakery/Croissant" },
+            { id: "PainauChocolatcard", name: "Pain au Chocolat", course: "Bakery/Croissant" },
+            { id: "StrawberryDanishcard", name: "Strawberry Custard Danish", course: "Bakery/Croissant" },
+            { id: "ClassicCinnamoncard", name: "Classic Cinnamon Rolls", course: "Bakery/Cinnamon" },
+            { id: "PecanCinnamoncard", name: "Pecan Cinnamon Rolls", course: "Bakery/Cinnamon" },
+            { id: "ChocolateCinnamoncard", name: "Chocolate Cinnamon Rolls", course: "Bakery/Cinnamon" },
+            { id: "ChocolateCookiescard", name: "Chocolate Cookies 🍪", course: "Bakery/Cookies" },
+            { id: "ButterBiscuitscard", name: "Butter Shortbread Biscuits 🧈", course: "Bakery/Cookies" },
+            { id: "OatmealCookiescard", name: "Oatmeal Raisin Cookies 🌾", course: "Bakery/Cookies" },
+            { id: "GlazedDonutscard", name: "Glazed Donuts 🍩", course: "Bakery/Donuts" },
+            { id: "ChocolateDonutscard", name: "Chocolate Donuts 🍫", course: "Bakery/Donuts" },
+            { id: "FilledDonutscard", name: "Filled Donuts 🍓", course: "Bakery/Donuts" },
+            { id: "VanillaMacaronscard", name: "Vanilla Macarons", course: "Bakery/Macarons" },
+            { id: "PistachioMacaronscard", name: "Pistachio Macarons", course: "Bakery/Macarons" },
+            { id: "RaspberryMacronscard", name: "Raspberry Macarons", course: "Bakery/Macarons" },
+
+            { id: "tiramisucard", name: "Tiramisu ☕", course: "Dessert" },
+            { id: "blackforest-cheesecakecard", name: "Black Forest Cheesecake 🍒", course: "Dessert" },
+            { id: "browniecard", name: "Brownies 🍫", course: "Dessert" },
+            { id: "strawberryCakecard", name: "Strawberry Cake 🍓", course: "Dessert" },
+            { id: "CrèmeCaramelcard", name: "Crème Caramel 🍮", course: "Dessert" },
+            { id: "cupcakecard", name: "Cupcake 🧁", course: "Dessert" },
+
+            { id: "DeviledEggscard", name: "Deviled Eggs", course: "appetizers" },
+            { id: "SpinachArtichokeDipcard", name: "Spinach Artichoke Dip", course: "appetizers" },
+            { id: "ChickenWingscard", name: "Chicken Wings", course: "appetizers" },
+            { id: "JalapenoPopperscard", name: "Jalapeno Poppers", course: "appetizers" },
+            { id: "StuffedMushroomscard", name: "Stuffed Mushrooms", course: "appetizers" },
+            { id: "Crostinicard", name: "Crostini", course: "appetizers" },
+            { id: "CharcuterieBoardcard", name: "Charcuterie Board", course: "appetizers" },
+            { id: "Sliderscard", name: "Sliders", course: "appetizers" },
+            { id: "ShrimpCocktailcard", name: "Shrimp Cocktail", course: "appetizers" },
+
+            { id: "FrenchVanillaCappuccinocard", name: "French Vanilla Cappuccino", course: "Drinks/coffee" },
+            { id: "CaramelHazelnutIcedCoffeecard", name: "Caramel Hazelnut Iced Coffee", course: "Drinks/coffee" },
+            { id: "ArabCoffeecard", name: "Arab Coffee", course: "Drinks/coffee" },
+            { id: "BerryBlastSmoothiecard", name: "Berry Blast Smoothie🍸", course: "Drinks/fresh juices& smothie" },
+            { id: "PineappleMangoSmoothiecard", name: "Pineapple Mango Smoothie", course: "Drinks/fresh juices& smothie" },
+            { id: "StrawberryLemonadecard", name: "Strawberry Lemonade🍓", course: "Drinks/fresh juices& smothie" },
+            { id: "HotChocolatecard", name: "Hot Chocolate🍫", course: "Drinks/Hot drinks" },
+            { id: "TurkishTeacard", name: "Turkish Tea🍃", course: "Drinks/Hot drinks" },
+            { id: "HerbalHibiscusTeacard", name: "Herbal Hibiscus Tea🌺🌹", course: "Drinks/Hot drinks" },
+
+        
+           
+        ];
+
+        localStorage.setItem("recipes", JSON.stringify(recipes));
+
+        function displayRecipes() {
+            const tableBody = document.getElementById('recipeTableBody');
+            let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+
+            tableBody.innerHTML = "";
+
+            recipes.forEach((recipe, index) => {
+                tableBody.innerHTML += `
                 <tr>
                     <td>${index + 1}</td>
                     <td><strong>${recipe.name}</strong></td>
@@ -94,31 +174,31 @@
                     </td>
                 </tr>
             `;
-        });
-    }
-
-    
-    function viewRecipe(id) {
-        window.location.href = `recipe-details.html?id=${id}`;
-    }
-
-    function editRecipe(id) {
-        window.location.href = `edit-recipe.html?id=${id}`;
-    }
-        
-    function deleteRecipe(id) {
-        if(confirm("Delete this recipe?")) {
-            let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
-            recipes = recipes.filter(r => r.id != id); 
-            localStorage.setItem('recipes', JSON.stringify(recipes));
-            displayRecipes();
+            });
         }
-    }
 
-    displayRecipes();
-</script>
 
-    
+        function viewRecipe(id) {
+            window.location.href = `recipe-details.html?id=${id}`;
+        }
+
+        function editRecipe(id) {
+            window.location.href = `edit-recipe.html?id=${id}`;
+        }
+
+        function deleteRecipe(id) {
+            if (confirm("Delete this recipe?")) {
+                let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+                recipes = recipes.filter(r => r.id != id);
+                localStorage.setItem('recipes', JSON.stringify(recipes));
+                displayRecipes();
+            }
+        }
+
+        displayRecipes();
+    </script>
+
+
 </body>
 
 </html>
