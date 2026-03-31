@@ -48,45 +48,65 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.querySelector('.close-btn');
     const viewButtons = document.querySelectorAll('.btn-healthy');
 
+    
     const recipes = {
-    "Quinoa Buddha Bowl": {
-        ingredients: ["1 cup cooked quinoa", "1/2 cup chickpeas", "Sliced avocado", "Shredded carrots", "Fresh spinach", "Tahini dressing"],
-        method: "1. Base the bowl with fresh spinach and cooked quinoa. 2. Arrange chickpeas, carrots, and avocado on top. 3. Drizzle with tahini and enjoy."
-    },
-    "Grilled Salmon": {
-        ingredients: ["150g Salmon fillet", "1 tbsp Olive oil", "Minced garlic", "Lemon slices", "Steamed asparagus"],
-        method: "1. Season salmon with garlic and pepper. 2. Grill for 4-5 minutes each side. 3. Serve with asparagus and lemon."
-    },
-    "Lemon Herb Chicken": {
-        ingredients: ["2 Chicken breasts", "1 Lemon", "Fresh Rosemary", "Olive oil", "Steamed broccoli"],
-        method: "1. Marinate chicken with lemon and herbs. 2. Grill until golden. 3. Serve with broccoli."
-    },
-    "Zucchini Noodles (Zoodles)": {
-        ingredients: ["2 Zucchinis", "Cherry tomatoes", "Pesto sauce", "Garlic", "Parmesan"],
-        method: "1. Spiralize zucchinis. 2. Sauté with garlic and tomatoes. 3. Toss with pesto and cheese for 3 minutes."
-    }
-};
+        "Grilled Salmon & Avocado": { 
+            ingredients: ["150g Salmon fillet", "1 tbsp Olive oil", "Minced garlic", "Lemon slices", "Steamed asparagus"],
+            method: "1. Season salmon with garlic and pepper. 2. Grill for 4-5 minutes each side. 3. Serve with asparagus and lemon."
+        },
+        "Quinoa Buddha Bowl": {
+            ingredients: ["1 cup cooked quinoa", "1/2 cup chickpeas", "Sliced avocado", "Shredded carrots", "Fresh spinach", "Tahini dressing"],
+            method: "1. Base the bowl with fresh spinach and cooked quinoa. 2. Arrange chickpeas, carrots, and avocado on top. 3. Drizzle with tahini and enjoy."
+        },
+        "Lemon Herb Chicken": {
+            ingredients: ["2 Chicken breasts", "1 Lemon", "Fresh Rosemary", "Olive oil", "Steamed broccoli"],
+            method: "1. Marinate chicken with lemon and herbs. 2. Grill until golden. 3. Serve with broccoli."
+        },
+        "Zucchini Noodles (Zoodles)": {
+            ingredients: ["2 Zucchinis", "Cherry tomatoes", "Pesto sauce", "Garlic", "Parmesan"],
+            method: "1. Spiralize zucchinis. 2. Sauté with garlic and tomatoes. 3. Toss with pesto and cheese for 3 minutes."
+        }
+    };
 
-    viewButtons.forEach(btn => {
+ 
+viewButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             const card = btn.closest('.recipe-card');
             const title = card.querySelector('h3').innerText;
             const data = recipes[title];
+            const bgImage = card.querySelector('.card-image').style.backgroundImage;
 
             if (data) {
+                const modalContent = document.querySelector('.glass-card');
+                modalContent.style.backgroundImage = bgImage;
+                
                 document.getElementById('modalBody').innerHTML = `
-                    <h2 class="modal-title">${title}</h2>
-                    <span class="section-title">🥗 Ingredients:</span>
-                    <ul>${data.ingredients.map(i => `<li>${i}</li>`).join('')}</ul>
-                    <span class="section-title">👨‍🍳 Method:</span>
-                    <p>${data.method}</p>
+                    <div class="modal-overlay-content">
+                        <span class="close-btn">&times;</span> 
+                        <h2 class="modal-title">${title}</h2>
+                        <span class="section-title">Ingredients</span>
+                        <ul class="modal-list">${data.ingredients.map(i => `<li>• ${i}</li>`).join('')}</ul>
+                        <span class="section-title">Preparation Steps</span>
+                        <p class="modal-text">${data.method}</p>
+                        <div class="modal-footer">
+                            <button class="heart-btn" onclick="toggleHeart(this)">❤</button>
+                        </div>
+                    </div>
                 `;
                 modal.style.display = "block";
+                
+               
+                document.querySelector('.close-btn').onclick = () => modal.style.display = "none";
             }
         });
     });
 
-    closeBtn.onclick = () => modal.style.display = "none";
+   
+    window.toggleHeart = (btn) => {
+        btn.classList.toggle('active');
+        btn.style.color = btn.classList.contains('active') ? '#e74c3c' : 'white';
+    };
+
     window.onclick = (event) => { if (event.target == modal) modal.style.display = "none"; };
 });
