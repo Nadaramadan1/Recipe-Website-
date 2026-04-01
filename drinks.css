@@ -18,9 +18,9 @@
   --text-muted: #7a7a7a;
 } */
 
- :root {
+:root {
 
-  --primary-color:  #711010;
+  --primary-color: #711010;
   --primary-hover: #940f0f;
 
   --secondary-color: #4b2e2b;
@@ -34,8 +34,9 @@
   --border-light: #3a2a2a;
   --shadow: rgba(0, 0, 0, 0.3);
 }
+
 .hero {
-  height:600px;
+  height: 600px;
   position: relative;
 
   background-size: cover;
@@ -45,7 +46,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-   margin: auto;
+  margin: auto;
   color: white;
 }
 
@@ -99,7 +100,8 @@
 .juice-hero {
   background-image: url("drinksimages/juce.png");
 }
-.hot-drinks-hero{
+
+.hot-drinks-hero {
   background-image: url(drinksimages/hotdrinksh.png);
 }
 
@@ -132,8 +134,7 @@ h2 {
 #turkish-tea-card,
 #turkish-tea,
 #Hibiscus-tea,
-#Hibiscus-tea-card
-{
+#Hibiscus-tea-card {
   background-position: center;
   background-size: cover;
 }
@@ -158,7 +159,7 @@ h2 {
 
 
 #Cappuccino,
-#cappuccino-card {
+#Cappuccino-card {
   background-image: url(drinksimages/Cappuccino.jpeg);
 
 }
@@ -176,7 +177,7 @@ h2 {
 }
 
 #Smoothie,
-#smoothie-card {
+#Smoothie-card {
   background-image: url(drinksimages/Smoothie.jpeg);
 
 }
@@ -192,16 +193,19 @@ h2 {
   background-image: url(drinksimages/Strawberry\ Lemonade.jpeg);
 
 }
+
 #hot-chocolate,
-#hot-chocolate-card{
+#hot-chocolate-card {
   background-image: url(drinksimages/Hot\ Chocolate.jpeg);
 }
+
 #turkish-tea,
-#turkish-tea-card{
+#turkish-tea-card {
   background-image: url(drinksimages/Turkishtea.jpeg);
 }
+
 #Hibiscus-tea,
-#Hibiscus-tea-card{
+#Hibiscus-tea-card {
   background-image: url(drinksimages/Hibiscustea.jpeg);
 }
 

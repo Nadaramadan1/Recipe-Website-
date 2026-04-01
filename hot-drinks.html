@@ -182,26 +182,31 @@
         }
 
 
-
         window.addEventListener("DOMContentLoaded", () => {
             const hashId = window.location.hash.substring(1);
             const targetCard = document.querySelector(`.recipe-card[data-id="${hashId}"]`);
+
             if (targetCard) {
-                // حركة للكارد للأعلى + تغيير اللون + شادو
+
+                //   hover effect الأول
                 targetCard.style.transform = "translateY(-20px)";
                 targetCard.style.transition = "all 0.3s ease";
-                
-                targetCard.style.boxShadow = "0 5px 10px 5px rgb(0, 0, 0)";  // 
+                targetCard.style.boxShadow = "0 5px 10px 5px rgb(0, 0, 0)";
 
-                // بعد 1 ثانية نرجع كل شيء للوضع الطبيعي
+                const detailsId = targetCard.dataset.id + "-card";
+
+                //  بعد ما الـ hover يخلص افتحي الكارد
+                setTimeout(() => {
+                    openCard(null, detailsId);
+                }, 800);
+
+                // 🔄 رجوع الشكل الطبيعي
                 setTimeout(() => {
                     targetCard.style.transform = "";
-                    targetCard.style.backgroundColor = "";
                     targetCard.style.boxShadow = "";
-                }, 1000);
+                }, 500);
             }
         });
-
     </script>
 
 

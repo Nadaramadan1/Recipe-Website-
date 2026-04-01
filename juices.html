@@ -39,11 +39,11 @@
     <h2 id="recipesss">Recipes</h2>
     <div class="recipes-container">
 
-        <div class="recipe-card" id="Smoothie" data-id="Smoothie"> 
+        <div class="recipe-card" id="Smoothie" data-id="Smoothie">
             <h2> Berry Blast Smoothie🍸</h2>
             <p></p>
             <!-- <a href="coffee.html" class="btn-main">View Recipe</a> -->
-            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'smoothie-card')">View
+            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'Smoothie-card')">View
                 Recipe</a>
         </div>
 
@@ -55,7 +55,7 @@
                 Recipe</a>
         </div>
 
-        <div class="recipe-card" id="strawberrylemo"  data-id="strawberrylemo">
+        <div class="recipe-card" id="strawberrylemo" data-id="strawberrylemo">
             <h2>Strawberry Lemonade🍓</h2>
             <p></p>
             <!-- <a href="recipe-details.html" class="btn-main">View Recipes</a> -->
@@ -65,7 +65,7 @@
 
     </div>
 
-    <div class="details-card" id="smoothie-card">
+    <div class="details-card" id="Smoothie-card">
         <div class="recipe-content-box">
             <h2>Berry Blast Smoothie🍸</h2>
 
@@ -90,7 +90,7 @@
     </div>
 
 
-    <div class="details-card" id="smothie2-card" >
+    <div class="details-card" id="smothie2-card">
         <div class="recipe-content-box">
             <h2>Pineapple Mango Smoothie 🥭🍍</h2>
 
@@ -189,22 +189,29 @@
                 }
             }
         }
-         window.addEventListener("DOMContentLoaded", () => {
+        window.addEventListener("DOMContentLoaded", () => {
             const hashId = window.location.hash.substring(1);
             const targetCard = document.querySelector(`.recipe-card[data-id="${hashId}"]`);
+
             if (targetCard) {
-                // حركة للكارد للأعلى + تغيير اللون + شادو
+
+                //   hover effect الأول
                 targetCard.style.transform = "translateY(-20px)";
                 targetCard.style.transition = "all 0.3s ease";
-                
-                targetCard.style.boxShadow = "0 5px 10px 5px rgb(0, 0, 0)";  // 
+                targetCard.style.boxShadow = "0 5px 10px 5px rgb(0, 0, 0)";
 
-                // بعد 1 ثانية نرجع كل شيء للوضع الطبيعي
+                const detailsId = targetCard.dataset.id + "-card";
+
+                //  بعد ما الـ hover يخلص افتحي الكارد
+                setTimeout(() => {
+                    openCard(null, detailsId);
+                }, 800);
+
+                // 🔄 رجوع الشكل الطبيعي
                 setTimeout(() => {
                     targetCard.style.transform = "";
-                    targetCard.style.backgroundColor = "";
                     targetCard.style.boxShadow = "";
-                }, 1000);
+                }, 500);
             }
         });
     </script>
