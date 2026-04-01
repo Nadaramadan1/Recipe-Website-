@@ -35,7 +35,7 @@
   --shadow: rgba(0, 0, 0, 0.3);
 }
 .hero {
-  height: 600px;
+  height:600px;
   position: relative;
 
   background-size: cover;
@@ -45,7 +45,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-   
+   margin: auto;
   color: white;
 }
 
@@ -76,7 +76,7 @@
   margin-bottom: 15px;
   color: var(--text-main);
 
-  text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.3);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
 }
 
 /* الوصف */
@@ -89,7 +89,7 @@
 
 /* صور مختلفة لكل صفحة */
 .drinks-hero {
-  background-image: url("drinksimages/drink.jpeg");
+  background-image: url("drinksimages/drink2.png");
 }
 
 .coffee-hero {
