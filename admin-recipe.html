@@ -87,9 +87,9 @@
             { id: "SpaghettiCarbonaracard", name: " Spaghetti Carbonara 🍝", course: "maindish/pasta" },
             { id: "PastaPestocard", name: "Pasta Pesto 🌿", course: "maindish/pasta" },
             { id: "Lasagnacard", name: "Lasagna 🍲", course: "maindish/pasta" },
-            { id: " GrilledSalmoncard", name: "Grilled Salmon 🐟", course: "maindish/seefood" },
-            { id: "ShrimpPastacard", name: "Shrimp Pasta 🍤", course: "maindish/seefood" },
-            { id: "FishCurrycard", name: "Fish Curry 🐠", course: "maindish/seefood" },
+            { id: " GrilledSalmoncard", name: "Grilled Salmon 🐟", course: "maindish/seafood" },
+            { id: "ShrimpPastacard", name: "Shrimp Pasta 🍤", course: "maindish/seafood" },
+            { id: "FishCurrycard", name: "Fish Curry 🐠", course: "maindish/seafood" },
             { id: "Burgercard", name: " Burger 🍔", course: "maindish/fastfood" },
             { id: "FrenchFriescard", name: "French Fries 🍟", course: "maindish/fastfood" },
             { id: "Pizzacard", name: "Pizza 🍕", course: "maindish/fastfood" },
@@ -128,11 +128,11 @@
             { id: "CrèmeCaramelcard", name: "Crème Caramel 🍮", course: "Dessert" },
             { id: "cupcakecard", name: "Cupcake 🧁", course: "Dessert" },
 
-            { id: "DeviledEggscard", name: "Deviled Eggs", course: "appetizers" },
-            { id: "SpinachArtichokeDipcard", name: "Spinach Artichoke Dip", course: "appetizers" },
-            { id: "ChickenWingscard", name: "Chicken Wings", course: "appetizers" },
-            { id: "JalapenoPopperscard", name: "Jalapeno Poppers", course: "appetizers" },
-            { id: "StuffedMushroomscard", name: "Stuffed Mushrooms", course: "appetizers" },
+            { id: "deviledeggscard", name: "Deviled Eggs", course: "appetizers" },
+            { id: "spinachartichokedipcard", name: "Spinach Artichoke Dip", course: "appetizers" },
+            { id: "chickenwingscard", name: "Chicken Wings", course: "appetizers" },
+            { id: "jalapenopopperscard", name: "Jalapeno Poppers", course: "appetizers" },
+            { id: "stuffedmushroomscard", name: "Stuffed Mushrooms", course: "appetizers" },
             { id: "Crostinicard", name: "Crostini", course: "appetizers" },
             { id: "CharcuterieBoardcard", name: "Charcuterie Board", course: "appetizers" },
             { id: "Sliderscard", name: "Sliders", course: "appetizers" },
@@ -160,8 +160,8 @@
         let storedRecipes = JSON.parse(localStorage.getItem('recipes'));
         
         if (!storedRecipes || storedRecipes.length === 0) {
-            localStorage.setItem('recipes', JSON.stringify(manualRecipes));
-            storedRecipes = manualRecipes;
+            localStorage.setItem('recipes', JSON.stringify(recipes));
+            storedRecipes = recipes;
         }
 
         let rowsHTML = "";
@@ -182,9 +182,9 @@
     }
 
     // Global functions for the buttons
-    function viewRecipe(id) {
-        window.location.href = `recipe-details.html?id=${id}`;
-    }
+    // function viewRecipe(id) {
+    //     window.location.href = `recipe-details.html?id=${id}`;
+    // }
 
     function editRecipe(id) {
         window.location.href = `edit-recipe.html?id=${id}`;
@@ -199,8 +199,56 @@
         }
     }
 
-    displayRecipes();
     
+    
+
+
+   function viewRecipe(id) {
+    // 1. البحث عن الوصفة في مصفوفة البيانات
+   const allRecipes = JSON.parse(localStorage.getItem('recipes')) || recipes;
+    const recipe = allRecipes.find(r => r.id === id);
+    
+    if (!recipe) {
+        console.error("Recipe not found ID:", id);
+        return;
+    }
+    // 2. قاموس الربط: (الاسم في Course : اسم الملف)
+    const categoryPages = {
+        "appetizers": "appetizers.html",
+        "dessert": "dessert.html",
+        "maindish/beef": "beef.html",
+        "maindish/chicken": "chicken.html",
+        "maindish/pasta": "pasta.html",
+        "maindish/fastfood": "fastfood.html",
+        "maindish/seafood": "seafood.html",
+        "maindish/Vegetarian": "Vegetarian.html",
+        "Bakery/Bread": "Bread.html",
+        "Bakery/Croissant": "Croissants.html",
+        "Bakery/Cinnamon": "Cinnamons.html",
+        "Bakery/Cookies": "cookies.html",
+        "Bakery/Donuts": "Donuts.html",
+        "Bakery/Macarons": "macrons.html",
+        "Drinks/coffee": "coffee.html",
+        "Drinks/fresh juices& smoothie": "juices.html",
+        "Drinks/Hot drinks": "hot-drinks.html"
+    };
+
+    // 3. استخراج اسم الصفحة بناءً على الـ Course
+    // سنبحث عن أول كلمة مطابقة في الـ course الخاص بالوصفة
+    let targetPage = "home.html"; // صفحة افتراضية في حال لم نجد تطابقاً
+    const courseLower = recipe.course.toLowerCase();    
+    for (let key in categoryPages) {
+        if (courseLower.includes(key)) {
+            targetPage = categoryPages[key];
+            break; // نخرج من الحلقة فور إيجاد الصفحة
+        }
+    }
+
+    // 4. الانتقال للصفحة مع الـ ID
+    // window.location.href = `${targetPage}?id=${id}`;
+    window.location.href = targetPage + "?id=" + id;
+}
+displayRecipes();
     </script>
 
 

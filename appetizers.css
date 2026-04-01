@@ -141,11 +141,11 @@ body {
 #CharcuterieBoard,
 #Sliders,
 #ShrimpCocktail,
-#deviledeggscard,
-#spinachartichokedipcard,
-#chickenwingscard,
-#jalapenopopperscard,
-#stuffedmushroomscard,
+#DeviledEggscard,
+#SpinachArtichokeDipcard,
+#ChickenWingscard,
+#JalapenoPopperscard,
+#StuffedMushroomscard,
 #Crostinicard,
 #CharcuterieBoardcard,
 #Sliderscard,
@@ -158,29 +158,29 @@ body {
 }
 
 #deviledeggs,
-#deviledeggscard
+#DeviledEggscard
  {
     background-image: url(appetizersimgs/pic1.jpg);
 }
 
 #spinachartichokedip,
-#spinachartichokedipcard
+#SpinachArtichokeDipcard
  {
     background-image: url(appetizersimgs/pic2.jpg);
 }
 
 #chickenwings,
-#chickenwingscard{
+#ChickenWingscard{
     background-image: url(appetizersimgs/pic3.jpg);
 }
 
 #jalapenopoppers,
-#jalapenopopperscard {
+#JalapenoPopperscard {
     background-image: url(appetizersimgs/pic4.jpg);
 }
 
 #stuffedmushrooms,
-#stuffedmushroomscard{
+#StuffedMushroomscard{
     background-image: url(appetizersimgs/mushroom.jpeg);
 }
 
@@ -226,7 +226,7 @@ body {
 }
 
 .recipe-content-box {
-    margin-top: 20px;
+    margin-top: 0px;
     color: black;
     height: 550px;
     background-color: rgba(255, 255, 255, 0.4);
@@ -358,11 +358,11 @@ body {
     #CharcuterieBoard,
     #Sliders,
     #ShrimpCocktail,
-    #deviledeggscard,
-    #spinachartichokedipcard,
-    #chickenwingscard,
-    #jalapenopopperscard,
-    #stuffedmushroomscard,
+    #DeviledEggscard,
+    #SpinachArtichokeDipcard,
+    #ChickenWingscard,
+    #JalapenoPopperscard,
+    #StuffedMushroomscard,
     #Crostinicard,
     #CharcuterieBoardcard,
     #Sliderscard,
@@ -380,6 +380,7 @@ body {
         max-height: 80vh; 
         padding: 15px;
         border-radius: 20px;
+        overflow: hidden;
     }
 
     .recipe-content-box {
@@ -388,10 +389,9 @@ body {
         padding: 15px;
         border-radius: 20px;
         font-size: 14px;  
-        overflow-y: scroll; 
+        overflow-y: auto; 
     }
-
-    .recipe-content-box-Shrimp{
+ .recipe-content-box-Shrimp{
         margin-top: 20px;
         height: auto;  
         padding: 15px;

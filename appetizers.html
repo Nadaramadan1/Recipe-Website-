@@ -90,40 +90,40 @@
 	<h2 class="h2"> Our Recipes </h2>
 	<div class="recipes-container">
 		
-		<div class="recipes-card" id="deviledeggs" onclick="openCard(event, 'deviledeggscard')">
+		<div class="recipes-card" id="deviledeggs" onclick="openCard(event, 'DeviledEggscard')">
 			<h2>Deviled Eggs</h2>
 
 			<p>A classic creamy finger-food often topped with paprika or bacon.</p>
-			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'deviledeggscard')">View Recipes</a>
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'DeviledEggscard')">View Recipes</a>
 		</div>
 <!--  -->
-		<div class="recipes-card" id="spinachartichokedip" onclick="openCard(event, 'spinachartichokedipcard')">
+		<div class="recipes-card" id="spinachartichokedip" onclick="openCard(event, 'SpinachArtichokeDipcard')">
 			<h2>Spinach Artichoke Dip</h2>
 
 			<p>A warm cheesy and reliable crowd-pleaser often served with chips or bread.</p>
-			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'spinachartichokedipcard')">View Recipes</a>
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'SpinachArtichokeDipcard')">View Recipes</a>
 		</div>
 <!--  -->
-		<div class="recipes-card" id="chickenwings" onclick="openCard(event, 'chickenwingscard')">
+		<div class="recipes-card" id="chickenwings" onclick="openCard(event, 'ChickenWingscard')">
 			<h2>Chicken Wings</h2>
 
 			<p>A classic creamy finger-food often topped with paprika or bacon.</p>
-			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'chickenwingscard')">View Recipes</a>
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'ChickenWingscard')">View Recipes</a>
 		</div>
 <!--  -->
-		<div class="recipes-card" id="jalapenopoppers" onclick="openCard(event, 'jalapenopopperscard')">
+		<div class="recipes-card" id="jalapenopoppers" onclick="openCard(event, 'JalapenoPopperscard')">
 			<h2>Jalapeno Poppers</h2>
 
 			<p>Spicy, creamy and fried or baked cheese-filled peppers.</p>
-			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'jalapenopopperscard')">View Recipes</a>
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'JalapenoPopperscard')">View Recipes</a>
 		</div>
 
 		<!--  -->
-		<div class="recipes-card" id="stuffedmushrooms" onclick="openCard(event, 'stuffedmushroomscard')">
+		<div class="recipes-card" id="stuffedmushrooms" onclick="openCard(event, 'StuffedMushroomscard')">
 			<h2>Stuffed Mushrooms</h2>
 
 			<p>Bite-sized Savory mushroom caps filled with an herb and cheese breadcrumb mixture..</p>
-			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'stuffedmushroomscard')">View Recipes</a>
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'StuffedMushroomscard')">View Recipes</a>
 		</div>
 
 		<!--  -->
@@ -158,7 +158,7 @@
 	</div>
 
 <!-- Details cards -->
-	<div class="details-card" id="deviledeggscard">
+	<div class="details-card" id="DeviledEggscard">
 		<div class="recipe-content-box">
 			<h2 style="text-align: center;">Deviled Eggs</h2>
 
@@ -182,7 +182,7 @@
 		</div>
 	</div>
 
-	<div class="details-card" id="spinachartichokedipcard">
+	<div class="details-card" id="SpinachArtichokeDipcard">
 		<div class="recipe-content-box">
 			<h2 style="text-align: center;">Spinach Artichoke Dip</h2>
 
@@ -208,7 +208,7 @@
 		</div>
 	</div>
 
-	<div class="details-card" id="chickenwingscard">
+	<div class="details-card" id="ChickenWingscard">
 		<div class="recipe-content-box">
 			<h2 style="text-align: center;">Chicken Wings</h2>
 
@@ -232,7 +232,7 @@
 		</div>
 	</div>
 
-	<div class="details-card" id="jalapenopopperscard">
+	<div class="details-card" id="JalapenoPopperscard">
 		<div class="recipe-content-box">
 			<h2 style="text-align: center;">Jalapeno Poppers</h2>
 
@@ -255,7 +255,7 @@
 		</div>
 	</div>
 
-<div class="details-card" id="stuffedmushroomscard">
+<div class="details-card" id="StuffedMushroomscard">
 		<div class="recipe-content-box">
 			<h2 style="text-align: center;">Stuffed Mushrooms</h2>
 
@@ -378,13 +378,12 @@
                <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
 		</div>
 	</div>
-
 		
 
 	<script>
 		let currentCard = null;
 		function openCard(event, cardId){
-			if(event) 
+			if(event && event.stopPropagation) 
 				event.stopPropagation();
 
 			if(currentCard)
@@ -400,7 +399,7 @@
 
 		window.onclick = function(event){
 			if(currentCard && currentCard.style.display === "block"){
-				if(event.target !== currentCard && !currentCard.contains(event.target)){
+				if( !currentCard.contains(event.target)){
 					currentCard.style.display = "none";
 					currentCard = null;
 				}
@@ -449,6 +448,28 @@
                     }
            });
 
+
+			// هذا الكود يعمل فور تحميل الصفحة
+		window.addEventListener("load", function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    let recipeId = urlParams.get('id');
+
+    if (recipeId) {
+        // إزالة أي مسافات أو رموز غريبة قد تكون انتقلت في الرابط
+        recipeId = recipeId.trim(); 
+        
+		setTimeout(() => {
+            openCard(null, recipeId);
+
+			const element = document.getElementById(recipeId);
+			if (element) {
+				element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+			}
+        }, 100);
+       
+        
+    }
+});
 	</script>
 
 </body>
