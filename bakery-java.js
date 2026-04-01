@@ -53,7 +53,38 @@
                     }
                }
           }
-     
+
+          
+//============================search==========================================
+ window.addEventListener("DOMContentLoaded", () => {
+            const hashId = window.location.hash.substring(1);
+            const targetCard = document.querySelector(`.recipe-card[data-id="${hashId}"]`);
+
+            if (targetCard) {
+
+                //   hover effect الأول
+                targetCard.style.transform = "translateY(-20px)";
+                targetCard.style.transition = "all 0.3s ease";
+                targetCard.style.boxShadow = "0 5px 10px 5px rgb(0, 0, 0)";
+
+                const detailsId = targetCard.dataset.id + "-card";
+
+                //  بعد ما الـ hover يخلص افتحي الكارد
+                setTimeout(() => {
+                    openCard(null, detailsId);
+                }, 800);
+
+                // 🔄 رجوع الشكل الطبيعي
+                setTimeout(() => {
+                    targetCard.style.transform = "";
+                    targetCard.style.boxShadow = "";
+                }, 500);
+            }
+        });
+
+
+
+     //================================Go Back=========================================
           document.addEventListener("DOMContentLoaded", () => {
                     const backBtn = document.getElementById("backbutton");
 
@@ -71,3 +102,5 @@
                          };
                     }
            });
+
+           
