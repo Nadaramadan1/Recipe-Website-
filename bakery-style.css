@@ -169,9 +169,9 @@ body {
 }
 
 /* Category Images (Shared Background Settings) */
-#bread,
+#Bread,
 #Croissants,
-#cookies,
+#Cookies,
 #Donuts,
 #Macarons,
 #Cinnamon,
@@ -188,7 +188,7 @@ body {
 }
 
 /* Main Categories Backgrounds */
-#bread {
+#Bread {
     background-image: url(bakeryimages/Breads.jpeg);
 }
 
@@ -196,7 +196,7 @@ body {
     background-image: url(bakeryimages/Croissants.jpeg);
 }
 
-#cookies {
+#Cookies {
     background-image: url(bakeryimages/cookies.jpeg);
 }
 
@@ -428,9 +428,9 @@ h3 {
         height: fit-content;
     }
 
-    #bread,
+    #Bread,
     #Croissants,
-    #cookies,
+    #Cookies,
     #Donuts,
     #Macarons,
     #Cinnamon,

@@ -39,37 +39,6 @@
             </thead>
             <tbody id="recipeTableBody">
 
-
-                <!-- <tr>
-                    <td>1</td>
-                    <td><strong>Pasta</strong></td>
-                    <td>Main-course</td>
-                    <td class="actions-cell">
-                        <a href="recipe-details.html" class="btn-main btn-view">View</a>
-                        <a href="edit-recipe.html" class="btn-main btn-edit">Edit</a>
-                        <button class="btn-main btn-delete">Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td><strong>Cake</strong></td>
-                    <td>Dessert</td>
-                    <td class="actions-cell">
-                        <a href="recipe-details.html" class="btn-main btn-view">View</a>
-                        <a href="edit-recipe.html" class="btn-main btn-edit">Edit</a>
-                        <button class="btn-main btn-delete">Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td><strong>Salad</strong></td>
-                    <td>Appetizers</td>
-                    <td class="actions-cell">
-                        <a href="recipe-details.html" class="btn-main btn-view">View</a>
-                        <a href="edit-recipe.html" class="btn-main btn-edit">Edit</a>
-                        <button class="btn-main btn-delete">Delete</button>
-                    </td>
-                </tr> -->
             </tbody>
         </table>
     </div>
@@ -181,10 +150,6 @@
         tableBody.innerHTML = rowsHTML;
     }
 
-    // Global functions for the buttons
-    // function viewRecipe(id) {
-    //     window.location.href = `recipe-details.html?id=${id}`;
-    // }
 
     function editRecipe(id) {
         window.location.href = `edit-recipe.html?id=${id}`;
@@ -204,7 +169,7 @@
 
 
    function viewRecipe(id) {
-    // 1. البحث عن الوصفة في مصفوفة البيانات
+   
    const allRecipes = JSON.parse(localStorage.getItem('recipes')) || recipes;
     const recipe = allRecipes.find(r => r.id === id);
     
@@ -212,7 +177,7 @@
         console.error("Recipe not found ID:", id);
         return;
     }
-    // 2. قاموس الربط: (الاسم في Course : اسم الملف)
+   
     const categoryPages = {
         "appetizers": "appetizers.html",
         "dessert": "dessert.html",
@@ -240,12 +205,9 @@
     for (let key in categoryPages) {
         if (courseLower.includes(key)) {
             targetPage = categoryPages[key];
-            break; // نخرج من الحلقة فور إيجاد الصفحة
+            break; 
         }
     }
-
-    // 4. الانتقال للصفحة مع الـ ID
-    // window.location.href = `${targetPage}?id=${id}`;
     window.location.href = targetPage + "?id=" + id;
 }
 displayRecipes();

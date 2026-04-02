@@ -25,8 +25,9 @@
           function openCard(event, cardId) {
                // Prevent the click event from bubbling up to the 'window' object,
                // otherwise the window.onclick listener would immediately close the card we just opened.
-               if (event) event.stopPropagation();
-
+               if (event && event.stopPropagation) {
+                    event.stopPropagation();
+               }
 
                if (currentCard) {
                     currentCard.style.display = "none";
@@ -47,7 +48,7 @@
                // Check if the clicked element is NOT the card itself 
                // AND is NOT a child element inside the card
                if (currentCard && currentCard.style.display === "block") {
-                    if (event.target !== currentCard && !currentCard.contains(event.target)) {
+                    if (!currentCard.contains(event.target)) {
                          currentCard.style.display = "none";
                          currentCard = null;
                     }
@@ -103,4 +104,23 @@
                     }
            });
 
-           
+     //================================Admin Features=========================================
+//         	window.addEventListener("load", function() {
+//     const urlParams = new URLSearchParams(window.location.search);
+//     let recipeId = urlParams.get('id');
+
+//     if (recipeId) {
+//         // إزالة أي مسافات أو رموز غريبة قد تكون انتقلت في الرابط
+//         recipeId = recipeId.trim(); 
+        
+// 		setTimeout(() => {
+//             openCard(null, recipeId);
+
+// 			const element = document.getElementById(recipeId);
+// 			if (element) {
+// 				element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+// 			}
+//         }, 100);
+         
+//     }
+// });       
