@@ -89,15 +89,15 @@ let recipes = [
     { id: "cupcake", name: "Cupcake", ingredients: ["flour", "sugar", "butter", "eggs"], page: "dessert.html" },
 
     // Appetizers
-    { id: "deviled_eggs", name: "Deviled Eggs", ingredients: ["eggs", "mayonnaise", "mustard"], page: "appetizers.html" },
-    { id: "spinach_artichoke_dip", name: "Spinach Artichoke Dip", ingredients: ["spinach", "artichoke", "cream cheese", "sour cream"], page: "appetizers.html" },
-    { id: "chicken_wings", name: "Chicken Wings", ingredients: ["chicken wings", "hot sauce", "butter"], page: "appetizers.html" },
-    { id: "jalapeno_poppers", name: "Jalapeno Poppers", ingredients: ["jalapenos", "cheese", "bacon"], page: "appetizers.html" },
-    { id: "stuffed_mushrooms", name: "Stuffed Mushrooms", ingredients: ["mushrooms", "cheese", "breadcrumbs"], page: "appetizers.html" },
-    { id: "crostini", name: "Crostini", ingredients: ["bread", "toppings", "olive oil"], page: "appetizers.html" },
-    { id: "charcuterie_board", name: "Charcuterie Board", ingredients: ["meats", "cheese", "fruits", "nuts"], page: "appetizers.html" },
-    { id: "sliders", name: "Sliders", ingredients: ["mini buns", "beef patties", "lettuce", "cheese"], page: "appetizers.html" },
-    { id: "shrimp_cocktail", name: "Shrimp Cocktail", ingredients: ["shrimp", "cocktail sauce"], page: "appetizers.html" }
+    { id: "deviledeggs", name: "Deviled Eggs", ingredients: ["eggs", "mayonnaise", "mustard"], page: "appetizers.html" },
+    { id: "spinachartichokedip", name: "Spinach Artichoke Dip", ingredients: ["spinach", "artichoke", "cream cheese", "sour cream"], page: "appetizers.html" },
+    { id: "chickenwings", name: "Chicken Wings", ingredients: ["chicken wings", "hot sauce", "butter"], page: "appetizers.html" },
+    { id: "jalapenopoppers", name: "Jalapeno Poppers", ingredients: ["jalapenos", "cheese", "bacon"], page: "appetizers.html" },
+    { id: "stuffedmushrooms", name: "Stuffed Mushrooms", ingredients: ["mushrooms", "cheese", "breadcrumbs"], page: "appetizers.html" },
+    { id: "Crostini", name: "Crostini", ingredients: ["bread", "toppings", "olive oil"], page: "appetizers.html" },
+    { id: "CharcuterieBoard", name: "Charcuterie Board", ingredients: ["meats", "cheese", "fruits", "nuts"], page: "appetizers.html" },
+    { id: "Sliders", name: "Sliders", ingredients: ["mini buns", "beef patties", "lettuce", "cheese"], page: "appetizers.html" },
+    { id: "ShrimpCocktail", name: "Shrimp Cocktail", ingredients: ["shrimp", "cocktail sauce"], page: "appetizers.html" }
 ];
 
 function searchdata(mode) {
