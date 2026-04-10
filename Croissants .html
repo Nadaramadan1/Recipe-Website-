@@ -7,15 +7,16 @@
     <title>Croissant</title>
     <link rel="stylesheet" href="bakery-style.css" />
     <script src="bakery-java.js"></script>
+    <script src="search-js.js"></script>
     <style>
 
     </style>
 </head>
 
 <body>
-     <div id="navbar">
+    <div id="navbar">
         <nav class="main-nav">
-            <div class="logo">Yummy 🍲</div> 
+            <div class="logo">Yummy 🍲</div>
             <ul class="nav-links">
                 <li><button id="backbutton" type="button">Go Back</button></li>
                 <li><a href="home.html">Home</a></li>
@@ -25,7 +26,7 @@
                 <li><a href="add-recipe.html">Add Recipe</a></li>
                 <li><a href="login.html">Login</a></li>
                 <li><a href="signup.html">Sign Up</a></li>
-                
+
             </ul>
         </nav>
     </div>
@@ -45,21 +46,24 @@
 
 
     <div class="recipes-container">
-        <div class="recipe-card" id="ButterCroissant"  data-id="butter_croissant"onclick="openCard(event, 'ButterCroissantcard')">
+        <div class="recipe-card" id="ButterCroissant" data-id="ButterCroissant"
+            onclick="openCard(event, 'ButterCroissantcard')">
             <h2>Butter Croissant</h2>
             <p>A classic French delight with a rich, buttery flavor and a delicate, flaky texture.</p>
             <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'ButterCroissantcard')">View
                 Recipes</a>
         </div>
 
-        <div class="recipe-card" id="PainauChocolat" data-id="pain_au_chocolat"   onclick="openCard(event, 'PainauChocolatcard')">
+        <div class="recipe-card" id="PainauChocolat" data-id="pain_au_chocolat"
+            onclick="openCard(event, 'PainauChocolatcard')">
             <h2>Pain au Chocolat</h2>
             <p>Irresistible buttery layers filled with premium dark chocolate for a sweet morning treat.</p>
             <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'PainauChocolatcard')">View
                 Recipes</a>
         </div>
 
-        <div class="recipe-card" id="StrawberryDanish" data-id="strawberry_custard_danish" onclick="openCard(event, 'StrawberryDanishcard')">
+        <div class="recipe-card" id="StrawberryDanish" data-id="strawberry_custard_danish"
+            onclick="openCard(event, 'StrawberryDanishcard')">
             <h2>Strawberry Custard Danish</h2>
             <p>Sweet, creamy custard topped with fresh strawberries on a crispy pastry bed.</p>
             <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'StrawberryDanishcard')">View
@@ -69,7 +73,7 @@
 
     </div>
 
-    <div class="detials-card" id="ButterCroissantcard">
+    <div class="detials-card" id="ButterCroissant-card">
         <div class="recipe-content-box">
             <h2 style="text-align: center;">Classic Butter Croissant</h2>
             <h3>Ingredients</h3>
@@ -129,7 +133,7 @@
         </div>
     </div>
 
-  
+
 
 </body>
 

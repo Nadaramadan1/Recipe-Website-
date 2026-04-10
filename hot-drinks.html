@@ -6,6 +6,7 @@
     <title>Yummy -Hot drinks</title>
     <link rel="stylesheet" href="Style.css">
     <link rel="stylesheet" href="drinks.css">
+    <script src="search-js.js"></script>
 </head>
 
 <body>
@@ -155,29 +156,29 @@
 
         let currentCard = null;
 
-        function openCard(event, cardId){
-			if(event && event.stopPropagation) 
-				event.stopPropagation();
+        function openCard(event, cardId) {
+            if (event && event.stopPropagation)
+                event.stopPropagation();
 
-			if(currentCard)
-				currentCard.style.display = "none";
+            if (currentCard)
+                currentCard.style.display = "none";
 
-			const targetCard = document.getElementById(cardId);
+            const targetCard = document.getElementById(cardId);
 
-			if(targetCard){
-				targetCard.style.display = "block";
-				currentCard = targetCard;
-			}
-		}
+            if (targetCard) {
+                targetCard.style.display = "block";
+                currentCard = targetCard;
+            }
+        }
 
-		window.onclick = function(event){
-			if(currentCard && currentCard.style.display === "block"){
-				if( !currentCard.contains(event.target)){
-					currentCard.style.display = "none";
-					currentCard = null;
-				}
-			}
-		}
+        window.onclick = function (event) {
+            if (currentCard && currentCard.style.display === "block") {
+                if (!currentCard.contains(event.target)) {
+                    currentCard.style.display = "none";
+                    currentCard = null;
+                }
+            }
+        }
 
 
         window.addEventListener("DOMContentLoaded", () => {
@@ -206,26 +207,7 @@
             }
         });
 
-        window.addEventListener("load", function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    let recipeId = urlParams.get('id');
-
-    if (recipeId) {
-        // إزالة أي مسافات أو رموز غريبة قد تكون انتقلت في الرابط
-        recipeId = recipeId.trim(); 
-        
-		setTimeout(() => {
-            openCard(null, recipeId);
-
-			const element = document.getElementById(recipeId);
-			if (element) {
-				element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-			}
-        }, 100);
-       
-        
-    }
-});
+         
     </script>
 
 
