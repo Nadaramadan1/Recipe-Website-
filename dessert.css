@@ -109,27 +109,27 @@ body{
 }
 
 #tiramisu,
-#tiramisucard{
+#tiramisu-card{
     background-image: url(dessertimages/tiramisu.jpg);
 }
 #blackforest-cheesecake,
-#blackforest-cheesecakecard{
+#blackforest-cheesecake-card{
     background-image: url(dessertimages/blackforest.jpg);
 }
 #brownie,
-#browniecard{
+#brownie-card{
     background-image: url(dessertimages/brownie.jpg);
 }
 #strawberryCake,
-#strawberryCakecard{
+#strawberryCake-card{
     background-image: url(dessertimages/strawberrycake.jpg);
 }
 #CrèmeCaramel,
-#CrèmeCaramelcard{
+#CrèmeCaramel-card{
     background-image: url(dessertimages/creamecramel.jpg);
 }
 #cupcake,
-#cupcakecard{
+#cupcake-card{
     background-image: url(dessertimages/cupcake.jpg);
 }
 

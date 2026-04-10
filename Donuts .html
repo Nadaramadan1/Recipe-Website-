@@ -6,7 +6,7 @@
     <meta charset=" UTF-8" />
     <title>Donuts</title>
     <link rel="stylesheet" href="bakery-style.css" />
-    <script src="bakery-java.js"></script>
+    <script src="bakery-java.js"></script><script src="search-js.js"></script>
     <style>
 
     </style>
@@ -45,29 +45,29 @@
 
     <div class="recipes-container">
 
-        <div class="recipe-card" id="GlazedDonuts" data-id="glazed_donuts" onclick="openCard(event, 'GlazedDonutscard')">
+        <div class="recipe-card" id="GlazedDonuts" data-id="GlazedDonuts" onclick="openCard(event, 'GlazedDonuts-card')">
             <h2>Glazed Donuts 🍩</h2>
             <p>Soft, fluffy, and melt-in-your-mouth homemade donuts with a silk glaze.</p>
-            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'GlazedDonutscard')">View
+            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'GlazedDonuts-card')">View
                 Recipes</a>
         </div>
 
-        <div class="recipe-card" id="ChocolateDonuts" data-id="chocolate_donuts" onclick="openCard(event, 'ChocolateDonutscard')">
+        <div class="recipe-card" id="ChocolateDonuts" data-id="ChocolateDonuts" onclick="openCard(event, 'ChocolateDonuts-card')">
             <h2>Chocolate Donuts 🍫</h2>
             <p>Rich chocolate frosting on a golden fried donut, the perfect sweet treat.</p>
-            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'ChocolateDonutscard')">View
+            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'ChocolateDonuts-card')">View
                 Recipes</a>
         </div>
 
-        <div class="recipe-card" id="FilledDonuts" data-id="filled_donuts" onclick="openCard(event, 'FilledDonutscard')">
+        <div class="recipe-card" id="FilledDonuts" data-id="FilledDonuts" onclick="openCard(event, 'FilledDonuts-card')">
             <h2>Filled Donuts 🍓</h2>
             <p>Deliciously sugar-coated donuts filled with creamy custard or fresh jam.</p>
-            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'FilledDonutscard')">View Recipes</a>
+            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'FilledDonuts-card')">View Recipes</a>
         </div>
 
     </div>
 
-    <div class="detials-card" id="GlazedDonutscard">
+    <div class="detials-card" id="GlazedDonuts-card">
         <div class="recipe-content-box">
             <h2 style="text-align: center;">Classic Glazed Donuts</h2>
             <h3>Ingredients</h3>
@@ -87,7 +87,7 @@
         </div>
     </div>
 
-    <div class="detials-card" id="ChocolateDonutscard">
+    <div class="detials-card" id="ChocolateDonuts-card">
         <div class="recipe-content-box">
             <h2 style="text-align: center;">Rich Chocolate Donuts</h2>
             <h3>Ingredients</h3>
@@ -107,7 +107,7 @@
         </div>
     </div>
 
-    <div class="detials-card" id="FilledDonutscard">
+    <div class="detials-card" id="FilledDonuts-card">
         <div class="recipe-content-box">
             <h2 style="text-align: center;">Creamy Filled Donuts</h2>
             <h3>Ingredients</h3>

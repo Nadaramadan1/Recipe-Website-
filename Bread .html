@@ -6,7 +6,7 @@
      <meta charset=" UTF-8" />
      <link rel="stylesheet" href="bakery-style.css" />
      <title>bread</title>
-<script src="bakery-java.js"></script>
+<script src="bakery-java.js"></script><script src="search-js.js"></script>
      <style>
 
 
@@ -45,31 +45,31 @@
 
      <div class="recipes-container">
          
-          <div class="recipe-card" id="Baguette" data-id="classic_french_baguette"onclick="openCard(event, 'Baguettecard')">
+          <div class="recipe-card" id="Baguette" data-id="Baguette" onclick="openCard(event, 'Baguette-card')">
                <h2>Classic French Baguette 🥖</h2>
 
                <p>A golden, crackly crust with a light, airy interior—the authentic taste of France in every bite</p>
-               <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'Baguettecard')">View Recipes</a>
+               <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'Baguette-card')">View Recipes</a>
           </div>
 
-          <div class="recipe-card" id="Sourdough" data-id="natural_sourdough" onclick="openCard(event, 'Sourdoughcard')">
+          <div class="recipe-card" id="Sourdough" data-id="Sourdough" onclick="openCard(event, 'Sourdough-card')">
                <h2>Natural Sourdough🥐</h2>
                <p>Slow-fermented for deep flavor and a chewy texture, crafted with natural wild yeast for a healthy,
                     artisan loaf.</p>
-               <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'Sourdoughcard')">View Recipes</a>
+               <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'Sourdough-card')">View Recipes</a>
           </div>
 
-          <div class="recipe-card" id="Focaccia" data-id="herbed_focaccia" onclick="openCard(event, 'Focacciacard')">
+          <div class="recipe-card" id="Focaccia" data-id="Focaccia" onclick="openCard(event, 'Focaccia-card')">
                <h2>Herbed Focaccia 🍪🤎</h2>
                <p>Soft Italian flatbread infused with premium olive oil and aromatic herbs, perfect for dipping or
                     sharing..</p>
-               <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'Focacciacard')">View Recipes</a>
+               <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'Focaccia-card')">View Recipes</a>
           </div>
 
      </div>
 
 
-     <div class="detials-card" id="Baguettecard">
+     <div class="detials-card" id="Baguette-card">
           <div class="recipe-content-box">
                <h2 style="text-align: center;">Baguette</h2>
 
@@ -98,7 +98,7 @@
           </div>
      </div>
 
-     <div class="detials-card" id="Sourdoughcard">
+     <div class="detials-card" id="Sourdough-card">
           <div class="recipe-content-box">
                <h2 style="text-align: center;">Natural Sourdough</h2>
 
@@ -125,7 +125,7 @@
           </div>
      </div>
 
-     <div class="detials-card" id="Focacciacard">
+     <div class="detials-card" id="Focaccia-card">
           <div class="recipe-content-box">
                <h2 style="text-align: center;">Herbed Focaccia</h2>
 

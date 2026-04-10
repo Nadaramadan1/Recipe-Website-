@@ -51,53 +51,53 @@ let recipes = [
     { id: "zucchini_noodles", name: "Zucchini Noodles (Zoodles)", ingredients: ["zucchini", "olive oil", "garlic", "parmesan"], page: "Healthy/Gluten-Free" },
 
     // Bakery - Bread
-    { id: "classic_french_baguette", name: "Classic French Baguette", ingredients: ["flour", "water", "yeast", "salt"], page: "Bread .html" },
-    { id: "natural_sourdough", name: "Natural Sourdough", ingredients: ["flour", "water", "sourdough starter", "salt"], page: "Bread .html" },
-    { id: "herbed_focaccia", name: "Herbed Focaccia", ingredients: ["flour", "water", "yeast", "olive oil", "herbs"], page: "Bread .html" },
+    { id: "Baguette", name: "Classic French Baguette", ingredients: ["flour", "water", "yeast", "salt"], page: "Bread .html" },
+    { id: "Sourdough", name: "Natural Sourdough", ingredients: ["flour", "water", "sourdough starter", "salt"], page: "Bread .html" },
+    { id: "Focaccia", name: "Herbed Focaccia", ingredients: ["flour", "water", "yeast", "olive oil", "herbs"], page: "Bread .html" },
 
     // Bakery - Croissant
     { id: "ButterCroissant", name: "Butter Croissant", ingredients: ["flour", "butter", "yeast", "sugar"], page: "Croissants .html" },
-    { id: "pain_au_chocolat", name: "Pain au Chocolat", ingredients: ["flour", "butter", "chocolate", "yeast"], page: "Croissants .html" },
-    { id: "strawberry_custard_danish", name: "Strawberry Custard Danish", ingredients: ["flour", "butter", "custard", "strawberries"], page: "Croissants .html" },
+    { id: "PainauChocolat", name: "Pain au Chocolat", ingredients: ["flour", "butter", "chocolate", "yeast"], page: "Croissants .html" },
+    { id: "StrawberryDanish", name: "Strawberry Custard Danish", ingredients: ["flour", "butter", "custard", "strawberries"], page: "Croissants .html" },
 
     // Bakery - Cinnamon
-    { id: "classic_cinnamon_rolls", name: "Classic Cinnamon Rolls", ingredients: ["flour", "butter", "cinnamon", "sugar"], page: "Cinnamon.html" },
-    { id: "pecan_cinnamon_rolls", name: "Pecan Cinnamon Rolls", ingredients: ["flour", "butter", "cinnamon", "sugar", "pecans"], page: "Cinnamon.html" },
-    { id: "chocolate_cinnamon_rolls", name: "Chocolate Cinnamon Rolls", ingredients: ["flour", "butter", "cinnamon", "sugar", "chocolate"], page: "Cinnamon.html" },
+    { id: "ClassicCinnamon", name: "Classic Cinnamon Rolls", ingredients: ["flour", "butter", "cinnamon", "sugar"], page: "Cinnamon.html" },
+    { id: "PecanCinnamon", name: "Pecan Cinnamon Rolls", ingredients: ["flour", "butter", "cinnamon", "sugar", "pecans"], page: "Cinnamon.html" },
+    { id: "ChocolateCinnamon", name: "Chocolate Cinnamon Rolls", ingredients: ["flour", "butter", "cinnamon", "sugar", "chocolate"], page: "Cinnamon.html" },
 
     // Bakery - Cookies
-    { id: "chocolate_cookies", name: "Chocolate Cookies", ingredients: ["flour", "butter", "sugar", "chocolate"], page: "cookies.html" },
-    { id: "butter_shortbread_biscuits", name: "Butter Shortbread Biscuits", ingredients: ["flour", "butter", "sugar"], page: "cookies.html" },
-    { id: "oatmeal_raisin_cookies", name: "Oatmeal Raisin Cookies", ingredients: ["oats", "flour", "butter", "sugar", "raisins"], page: "cookies.html" },
+    { id: "ChocolateCookies", name: "Chocolate Cookies", ingredients: ["flour", "butter", "sugar", "chocolate"], page: "cookies.html" },
+    { id: "ButterBiscuits", name: "Butter Shortbread Biscuits", ingredients: ["flour", "butter", "sugar"], page: "cookies.html" },
+    { id: "OatmealCookies", name: "Oatmeal Raisin Cookies", ingredients: ["oats", "flour", "butter", "sugar", "raisins"], page: "cookies.html" },
 
     // Bakery - Donuts
-    { id: "glazed_donuts", name: "Glazed Donuts", ingredients: ["flour", "sugar", "yeast", "oil"], page: "Donuts.html" },
-    { id: "chocolate_donuts", name: "Chocolate Donuts", ingredients: ["flour", "sugar", "cocoa powder", "yeast", "oil"], page: "Donuts.html" },
-    { id: "filled_donuts", name: "Filled Donuts", ingredients: ["flour", "sugar", "yeast", "jam", "oil"], page: "Donuts.html" },
+    { id: "GlazedDonuts", name: "Glazed Donuts", ingredients: ["flour", "sugar", "yeast", "oil"], page: "Donuts .html" },
+    { id: "ChocolateDonuts", name: "Chocolate Donuts", ingredients: ["flour", "sugar", "cocoa powder", "yeast", "oil"], page: "Donuts .html" },
+    { id: "FilledDonuts", name: "Filled Donuts", ingredients: ["flour", "sugar", "yeast", "jam", "oil"], page: "Donuts .html" },
 
     // Bakery - Macarons
-    { id: "vanilla_macarons", name: "Vanilla Macarons", ingredients: ["almond flour", "sugar", "egg whites", "vanilla"], page: "macrons.html" },
-    { id: "pistachio_macarons", name: "Pistachio Macarons", ingredients: ["almond flour", "sugar", "egg whites", "pistachio"], page: "macrons.html" },
-    { id: "raspberry_macarons", name: "Raspberry Macarons", ingredients: ["almond flour", "sugar", "egg whites", "raspberry"], page: "macrons.html" },
+    { id: "VanillaMacarons", name: "Vanilla Macarons", ingredients: ["almond flour", "sugar", "egg whites", "vanilla"], page: "macrons.html" },
+    { id: "PistachioMacarons", name: "Pistachio Macarons", ingredients: ["almond flour", "sugar", "egg whites", "pistachio"], page: "macrons.html" },
+    { id: "RaspberryMacrons", name: "Raspberry Macarons", ingredients: ["almond flour", "sugar", "egg whites", "raspberry"], page: "macrons.html" },
 
     // Dessert
-    { id: "tiramisu", name: "Tiramisu", ingredients: ["mascarpone", "coffee", "ladyfingers", "cocoa powder"], page: "Dessert" },
-    { id: "black_forest_cheesecake", name: "Black Forest Cheesecake", ingredients: ["chocolate", "cherries", "cream cheese"], page: "Dessert" },
-    { id: "brownies", name: "Brownies", ingredients: ["chocolate", "flour", "butter", "sugar", "eggs"], page: "Dessert" },
-    { id: "strawberry_cake", name: "Strawberry Cake", ingredients: ["flour", "sugar", "butter", "strawberries", "eggs"], page: "Dessert" },
-    { id: "creme_caramel", name: "Crème Caramel", ingredients: ["milk", "sugar", "eggs", "vanilla"], page: "Dessert" },
-    { id: "cupcake", name: "Cupcake", ingredients: ["flour", "sugar", "butter", "eggs"], page: "Dessert" },
+    { id: "tiramisu", name: "Tiramisu", ingredients: ["mascarpone", "coffee", "ladyfingers", "cocoa powder"], page: "dessert.html" },
+    { id: "blackforest-cheesecake", name: "Black Forest Cheesecake", ingredients: ["chocolate", "cherries", "cream cheese"], page: "dessert.html" },
+    { id: "brownie", name: "Brownies", ingredients: ["chocolate", "flour", "butter", "sugar", "eggs"], page: "dessert.html" },
+    { id: "strawberryCake", name: "Strawberry Cake", ingredients: ["flour", "sugar", "butter", "strawberries", "eggs"], page: "dessert.html" },
+    { id: "CrèmeCaramel", name: "Crème Caramel", ingredients: ["milk", "sugar", "eggs", "vanilla"], page: "dessert.html" },
+    { id: "cupcake", name: "Cupcake", ingredients: ["flour", "sugar", "butter", "eggs"], page: "dessert.html" },
 
     // Appetizers
-    { id: "deviled_eggs", name: "Deviled Eggs", ingredients: ["eggs", "mayonnaise", "mustard"], page: "appetizers" },
-    { id: "spinach_artichoke_dip", name: "Spinach Artichoke Dip", ingredients: ["spinach", "artichoke", "cream cheese", "sour cream"], page: "appetizers" },
-    { id: "chicken_wings", name: "Chicken Wings", ingredients: ["chicken wings", "hot sauce", "butter"], page: "appetizers" },
-    { id: "jalapeno_poppers", name: "Jalapeno Poppers", ingredients: ["jalapenos", "cheese", "bacon"], page: "appetizers" },
-    { id: "stuffed_mushrooms", name: "Stuffed Mushrooms", ingredients: ["mushrooms", "cheese", "breadcrumbs"], page: "appetizers" },
-    { id: "crostini", name: "Crostini", ingredients: ["bread", "toppings", "olive oil"], page: "appetizers" },
-    { id: "charcuterie_board", name: "Charcuterie Board", ingredients: ["meats", "cheese", "fruits", "nuts"], page: "appetizers" },
-    { id: "sliders", name: "Sliders", ingredients: ["mini buns", "beef patties", "lettuce", "cheese"], page: "appetizers" },
-    { id: "shrimp_cocktail", name: "Shrimp Cocktail", ingredients: ["shrimp", "cocktail sauce"], page: "appetizers" }
+    { id: "deviled_eggs", name: "Deviled Eggs", ingredients: ["eggs", "mayonnaise", "mustard"], page: "appetizers.html" },
+    { id: "spinach_artichoke_dip", name: "Spinach Artichoke Dip", ingredients: ["spinach", "artichoke", "cream cheese", "sour cream"], page: "appetizers.html" },
+    { id: "chicken_wings", name: "Chicken Wings", ingredients: ["chicken wings", "hot sauce", "butter"], page: "appetizers.html" },
+    { id: "jalapeno_poppers", name: "Jalapeno Poppers", ingredients: ["jalapenos", "cheese", "bacon"], page: "appetizers.html" },
+    { id: "stuffed_mushrooms", name: "Stuffed Mushrooms", ingredients: ["mushrooms", "cheese", "breadcrumbs"], page: "appetizers.html" },
+    { id: "crostini", name: "Crostini", ingredients: ["bread", "toppings", "olive oil"], page: "appetizers.html" },
+    { id: "charcuterie_board", name: "Charcuterie Board", ingredients: ["meats", "cheese", "fruits", "nuts"], page: "appetizers.html" },
+    { id: "sliders", name: "Sliders", ingredients: ["mini buns", "beef patties", "lettuce", "cheese"], page: "appetizers.html" },
+    { id: "shrimp_cocktail", name: "Shrimp Cocktail", ingredients: ["shrimp", "cocktail sauce"], page: "appetizers.html" }
 ];
 
 function searchdata(mode) {

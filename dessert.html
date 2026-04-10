@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Yummy-Desserts</title>
-    <link rel="stylesheet" href="dessert.css"/>
+    <link rel="stylesheet" href="dessert.css"/><script src="search-js.js"></script>
 
     <style>
         #navbar{
@@ -81,52 +81,52 @@
     <div class="recipes-container">
 
 
-      <div class="recipe-card" id="tiramisu" onclick="openCard(event,'tiramisucard')">
+      <div class="recipe-card" id="tiramisu"  data-id="tiramisu"onclick="openCard(event,'tiramisu-card')">
          <h2>Tiramisu</h2>
          <p>Tiramisu is a creamy Italian dessert with coffee-soaked ladyfingers.</p>
-         <a href="javascript:void(0)" class="btn-main" onclick="openCard(event,'tiramisucard')">View Recipe</a>
+         <a href="javascript:void(0)" class="btn-main" onclick="openCard(event,'tiramisu-card')">View Recipe</a>
       </div>
 
 
-      <div class="recipe-card" id="blackforest-cheesecake" onclick="openCard(event,'blackforest-cheesecakecard')">
+      <div class="recipe-card" id="blackforest-cheesecake" data-id="blackforest-cheesecake" onclick="openCard(event,'blackforest-cheesecake-card')">
           <h2>Black Forest Cheesecake</h2>
           <p>Black Forest Cheesecake is a creamy chocolate cheesecake with cherry layers on top.</p>
-          <a href="javascript:void(0)" class="btn-main" onclick="openCard(event,'blackforest-cheesecakecard')">View Recipe</a>
+          <a href="javascript:void(0)" class="btn-main" onclick="openCard(event,'blackforest-cheesecake-card')">View Recipe</a>
       </div>
 
 
-      <div class="recipe-card" id="brownie" onclick="openCard(event,'browniecard')">
+      <div class="recipe-card" id="brownie" data-id="brownie"  onclick="openCard(event,'brownie-card')">
          <h2>Brownies</h2>
          <p>Brownies are rich, chocolatey squares with a soft, fudgy center. Perfect for chocolate lovers!</p>
-         <a href="javascript:void(0)" class="btn-main" onclick="openCard(event,'browniecard')">View Recipe</a>
+         <a href="javascript:void(0)" class="btn-main" onclick="openCard(event,'brownie-card')">View Recipe</a>
       </div> 
 
 
-      <div class="recipe-card" id="strawberryCake" onclick="openCard(event,'strawberryCakecard')">
+      <div class="recipe-card" id="strawberryCake" data-id="strawberryCake" onclick="openCard(event,'strawberryCake-card')">
          <h2>strawberry Cake</h2>
          <p>Strawberry Cake is a soft, sweet cake layered with fresh strawberries and cream.</p>
-         <a href="javascript:void(0)" class="btn-main" onclick="openCard(event,'strawberryCakecard')">View Recipe</a>
+         <a href="javascript:void(0)" class="btn-main" onclick="openCard(event,'strawberryCake-card')">View Recipe</a>
       </div>
  
       
-      <div class="recipe-card" id="CrèmeCaramel" onclick="openCard(event,'CrèmeCaramelcard')">
+      <div class="recipe-card" id="CrèmeCaramel" data-id="CrèmeCaramel" onclick="openCard(event,'CrèmeCaramel-card')">
          <h2>Crème Caramel</h2>
          <p>Crème Caramel is a smooth custard dessert topped with soft caramel.</p>
-         <a href="javascript:void(0)" class="btn-main" onclick="openCard(event,'CrèmeCaramelcard')">View Recipe</a>
+         <a href="javascript:void(0)" class="btn-main" onclick="openCard(event,'CrèmeCaramel-card')">View Recipe</a>
       </div>
       
       
 
-      <div class="recipe-card" id="cupcake" onclick="openCard(event,'cupcakecard')">
+      <div class="recipe-card" id="cupcake" data-id="cupcake" onclick="openCard(event,'cupcake-card')">
          <h2>Cupcake</h2>
          <p>Cupcakes are small, sweet cakes,topped with frosting or sprinkles.</p>
-         <a href="javascript:void(0)" class="btn-main" onclick="openCard(event,'cupcakecard')">View Recipe</a>
+         <a href="javascript:void(0)" class="btn-main" onclick="openCard(event,'cupcake-card')">View Recipe</a>
       </div>    
 
     </div>
 
 
-    <div class="details-card" id="tiramisucard">
+    <div class="details-card" id="tiramisu-card">
 		<div class="recipe-content-box">
 			<h2 style="text-align: center;">Tiramisu</h2>
             <h3>Ingredients</h3>
@@ -149,7 +149,7 @@
 
 
 
-    <div class="details-card" id="blackforest-cheesecakecard">
+    <div class="details-card" id="blackforest-cheesecake-card">
 		<div class="recipe-content-box">
 			<h2 style="text-align: center;">Black Forest Cheesecake</h2>
             <h3>Ingredients</h3>
@@ -172,7 +172,7 @@
 
 
 
-   <div class="details-card" id="browniecard">
+   <div class="details-card" id="brownie-card">
 		<div class="recipe-content-box">
 			<h2 style="text-align: center;">Brownies</h2>
             <h3>Ingredients</h3>
@@ -195,7 +195,7 @@
 
 
 
-   <div class="details-card" id="strawberryCakecard">
+   <div class="details-card" id="strawberryCake-card">
 		<div class="recipe-content-box">
 			<h2 style="text-align: center;">Strawberry Cake</h2>
             <h3>Ingredients</h3>
@@ -218,7 +218,7 @@
 
 
 
-    <div class="details-card" id="CrèmeCaramelcard">
+    <div class="details-card" id="CrèmeCaramel-card">
 		<div class="recipe-content-box">
 			<h2 style="text-align: center;">Crème Caramel</h2>
             <h3>Ingredients</h3>
@@ -241,7 +241,7 @@
     </div>
 
 
-     <div class="details-card" id="cupcakecard">
+     <div class="details-card" id="cupcake-card">
 	 	<div class="recipe-content-box">
 			<h2 style="text-align: center;">Cup Cake</h2>
             <h3>Ingredients</h3>

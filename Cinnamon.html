@@ -6,7 +6,7 @@
     <meta charset=" UTF-8" />
     <title>Cinnamon</title>
     <link rel="stylesheet" href="bakery-style.css" />
-    <script src="bakery-java.js"></script>
+    <script src="bakery-java.js"></script><script src="search-js.js"></script>
     <style>
 
     </style>
@@ -45,27 +45,27 @@
 
    <div class="recipes-container">
 
-        <div class="recipe-card" id="ClassicCinnamon" data-id="classic_cinnamon_rolls" onclick="openCard(event, 'ClassicCinnamoncard')">
+        <div class="recipe-card" id="ClassicCinnamon" data-id="ClassicCinnamon" onclick="openCard(event, 'ClassicCinnamon-card')">
             <h2>Classic Cinnamon Rolls </h2>
             <p> gooey rolls filled with aromatic cinnamon sugar and topped with cream cheese.</p>
-            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'ClassicCinnamoncard')">View Recipes</a>
+            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'ClassicCinnamon-card')">View Recipes</a>
         </div>
 
-        <div class="recipe-card" id="PecanCinnamon" data-id=PecanCinnamon" onclick="openCard(event, 'PecanCinnamoncard')">
+        <div class="recipe-card" id="PecanCinnamon" data-id="PecanCinnamon" onclick="openCard(event, 'PecanCinnamon-card')">
             <h2>Pecan Cinnamon Rolls </h2>
             <p>Decadent rolls topped with toasted pecans and a rich, buttery caramel drizzle.</p>
-            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'PecanCinnamoncard')">View Recipes</a>
+            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'PecanCinnamon-card')">View Recipes</a>
         </div>
 
-        <div class="recipe-card" id="ChocolateCinnamon" data-id="chocolate_cinnamon_rolls" onclick="openCard(event, 'ChocolateCinnamoncard')">
+        <div class="recipe-card" id="ChocolateCinnamon" data-id="ChocolateCinnamon" onclick="openCard(event, 'ChocolateCinnamon-card')">
             <h2>Chocolate Cinnamon Rolls </h2>
             <p>A delicious twist with rich chocolate swirls inside every soft, buttery layer.</p>
-            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'ChocolateCinnamoncard')">View Recipes</a>
+            <a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'ChocolateCinnamon-card')">View Recipes</a>
         </div>
 
     </div>
 
-    <div class="detials-card" id="ClassicCinnamoncard">
+    <div class="detials-card" id="ClassicCinnamon-card">
         <div class="recipe-content-box">
             <h2 style="text-align: center;">Classic Cinnamon Rolls</h2>
             <h3>Ingredients</h3>
@@ -86,7 +86,7 @@
     </div>
 
 
-    <div class="detials-card" id="PecanCinnamoncard">
+    <div class="detials-card" id="PecanCinnamon-card">
         <div class="recipe-content-box">
             <h2 style="text-align: center;">Pecan Cinnamon Rolls</h2>
             <h3>Ingredients</h3>
@@ -107,7 +107,7 @@
     </div>
 
 
-    <div class="detials-card" id="ChocolateCinnamoncard">
+    <div class="detials-card" id="ChocolateCinnamon-card">
         <div class="recipe-content-box">
             <h2 style="text-align: center;">Chocolate Cinnamon Rolls</h2>
             <h3>Ingredients</h3>
