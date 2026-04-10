@@ -224,24 +224,16 @@ h2 {
   height: 400px;
   background: #faf8f5;
   border-radius: 40px;
-  /* box-shadow: 0px 0px 10px black; */
   background-repeat: no-repeat;
+
   color: white;
   text-shadow: 0px 0px 10px black;
+
   display: flex;
   flex-direction: column;
-  /* يخلي العناصر تحت بعض */
-  align-items: center;
-  /* يوسّطهم */
-  justify-content: space-between;
-  /* يخلي الزرار ينزل تحت */
 
   padding: 25px;
-  text-align: right;
-
-
 }
-
 .details-card {
   display: none;
 
@@ -290,11 +282,18 @@ h2 {
 
 
 
+ 
 .btn-main {
-  margin-top: 10px;
-  /* مسافة فوق الزرار */
-  display: inline-block;
+  margin-top: auto; /* دي أهم حركة 👈 */
+
+  align-self: center; /* في النص */
+  border-radius: 10px;
+
+  padding: 8px 20px;
+  border: none;
+  cursor: pointer;
 }
+ 
 
 html {
   scroll-behavior: smooth;
