@@ -166,13 +166,22 @@
 
     <script>
 
-        function changecolor(element) {
-            element.style.color = "red";
+      //==============================  heart button ==================================
+       function changecolor(element) {
+			const isRed = element.style.color === "red";
 
-            element.title = "Added Successfully! ✨";
+			if (isRed) {
+				element.style.color = "white";
 
-        }
+ 
+			}
+			else {
+				element.style.color = "red";
+				element.title = "Added Successfully! ✨";
+			}
+		}
 
+// =================================== OPEN CARD==============================================
         let currentCard = null;
 
         function openCard(event, cardId) {
@@ -200,7 +209,7 @@
                 }
             }
         }
-       
+        
          //================================Admin Features=========================================      
 
 // هذا الكود يعمل فور تحميل الصفحة

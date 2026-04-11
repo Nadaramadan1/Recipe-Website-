@@ -85,26 +85,28 @@
   font-size: 1.2rem;
   margin-bottom: 20px;
 }
+
 /* go back */
-	.big-arrow-btn {
-    font-size: 24px;        
-    font-weight: bold;       
-    background: none;        
-    border: none;           
-    cursor: pointer;        
-    color: rgb(234, 221, 212);
-    transition: transform 0.2s; 
-    padding: 0 10px;
-    display: flex;
-    align-items: center;
+.big-arrow-btn {
+  font-size: 24px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgb(234, 221, 212);
+  transition: transform 0.2s;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
 }
 
 
 .big-arrow-btn:hover {
-        transform: translateY(-1.5px);
+  transform: translateY(-1.5px);
 
-    text-shadow: 0 0 15px rgb(255, 255, 255, 0.5);   
-    transform: scale(1.2);   }
+  text-shadow: 0 0 15px rgb(255, 255, 255, 0.5);
+  transform: scale(1.2);
+}
 
 
 /* صور مختلفة لكل صفحة */
@@ -228,6 +230,11 @@ h2 {
   background-image: url(drinksimages/Hibiscustea.jpeg);
 }
 
+#recipesss {
+  color: var(--primary-color);
+}
+
+
 
 .recipe-content-box {
   margin-top: 20px;
@@ -244,7 +251,7 @@ h2 {
   background: #faf8f5;
   border-radius: 40px;
   background-repeat: no-repeat;
-
+  border: 0ch;
   color: white;
   text-shadow: 0px 0px 10px black;
 
@@ -252,7 +259,9 @@ h2 {
   flex-direction: column;
 
   padding: 25px;
+  
 }
+
 .details-card {
   display: none;
 
@@ -294,25 +303,46 @@ h2 {
 .details-card span {
   cursor: pointer;
   font-size: 18px;
-  color: red;
+  color:white;
   width: 90%;
   height: auto;
 }
 
 
 
- 
-.btn-main {
-  margin-top: auto; /* دي أهم حركة 👈 */
 
-  align-self: center; /* في النص */
+.btn-main {
+  margin-top: auto;
+  /* دي أهم حركة 👈 */
+
+  align-self: center;
+  /* في النص */
   border-radius: 10px;
 
   padding: 8px 20px;
   border: none;
   cursor: pointer;
 }
- 
+
+.heart {
+  margin-top: auto;
+
+  align-self: center;
+
+  border-radius: 10px;
+  padding: 8px 20px;
+  border: none;
+  cursor: pointer;
+
+  
+  background-color: var(--primary-color);
+  text-align: center;
+
+  width: fit-content; /* 🔥 ده الحل */
+}
+.heart:hover {
+  transform: translateY(-5px);
+}
 
 html {
   scroll-behavior: smooth;
