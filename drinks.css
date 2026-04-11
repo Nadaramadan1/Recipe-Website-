@@ -325,20 +325,21 @@ h2 {
 }
 
 .heart {
-  margin-top: auto;
-
-  align-self: center;
-
-  border-radius: 10px;
-  padding: 8px 20px;
-  border: none;
-  cursor: pointer;
+    margin-top: 100px;
+    align-self: center;
+    width: 10px;  
+    padding: 5px 10px; 
+    color: white;
+    cursor: pointer;
+    
+    border-radius: 20px;
+    display: inline-block;
 
   
   background-color: var(--primary-color);
   text-align: center;
 
-  width: fit-content; /* 🔥 ده الحل */
+  
 }
 .heart:hover {
   transform: translateY(-5px);
