@@ -95,34 +95,43 @@
 
 	<h2 class="h2"> Our Recipes </h2>
 	<div class="recipes-container">
-
+ 
 		<div class="recipe-card" id="deviledeggs" data-id="deviledeggs" onclick="openCard(event, 'deviledeggs-card')">
+ 
+		
+		 
 			<h2>Deviled Eggs</h2>
 
 			<p>A classic creamy finger-food often topped with paprika or bacon.</p>
 			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'deviledeggs-card')">View Recipes</a>
 		</div>
-		<!--  -->
+ 
 		<div class="recipe-card" id="spinachartichokedip" data-id="spinachartichokedip"
 			onclick="openCard(event, 'spinachartichokedip-card')">
+ 
+ 
 			<h2>Spinach Artichoke Dip</h2>
 
 			<p>A warm cheesy and reliable crowd-pleaser often served with chips or bread.</p>
 			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'spinachartichokedip-card')">View
 				Recipes</a>
 		</div>
+ 
 		<!--  -->
 		<div class="recipe-card" id="chickenwings" data-id="chickenwings"
 			onclick="openCard(event, 'chickenwings-card')">
+ 
 			<h2>Chicken Wings</h2>
 
 			<p>A classic creamy finger-food often topped with paprika or bacon.</p>
 			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'chickenwings')">View
 				Recipes</a>
 		</div>
+ 
 		<!--  -->
 		<div class="recipe-card" id="jalapenopoppers" data-id="jalapenopoppers"
 			onclick="openCard(event, 'jalapenopoppers-card')">
+ 
 			<h2>Jalapeno Poppers</h2>
 
 			<p>Spicy, creamy and fried or baked cheese-filled peppers.</p>
@@ -131,8 +140,10 @@
 		</div>
 
 		<!--  -->
+ 
 		<div class="recipe-card" id="stuffedmushrooms" data-id="stuffedmushrooms"
 			onclick="openCard(event, 'stuffedmushrooms-card')">
+ 
 			<h2>Stuffed Mushrooms</h2>
 
 			<p>Bite-sized Savory mushroom caps filled with an herb and cheese breadcrumb mixture..</p>
@@ -456,6 +467,7 @@
 			if (isRed) {
 				element.style.color = "white";
 
+ 
 			}
 			else {
 				element.style.color = "red";
@@ -505,6 +517,124 @@
 
 			}
 		});
+ 
+
+
+           document.addEventListener("DOMContentLoaded", () => {
+                    const backBtn = document.getElementById("backbutton");
+
+                    if (backBtn) {
+                         backBtn.onclick = function(event) {
+                              event.preventDefault();
+
+                              // Check if there is actually a page to go back to in this tab
+                              if (window.history.length > 1) {
+                                   window.history.back();
+                              } else {
+                         
+                                   window.location.href = "home.html"; 
+                              }
+                         };
+                    }
+           });
+
+
+			// هذا الكود يعمل فور تحميل الصفحة
+// 		window.addEventListener("load", function() {
+//     const urlParams = new URLSearchParams(window.location.search);
+//     let recipeId = urlParams.get('id');
+
+//     if (recipeId) {
+//         // إزالة أي مسافات أو رموز غريبة قد تكون انتقلت في الرابط
+//         recipeId = recipeId.trim(); 
+        
+// 		setTimeout(() => {
+//             openCard(null, recipeId);
+
+// 			const element = document.getElementById(recipeId);
+// 			if (element) {
+// 				element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+// 			}
+//         }, 100);
+       
+        
+//     }
+// });
+
+// ********************************************
+// // هذا الكود يعمل فور تحميل الصفحة
+// window.addEventListener("load", function() {
+//     // Get the recipe ID from the URL hash (everything after #)
+//     let recipeId = window.location.hash.substring(1);
+    
+//     // Remove 'card' suffix if present (clean the ID)
+//     if (recipeId && recipeId.endsWith('card')) {
+//         recipeId = recipeId.replace('card', '');
+//     }
+
+//     if (recipeId) {
+//         setTimeout(() => {
+//             // Open the details card by adding 'card' suffix
+//             openCard(null, recipeId + 'card');
+            
+//             // Find the recipe card element and scroll to it
+//             const element = document.getElementById(recipeId);
+//             if (element) {
+//                 element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+//             }
+//         }, 100);
+//     }
+// });
+
+// هذا الكود يعمل فور تحميل الصفحة
+window.addEventListener("load", function() {
+    // Get the recipe ID from the URL hash (everything after #)
+    let recipeId = window.location.hash.substring(1);
+    
+    // Remove 'card' suffix if present (clean the ID)
+    if (recipeId && recipeId.endsWith('card')) {
+        recipeId = recipeId.replace('card', '');
+    }
+
+    if (recipeId) {
+        // Add a longer delay to ensure the DOM is fully ready
+        setTimeout(function() {
+            // Try to open the details card
+            const detailsCardId = recipeId + 'card';
+            const detailsCard = document.getElementById(detailsCardId);
+            
+            if (detailsCard) {
+                // Close any open card first
+                if (currentCard) {
+                    currentCard.style.display = "none";
+                }
+                
+                // Open the card
+                detailsCard.style.display = "block";
+                currentCard = detailsCard;
+                
+                // Find and scroll to the recipe card
+                const element = document.getElementById(recipeId);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Add highlight effect
+                    element.style.transition = "all 0.3s ease";
+                    element.style.transform = "translateY(-10px)";
+                    element.style.boxShadow = "0 5px 15px rgba(0,0,0,0.3)";
+                    
+                    setTimeout(function() {
+                        element.style.transform = "";
+                        element.style.boxShadow = "";
+                    }, 1000);
+                }
+            } else {
+                console.log("Card not found:", detailsCardId);
+            }
+        }, 500); // Increased delay to 500ms
+    }
+});
+ 
 	</script>
 
 </body>

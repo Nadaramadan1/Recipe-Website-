@@ -58,7 +58,7 @@ let recipes = [
     // Bakery - Croissant
     { id: "ButterCroissant", name: "Butter Croissant", ingredients: ["flour", "butter", "yeast", "sugar"], page: "Croissants .html" },
     { id: "PainauChocolat", name: "Pain au Chocolat", ingredients: ["flour", "butter", "chocolate", "yeast"], page: "Croissants .html" },
-    { id: "StrawberryDanish", name: "Strawberry Custard Danish", ingredients: ["flour", "butter", "custard", "strawberries"], page: "Croissants .html" },
+    { id: "StrawberryDanish", name: "Strawberry Custard Danish", ingredients: ["flour", "butter", "custard", "strawberries"], page: "Croissants.html" },
 
     // Bakery - Cinnamon
     { id: "ClassicCinnamon", name: "Classic Cinnamon Rolls", ingredients: ["flour", "butter", "cinnamon", "sugar"], page: "Cinnamon.html" },
@@ -89,11 +89,13 @@ let recipes = [
     { id: "cupcake", name: "Cupcake", ingredients: ["flour", "sugar", "butter", "eggs"], page: "dessert.html" },
 
     // Appetizers
+ 
     { id: "deviledeggs", name: "Deviled Eggs", ingredients: ["eggs", "mayonnaise", "mustard"], page: "appetizers.html"},
     { id: "spinachartichokedip", name: "Spinach Artichoke Dip", ingredients: ["spinach", "artichoke", "cream cheese", "sour cream"], page: "appetizers.html" },
     { id: "chickenwings", name: "Chicken Wings", ingredients: ["chicken wings", "hot sauce", "butter"], page: "appetizers.html" },
     { id: "jalapenopoppers", name: "Jalapeno Poppers", ingredients: ["jalapenos", "cheese", "bacon"], page: "appetizers.html" },
     { id: "stuffedmushrooms", name: "Stuffed Mushrooms", ingredients: ["mushrooms", "cheese", "breadcrumbs"], page: "appetizers.html" },
+ 
     { id: "Crostini", name: "Crostini", ingredients: ["bread", "toppings", "olive oil"], page: "appetizers.html" },
     { id: "CharcuterieBoard", name: "Charcuterie Board", ingredients: ["meats", "cheese", "fruits", "nuts"], page: "appetizers.html" },
     { id: "Sliders", name: "Sliders", ingredients: ["mini buns", "beef patties", "lettuce", "cheese"], page: "appetizers.html" },

@@ -132,11 +132,11 @@ body {
 }
 
 /*Images*/
-#deviledeggs,
-#spinachartichokedip,
-#chickenwings,
-#jalapenopoppers,
-#stuffedmushrooms,
+#DeviledEggs,
+#SpinachArtichokeDip,
+#ChickenWings,
+#JalapenoPoppers,
+#StuffedMushrooms,
 #Crostini,
 #CharcuterieBoard,
 #Sliders,
@@ -157,18 +157,23 @@ body {
     text-shadow: 0px 0px 3px black;
 }
 
+ 
 #deviledeggs,
 #deviledeggs-card
+ 
  {
     background-image: url(appetizersimgs/pic1.jpg);
 }
 
+ 
 #spinachartichokedip,
 #spinachartichokedip-card
+ 
  {
     background-image: url(appetizersimgs/pic2.jpg);
 }
 
+ 
 #chickenwings,
 #chickenwings-card{
     background-image: url(appetizersimgs/pic3.jpg);
@@ -181,6 +186,7 @@ body {
 
 #stuffedmushrooms,
 #stuffedmushrooms-card{
+ 
     background-image: url(appetizersimgs/mushroom.jpeg);
 }
 
@@ -349,11 +355,11 @@ body {
         height: fit-content;
     }
 
-    #deviledeggs,
-    #spinachartichokedip,
-    #chickenwings,
-    #jalapenopoppers,
-    #stuffedmushrooms,
+    #DeviledEggs,
+    #SpinachArtichokeDip,
+    #ChickenWings,
+    #JalapenoPoppers,
+    #StuffedMushrooms,
     #Crostini,
     #CharcuterieBoard,
     #Sliders,
