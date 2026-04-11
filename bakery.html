@@ -5,20 +5,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Baked Recipes • Bakery</title>
-  <script src="bakery-java.js"></script>
+    <script src="java.js"></script>
     <link rel="stylesheet" href="bakery-style.css" />
-    
-    <style></style>
+
+    <style>
+    </style>
 
 </head>
 
 <body>
 
- <div id="navbar">
+    <div id="navbar">
         <nav class="main-nav">
-            <div class="logo">Yummy </div> 
+            <div class="logo">Yummy </div>
             <ul class="nav-links">
-                <li><button id="backbutton" type="button">Go Back</button></li>
+                <button id="backbutton" class="arrow-btn" type="button" aria-label="Go Back">
+                    &#8592;
+                </button>
                 <li><a href="home.html">Home</a></li>
                 <li><a href="search.html">Search</a></li>
                 <li><a href="favorites.html">Favorites</a></li>
@@ -26,7 +29,7 @@
                 <li><a href="add-recipe.html">Add Recipe</a></li>
                 <li><a href="login.html">Login</a></li>
                 <li><a href="signup.html">Sign Up</a></li>
-               
+
             </ul>
         </nav>
     </div>
@@ -55,32 +58,40 @@
         <div class="recipe-card" id="Croissants">
             <h2>Croissants & Danish🥐</h2>
             <p>Buttery, flaky layers of perfection that melt in your mouth with every bite.</p>
-            <a href="Croissants .html" class="btn-main" >View Recipes</a>
+            <a href="Croissants .html" class="btn-main">View Recipes</a>
         </div>
 
         <div class="recipe-card" id="Cookies">
             <h2>Cookies & Biscuits 🍪🤎</h2>
             <p>The perfect crunch and sweetness to brighten up your coffee break.</p>
-            <a href="cookies.html" class="btn-main " >View Recipes</a>
+            <a href="cookies.html" class="btn-main ">View Recipes</a>
         </div>
         <div class="recipe-card" id="Macarons">
             <h2> French Macarons🍥 </h2>
             <p>Delicate French macarons with a smooth shell and a creamy, flavorful filling.</p>
-            <a href="macrons.html" class="btn-main" >View Recipes</a>
+            <a href="macrons.html" class="btn-main">View Recipes</a>
         </div>
         <div class="recipe-card" id="Donuts">
             <h2> Donuts 🍩✨</h2>
             <p>Fluffy, golden-fried donuts topped with creative glazes and colorful sprinkles.</p>
-            <a href="Donuts .html" class="btn-main" >View Recipes</a>
+            <a href="Donuts .html" class="btn-main">View Recipes</a>
         </div>
         <div class="recipe-card" id="Cinnamon">
             <h2> Cinnamon Rolls 🌀 🍩✨</h2>
             <p>Soft, gooey rolls filled with aromatic cinnamon and topped with our secret cream cheese frosting..</p>
-            <a href="Cinnamon.html" class="btn-main" >View Recipes</a>
+            <a href="Cinnamon.html" class="btn-main">View Recipes</a>
         </div>
     </section>
 
+    <script>
+        function onClick() {
+            window.scrollBy({
+                top: 740,
 
-   
+                behavior: 'smooth'
+            });
+        }
+    </script>
+
 
 </body>

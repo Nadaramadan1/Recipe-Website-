@@ -40,24 +40,27 @@
     display: inline-block;
 }
 
-.nav-links a:hover,
-.nav-links li button#backbutton:hover{
-    transform: translateY(-1.5px);
 
-    text-shadow: 0 0 15px rgb(255, 255, 255, 0.5);
+  .arrow-btn {
+    font-size: 24px;        
+  
+    background-color: var(--dark-walnut);
+    background: none;        
+    border: none;            
+    cursor: pointer;        
+     color: rgb(234, 221, 212);           
+    transition: transform 0.2s; 
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
 }
 
- .nav-links li button#backbutton {
-	border: none;
-    font-family: inherit;
-    font-size: inherit;
-    cursor: pointer;
-    outline: none;		    
-    color: white; 			    
-    text-decoration: none;
-    transition: 0.3s;			    		   
-    background-color: var(--dark-walnut);			    
-	}
+
+.arrow-btn:hover {
+     transform: translateY(-1.5px);
+
+    text-shadow: 0 0 15px rgb(255, 255, 255, 0.5);   
+}
 
 /* General Reset & Base Styles */
 * {

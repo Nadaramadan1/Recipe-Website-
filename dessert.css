@@ -8,6 +8,7 @@ body{
     line-height: 1.6;
     color:#333333;
 }
+
 .main{
     background-image:url("dessertimages/background.jpg");
      height: 630px;
@@ -45,6 +46,29 @@ body{
 .main a:hover{
    transform: translateY(-5px);
 }
+
+/* go back link */
+  .arrow-btn {
+    font-size: 24px;        
+  
+    background-color: var(--dark-walnut);
+    background: none;        
+    border: none;            
+    cursor: pointer;        
+     color: rgb(234, 221, 212);           
+    transition: transform 0.2s; 
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+
+.arrow-btn:hover {
+     transform: translateY(-1.5px);
+
+    text-shadow: 0 0 15px rgb(255, 255, 255, 0.5);   
+}
+
 .recipes-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

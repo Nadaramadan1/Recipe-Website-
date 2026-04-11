@@ -1,12 +1,6 @@
 
-        function onClick() {
-            window.scrollBy({
-                top: 740,
-                
-                behavior: 'smooth'
-            });
-        }
-
+        
+//==============================  heart button ===================================================
          function changecolor(element) {
           if( element.style.color == "red"){
                 element.style.color = "white";
@@ -19,7 +13,7 @@
           }
           }
 
-
+// =================================== OPEN CARD==============================================
           let currentCard = null;
 
           function openCard(event, cardId) {
@@ -76,6 +70,21 @@
                          };
                     }
            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
      //================================Admin Features=========================================      
 // window.addEventListener("load", function() {
