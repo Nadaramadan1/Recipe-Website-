@@ -45,10 +45,10 @@ let recipes = [
     { id: "quinoa_salad", name: "Quinoa Salad", ingredients: ["quinoa", "vegetables", "olive oil", "lemon juice"], page: "maindish/Vegetarian" },
 
     // Healthy
-    { id: "grilled_salmon_avocado", name: "Grilled Salmon & Avocado", ingredients: ["salmon", "avocado", "olive oil", "lemon"], page: "Healthy/Keto" },
-    { id: "quinoa_buddha_bowl", name: "Quinoa Buddha Bowl", ingredients: ["quinoa", "vegetables", "chickpeas", "olive oil"], page: "Healthy/Vegan" },
-    { id: "lemon_herb_chicken", name: "Lemon Herb Chicken", ingredients: ["chicken", "lemon", "herbs", "olive oil"], page: "Healthy/Protein" },
-    { id: "zucchini_noodles", name: "Zucchini Noodles (Zoodles)", ingredients: ["zucchini", "olive oil", "garlic", "parmesan"], page: "Healthy/Gluten-Free" },
+    { id: "grilled_salmon_avocado", name: "Grilled Salmon & Avocado", ingredients: ["salmon", "avocado", "olive oil", "lemon"], page: "Healthy Food.html" },
+    { id: "quinoa_buddha_bowl", name: "Quinoa Buddha Bowl", ingredients: ["quinoa", "vegetables", "chickpeas", "olive oil"], page: "Healthy Food.html" },
+    { id: "lemon_herb_chicken", name: "Lemon Herb Chicken", ingredients: ["chicken", "lemon", "herbs", "olive oil"], page: "Healthy Food.html" },
+    { id: "zucchini_noodles", name: "Zucchini Noodles (Zoodles)", ingredients: ["zucchini", "olive oil", "garlic", "parmesan"], page: "Healthy Food.html" },
 
     // Bakery - Bread
     { id: "Baguette", name: "Classic French Baguette", ingredients: ["flour", "water", "yeast", "salt"], page: "Bread .html" },

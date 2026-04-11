@@ -33,6 +33,7 @@
                     <option value="Main-course">Main-course</option>
                     <option value="Dessert">Dessert</option>
                     <option value="Appetizers">Appetizers</option>
+                    <option value="Healthy">Healthy Food</option>
                 </select>
             </div>
             
@@ -41,7 +42,7 @@
                 <textarea id="recipeIngredients" class="form-input" placeholder="List ingredients here..."></textarea>
             </div>
 
-            <button type="submit" class="btn-main">Save Recipe</button>
+            <button type="submit" id="saveBtn" class="btn-main">Save Recipe</button>
         </form>
     </div>
 </div>
@@ -50,15 +51,20 @@
     document.getElementById('addRecipeForm').onsubmit = function(e) {
         e.preventDefault();
         
+        // Prevent multiple clicks
+        const saveBtn = document.getElementById('saveBtn');
+        saveBtn.disabled = true;
+        saveBtn.innerText = "Saving...";
+
         // 1. Get existing recipes
         let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
         
         // 2. Build the new recipe object with ingredients
         const newRecipe = {
-            id: Date.now(),
+            id: Date.now().toString(), // Using string for consistency
             name: document.getElementById('recipeName').value,
             course: document.getElementById('recipeCourse').value,
-            ingredients: document.getElementById('recipeIngredients').value // Added this
+            ingredients: document.getElementById('recipeIngredients').value
         };
 
         // 3. Save to localStorage
