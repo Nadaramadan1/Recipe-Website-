@@ -97,11 +97,11 @@
             { id: "CrèmeCaramelcard", name: "Crème Caramel 🍮", course: "Dessert" },
             { id: "cupcakecard", name: "Cupcake 🧁", course: "Dessert" },
 
-            { id: "deviledeggscard", name: "Deviled Eggs", course: "appetizers" },
-            { id: "spinachartichokedipcard", name: "Spinach Artichoke Dip", course: "appetizers" },
-            { id: "chickenwingscard", name: "Chicken Wings", course: "appetizers" },
-            { id: "jalapenopopperscard", name: "Jalapeno Poppers", course: "appetizers" },
-            { id: "stuffedmushroomscard", name: "Stuffed Mushrooms", course: "appetizers" },
+            { id: "DeviledEggscard", name: "Deviled Eggs", course: "appetizers" },
+            { id: "SpinachArtichokeDipcard", name: "Spinach Artichoke Dip", course: "appetizers" },
+            { id: "ChickenWingscard", name: "Chicken Wings", course: "appetizers" },
+            { id: "JalapenoPopperscard", name: "Jalapeno Poppers", course: "appetizers" },
+            { id: "StuffedMushroomscard", name: "Stuffed Mushrooms", course: "appetizers" },
             { id: "Crostinicard", name: "Crostini", course: "appetizers" },
             { id: "CharcuterieBoardcard", name: "Charcuterie Board", course: "appetizers" },
             { id: "Sliderscard", name: "Sliders", course: "appetizers" },
@@ -187,11 +187,11 @@
         "maindish/fastfood": "fastfood.html",
         "maindish/seafood": "seafood.html",
         "maindish/Vegetarian": "Vegetarian.html",
-        "Bakery/Bread": "Bread.html",
-        "Bakery/Croissant": "Croissants.html",
-        "Bakery/Cinnamon": "Cinnamons.html",
+        "Bakery/Bread": "Bread .html",
+        "Bakery/Croissant": "Croissants .html",
+        "Bakery/Cinnamon": "Cinnamon.html",
         "Bakery/Cookies": "cookies.html",
-        "Bakery/Donuts": "Donuts.html",
+        "Bakery/Donuts": "Donuts .html",
         "Bakery/Macarons": "macrons.html",
         "Drinks/coffee": "coffee.html",
         "Drinks/fresh juices& smoothie": "juices.html",
@@ -203,12 +203,12 @@
     let targetPage = "home.html"; // صفحة افتراضية في حال لم نجد تطابقاً
     const courseLower = recipe.course.toLowerCase();    
     for (let key in categoryPages) {
-        if (courseLower.includes(key)) {
+        if (courseLower.includes(key.toLowerCase())) {
             targetPage = categoryPages[key];
             break; 
         }
     }
-    window.location.href = targetPage + "?id=" + id;
+    window.location.href = targetPage + "#" + id;
 }
 displayRecipes();
     </script>

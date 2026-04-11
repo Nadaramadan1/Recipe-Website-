@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="appetizers.css">
+	<script src="search-js.js"></script>
 	<title>Appetizers</title>
 
 	<style>
@@ -90,28 +91,28 @@
 	<h2 class="h2"> Our Recipes </h2>
 	<div class="recipes-container">
 		
-		<div class="recipes-card" id="deviledeggs" onclick="openCard(event, 'DeviledEggscard')">
+		<div class="recipes-card" id="DeviledEggs" onclick="openCard(event, 'DeviledEggscard')">
 			<h2>Deviled Eggs</h2>
 
 			<p>A classic creamy finger-food often topped with paprika or bacon.</p>
 			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'DeviledEggscard')">View Recipes</a>
 		</div>
 <!--  -->
-		<div class="recipes-card" id="spinachartichokedip" onclick="openCard(event, 'SpinachArtichokeDipcard')">
+		<div class="recipes-card" id="SpinachArtichokeDip" onclick="openCard(event, 'SpinachArtichokeDipcard')">
 			<h2>Spinach Artichoke Dip</h2>
 
 			<p>A warm cheesy and reliable crowd-pleaser often served with chips or bread.</p>
 			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'SpinachArtichokeDipcard')">View Recipes</a>
 		</div>
 <!--  -->
-		<div class="recipes-card" id="chickenwings" onclick="openCard(event, 'ChickenWingscard')">
+		<div class="recipes-card" id="ChickenWings" onclick="openCard(event, 'ChickenWingscard')">
 			<h2>Chicken Wings</h2>
 
 			<p>A classic creamy finger-food often topped with paprika or bacon.</p>
 			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'ChickenWingscard')">View Recipes</a>
 		</div>
 <!--  -->
-		<div class="recipes-card" id="jalapenopoppers" onclick="openCard(event, 'JalapenoPopperscard')">
+		<div class="recipes-card" id="JalapenoPoppers" onclick="openCard(event, 'JalapenoPopperscard')">
 			<h2>Jalapeno Poppers</h2>
 
 			<p>Spicy, creamy and fried or baked cheese-filled peppers.</p>
@@ -119,7 +120,7 @@
 		</div>
 
 		<!--  -->
-		<div class="recipes-card" id="stuffedmushrooms" onclick="openCard(event, 'StuffedMushroomscard')">
+		<div class="recipes-card" id="StuffedMushrooms" onclick="openCard(event, 'StuffedMushroomscard')">
 			<h2>Stuffed Mushrooms</h2>
 
 			<p>Bite-sized Savory mushroom caps filled with an herb and cheese breadcrumb mixture..</p>
@@ -450,24 +451,98 @@
 
 
 			// هذا الكود يعمل فور تحميل الصفحة
-		window.addEventListener("load", function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    let recipeId = urlParams.get('id');
+// 		window.addEventListener("load", function() {
+//     const urlParams = new URLSearchParams(window.location.search);
+//     let recipeId = urlParams.get('id');
 
-    if (recipeId) {
-        // إزالة أي مسافات أو رموز غريبة قد تكون انتقلت في الرابط
-        recipeId = recipeId.trim(); 
+//     if (recipeId) {
+//         // إزالة أي مسافات أو رموز غريبة قد تكون انتقلت في الرابط
+//         recipeId = recipeId.trim(); 
         
-		setTimeout(() => {
-            openCard(null, recipeId);
+// 		setTimeout(() => {
+//             openCard(null, recipeId);
 
-			const element = document.getElementById(recipeId);
-			if (element) {
-				element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-			}
-        }, 100);
+// 			const element = document.getElementById(recipeId);
+// 			if (element) {
+// 				element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+// 			}
+//         }, 100);
        
         
+//     }
+// });
+
+// ********************************************
+// // هذا الكود يعمل فور تحميل الصفحة
+// window.addEventListener("load", function() {
+//     // Get the recipe ID from the URL hash (everything after #)
+//     let recipeId = window.location.hash.substring(1);
+    
+//     // Remove 'card' suffix if present (clean the ID)
+//     if (recipeId && recipeId.endsWith('card')) {
+//         recipeId = recipeId.replace('card', '');
+//     }
+
+//     if (recipeId) {
+//         setTimeout(() => {
+//             // Open the details card by adding 'card' suffix
+//             openCard(null, recipeId + 'card');
+            
+//             // Find the recipe card element and scroll to it
+//             const element = document.getElementById(recipeId);
+//             if (element) {
+//                 element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+//             }
+//         }, 100);
+//     }
+// });
+
+// هذا الكود يعمل فور تحميل الصفحة
+window.addEventListener("load", function() {
+    // Get the recipe ID from the URL hash (everything after #)
+    let recipeId = window.location.hash.substring(1);
+    
+    // Remove 'card' suffix if present (clean the ID)
+    if (recipeId && recipeId.endsWith('card')) {
+        recipeId = recipeId.replace('card', '');
+    }
+
+    if (recipeId) {
+        // Add a longer delay to ensure the DOM is fully ready
+        setTimeout(function() {
+            // Try to open the details card
+            const detailsCardId = recipeId + 'card';
+            const detailsCard = document.getElementById(detailsCardId);
+            
+            if (detailsCard) {
+                // Close any open card first
+                if (currentCard) {
+                    currentCard.style.display = "none";
+                }
+                
+                // Open the card
+                detailsCard.style.display = "block";
+                currentCard = detailsCard;
+                
+                // Find and scroll to the recipe card
+                const element = document.getElementById(recipeId);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Add highlight effect
+                    element.style.transition = "all 0.3s ease";
+                    element.style.transform = "translateY(-10px)";
+                    element.style.boxShadow = "0 5px 15px rgba(0,0,0,0.3)";
+                    
+                    setTimeout(function() {
+                        element.style.transform = "";
+                        element.style.boxShadow = "";
+                    }, 1000);
+                }
+            } else {
+                console.log("Card not found:", detailsCardId);
+            }
+        }, 500); // Increased delay to 500ms
     }
 });
 	</script>
