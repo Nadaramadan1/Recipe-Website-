@@ -71,75 +71,7 @@
                     }
            });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     //================================Admin Features=========================================      
-// window.addEventListener("load", function() {
-//     // Get the recipe ID from the URL hash (everything after #)
-//     let recipeId = window.location.hash.substring(1);
-    
-//     // Remove 'card' suffix if present (clean the ID)
-//     if (recipeId && recipeId.endsWith('card')) {
-//         recipeId = recipeId.replace('card', '');
-//     }
-//     if (recipeId && recipeId.endsWith('-card')) {
-//         recipeId = recipeId.replace('-card', '');
-//     }
-
-//     if (recipeId) {
-//         // Add a longer delay to ensure the DOM is fully ready
-//         setTimeout(function() {
-//             // Try to open the details card
-//             const detailsCardId = recipeId + 'card';
-//             const detailsCard = document.getElementById(detailsCardId);
-            
-//             if (detailsCard) {
-//                 // Close any open card first
-//                 if (currentCard) {
-//                     currentCard.style.display = "none";
-//                 }
-                
-//                 // Open the card
-//                 detailsCard.style.display = "block";
-//                 currentCard = detailsCard;
-                
-//                 // Find and scroll to the recipe card
-//                 const element = document.getElementById(recipeId);
-//                 if (element) {
-//                     element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    
-//                     // Add highlight effect
-//                     element.style.transition = "all 0.3s ease";
-//                     element.style.transform = "translateY(-10px)";
-//                     element.style.boxShadow = "0 5px 15px rgba(0,0,0,0.3)";
-                    
-//                     setTimeout(function() {
-//                         element.style.transform = "";
-//                         element.style.boxShadow = "";
-//                     }, 1000);
-//                 }
-//             } else {
-//                 console.log("Card not found:", detailsCardId);
-//             }
-//         }, 500); // Increased delay to 500ms
-//     }
-// });
-
-
-// ************************************************************
+ //================================Admin Features=========================================      
 
 // هذا الكود يعمل فور تحميل الصفحة
 window.addEventListener("load", function() {

@@ -436,6 +436,8 @@
 
 
 	<script>
+		
+// =================================== OPEN CARD==============================================
 		let currentCard = null;
 		function openCard(event, cardId) {
 			if (event && event.stopPropagation)
@@ -469,6 +471,7 @@
 			});
 		}
 
+//==============================  heart button ==================================
 
 		function changecolor(element) {
 			const isRed = element.style.color === "red";
@@ -485,7 +488,7 @@
 		}
 
 
-
+//================================Go Back=========================================
 		document.addEventListener("DOMContentLoaded", () => {
 			const backBtn = document.getElementById("backbutton");
 
@@ -527,73 +530,7 @@
 			}
 		});
  
-
-
-           document.addEventListener("DOMContentLoaded", () => {
-                    const backBtn = document.getElementById("backbutton");
-
-                    if (backBtn) {
-                         backBtn.onclick = function(event) {
-                              event.preventDefault();
-
-                              // Check if there is actually a page to go back to in this tab
-                              if (window.history.length > 1) {
-                                   window.history.back();
-                              } else {
-                         
-                                   window.location.href = "home.html"; 
-                              }
-                         };
-                    }
-           });
-
-
-			// هذا الكود يعمل فور تحميل الصفحة
-// 		window.addEventListener("load", function() {
-//     const urlParams = new URLSearchParams(window.location.search);
-//     let recipeId = urlParams.get('id');
-
-//     if (recipeId) {
-//         // إزالة أي مسافات أو رموز غريبة قد تكون انتقلت في الرابط
-//         recipeId = recipeId.trim(); 
-        
-// 		setTimeout(() => {
-//             openCard(null, recipeId);
-
-// 			const element = document.getElementById(recipeId);
-// 			if (element) {
-// 				element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-// 			}
-//         }, 100);
-       
-        
-//     }
-// });
-
-// ********************************************
-// // هذا الكود يعمل فور تحميل الصفحة
-// window.addEventListener("load", function() {
-//     // Get the recipe ID from the URL hash (everything after #)
-//     let recipeId = window.location.hash.substring(1);
-    
-//     // Remove 'card' suffix if present (clean the ID)
-//     if (recipeId && recipeId.endsWith('card')) {
-//         recipeId = recipeId.replace('card', '');
-//     }
-
-//     if (recipeId) {
-//         setTimeout(() => {
-//             // Open the details card by adding 'card' suffix
-//             openCard(null, recipeId + 'card');
-            
-//             // Find the recipe card element and scroll to it
-//             const element = document.getElementById(recipeId);
-//             if (element) {
-//                 element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-//             }
-//         }, 100);
-//     }
-// });
+ //================================Admin Features=========================================      
 
 // هذا الكود يعمل فور تحميل الصفحة
 window.addEventListener("load", function() {

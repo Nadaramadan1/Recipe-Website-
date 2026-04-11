@@ -165,19 +165,50 @@
     }
 
     
+// ********************* The View Function *************************************
+// Helper function to clean ID (remove 'card' suffix)
+function cleanRecipeId(id) {
+    if (!id) return id;
+    // Remove 'card' suffix if present
+    if (id.toLowerCase().endsWith('card')) {
+        return id.substring(0, id.length - 4);
+    }
+    return id;
+}
+
+function viewRecipe(id) {
+    console.log("Original ID received:", id);
     
-
-
-   function viewRecipe(id) {
-   
-   const allRecipes = JSON.parse(localStorage.getItem('recipes')) || recipes;
-    const recipe = allRecipes.find(r => r.id === id);
+    // Clean the ID (remove 'card' suffix)
+    let cleanId = cleanRecipeId(id);
+    console.log("Cleaned ID:", cleanId);
+    
+    // Get all recipes from localStorage or use the default array
+    let allRecipes = JSON.parse(localStorage.getItem('recipes'));
+    
+    // If no recipes in localStorage, use the recipes array from this page
+    if (!allRecipes || allRecipes.length === 0) {
+        allRecipes = recipes;
+    }
+    
+    // Find the recipe using the CLEANED ID
+    const recipe = allRecipes.find(r => {
+        let recipeId = r.id;
+        // Also clean the stored recipe ID for comparison
+        if (recipeId && recipeId.toLowerCase().endsWith('card')) {
+            recipeId = recipeId.substring(0, recipeId.length - 4);
+        }
+        return recipeId === cleanId;
+    });
     
     if (!recipe) {
-        console.error("Recipe not found ID:", id);
+        console.error("Recipe not found ID:", cleanId);
+        alert("Recipe not found! Please refresh the page and try again.");
         return;
     }
-   
+    
+    console.log("Found recipe:", recipe.name, "Course:", recipe.course);
+    
     const categoryPages = {
         "appetizers": "appetizers.html",
         "dessert": "dessert.html",
@@ -198,9 +229,7 @@
         "Drinks/Hot drinks": "hot-drinks.html"
     };
 
-    // 3. استخراج اسم الصفحة بناءً على الـ Course
-    // سنبحث عن أول كلمة مطابقة في الـ course الخاص بالوصفة
-    let targetPage = "home.html"; // صفحة افتراضية في حال لم نجد تطابقاً
+    let targetPage = "home.html";
     const courseLower = recipe.course.toLowerCase();    
     for (let key in categoryPages) {
         if (courseLower.includes(key.toLowerCase())) {
@@ -208,9 +237,15 @@
             break; 
         }
     }
-    window.location.href = targetPage + "#" + id;
+    
+    // Use the CLEAN ID for the URL hash
+    const finalUrl = targetPage + "#" + cleanId;
+    console.log("Redirecting to:", finalUrl);
+    window.location.href = finalUrl;
 }
+
 displayRecipes();
+
     </script>
 
 
