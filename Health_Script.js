@@ -1,66 +1,62 @@
-// Health_Script.js
-
-// --- Initial Section Rendering ---
-// This listener handles the basic filtering when the page first loads
+// --- Page Initialization ---
+// Consolidates all setup logic into one listener to ensure correct execution order
 document.addEventListener('DOMContentLoaded', () => {
     const tabBtns = document.querySelectorAll('.tab-btn');
-    const recipeCards = document.querySelectorAll('.recipe-card');
-
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            tabBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const selectedDiet = btn.getAttribute('data-diet');
-
-            recipeCards.forEach(card => {
-                if (selectedDiet === 'all' || card.classList.contains(selectedDiet)) {
-                    card.style.display = 'flex';
-                    
-                    card.style.animation = 'fadeIn 0.5s ease forwards';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    });
-});
-
-
-
-
-
-function showNoResults(count) {
-    let msg = document.getElementById('no-results');
-    if (count === 0) {
-        if (!msg) {
-            msg = document.createElement('p');
-            msg.id = 'no-results';
-            msg.innerText = "No recipes found for this category yet. Stay tuned! 🥗";
-            msg.style.textAlign = 'center';
-            document.querySelector('.recipes-grid').appendChild(msg);
-        }
-    } else if (msg) {
-        msg.remove();
-    }
-}
-
-// --- Detailed Modal & Dynamic Data ---
-// This section handles the generation of the recipe info pop-up
-document.addEventListener('DOMContentLoaded', () => {
+    const recipesContainer = document.getElementById('recipes-container');
     const modal = document.getElementById('recipeModal');
-    const closeBtn = document.querySelector('.close-btn');
-    const viewButtons = document.querySelectorAll('.btn-healthy');
+    const storedRecipes = JSON.parse(localStorage.getItem('recipes')) || [];
 
-    
-    /**
- * Healthy Food Page Script
- * Handles recipe dynamic rendering, filtering by diet, modal popups, and favorites storage.
- */
+    // 1. --- Render Custom Recipes ---
+    // Create new cards for healthy recipes added via the Admin panel
+    if (recipesContainer && storedRecipes.length > 0) {
+        storedRecipes.forEach(r => {
+            const courseLower = (r.course || "").toLowerCase();
+            if (courseLower.includes('healthy')) {
+                let rId = r.id.toLowerCase();
+                if (rId.endsWith('card')) rId = rId.slice(0, -4);
+                
+                if (!document.getElementById(rId)) {
+                    const newCard = document.createElement('div');
+                    newCard.className = 'recipe-card all keto'; 
+                    newCard.id = rId;
+                    newCard.innerHTML = `
+                        <div class="card-image" style="background-image: url('healthy_images/Grilled Salmon & Avocado Salad.jfif');">
+                            <span class="diet-badge">Custom</span>
+                            <button class="grid-heart-btn" onclick="changecolor(this)" aria-label="Favorite">❤</button>
+                        </div>
+                        <div class="card-body">
+                            <h3>${r.name}</h3>
+                            <p>${r.description || r.ingredients || "A new delicious healthy recipe."}</p>
+                            <div class="card-info">
+                                <span>⏱ 20 min</span>
+                                <span>🔥 350 kcal</span>
+                            </div>
+                            <a href="#" class="btn-healthy">View Recipe</a>
+                        </div>
+                    `;
+                    recipesContainer.appendChild(newCard);
+                }
+            }
+        });
+    }
 
-// --- Recipe Data Store ---
-// Contains details for all healthy recipes shown in the grid
-const recipes = {
+    // 2. --- Admin Delete Support ---
+    // Hide original cards if they have been deleted in the Admin panel
+    const allCards = document.querySelectorAll('.recipe-card');
+    if (storedRecipes.length > 0) {
+        allCards.forEach(card => {
+            const cardId = card.id.toLowerCase();
+            const isAlive = storedRecipes.some(r => {
+                let rId = r.id.toLowerCase();
+                if (rId.endsWith('card')) rId = rId.slice(0, -4);
+                return rId === cardId;
+            });
+            if (!isAlive) card.style.display = 'none';
+        });
+    }
+
+    // --- Static Recipe Data fallback ---
+    const defaultData = {
         "Grilled Salmon & Avocado": { 
             ingredients: ["150g Salmon fillet", "1 tbsp Olive oil", "Minced garlic", "Lemon slices", "Steamed asparagus"],
             method: "1. Season salmon with garlic and pepper. 2. Grill for 4-5 minutes each side. 3. Serve with asparagus and lemon."
@@ -79,27 +75,62 @@ const recipes = {
         }
     };
 
- 
-viewButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
+    // 3. --- Event Delegation for "View Recipe" ---
+    // Handles clicks for ALL cards (even ones added after page load)
+    if (recipesContainer) {
+        recipesContainer.addEventListener('click', (e) => {
+            // Find the closest button or card that was clicked
+            const viewBtn = e.target.closest('.btn-healthy');
+            if (!viewBtn) return;
+            
             e.preventDefault();
-            const card = btn.closest('.recipe-card');
-            const title = card.querySelector('h3').innerText;
-            const data = recipes[title];
+            const card = viewBtn.closest('.recipe-card');
+            const titleElement = card.querySelector('h3');
+            const title = titleElement ? titleElement.innerText.trim() : "";
             const bgImage = card.querySelector('.card-image').style.backgroundImage;
 
-            if (data) {
-                const modalContent = document.querySelector('.glass-card');
+            console.log("🔍 View button clicked for:", title);
+
+            // --- Database Search ---
+            // Look in localStorage first, then fallback to defaults
+            const updated = storedRecipes.find(r => {
+                let rId = r.id.toLowerCase();
+                if (rId.endsWith('card')) rId = rId.slice(0, -4);
+                return rId === card.id.toLowerCase() || r.name.trim().toLowerCase() === title.toLowerCase();
+            });
+
+            // Data selection logic
+            const fallback = defaultData[title] || { ingredients: [], method: "Preparation steps coming soon..." };
+            let finalIngredients = fallback.ingredients;
+            let finalMethod = fallback.method;
+            let finalTitle = title;
+
+            if (updated) {
+                finalTitle = updated.name;
+                if (updated.ingredients) {
+                    finalIngredients = updated.ingredients.split(/,|\n/).map(i => i.trim()).filter(i => i);
+                }
+                if (updated.description) finalMethod = updated.description;
+            }
+
+            // --- Modal Activation ---
+            const modalContent = document.querySelector('.glass-card');
+            if (modalContent) {
                 modalContent.style.backgroundImage = bgImage;
-                
-                document.getElementById('modalBody').innerHTML = `
+                modalContent.style.backgroundSize = "cover";
+                modalContent.style.backgroundPosition = "center";
+            }
+            
+            const modalBody = document.getElementById('modalBody');
+            if (modalBody) {
+                modalBody.innerHTML = `
                     <div class="modal-overlay-content">
                         <span class="close-btn">&times;</span> 
-                        <h2 class="modal-title">${title}</h2>
+                        <h2 class="modal-title">${finalTitle}</h2>
                         <span class="section-title">Ingredients</span>
-                        <ul class="modal-list">${data.ingredients.map(i => `<li>• ${i}</li>`).join('')}</ul>
+                        <ul class="modal-list">${finalIngredients.map(i => `<li>• ${i}</li>`).join('')}</ul>
                         <span class="section-title">Preparation Steps</span>
-                        <p class="modal-text">${data.method}</p>
+                        <p class="modal-text">${finalMethod}</p>
                         <div class="modal-footer">
                             <button class="heart-btn" onclick="changecolor(this)">❤</button>
                         </div>
@@ -107,28 +138,37 @@ viewButtons.forEach(btn => {
                 `;
                 modal.style.display = "block";
                 
-               
-                document.querySelector('.close-btn').onclick = () => modal.style.display = "none";
+                // Re-attach close event for newly generated HTML content
+                const dynamicClose = modalBody.querySelector('.close-btn');
+                if (dynamicClose) dynamicClose.onclick = () => modal.style.display = "none";
             }
         });
-    });
+    }
 
-    // Close modal when clicking on the dark background
-    window.onclick = (event) => {
-        if (event.target == modal) modal.style.display = "none";
-    };
-
-    // Tabs logic
+    // 4. --- Category Filters ---
     tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             tabBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             const selectedDiet = btn.getAttribute('data-diet');
-            recipeCards.forEach(card => {
-                card.style.display = (selectedDiet === 'all' || card.classList.contains(selectedDiet)) ? 'flex' : 'none';
+            
+            document.querySelectorAll('.recipe-card').forEach(card => {
+                // Determine if Admin deleted this card
+                const isDeleted = card.style.display === 'none';
+                if (isDeleted && !card.classList.contains('hidden-by-filter')) return;
+
+                const matchesFilter = selectedDiet === 'all' || card.classList.contains(selectedDiet);
+                card.style.display = matchesFilter ? 'flex' : 'none';
+                if (!matchesFilter) card.classList.add('hidden-by-filter');
+                else card.classList.remove('hidden-by-filter');
             });
         });
     });
+
+    // Close modal settings
+    window.onclick = (event) => {
+        if (event.target == modal) modal.style.display = "none";
+    };
 });
 
 // --- Favorites Management ---
@@ -212,7 +252,7 @@ window.addEventListener("load", function() {
                 // 3. Scroll safely to the card
                 targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 
-                // 4. Highlight animation (similar to bakery style)
+                // 4. Highlight animation 
                 targetCard.style.transition = "all 0.4s ease";
                 targetCard.style.transform = "translateY(-15px)";
                 targetCard.style.boxShadow = "0 15px 35px rgba(39, 174, 96, 0.4)";

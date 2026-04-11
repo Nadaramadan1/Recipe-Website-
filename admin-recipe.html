@@ -132,10 +132,10 @@ if (stored) {
             { id: "VegetableCurrycard", name: "Vegetable Curry 🍛", course: "maindish/Vegetarian" },
             { id: "QuinoaSaladcard", name: "Quinoa Salad 🥗", course: "maindish/Vegetarian" },
 
-            { id: "SalmonAvocadocard", name: "Grilled Salmon & Avocado", course: "Healthy/Keto" },
-            { id: "QuinoaBowlcard", name: "Quinoa Buddha Bowl", course: "Healthy/Vegan" },
-            { id: "HerbChickencard", name: "Lemon Herb Chicken", course: "Healthy/Protein" },
-            { id: "Zoodlescard", name: "Zucchini Noodles (Zoodles)", course: "Healthy/Gluten-Free" },
+            { id: "grilled_salmon_avocadocard", name: "Grilled Salmon & Avocado", course: "Healthy" },
+            { id: "quinoa_buddha_bowlcard", name: "Quinoa Buddha Bowl", course: "Healthy" },
+            { id: "lemon_herb_chickencard", name: "Lemon Herb Chicken", course: "Healthy" },
+            { id: "zucchini_noodlescard", name: "Zucchini Noodles (Zoodles)", course: "Healthy" },
 
             { id: "Baguettecard", name: "Classic French Baguette 🥖", course: "Bakery/Bread" },
             { id: "Sourdoughcard", name: "Natural Sourdough 🥐", course: "Bakery/Bread" },
@@ -193,11 +193,20 @@ if (stored) {
             const tableBody = document.getElementById('recipeTableBody');
 
             // Get existing recipes from storage or use manual ones if storage is empty
-            let storedRecipes = JSON.parse(localStorage.getItem('recipes'));
+            let storedRecipes = JSON.parse(localStorage.getItem('recipes')) || [];
 
-            if (!storedRecipes || storedRecipes.length === 0) {
-                localStorage.setItem('recipes', JSON.stringify(recipes));
-                storedRecipes = recipes;
+            // Merging logic: Ensure default recipes exist in storage
+            let needsUpdate = false;
+            recipes.forEach(defaultRecipe => {
+                const exists = storedRecipes.some(r => r.id === defaultRecipe.id || r.name === defaultRecipe.name);
+                if (!exists) {
+                    storedRecipes.push(defaultRecipe);
+                    needsUpdate = true;
+                }
+            });
+
+            if (needsUpdate) {
+                localStorage.setItem('recipes', JSON.stringify(storedRecipes));
             }
 
             let rowsHTML = "";
