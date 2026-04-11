@@ -105,58 +105,55 @@
 	<h2 class="h2"> Our Recipes </h2>
 	<div class="recipes-container">
  
-		<div class="recipe-card" id="deviledeggs" data-id="deviledeggs" onclick="openCard(event, 'deviledeggs-card')">
- 
-		
-		 
+		<div class="recipe-card" id="DeviledEggs" data-id="DeviledEggs" onclick="openCard(event, 'DeviledEggs-card')">
 			<h2>Deviled Eggs</h2>
 
 			<p>A classic creamy finger-food often topped with paprika or bacon.</p>
-			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'deviledeggs-card')">View Recipes</a>
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'DeviledEggs-card')">View Recipes</a>
 		</div>
  
-		<div class="recipe-card" id="spinachartichokedip" data-id="spinachartichokedip"
-			onclick="openCard(event, 'spinachartichokedip-card')">
+		<div class="recipe-card" id="SpinachArtichokeDip" data-id="SpinachArtichokeDip"
+			onclick="openCard(event, 'SpinachArtichokeDip-card')">
  
  
 			<h2>Spinach Artichoke Dip</h2>
 
 			<p>A warm cheesy and reliable crowd-pleaser often served with chips or bread.</p>
-			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'spinachartichokedip-card')">View
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'SpinachArtichokeDip-card')">View
 				Recipes</a>
 		</div>
  
 		<!--  -->
-		<div class="recipe-card" id="chickenwings" data-id="chickenwings"
-			onclick="openCard(event, 'chickenwings-card')">
+		<div class="recipe-card" id="ChickenWings" data-id="ChickenWings"
+			onclick="openCard(event, 'ChickenWings-card')">
  
 			<h2>Chicken Wings</h2>
 
 			<p>A classic creamy finger-food often topped with paprika or bacon.</p>
-			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'chickenwings-card')">View
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'ChickenWings-card')">View
 				Recipes</a>
 		</div>
  
 		<!--  -->
-		<div class="recipe-card" id="jalapenopoppers" data-id="jalapenopoppers"
-			onclick="openCard(event, 'jalapenopoppers-card')">
+		<div class="recipe-card" id="JalapenoPoppers" data-id="JalapenoPoppers"
+			onclick="openCard(event, 'JalapenoPoppers-card')">
  
 			<h2>Jalapeno Poppers</h2>
 
 			<p>Spicy, creamy and fried or baked cheese-filled peppers.</p>
-			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'jalapenopoppers-card')">View
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'JalapenoPoppers-card')">View
 				Recipes</a>
 		</div>
 
 		<!--  -->
  
-		<div class="recipe-card" id="stuffedmushrooms" data-id="stuffedmushrooms"
-			onclick="openCard(event, 'stuffedmushrooms-card')">
+		<div class="recipe-card" id="StuffedMushrooms" data-id="StuffedMushrooms"
+			onclick="openCard(event, 'StuffedMushrooms-card')">
  
 			<h2>Stuffed Mushrooms</h2>
 
 			<p>Bite-sized Savory mushroom caps filled with an herb and cheese breadcrumb mixture..</p>
-			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'stuffedmushrooms-card')">View
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'StuffedMushrooms-card')">View
 				Recipes</a>
 		</div>
 
@@ -196,7 +193,7 @@
 	</div>
 
 	<!-- Details cards -->
-	<div class="details-card" id="deviledeggs-card">
+	<div class="details-card" id="DeviledEggs-card">
 		<div class="recipe-content-box">
 			<h2 style="text-align: center;">Deviled Eggs</h2>
 
@@ -221,7 +218,7 @@
 		</div>
 	</div>
 
-	<div class="details-card" id="spinachartichokedip-card">
+	<div class="details-card" id="SpinachArtichokeDip-card">
 		<div class="recipe-content-box">
 			<h2 style="text-align: center;">Spinach Artichoke Dip</h2>
 
@@ -249,7 +246,7 @@
 		</div>
 	</div>
 
-	<div class="details-card" id="chickenwings-card">
+	<div class="details-card" id="ChickenWings-card">
 		<div class="recipe-content-box">
 			<h2 style="text-align: center;">Chicken Wings</h2>
 
@@ -274,7 +271,7 @@
 		</div>
 	</div>
 
-	<div class="details-card" id="jalapenopoppers-card">
+	<div class="details-card" id="JalapenoPoppers-card">
 		<div class="recipe-content-box">
 			<h2 style="text-align: center;">Jalapeno Poppers</h2>
 
@@ -299,7 +296,7 @@
 		</div>
 	</div>
 
-	<div class="details-card" id="stuffedmushrooms-card">
+	<div class="details-card" id="StuffedMushrooms-card">
 		<div class="recipe-content-box">
 			<h2 style="text-align: center;">Stuffed Mushrooms</h2>
 
@@ -437,148 +434,148 @@
 
 	<script>
 		
+//==============================  heart button==================================
+         function changecolor(element) {
+          if( element.style.color == "red"){
+                element.style.color = "white";
+                 element.title = "add to favorite";
+          }else{
+               element.style.color = "red";
+
+               element.title = "Added Successfully! ✨";
+
+          }
+          }
+
 // =================================== OPEN CARD==============================================
-		let currentCard = null;
-		function openCard(event, cardId) {
-			if (event && event.stopPropagation)
-				event.stopPropagation();
+          let currentCard = null;
 
-			if (currentCard)
-				currentCard.style.display = "none";
+          function openCard(event, cardId) {
+               // Prevent the click event from bubbling up to the 'window' object,
+               // otherwise the window.onclick listener would immediately close the card we just opened.
+               if (event && event.stopPropagation) {
+                    event.stopPropagation();
+               }
 
-			const targetCard = document.getElementById(cardId);
-
-			if (targetCard) {
-				targetCard.style.display = "block";
-				currentCard = targetCard;
-			}
-		}
-
-		window.onclick = function (event) {
-			if (currentCard && currentCard.style.display === "block") {
-				if (!currentCard.contains(event.target)) {
-					currentCard.style.display = "none";
-					currentCard = null;
-				}
-			}
-		}
-
-		function onClick() {
-			window.scrollBy({
-				top: 740,
-
-				behavior: 'smooth'
-			});
-		}
-
-//==============================  heart button ==================================
-
-		function changecolor(element) {
-			const isRed = element.style.color === "red";
-
-			if (isRed) {
-				element.style.color = "white";
-
- 
-			}
-			else {
-				element.style.color = "red";
-				element.title = "Added Successfully! ✨";
-			}
-		}
+               if (currentCard) {
+                    currentCard.style.display = "none";
+               }
 
 
-//================================Go Back=========================================
-		document.addEventListener("DOMContentLoaded", () => {
-			const backBtn = document.getElementById("backbutton");
+               const targetCard = document.getElementById(cardId);
 
-			if (backBtn) {
-				backBtn.onclick = function (event) {
-					event.preventDefault();
+               if (targetCard) {
+                    targetCard.style.display = "block";
+                    currentCard = targetCard;
+               }
+          }
+          /**
+           * Global click listener to detect clicks outside the active card.
+           */
+          window.onclick = function (event) {
+               // Check if the clicked element is NOT the card itself 
+               // AND is NOT a child element inside the card
+               if (currentCard && currentCard.style.display === "block") {
+                    if (!currentCard.contains(event.target)) {
+                         currentCard.style.display = "none";
+                         currentCard = null;
+                    }
+               }
+          }
 
-					// Check if there is actually a page to go back to in this tab
-					if (window.history.length > 1) {
-						window.history.back();
-					} else {
-
-						window.location.href = "home.html";
-					}
-				};
-			}
-		});
-
-
-		// هذا الكود يعمل فور تحميل الصفحة
-		window.addEventListener("load", function () {
-			const urlParams = new URLSearchParams(window.location.search);
-			let recipeId = urlParams.get('id');
-
-			if (recipeId) {
-				// إزالة أي مسافات أو رموز غريبة قد تكون انتقلت في الرابط
-				recipeId = recipeId.trim();
-
-				setTimeout(() => {
-					openCard(null, recipeId);
-
-					const element = document.getElementById(recipeId);
-					if (element) {
-						element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-					}
-				}, 100);
+          
 
 
-			}
-		});
- 
- //================================Admin Features=========================================      
+     //================================Go Back=========================================
+          document.addEventListener("DOMContentLoaded", () => {
+                    const backBtn = document.getElementById("backbutton");
 
-// هذا الكود يعمل فور تحميل الصفحة
+                    if (backBtn) {
+                         backBtn.onclick = function(event) {
+                              event.preventDefault();
+
+                              // Check if there is actually a page to go back to in this tab
+                              if (window.history.length > 1) {
+                                   window.history.back();
+                              } else {
+                         
+                                   window.location.href = "home.html"; 
+                              }
+                         };
+                    }
+           });
+
+
+//================================Admin Features=========================================      
 window.addEventListener("load", function() {
     // Get the recipe ID from the URL hash (everything after #)
     let recipeId = window.location.hash.substring(1);
+    console.log("Hash detected:", recipeId);
     
-    // Remove 'card' suffix if present (clean the ID)
-    if (recipeId && recipeId.endsWith('card')) {
-        recipeId = recipeId.replace('card', '');
+    if (!recipeId) return;
+    
+    // Clean the ID - remove any suffixes
+    let cleanId = recipeId;
+    if (cleanId.endsWith('card')) {
+        cleanId = cleanId.replace('card', '');
     }
-
-    if (recipeId) {
-        // Add a longer delay to ensure the DOM is fully ready
-        setTimeout(function() {
-            // Try to open the details card
-            const detailsCardId = recipeId + 'card';
-            const detailsCard = document.getElementById(detailsCardId);
+    if (cleanId.endsWith('-card')) {
+        cleanId = cleanId.replace('-card', '');
+    }
+    
+    console.log("Looking for recipe card:", cleanId);
+    
+    setTimeout(function() {
+        // Find the recipe card
+        const recipeCard = document.getElementById(cleanId);
+        
+        if (recipeCard) {
+            console.log("Found recipe card!");
+            
+            // Scroll to the card
+            recipeCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Highlight effect
+            recipeCard.style.transition = "all 0.3s ease";
+            recipeCard.style.transform = "translateY(-10px)";
+            recipeCard.style.boxShadow = "0 5px 15px rgba(0,0,0,0.3)";
+            
+            // Try BOTH formats for details card
+            let detailsCard = null;
+            
+            // Try with '-card' (your new appetizers format)
+            if (!detailsCard) {
+                detailsCard = document.getElementById(cleanId + '-card');
+                if (detailsCard) console.log("Found with '-card' format");
+            }
+            
+            // Try with 'card' (old format)
+            if (!detailsCard) {
+                detailsCard = document.getElementById(cleanId + 'card');
+                if (detailsCard) console.log("Found with 'card' format");
+            }
             
             if (detailsCard) {
-                // Close any open card first
+                console.log("Opening details card");
                 if (currentCard) {
                     currentCard.style.display = "none";
                 }
-                
-                // Open the card
                 detailsCard.style.display = "block";
                 currentCard = detailsCard;
-                
-                // Find and scroll to the recipe card
-                const element = document.getElementById(recipeId);
-                if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    
-                    // Add highlight effect
-                    element.style.transition = "all 0.3s ease";
-                    element.style.transform = "translateY(-10px)";
-                    element.style.boxShadow = "0 5px 15px rgba(0,0,0,0.3)";
-                    
-                    setTimeout(function() {
-                        element.style.transform = "";
-                        element.style.boxShadow = "";
-                    }, 1000);
-                }
             } else {
-                console.log("Card not found:", detailsCardId);
+                console.log("No details card found for:", cleanId);
             }
-        }, 500); // Increased delay to 500ms
-    }
+            
+            // Remove highlight after delay
+            setTimeout(function() {
+                recipeCard.style.transform = "";
+                recipeCard.style.boxShadow = "";
+            }, 1500);
+            
+        } else {
+            console.log("Recipe card not found for ID:", cleanId);
+        }
+    }, 500);
 });
  
 	</script>

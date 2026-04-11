@@ -141,15 +141,15 @@ body {
 #CharcuterieBoard,
 #Sliders,
 #ShrimpCocktail,
-#deviledeggs-card,
-#spinachartichokedip-card,
-#chickenwings-card,
-#jalapenopoppers-card,
-#stuffedmushrooms-card,
-#Crostinicard,
-#CharcuterieBoardcard,
-#Sliderscard,
-#ShrimpCocktailcard
+#DeviledEggs-card,
+#SpinachArtichokeDip-card,
+#ChickenWings-card,
+#JalapenoPoppers-card,
+#StuffedMushrooms-card,
+#Crostini-card,
+#CharcuterieBoard-card,
+#Sliders-card,
+#ShrimpCocktail-card
 {
     background-size: cover;
     background-repeat: no-repeat;
@@ -158,34 +158,34 @@ body {
 }
 
  
-#deviledeggs,
-#deviledeggs-card
+#DeviledEggs,
+#DeviledEggs-card
  
  {
     background-image: url(appetizersimgs/pic1.jpg);
 }
 
  
-#spinachartichokedip,
-#spinachartichokedip-card
+#SpinachArtichokeDip,
+#SpinachArtichokeDip-card
  
  {
     background-image: url(appetizersimgs/pic2.jpg);
 }
 
  
-#chickenwings,
-#chickenwings-card{
+#ChickenWings,
+#ChickenWings-card{
     background-image: url(appetizersimgs/pic3.jpg);
 }
 
-#jalapenopoppers,
-#jalapenopoppers-card {
+#JalapenoPoppers,
+#JalapenoPoppers-card {
     background-image: url(appetizersimgs/pic4.jpg);
 }
 
-#stuffedmushrooms,
-#stuffedmushrooms-card{
+#StuffedMushrooms,
+#StuffedMushrooms-card{
  
     background-image: url(appetizersimgs/mushroom.jpeg);
 }
@@ -364,15 +364,15 @@ body {
     #CharcuterieBoard,
     #Sliders,
     #ShrimpCocktail,
-    #deviledeggs-card,
-    #spinachartichokedip-card,
-    #chickenwings-card,
-    #jalapenopoppers-card,
-    #stuffedmushrooms-card,
-    #Crostinicard,
-    #CharcuterieBoardcard,
-    #Sliderscard,
-    #ShrimpCocktailcard
+    #DeviledEggs-card,
+    #SpinachArtichokeDip-card,
+    #ChickenWings-card,
+    #JalapenoPoppers-card,
+    #StuffedMushrooms-card,
+    #Crostini-card,
+    #CharcuterieBoard-card,
+    #Sliders-card,
+    #ShrimpCocktail-card
     {
         background-size: cover;
         background-position: center;
