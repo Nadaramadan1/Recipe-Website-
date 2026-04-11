@@ -146,13 +146,13 @@ const imageMap = {
     // --- Drinks ---
         
         'French Vanilla Cappuccino': 'drinksimages/Cappuccino.jpeg',
-        'Caramel Hazelnut Iced ': 'drinksimages/Caramel Hazelnut Iced Coffee.jpeg',
+        'Caramel Hazelnut Iced Coffee': 'drinksimages/Caramel Hazelnut Iced Coffee.jpeg',
         'Arab Coffee': 'drinksimages/arabcoffe.jpeg',
         'Berry Blast Smoothie🍸': 'drinksimages/Smoothie.jpeg',
-        'Pineapple Mango Smoothie 🥭🍍': 'drinksimages/Pineapple Mango Smoothie.jpeg',
-        'Strawberry LemonadeStrawberry Lemonade🍓🍋': 'drinksimages/Strawberry Lemonade.jpeg',
+        'Pineapple Mango Smoothie': 'drinksimages/Pineapple Mango Smoothie.jpeg',
+        'Strawberry Lemonade🍓': 'drinksimages/Strawberry Lemonade.jpeg',
         'Hot Chocolate🍫': 'drinksimages/Hot Chocolate.jpeg',
-        'Turkish Tea🍃 ': 'drinksimages/Turkishtea.jpeg',
+        'Turkish Tea🍃': 'drinksimages/Turkishtea.jpeg',
         'Herbal Hibiscus Tea🌺🌹': 'drinksimages/Hibiscustea.jpeg'
 };
 
@@ -167,7 +167,7 @@ const imageMap = {
                     recipeCard.className = "recipe-card";
                     
                     const titleText = recipe.title || recipe.id || "Delicious Recipe";
-                    const imageSrc = imageMap[titleText] || recipe.image || 'bakeryimages/placeholder.jpeg';
+                    const imageSrc = imageMap[titleText] || recipe.image || 'bakeryimages/placeholder.jpeg'  ;
 
                     // 6. Set background and content
                     recipeCard.style.backgroundImage = `url(${imageSrc})`;
