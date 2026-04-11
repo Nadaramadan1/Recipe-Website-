@@ -85,11 +85,11 @@ let recipes = [
     { id: "blackforest-cheesecake", name: "Black Forest Cheesecake", ingredients: ["chocolate", "cherries", "cream cheese"], page: "dessert.html" },
     { id: "brownie", name: "Brownies", ingredients: ["chocolate", "flour", "butter", "sugar", "eggs"], page: "dessert.html" },
     { id: "strawberryCake", name: "Strawberry Cake", ingredients: ["flour", "sugar", "butter", "strawberries", "eggs"], page: "dessert.html" },
-    { id: "CrèmeCaramel", name: "Crème Caramel", ingredients: ["milk", "sugar", "eggs", "vanilla"], page: "dessert.html" },
+    { id: "CremeCaramel", name: "Crème Caramel", ingredients: ["milk", "sugar", "eggs", "vanilla"], page: "dessert.html" },
     { id: "cupcake", name: "Cupcake", ingredients: ["flour", "sugar", "butter", "eggs"], page: "dessert.html" },
 
     // Appetizers
-    { id: "deviledeggs", name: "Deviled Eggs", ingredients: ["eggs", "mayonnaise", "mustard"], page: "appetizers.html" },
+    { id: "deviledeggs", name: "Deviled Eggs", ingredients: ["eggs", "mayonnaise", "mustard"], page: "appetizers.html"},
     { id: "spinachartichokedip", name: "Spinach Artichoke Dip", ingredients: ["spinach", "artichoke", "cream cheese", "sour cream"], page: "appetizers.html" },
     { id: "chickenwings", name: "Chicken Wings", ingredients: ["chicken wings", "hot sauce", "butter"], page: "appetizers.html" },
     { id: "jalapenopoppers", name: "Jalapeno Poppers", ingredients: ["jalapenos", "cheese", "bacon"], page: "appetizers.html" },

@@ -1,164 +1,182 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="appetizers.css">
+	<script src="search-js.js"></script>
 	<title>Appetizers</title>
 
 	<style>
 		#navbar {
-	  background-color: var(--dark-walnut);
-	  padding: 1rem 2rem;
-	  box-shadow: var(--shadow-sm);
-	}
+			background-color: var(--dark-walnut);
+			padding: 1rem 2rem;
+			box-shadow: var(--shadow-sm);
+		}
 
 		.main-nav {
-		  display: flex;
-		  justify-content: space-between;
-		  align-items: center;
-		  max-width: 1200px;
-		  margin: 0 auto;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			max-width: 1200px;
+			margin: 0 auto;
 		}
+
 		.logo {
-		  color: #fff;
-		  font-size: 1.5rem;
-		  font-weight: bold;
+			color: #fff;
+			font-size: 1.5rem;
+			font-weight: bold;
 		}
 
 		.nav-links {
-		  display: flex;
-		  list-style: none;
+			display: flex;
+			list-style: none;
 		}
+
 		.nav-links li {
-  			margin-left: 20px;
+			margin-left: 20px;
 		}
 
 		.nav-links a {
-		  color: #ecf0f1;
-		  text-decoration: none;
-		  font-weight: 500;
-		  transition: var(--transition);
-		  display: inline-block;
+			color: #ecf0f1;
+			text-decoration: none;
+			font-weight: 500;
+			transition: var(--transition);
+			display: inline-block;
 		}
 
 		.nav-links a:hover,
-		.nav-links li button#backbutton:hover{
-		  color: white;
-		  transform: translateY(-1.5px);
-		  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+		.nav-links li button#backbutton:hover {
+			color: white;
+			transform: translateY(-1.5px);
+			text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 		}
 
-	    .nav-links li button#backbutton {
+		.nav-links li button#backbutton {
 			border: none;
-		    font-family: inherit;
-		    font-size: inherit;
-		    cursor: pointer;
-		    outline: none;		    
-		    color: white; 			    
-		    text-decoration: none;
-		    transition: 0.3s;			    		   
-		    background-color: var(--dark-walnut);			    
+			font-family: inherit;
+			font-size: inherit;
+			cursor: pointer;
+			outline: none;
+			color: white;
+			text-decoration: none;
+			transition: 0.3s;
+			background-color: var(--dark-walnut);
 		}
-		
 	</style>
 </head>
 
 <body>
 	<div id="navbar">
-        <nav class="main-nav">
-            <div class="logo">Yummy 🍲</div> 
-            <ul class="nav-links">
-                <li><button id="backbutton" type="button">Go Back</button></li>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="search.html">Search</a></li>
-                <li><a href="favorites.html">Favorites</a></li>
-                <li><a href="admin-recipe.html">Admin</a></li>
-                <li><a href="add-recipe.html">Add Recipe</a></li>           
-            </ul>
-        </nav>
-    </div>
+		<nav class="main-nav">
+			<div class="logo">Yummy 🍲</div>
+			<ul class="nav-links">
+				<li><button id="backbutton" type="button">Go Back</button></li>
+				<li><button id="backbutton" type="button">Go Back</button></li>
+				<li><a href="home.html">Home</a></li>
+				<li><a href="search.html">Search</a></li>
+				<li><a href="favorites.html">Favorites</a></li>
+				<li><a href="admin-recipe.html">Admin</a></li>
+				<li><a href="add-recipe.html">Add Recipe</a></li>
+				<li><a href="login.html">Login</a></li>
+				<li><a href="signup.html">Sign Up</a></li>
+			</ul>
+		</nav>
+	</div>
 
-    <section class="main">
-        <div class="main-content">
-            <h1>Bite-Sized made with love</h1>
-            <p>Savor the artistry in every bite.</p>
-            <a href="javascript:void(0)" class="btn-main" onclick="onClick()">View Recipes</a>
-        </div>
-    </section>
+	<section class="main">
+		<div class="main-content">
+			<h1>Bite-Sized made with love</h1>
+			<p>Savor the artistry in every bite.</p>
+			<a href="javascript:void(0)" class="btn-main" onclick="onClick()">View Recipes</a>
+		</div>
+	</section>
 
 	<h2 class="h2"> Our Recipes </h2>
 	<div class="recipes-container">
-		
-		<div class="recipes-card" id="deviledeggs" onclick="openCard(event, 'DeviledEggscard')">
+
+		<div class="recipe-card" id="deviledeggs" data-id="deviledeggs" onclick="openCard(event, 'deviledeggs-card')">
 			<h2>Deviled Eggs</h2>
 
 			<p>A classic creamy finger-food often topped with paprika or bacon.</p>
-			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'DeviledEggscard')">View Recipes</a>
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'deviledeggs-card')">View Recipes</a>
 		</div>
-<!--  -->
-		<div class="recipes-card" id="spinachartichokedip" onclick="openCard(event, 'SpinachArtichokeDipcard')">
+		<!--  -->
+		<div class="recipe-card" id="spinachartichokedip" data-id="spinachartichokedip"
+			onclick="openCard(event, 'spinachartichokedip-card')">
 			<h2>Spinach Artichoke Dip</h2>
 
 			<p>A warm cheesy and reliable crowd-pleaser often served with chips or bread.</p>
-			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'SpinachArtichokeDipcard')">View Recipes</a>
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'spinachartichokedip-card')">View
+				Recipes</a>
 		</div>
-<!--  -->
-		<div class="recipes-card" id="chickenwings" onclick="openCard(event, 'ChickenWingscard')">
+		<!--  -->
+		<div class="recipe-card" id="chickenwings" data-id="chickenwings"
+			onclick="openCard(event, 'chickenwings-card')">
 			<h2>Chicken Wings</h2>
 
 			<p>A classic creamy finger-food often topped with paprika or bacon.</p>
-			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'ChickenWingscard')">View Recipes</a>
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'chickenwings')">View
+				Recipes</a>
 		</div>
-<!--  -->
-		<div class="recipes-card" id="jalapenopoppers" onclick="openCard(event, 'JalapenoPopperscard')">
+		<!--  -->
+		<div class="recipe-card" id="jalapenopoppers" data-id="jalapenopoppers"
+			onclick="openCard(event, 'jalapenopoppers-card')">
 			<h2>Jalapeno Poppers</h2>
 
 			<p>Spicy, creamy and fried or baked cheese-filled peppers.</p>
-			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'JalapenoPopperscard')">View Recipes</a>
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'jalapenopoppers-card')">View
+				Recipes</a>
 		</div>
 
 		<!--  -->
-		<div class="recipes-card" id="stuffedmushrooms" onclick="openCard(event, 'StuffedMushroomscard')">
+		<div class="recipe-card" id="stuffedmushrooms" data-id="stuffedmushrooms"
+			onclick="openCard(event, 'stuffedmushrooms-card')">
 			<h2>Stuffed Mushrooms</h2>
 
 			<p>Bite-sized Savory mushroom caps filled with an herb and cheese breadcrumb mixture..</p>
-			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'StuffedMushroomscard')">View Recipes</a>
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'stuffedmushrooms-card')">View
+				Recipes</a>
 		</div>
 
 		<!--  -->
-		<div class="recipes-card" id="Crostini" onclick="openCard(event, 'Crostinicard')">
+		<div class="recipe-card" id="Crostini" data-id="Crostini" onclick="openCard(event, 'Crostini-card')">
 			<h2>Crostini</h2>
 
 			<p>Toasted bread topped with tomatoes, herbs, or cheese.</p>
-			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'Crostinicard')">View Recipes</a>
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'Crostini-card')">View Recipes</a>
 		</div>
-<!--  -->
-		<div class="recipes-card" id="CharcuterieBoard" onclick="openCard(event, 'CharcuterieBoardcard')">
+		<!--  -->
+		<div class="recipe-card" id="CharcuterieBoard" data-id="CharcuterieBoard"
+			onclick="openCard(event, 'CharcuterieBoard-card')">
 			<h2>Charcuterie Board</h2>
 
 			<p>Curated boards of cheeses, meats, crackers, and fruits that allow for easy customization.</p>
-			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'CharcuterieBoardcard')">View Recipes</a>
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'CharcuterieBoard-card')">View
+				Recipes</a>
 		</div>
-	<!--  -->
-		<div class="recipes-card" id="Sliders" onclick="openCard(event, 'Sliderscard')">
+		<!--  -->
+		<div class="recipe-card" id="Sliders" data-id="Sliders" onclick="openCard(event, 'Sliders-card')">
 			<h2>Sliders</h2>
 
 			<p>Miniature sandwiches, such as ham and cheese, that can be made in bulk.</p>
-			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'Sliderscard')">View Recipes</a>
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'Sliders-card')">View Recipes</a>
 		</div>
 
 		<!--  -->
-		<div class="recipes-card" id="ShrimpCocktail" onclick="openCard(event, 'ShrimpCocktailcard')">
+		<div class="recipe-card" id="ShrimpCocktail" data-id="ShrimpCocktail"
+			onclick="openCard(event, 'ShrimpCocktail-card')">
 			<h2>Shrimp Cocktail</h2>
 
 			<p>Sophisticated, refreshing, and protein-rich starter that has remained a party staple for decades</p>
-			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'ShrimpCocktailcard')">View Recipes</a>
+			<a href="javascript:void(0)" class="btn-main" onclick="openCard(event, 'ShrimpCocktail-card')">View
+				Recipes</a>
 		</div>
 	</div>
 
-<!-- Details cards -->
-	<div class="details-card" id="DeviledEggscard">
+	<!-- Details cards -->
+	<div class="details-card" id="deviledeggs-card">
 		<div class="recipe-content-box">
 			<h2 style="text-align: center;">Deviled Eggs</h2>
 
@@ -175,14 +193,15 @@
 			<ul class="recipe-list">
 				<li> Boil eggs for 10-20 min,then cool in an ice bath before peeling and halving lengthwise. </li>
 				<li> Scoop out the yolks and mash them with wuth mayonnaise, mustared ,salt,pepper until smooth. </li>
-				<li> Spoon or pipe this creamy mixture back into the egg white hollows and finish with a light sprinkle of paprika. </li>
+				<li> Spoon or pipe this creamy mixture back into the egg white hollows and finish with a light sprinkle
+					of paprika. </li>
 			</ul>
 
-               <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
+			<span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
 		</div>
 	</div>
 
-	<div class="details-card" id="SpinachArtichokeDipcard">
+	<div class="details-card" id="spinachartichokedip-card">
 		<div class="recipe-content-box">
 			<h2 style="text-align: center;">Spinach Artichoke Dip</h2>
 
@@ -199,16 +218,18 @@
 
 			<p><strong>Preparation Steps:</strong></p>
 			<ul class="recipe-list">
-				<li> Combine softened cream cheese,sour cream and mayonnaise with chooped spinach and drained artichoke hearts. </li>
-				<li> Stir in shredded mozzarella and Parmesan, then season with garlic powder and red pepper flakes. </li>
+				<li> Combine softened cream cheese,sour cream and mayonnaise with chooped spinach and drained artichoke
+					hearts. </li>
+				<li> Stir in shredded mozzarella and Parmesan, then season with garlic powder and red pepper flakes.
+				</li>
 				<li> Bake at 350°F(175°C) for about 25 min until the cheese is bubbly and lightly browned on top. </li>
 			</ul>
 
-               <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
+			<span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
 		</div>
 	</div>
 
-	<div class="details-card" id="ChickenWingscard">
+	<div class="details-card" id="chickenwings-card">
 		<div class="recipe-content-box">
 			<h2 style="text-align: center;">Chicken Wings</h2>
 
@@ -223,16 +244,17 @@
 
 			<p><strong>Preparation Steps:</strong></p>
 			<ul class="recipe-list">
-				<li> Pat chicken wings dry and bake them on a wise rack at 425°F(220°C) for about 45-60 min , turning halfway through for even crisping. </li>
+				<li> Pat chicken wings dry and bake them on a wise rack at 425°F(220°C) for about 45-60 min , turning
+					halfway through for even crisping. </li>
 				<li> While they bake, whisk together melted butter and hot sauce in a large bowl . </li>
 				<li> Once the wings are cooked and crispy , toss them in the sauce until fully coated. </li>
 			</ul>
 
-               <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
+			<span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
 		</div>
 	</div>
 
-	<div class="details-card" id="JalapenoPopperscard">
+	<div class="details-card" id="jalapenopoppers-card">
 		<div class="recipe-content-box">
 			<h2 style="text-align: center;">Jalapeno Poppers</h2>
 
@@ -246,16 +268,18 @@
 
 			<p><strong>Preparation Steps:</strong></p>
 			<ul class="recipe-list">
-				<li> Slice Fresh Jalapenos in half lengthwise and remove the seeds and membranes to control the heat. </li>
-				<li> Fill each half with a mixture of cream cheese and shredded cheddar, then top with breadcrumbsor wrap in a half-slice of bacon. </li>
+				<li> Slice Fresh Jalapenos in half lengthwise and remove the seeds and membranes to control the heat.
+				</li>
+				<li> Fill each half with a mixture of cream cheese and shredded cheddar, then top with breadcrumbsor
+					wrap in a half-slice of bacon. </li>
 				<li> Bake at 400°F(200°C) for 15-20 min until the peppers are tender and the topping is golden. </li>
 			</ul>
 
-               <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
+			<span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
 		</div>
 	</div>
 
-<div class="details-card" id="StuffedMushroomscard">
+	<div class="details-card" id="stuffedmushrooms-card">
 		<div class="recipe-content-box">
 			<h2 style="text-align: center;">Stuffed Mushrooms</h2>
 
@@ -272,14 +296,15 @@
 			<ul class="recipe-list">
 				<li> Remove the stems from large white or cremini mushrooms and finely chop the stems. </li>
 				<li> Sauté the chopped stems with garlic and herbs, then mix with breadcrumbs and Parmesan cheese. </li>
-				<li> Fill the mushroom caps with the mixture and bake at 375°F(190°C)for 20 minutes until the caps are tender and the stuffing is browned.</li>
+				<li> Fill the mushroom caps with the mixture and bake at 375°F(190°C)for 20 minutes until the caps are
+					tender and the stuffing is browned.</li>
 			</ul>
 
-               <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
+			<span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
 		</div>
 	</div>
 
-	<div class="details-card" id="Crostinicard">
+	<div class="details-card" id="Crostini-card">
 		<div class="recipe-content-box">
 			<h2 style="text-align: center;">Crostini</h2>
 
@@ -294,17 +319,19 @@
 
 			<p><strong>Preparation Steps:</strong></p>
 			<ul class="recipe-list">
-				<li> Dice fresh tomatoes and toss them with minced garlic, chopped basil, balsamic vinegar, and olive oil, then let the mixture sit for at least 15 minutes to meld flavors. </li>
-				<li> Slice a baguette into rounds, brush them with olive oil, and toast them in the oven until golden. </li>
+				<li> Dice fresh tomatoes and toss them with minced garlic, chopped basil, balsamic vinegar, and olive
+					oil, then let the mixture sit for at least 15 minutes to meld flavors. </li>
+				<li> Slice a baguette into rounds, brush them with olive oil, and toast them in the oven until golden.
+				</li>
 				<li> Spoon the tomato mixture onto the warm bread just before serving to keep it crisp. </li>
 			</ul>
 
-               <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
+			<span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
 		</div>
 	</div>
 
 
-	<div class="details-card" id="CharcuterieBoardcard">
+	<div class="details-card" id="CharcuterieBoard-card">
 		<div class="recipe-content-box">
 			<h2 style="text-align: center;">Charcuterie Board</h2>
 
@@ -320,15 +347,17 @@
 			<p><strong>Preparation Steps:</strong></p>
 			<ul class="recipe-list">
 				<li> Start by placing small bowls for jams, olives, or nuts on a large wooden board or platter. </li>
-				<li> Arrange a variety of sliced meats like prosciutto or salami alongside assorted cheeses like brie, cheddar, and gouda. </li>
-				<li> SFill in the remaining spaces with crackers, fresh fruit like grapes or berries, and sprigs of herbs for a decorative touch. </li>
+				<li> Arrange a variety of sliced meats like prosciutto or salami alongside assorted cheeses like brie,
+					cheddar, and gouda. </li>
+				<li> SFill in the remaining spaces with crackers, fresh fruit like grapes or berries, and sprigs of
+					herbs for a decorative touch. </li>
 			</ul>
 
-               <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
+			<span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
 		</div>
 	</div>
 
-	<div class="details-card" id="Sliderscard">
+	<div class="details-card" id="Sliders-card">
 		<div class="recipe-content-box">
 			<h2 style="text-align: center;">Sliders</h2>
 
@@ -342,16 +371,18 @@
 
 			<p><strong>Preparation Steps:</strong></p>
 			<ul class="recipe-list">
-				<li> Slice a pack of dinner rolls in half horizontally without separating the individual buns and place the bottom half in a baking dish. </li>
+				<li> Slice a pack of dinner rolls in half horizontally without separating the individual buns and place
+					the bottom half in a baking dish. </li>
 				<li> Layer on deli meats like ham and slices of cheese, then replace the top half of the rolls. </li>
-				<li> Brush the tops with melted butter seasoned with garlic or poppy seeds and bake at 350°F(175°C) for 15–20 minutes until the cheese is melted. </li>
+				<li> Brush the tops with melted butter seasoned with garlic or poppy seeds and bake at 350°F(175°C) for
+					15–20 minutes until the cheese is melted. </li>
 			</ul>
 
-               <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
+			<span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
 		</div>
-    </div>
+	</div>
 
-    <div class="details-card" id="ShrimpCocktailcard">
+	<div class="details-card" id="ShrimpCocktail-card">
 		<div class="recipe-content-box-Shrimp">
 			<h2 style="text-align: center;">Shrimp Cocktail</h2>
 
@@ -368,109 +399,114 @@
 
 			<p><strong>Preparation Steps:</strong></p>
 			<ul class="recipe-list">
-				<li> Bring a pot of water to a boil with the lemon slices, bay leaves, salt, and peppercorns.  </li>
+				<li> Bring a pot of water to a boil with the lemon slices, bay leaves, salt, and peppercorns. </li>
 				<li> Add the shrimp and poach them gently for about 3–5 minutes until they turn pink and opaque. </li>
-				<li> BImmediately transfer the cooked shrimp to an ice bath to stop the cooking and ensure they stay firm and snappy </li>
-				<li>For the cocktail sauce, whisk together the ketchup, horseradish, lemon juice, Worcestershire sauce, and any optional spices in a small bowl.</li>
-				<li>Chill both the shrimp and the sauce in the refrigerator for at least an hour before serving. Arrange the cold shrimp around the edge of a bowl or glass filled with the sauce and garnish with fresh lemon wedges.</li>
+				<li> BImmediately transfer the cooked shrimp to an ice bath to stop the cooking and ensure they stay
+					firm and snappy </li>
+				<li>For the cocktail sauce, whisk together the ketchup, horseradish, lemon juice, Worcestershire sauce,
+					and any optional spices in a small bowl.</li>
+				<li>Chill both the shrimp and the sauce in the refrigerator for at least an hour before serving. Arrange
+					the cold shrimp around the edge of a bowl or glass filled with the sauce and garnish with fresh
+					lemon wedges.</li>
 			</ul>
 
-               <span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
+			<span class="heart" title="Add to Favorites" onclick="changecolor(this)">♥</span>
 		</div>
 	</div>
-		
+
 
 	<script>
 		let currentCard = null;
-		function openCard(event, cardId){
-			if(event && event.stopPropagation) 
+		function openCard(event, cardId) {
+			if (event && event.stopPropagation)
 				event.stopPropagation();
 
-			if(currentCard)
+			if (currentCard)
 				currentCard.style.display = "none";
 
 			const targetCard = document.getElementById(cardId);
 
-			if(targetCard){
+			if (targetCard) {
 				targetCard.style.display = "block";
 				currentCard = targetCard;
 			}
 		}
 
-		window.onclick = function(event){
-			if(currentCard && currentCard.style.display === "block"){
-				if( !currentCard.contains(event.target)){
+		window.onclick = function (event) {
+			if (currentCard && currentCard.style.display === "block") {
+				if (!currentCard.contains(event.target)) {
 					currentCard.style.display = "none";
 					currentCard = null;
 				}
 			}
 		}
 
-		 function onClick() {
-            window.scrollBy({
-                top: 740,
-                
-                behavior: 'smooth'
-            });
-        }
+		function onClick() {
+			window.scrollBy({
+				top: 740,
+
+				behavior: 'smooth'
+			});
+		}
 
 
-          function changecolor(element) {
-              const isRed = element.style.color === "red";
+		function changecolor(element) {
+			const isRed = element.style.color === "red";
 
-              if (isRed) {
-              	element.style.color= "white";
-              	
-              }
-              else{
-              	element.style.color = "red";
-                element.title = "Added Successfully! ✨";
-              }
-          }
+			if (isRed) {
+				element.style.color = "white";
 
-
-
-           document.addEventListener("DOMContentLoaded", () => {
-                    const backBtn = document.getElementById("backbutton");
-
-                    if (backBtn) {
-                         backBtn.onclick = function(event) {
-                              event.preventDefault();
-
-                              // Check if there is actually a page to go back to in this tab
-                              if (window.history.length > 1) {
-                                   window.history.back();
-                              } else {
-                         
-                                   window.location.href = "home.html"; 
-                              }
-                         };
-                    }
-           });
-
-
-			// هذا الكود يعمل فور تحميل الصفحة
-		window.addEventListener("load", function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    let recipeId = urlParams.get('id');
-
-    if (recipeId) {
-        // إزالة أي مسافات أو رموز غريبة قد تكون انتقلت في الرابط
-        recipeId = recipeId.trim(); 
-        
-		setTimeout(() => {
-            openCard(null, recipeId);
-
-			const element = document.getElementById(recipeId);
-			if (element) {
-				element.scrollIntoView({ behavior: 'smooth', block: 'center' });
 			}
-        }, 100);
-       
-        
-    }
-});
+			else {
+				element.style.color = "red";
+				element.title = "Added Successfully! ✨";
+			}
+		}
+
+
+
+		document.addEventListener("DOMContentLoaded", () => {
+			const backBtn = document.getElementById("backbutton");
+
+			if (backBtn) {
+				backBtn.onclick = function (event) {
+					event.preventDefault();
+
+					// Check if there is actually a page to go back to in this tab
+					if (window.history.length > 1) {
+						window.history.back();
+					} else {
+
+						window.location.href = "home.html";
+					}
+				};
+			}
+		});
+
+
+		// هذا الكود يعمل فور تحميل الصفحة
+		window.addEventListener("load", function () {
+			const urlParams = new URLSearchParams(window.location.search);
+			let recipeId = urlParams.get('id');
+
+			if (recipeId) {
+				// إزالة أي مسافات أو رموز غريبة قد تكون انتقلت في الرابط
+				recipeId = recipeId.trim();
+
+				setTimeout(() => {
+					openCard(null, recipeId);
+
+					const element = document.getElementById(recipeId);
+					if (element) {
+						element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+					}
+				}, 100);
+
+
+			}
+		});
 	</script>
 
 </body>
+
 </html>

@@ -92,7 +92,7 @@ body {
 }
 
 /* Recipe Card Shared Styles */
-.recipes-card {
+.recipe-card {
     height: 400px;
     background: #E8D2A8ff;
     border-radius: 40px;
@@ -104,12 +104,12 @@ body {
     text-shadow: 0px 0px 3px black;
 }
 
-.recipes-card:hover {
+.recipe-card:hover {
     transform: translateY(-5px);
 }
 
 /* Recipe Card Buttons */
-.recipes-card a {
+.recipe-card a {
     margin-top: auto;
     align-self: center;
     margin-top: 250px;
@@ -125,7 +125,7 @@ body {
     display: inline-block;
 }
 
-.recipes-card a:hover {
+.recipe-card a:hover {
     transform: translateY(-5px);
     background-color:var(--ochre);
     color: var(--dark-walnut);
@@ -141,11 +141,11 @@ body {
 #CharcuterieBoard,
 #Sliders,
 #ShrimpCocktail,
-#DeviledEggscard,
-#SpinachArtichokeDipcard,
-#ChickenWingscard,
-#JalapenoPopperscard,
-#StuffedMushroomscard,
+#deviledeggs-card,
+#spinachartichokedip-card,
+#chickenwings-card,
+#jalapenopoppers-card,
+#stuffedmushrooms-card,
 #Crostinicard,
 #CharcuterieBoardcard,
 #Sliderscard,
@@ -158,52 +158,52 @@ body {
 }
 
 #deviledeggs,
-#DeviledEggscard
+#deviledeggs-card
  {
     background-image: url(appetizersimgs/pic1.jpg);
 }
 
 #spinachartichokedip,
-#SpinachArtichokeDipcard
+#spinachartichokedip-card
  {
     background-image: url(appetizersimgs/pic2.jpg);
 }
 
 #chickenwings,
-#ChickenWingscard{
+#chickenwings-card{
     background-image: url(appetizersimgs/pic3.jpg);
 }
 
 #jalapenopoppers,
-#JalapenoPopperscard {
+#jalapenopoppers-card {
     background-image: url(appetizersimgs/pic4.jpg);
 }
 
 #stuffedmushrooms,
-#StuffedMushroomscard{
+#stuffedmushrooms-card{
     background-image: url(appetizersimgs/mushroom.jpeg);
 }
 
 #Crostini,
-#Crostinicard{
+#Crostini-card{
     background-image: url(appetizersimgs/pic5.jpeg);
 
 }
 
-#CharcuterieBoardcard,
+#CharcuterieBoard-card,
 #CharcuterieBoard{
     background-image: url(appetizersimgs/pic7.jpeg);
 
 }
 
 #Sliders,
-#Sliderscard{
+#Sliders-card{
      background-image: url(appetizersimgs/pic6.jpeg);
 
 }
 
 #ShrimpCocktail,
-#ShrimpCocktailcard{
+#ShrimpCocktail-card{
      background-image: url(appetizersimgs/pic8.jpeg);
 
 }
@@ -358,11 +358,11 @@ body {
     #CharcuterieBoard,
     #Sliders,
     #ShrimpCocktail,
-    #DeviledEggscard,
-    #SpinachArtichokeDipcard,
-    #ChickenWingscard,
-    #JalapenoPopperscard,
-    #StuffedMushroomscard,
+    #deviledeggs-card,
+    #spinachartichokedip-card,
+    #chickenwings-card,
+    #jalapenopoppers-card,
+    #stuffedmushrooms-card,
     #Crostinicard,
     #CharcuterieBoardcard,
     #Sliderscard,

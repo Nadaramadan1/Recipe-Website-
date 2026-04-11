@@ -100,7 +100,7 @@ body{
 #blackforest-cheesecake,
 #brownie,
 #strawberryCake,
-#CrèmeCaramel,
+#CremeCaramel,
 #cupcake{
     color:white;
     background-repeat: no-repeat;
@@ -124,8 +124,8 @@ body{
 #strawberryCake-card{
     background-image: url(dessertimages/strawberrycake.jpg);
 }
-#CrèmeCaramel,
-#CrèmeCaramel-card{
+#CremeCaramel,
+#CremeCaramel-card{
     background-image: url(dessertimages/creamecramel.jpg);
 }
 #cupcake,
@@ -246,13 +246,13 @@ body{
 #blackforest-cheesecake,
 #brownie,
 #strawberryCake,
-#CrèmeCaramel,
+#CremeCaramel,
 #cupcake,
 #tiramisucard,
 #blackforest-cheesecakecard,
 #browniecard,
 #strawberryCakecard,
-#CrèmeCaramelcard,
+#CremeCaramel-card,
 #cupcakecard
     
     {
