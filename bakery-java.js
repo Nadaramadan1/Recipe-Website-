@@ -1,6 +1,6 @@
 
         
-//==============================  heart button ===================================================
+//==============================  heart button==================================
          function changecolor(element) {
           if( element.style.color == "red"){
                 element.style.color = "white";

@@ -6,7 +6,6 @@
     <title>Yummy-Desserts</title>
     <link rel="stylesheet" href="dessert.css"/>
     <script src="search-js.js"></script>
-    <script src="java.js"></script>
 
     <style>
         #navbar{
@@ -57,9 +56,6 @@
         <nav class="main-nav">
             <div class="logo">Yummy 🍲</div> 
             <ul class="nav-links">
-                <button id="backbutton" class="arrow-btn" type="button" aria-label="Go Back">
-        &#8592;
-    </button>
                 <li><a href="cover.html">Team</a></li>
                 <li><a href="home.html">Home</a></li>
                 <li><a href="search.html">Search</a></li>
@@ -272,6 +268,39 @@
 
  <script>
 
+     function changecolor(element) {
+      if(element.style.color=="red") {element.style.color="white"}
+       else {element.style.color = "red";
+         element.title = "Added Successfully! ✨";}
+          
+        }
+
+		let currentCard = null;
+		function openCard(event, cardId){
+
+			if(event) {event.stopPropagation();}
+
+			if(currentCard) {currentCard.style.display = "none";}
+
+			const targetCard = document.getElementById(cardId);
+
+			if(targetCard){
+				targetCard.style.display = "block";
+				currentCard = targetCard;
+			}
+
+		}
+
+		window.onclick = function(event){
+			if(currentCard && currentCard.style.display === "block"){
+
+				if(event.target !== currentCard && !currentCard.contains(event.target)){
+					currentCard.style.display = "none";
+					currentCard = null;
+				}
+
+			}
+		}
 
 		 function onClick() {
             window.scrollBy({

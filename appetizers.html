@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="appetizers.css">
-	<script src="search-js.js"></script><script src="java.js"></script>
+	<script src="search-js.js"></script>
 	<title>Appetizers</title>
 
 	<style>
@@ -45,26 +45,25 @@
 			transition: var(--transition);
 			display: inline-block;
 		}
-  .arrow-btn {
-    font-size: 24px;        
-  
-    background-color: var(--dark-walnut);
-    background: none;        
-    border: none;            
-    cursor: pointer;        
-     color: rgb(234, 221, 212);           
-    transition: transform 0.2s; 
-    padding: 0 10px;
-    display: flex;
-    align-items: center;
-}
 
+		.nav-links a:hover,
+		.nav-links li button#backbutton:hover {
+			color: white;
+			transform: translateY(-1.5px);
+			text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+		}
 
-.arrow-btn:hover {
-     transform: translateY(-1.5px);
-
-    text-shadow: 0 0 15px rgb(255, 255, 255, 0.5);   
-}
+		.nav-links li button#backbutton {
+			border: none;
+			font-family: inherit;
+			font-size: inherit;
+			cursor: pointer;
+			outline: none;
+			color: white;
+			text-decoration: none;
+			transition: 0.3s;
+			background-color: var(--dark-walnut);
+		}
 	</style>
 </head>
 
@@ -73,9 +72,8 @@
 		<nav class="main-nav">
 			<div class="logo">Yummy 🍲</div>
 			<ul class="nav-links">
-				<button id="backbutton" class="arrow-btn" type="button" aria-label="Go Back">
-        &#8592;
-    </button>
+				<li><button id="backbutton" type="button">Go Back</button></li>
+				<li><button id="backbutton" type="button">Go Back</button></li>
 				<li><a href="home.html">Home</a></li>
 				<li><a href="search.html">Search</a></li>
 				<li><a href="favorites.html">Favorites</a></li>
