@@ -47,27 +47,71 @@
 
     <script>
 
-        // Fix typo in course name (smothie -> smoothie) for stored recipes
-        let stored = localStorage.getItem('recipes');
-        if (stored) {
-            let recipesData = JSON.parse(stored);
-            let updated = false;
-            recipesData = recipesData.map(recipe => {
-                if (recipe.course === "Drinks/fresh juices& smothie") {
-                    recipe.course = "Drinks/fresh juices& smoothie";
-                    updated = true;
-                }
-                 if (recipe.id === "CrèmeCaramelcard") {
+       // =====================================================
+// Fix all drink IDs and course typos in localStorage
+// =====================================================
+let stored = localStorage.getItem('recipes');
+if (stored) {
+    let recipesData = JSON.parse(stored);
+    let updated = false;
+
+    recipesData = recipesData.map(recipe => {
+        // 1. Fix course typo for smoothie
+        if (recipe.course === "Drinks/fresh juices& smothie") {
+            recipe.course = "Drinks/fresh juices& smoothie";
+            updated = true;
+        }
+
+        // 2. Fix coffee recipe IDs (old -> new)
+        if (recipe.id === "FrenchVanillaCappuccinocard") {
+            recipe.id = "Cappuccinocard";
+            updated = true;
+        } else if (recipe.id === "CaramelHazelnutIcedCoffeecard") {
+            recipe.id = "icedcoffeecard";
+            updated = true;
+        } else if (recipe.id === "ArabCoffeecard") {
+            recipe.id = "arabcoffeecard";
+            updated = true;
+        }
+
+        // 3. Fix hot drinks recipe IDs
+        else if (recipe.id === "HotChocolatecard") {
+            recipe.id = "hot-chocolatecard";
+            updated = true;
+        } else if (recipe.id === "TurkishTeacard") {
+            recipe.id = "turkish-teacard";
+            updated = true;
+        } else if (recipe.id === "HerbalHibiscusTeacard") {
+            recipe.id = "Hibiscus-teacard";
+            updated = true;
+        }
+
+        // 4. Fix fresh juices & smoothie recipe IDs
+        else if (recipe.id === "BerryBlastSmoothiecard") {
+            recipe.id = "Smoothiecard";
+            updated = true;
+        } else if (recipe.id === "PineappleMangoSmoothiecard") {
+            recipe.id = "smothie2card";
+            updated = true;
+        } else if (recipe.id === "StrawberryLemonadecard") {
+            recipe.id = "strawberrylemocard";
+            updated = true;
+        }
+
+        // 5. Fix Crème Caramel (accent issue)
+        else if (recipe.id === "CrèmeCaramelcard") {
             recipe.id = "CremeCaramelcard";
             updated = true;
         }
-                return recipe;
-            });
-            if (updated) {
-                localStorage.setItem('recipes', JSON.stringify(recipesData));
-                console.log("✅ Fixed course typo in localStorage");
-            }
-        }
+
+        return recipe;
+    });
+
+    if (updated) {
+        localStorage.setItem('recipes', JSON.stringify(recipesData));
+        console.log("✅ Fixed all drink IDs and course typos in localStorage");
+    }
+}
 
         let recipes = [
             { id: "BeefSteakcard", name: "Beef Steak 🥩", course: "maindish/beef" },
