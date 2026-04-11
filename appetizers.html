@@ -53,17 +53,25 @@
 			text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 		}
 
-		.nav-links li button#backbutton {
-			border: none;
-			font-family: inherit;
-			font-size: inherit;
-			cursor: pointer;
-			outline: none;
-			color: white;
-			text-decoration: none;
-			transition: 0.3s;
-			background-color: var(--dark-walnut);
-		}
+	.big-arrow-btn {
+    font-size: 24px;        
+    font-weight: bold;       
+    background: none;        
+    border: none;           
+    cursor: pointer;        
+    color: rgb(234, 221, 212);
+    transition: transform 0.2s; 
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+
+.big-arrow-btn:hover {
+        transform: translateY(-1.5px);
+
+    text-shadow: 0 0 15px rgb(255, 255, 255, 0.5);   
+    transform: scale(1.2);   }
 	</style>
 </head>
 
@@ -72,8 +80,9 @@
 		<nav class="main-nav">
 			<div class="logo">Yummy 🍲</div>
 			<ul class="nav-links">
-				<li><button id="backbutton" type="button">Go Back</button></li>
-				<li><button id="backbutton" type="button">Go Back</button></li>
+				  <button id="backbutton" class="big-arrow-btn" type="button" aria-label="Go Back">
+        &#8592;
+    </button>
 				<li><a href="home.html">Home</a></li>
 				<li><a href="search.html">Search</a></li>
 				<li><a href="favorites.html">Favorites</a></li>

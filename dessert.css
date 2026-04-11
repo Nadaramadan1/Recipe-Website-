@@ -45,6 +45,26 @@ body{
 .main a:hover{
    transform: translateY(-5px);
 }
+/* go back */
+.big-arrow-btn {
+    font-size: 24px;        
+    font-weight: bold;       
+    background: none;        
+    border: none;           
+    cursor: pointer;        
+    color: rgb(234, 221, 212);
+    transition: transform 0.2s; 
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+
+.big-arrow-btn:hover {
+        transform: translateY(-1.5px);
+
+    text-shadow: 0 0 15px rgb(255, 255, 255, 0.5);   
+    transform: scale(1.2);   }
 .recipes-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
