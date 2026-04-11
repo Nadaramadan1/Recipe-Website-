@@ -1,17 +1,42 @@
 
-        
+        function onClick() {
+            window.scrollBy({
+                top: 740,
+                behavior: 'smooth'
+            });
+        }
 //==============================  heart button==================================
-         function changecolor(element) {
-          if( element.style.color == "red"){
-                element.style.color = "white";
-                 element.title = "add to favorite";
-          }else{
-               element.style.color = "red";
+       function changecolor(heartIcon) {
+    // 1. Toggle the visual look (red color)
+    heartIcon.classList.toggle('active');
+    
+    if (heartIcon.classList.contains('active')) {
+        heartIcon.style.color = "red";
+        
+        // 2. Find the recipe details near the clicked heart
+        const card = heartIcon.closest('.recipe-content-box');
+        const title = card.querySelector('h2').innerText;
+        
+        // Create a recipe object
+        const recipe = {
+            id: title.toLowerCase().replace(/\s/g, '-'),
+            title: title,
+            // You can add an image path here if you want images in favorites too
+        };
 
-               element.title = "Added Successfully! ✨";
-
-          }
-          }
+        // 3. Save to localStorage
+        let favorites = JSON.parse(localStorage.getItem('myFavorites')) || [];
+        
+        // Only add if it's not already there
+        if (!favorites.some(fav => fav.title === title)) {
+            favorites.push(recipe);
+            localStorage.setItem('myFavorites', JSON.stringify(favorites));
+        }
+    } else {
+        heartIcon.style.color = "white"; // Or your default color
+        // Optional: Remove from favorites logic here
+    }
+}
 
 // =================================== OPEN CARD==============================================
           let currentCard = null;

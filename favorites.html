@@ -3,19 +3,51 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Yummy - My Favorites </title>
+    <title>Yummy - My Favorites</title>
+     <link rel="stylesheet" href="bakery-style.css">
     <link rel="stylesheet" href="Style.css">
-
+   
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
     <style>
-       
+        /* Container for cards - Set to row to display them side by side */
+        #favorites-list {
+            display: flex;
+            flex-direction: row;    /* Horizontal layout */
+            flex-wrap: wrap;        /* Wrap cards to the next line if needed */
+            justify-content: center; /* Center cards horizontally */
+            gap: 25px;
+            padding: 40px 20px;
+            width: 100%;
+        }
+
+        /* Card styling with a width suitable for horizontal layout */
+        .recipe-card {
+            width: 360px;           /* Fixed width for each card */
+            height: 400px;          /* Fixed height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 40px;
+            padding: 25px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .hidden {
+            display: none !important;
+        }
     </style>
 </head>
 
 <body style="background-color: #f2e7df; text-align: center;">
-    <div id="navbar" >
+
+    <div id="navbar">
         <nav class="main-nav">
-            <div class="logo">Yummy </div>
+            <div class="logo">Yummy</div>
             <ul class="nav-links">
                 <li><a href="cover.html">Team</a></li>
                 <li><a href="home.html">Home</a></li>
@@ -25,36 +57,143 @@
                 <li><a href="add-recipe.html">Add Recipe</a></li>
                 <li><a href="login.html">Login</a></li>
                 <li><a href="signup.html">Sign Up</a></li>
-                
             </ul>
         </nav>
     </div>
-    <div>
 
-        <h1 class="fav">MY FAVORUTES</h1>
-        <div>
-            <img class="favimg" src="bakeryimages/favorite.png" width="400">
+    <div id="favorites-view">
+        <h1 class="fav" style="margin-top: 20px;">MY FAVORITES</h1>
+        
+        <div id="empty-state">
+            <div>
+                <img class="favimg" src="bakeryimages/favorite.png" width="400">
+            </div>
+            <h2 class="fav">Your favorites haven’t arrived yet...</h2>
+            <p class="P-fav">
+                Your personal collection of recipes is ready to grow.<br>
+                Start saving the recipes you love and build your delicious collection!
+            </p>
+            <br>
+            <a href="recipes.html" style="text-decoration: none;">
+                <span class="favbutton">DISCOVER DELIGHTFUL RECIPES</span>
+            </a>
         </div>
-        <h2 class="fav">Your favorites haven’t arrived yet...</h2>
-        <p class="P-fav">
 
-            Your personal collection of recipes is ready to grow.<br>
-            Start saving the recipes you love and build your delicious collection!
-
-        </p>
-
-        <br>
-
-        <a href="recipes.html" style="text-decoration: none;"><span class="favbutton">
-                DISCOVER DELIGHTFUL RECIPES
-            </span></a>
-
-
+        <div id="favorites-list"></div>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const favoritesContainer = document.getElementById('favorites-list');
+            const emptyState = document.getElementById('empty-state');
+            
+            // 1. Fetch saved favorites from LocalStorage
+            let favorites = JSON.parse(localStorage.getItem('myFavorites')) || [];
 
-    <main>
-    </main>
+            // 2. Filter out invalid entries
+            favorites = favorites.filter(fav => fav && (fav.title || fav.id));
+
+            // 3. Mapping titles to local image paths
+            // 3. Mapping recipe IDs/Titles to local image paths
+const imageMap = {
+    // Bread
+    'Baguette': 'bakeryimages/Baguette.jpeg',
+    'Natural Sourdough': 'bakeryimages/Sourdough.jpeg',
+    'Herbed Focaccia': 'bakeryimages/Focaccia1.jpeg',
+
+    'Classic Cinnamon Rolls': 'bakeryimages/classicCinnamon.jpeg',
+    'Pecan Cinnamon Rolls': 'bakeryimages/PecanCinnamon.jpeg',
+    'Chocolate Cinnamon Rolls': 'bakeryimages/ChocolateCinnamon.jpeg',
+    
+    // Cookies 
+    'Ultimate Chocolate Cookies': 'bakeryimages/chocolatcookie.jpeg',
+    'Butter Shortbread Biscuits': 'bakeryimages/butterbiscuit.jpeg',
+    'Oatmeal Raisin Cookies': 'bakeryimages/oatmlcookie.jpeg',
+    
+    // Croissant
+    'Classic Butter Croissant': 'bakeryimages/butter.jpeg',
+    'Pain au Chocolat': 'bakeryimages/Chocolat.jpeg',
+    'Strawberry Custard Danish': 'bakeryimages/Danish.jpeg',
+    
+    // Donuts
+    'Classic Glazed Donuts': 'bakeryimages/GlazedDonuts.jpeg',
+    'Rich Chocolate Donuts': 'bakeryimages/Chocolatdounts.jpeg',
+    'Creamy Filled Donuts': 'bakeryimages/filledDounts.jpeg',
+    
+    // Macarons
+    'Vanilla Bean Macarons': 'bakeryimages/vanillamacron.jpeg',
+    'Raspberry Macarons': 'bakeryimages/RaspberryMacarons.jpeg',
+    'Pistachio Macarons': 'bakeryimages/PistachioMacarons.jpeg',
+
+    // --- Desserts Section ---
+        'Tiramisu': 'dessertimages/tiramisu.jpg',
+        'Black Forest Cheesecake': 'dessertimages/blackforest.jpg',
+        'Brownies': 'dessertimages/brownie.jpg',
+        'Strawberry Cake': 'dessertimages/strawberrycake.jpg',
+        'Crème Caramel': 'dessertimages/creamecramel.jpg',
+        'Cup Cake': 'dessertimages/cupcake.jpg' ,
+
+    // --- Appetizers Section ---
+    'Deviled Eggs': 'appetizersimgs/pic1.jpg',
+    'Spinach Artichoke Dip': 'appetizersimgs/pic2.jpg',
+    'Chicken Wings': 'appetizersimgs/pic3.jpg',
+    'Jalapeno Poppers': 'appetizersimgs/pic4.jpg',
+    'Stuffed Mushrooms': 'appetizersimgs/mushroom.jpeg',
+    'Crostini': 'appetizersimgs/pic5.jpeg',
+    'Charcuterie Board': 'appetizersimgs/pic7.jpeg',
+    'Sliders': 'appetizersimgs/pic6.jpeg',
+    'Shrimp Cocktail': 'appetizersimgs/pic8.jpeg',
+    // --- Drinks ---
+        
+        'French Vanilla Cappuccino': 'drinksimages/Cappuccino.jpeg',
+        'Caramel Hazelnut Iced ': 'drinksimages/Caramel Hazelnut Iced Coffee.jpeg',
+        'Arab Coffee': 'drinksimages/arabcoffe.jpeg',
+        'Berry Blast Smoothie🍸': 'drinksimages/Smoothie.jpeg',
+        'Pineapple Mango Smoothie 🥭🍍': 'drinksimages/Pineapple Mango Smoothie.jpeg',
+        'Strawberry LemonadeStrawberry Lemonade🍓🍋': 'drinksimages/Strawberry Lemonade.jpeg',
+        'Hot Chocolate🍫': 'drinksimages/Hot Chocolate.jpeg',
+        'Turkish Tea🍃 ': 'drinksimages/Turkishtea.jpeg',
+        'Herbal Hibiscus Tea🌺🌹': 'drinksimages/Hibiscustea.jpeg'
+};
+
+            if (favorites.length > 0) {
+                // 4. Hide empty state message
+                emptyState.classList.add('hidden');
+                favoritesContainer.innerHTML = ''; 
+
+                // 5. Generate a card for each favorite
+                favorites.forEach(recipe => {
+                    const recipeCard = document.createElement('div');
+                    recipeCard.className = "recipe-card";
+                    
+                    const titleText = recipe.title || recipe.id || "Delicious Recipe";
+                    const imageSrc = imageMap[titleText] || recipe.image || 'bakeryimages/placeholder.jpeg';
+
+                    // 6. Set background and content
+                    recipeCard.style.backgroundImage = `url(${imageSrc})`;
+                    recipeCard.innerHTML = `
+                        <h2>${titleText}</h2>
+                        <a href="javascript:void(0)" 
+                           class="btn-main" 
+                           onclick="removeFavorite('${titleText}')" 
+                           style="margin-top: auto; background-color: #4b1f11; color: #dcb8a0; padding: 10px; border-radius: 20px; text-decoration: none;">
+                           REMOVE
+                        </a>
+                    `;
+                    favoritesContainer.appendChild(recipeCard);
+                });
+            } else {
+                emptyState.classList.remove('hidden');
+            }
+        });
+
+        // Function to remove item and refresh the view
+        function removeFavorite(title) {
+            let favorites = JSON.parse(localStorage.getItem('myFavorites')) || [];
+            favorites = favorites.filter(fav => (fav.title || fav.id) !== title);
+            localStorage.setItem('myFavorites', JSON.stringify(favorites));
+            location.reload(); 
+        }
+    </script>
 </body>
-
 </html>
