@@ -141,66 +141,66 @@
 
 // ************************************************************
 
-window.addEventListener("DOMContentLoaded", function() {
-    // Get the recipe ID from URL hash (e.g., #Baguette or #Baguette-card)
-    let recipeId = window.location.hash.substring(1);
+// window.addEventListener("DOMContentLoaded", function() {
+//     // Get the recipe ID from URL hash (e.g., #Baguette or #Baguette-card)
+//     let recipeId = window.location.hash.substring(1);
     
-    if (recipeId) {
-        console.log("Hash detected:", recipeId);
+//     if (recipeId) {
+//         console.log("Hash detected:", recipeId);
         
-        setTimeout(function() {
-            // Try to find the details card directly first
-            let detailsCard = document.getElementById(recipeId);
+//         setTimeout(function() {
+//             // Try to find the details card directly first
+//             let detailsCard = document.getElementById(recipeId);
             
-            // If not found, try adding '-card' (for bakery pages)
-            if (!detailsCard && !recipeId.endsWith('-card')) {
-                detailsCard = document.getElementById(recipeId + '-card');
-            }
+//             // If not found, try adding '-card' (for bakery pages)
+//             if (!detailsCard && !recipeId.endsWith('-card')) {
+//                 detailsCard = document.getElementById(recipeId + '-card');
+//             }
             
-            // If still not found, try adding 'card' (for appetizers style)
-            if (!detailsCard && !recipeId.endsWith('card')) {
-                detailsCard = document.getElementById(recipeId + 'card');
-            }
+//             // If still not found, try adding 'card' (for appetizers style)
+//             if (!detailsCard && !recipeId.endsWith('card')) {
+//                 detailsCard = document.getElementById(recipeId + 'card');
+//             }
             
-            if (detailsCard) {
-                console.log("Found details card:", detailsCard.id);
+//             if (detailsCard) {
+//                 console.log("Found details card:", detailsCard.id);
                 
-                // Close any open card
-                if (currentCard) {
-                    currentCard.style.display = "none";
-                }
+//                 // Close any open card
+//                 if (currentCard) {
+//                     currentCard.style.display = "none";
+//                 }
                 
-                // Open the card
-                detailsCard.style.display = "block";
-                currentCard = detailsCard;
+//                 // Open the card
+//                 detailsCard.style.display = "block";
+//                 currentCard = detailsCard;
                 
-                // Find and highlight the recipe card
-                // Remove '-card' or 'card' suffix to get recipe card ID
-                let recipeCardId = recipeId;
-                if (recipeCardId.endsWith('-card')) {
-                    recipeCardId = recipeCardId.replace('-card', '');
-                }
-                if (recipeCardId.endsWith('card')) {
-                    recipeCardId = recipeCardId.replace('card', '');
-                }
+//                 // Find and highlight the recipe card
+//                 // Remove '-card' or 'card' suffix to get recipe card ID
+//                 let recipeCardId = recipeId;
+//                 if (recipeCardId.endsWith('-card')) {
+//                     recipeCardId = recipeCardId.replace('-card', '');
+//                 }
+//                 if (recipeCardId.endsWith('card')) {
+//                     recipeCardId = recipeCardId.replace('card', '');
+//                 }
                 
-                const recipeCard = document.getElementById(recipeCardId);
-                if (recipeCard) {
-                    recipeCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+//                 const recipeCard = document.getElementById(recipeCardId);
+//                 if (recipeCard) {
+//                     recipeCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     
-                    // Highlight effect
-                    recipeCard.style.transition = "all 0.3s ease";
-                    recipeCard.style.transform = "translateY(-10px)";
-                    recipeCard.style.boxShadow = "0 5px 15px rgba(0,0,0,0.3)";
+//                     // Highlight effect
+//                     recipeCard.style.transition = "all 0.3s ease";
+//                     recipeCard.style.transform = "translateY(-10px)";
+//                     recipeCard.style.boxShadow = "0 5px 15px rgba(0,0,0,0.3)";
                     
-                    setTimeout(function() {
-                        recipeCard.style.transform = "";
-                        recipeCard.style.boxShadow = "";
-                    }, 1000);
-                }
-            } else {
-                console.log("Details card not found for:", recipeId);
-            }
-        }, 500);
-    }
-});
+//                     setTimeout(function() {
+//                         recipeCard.style.transform = "";
+//                         recipeCard.style.boxShadow = "";
+//                     }, 1000);
+//                 }
+//             } else {
+//                 console.log("Details card not found for:", recipeId);
+//             }
+//         }, 500);
+//     }
+// });
