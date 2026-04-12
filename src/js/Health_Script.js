@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     newCard.className = 'recipe-card all keto'; 
                     newCard.id = rId;
                     newCard.innerHTML = `
-                        <div class="card-image" style="background-image: url('../../healthy_images/Grilled Salmon & Avocado Salad.jfif');">
+                        <div class="card-image" style="background-image: url('photos/Healthy_images/Grilled Salmon & Avocado Salad.jfif');">
                             <span class="diet-badge">Custom</span>
                             <button class="grid-heart-btn" onclick="changecolor(this)" aria-label="Favorite">❤</button>
                         </div>
