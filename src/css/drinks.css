@@ -325,6 +325,7 @@ h2 {
 }
 
 .heart {
+ 
   margin-top: 100px;
   align-self: center;
   width: 10px;
@@ -340,10 +341,12 @@ h2 {
   text-align: center;
 
 
+ 
 }
 
+
 .heart:hover {
-  transform: translateY(-5px);
+   transform: translateY(-5px);
 }
 
 html {

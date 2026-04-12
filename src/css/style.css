@@ -582,7 +582,7 @@ table tr:hover td {
 .hero-home-container {
   height: 90vh;
   /* Dark Overlay for better text readability */
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('photos/home-page.png');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../photos/home-page.png');
   background-size: cover;
   background-position: center;
   display: flex;
