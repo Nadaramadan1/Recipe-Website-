@@ -4,12 +4,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabBtns = document.querySelectorAll('.tab-btn');
     const recipesContainer = document.getElementById('recipes-container');
     const modal = document.getElementById('recipeModal');
-    const storedRecipes = JSON.parse(localStorage.getItem('recipes')) || [];
+    let storedRecipes = [];
+    try {
+        const rawData = localStorage.getItem('recipes');
+        storedRecipes = rawData ? JSON.parse(rawData) : [];
+        if (!Array.isArray(storedRecipes)) storedRecipes = [];
+    } catch (err) {
+        console.error("Failed to parse recipes from localStorage:", err);
+        storedRecipes = [];
+    }
 
     // 1. --- Render Custom Recipes ---
     // Create new cards for healthy recipes added via the Admin panel
     if (recipesContainer && storedRecipes.length > 0) {
         storedRecipes.forEach(r => {
+            // Safety check: ensure recipe has name and ID
+            if (!r || !r.id) return;
+            
             const courseLower = (r.course || "").toLowerCase();
             if (courseLower.includes('healthy')) {
                 let rId = r.id.toLowerCase();
@@ -94,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // --- Database Search ---
             // Look in localStorage first, then fallback to defaults
             const updated = storedRecipes.find(r => {
+                if (!r || !r.id || !r.name) return false;
                 let rId = r.id.toLowerCase();
                 if (rId.endsWith('card')) rId = rId.slice(0, -4);
                 return rId === card.id.toLowerCase() || r.name.trim().toLowerCase() === title.toLowerCase();
