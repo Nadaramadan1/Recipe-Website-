@@ -134,6 +134,36 @@
         </div>
 
 
+    <!-- Embedded Script for Deep Linking (Admin View & Search Results) -->
+    <script>
+        window.addEventListener("load", function () {
+            let recipeId = window.location.hash.substring(1);
+            if (recipeId && recipeId.endsWith('card')) {
+                recipeId = recipeId.replace('card', '');
+            }
+            if (recipeId) {
+                setTimeout(function () {
+                    const targetCard = document.getElementById(recipeId);
+                    if (targetCard) {
+                        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        
+                        // Add highlight effect matching drinks pages style
+                        targetCard.style.transition = "all 0.3s ease";
+                        targetCard.style.transform = "translateY(-10px)";
+                        targetCard.style.boxShadow = "0 5px 15px rgba(230, 126, 34, 0.4)";
+                        
+                        setTimeout(function () {
+                            targetCard.style.transform = "";
+                            targetCard.style.boxShadow = "";
+                        }, 1000);
+
+                        // Trigger the modal exactly as if the user clicked it
+                        targetCard.click();
+                    }
+                }, 500);
+            }
+        });
+    </script>
     <script src="../../src/js/Health_Script.js"></script>
 </body>
 </html>
