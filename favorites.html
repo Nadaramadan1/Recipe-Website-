@@ -27,9 +27,9 @@
         /* Card styling with a width suitable for horizontal layout */
         .recipe-card {
             width: 360px;
-            /* Fixed width for each card */
+            
             height: 400px;
-            /* Fixed height */
+            
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -87,122 +87,129 @@
         <div id="favorites-list"></div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const favoritesContainer = document.getElementById('favorites-list');
-            const emptyState = document.getElementById('empty-state');
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const favoritesContainer = document.getElementById('favorites-list');
+        const emptyState = document.getElementById('empty-state');
 
-            // 1. Fetch saved favorites from LocalStorage
-            let favorites = JSON.parse(localStorage.getItem('myFavorites')) || [];
+        let favorites = JSON.parse(localStorage.getItem('myFavorites')) || [];
+        favorites = favorites.filter(fav => fav && (fav.title || fav.id));
 
-            // 2. Filter out invalid entries
-            favorites = favorites.filter(fav => fav && (fav.title || fav.id));
+        const imageMap = {
+            // Bakery
+            'Baguette': 'bakeryimages/Baguette.jpeg',
+            'Natural Sourdough': 'bakeryimages/Sourdough.jpeg',
+            'Herbed Focaccia': 'bakeryimages/Focaccia1.jpeg',
+            'Classic Cinnamon Rolls': 'bakeryimages/classicCinnamon.jpeg',
+            'Pecan Cinnamon Rolls': 'bakeryimages/PecanCinnamon.jpeg',
+            'Chocolate Cinnamon Rolls': 'bakeryimages/ChocolateCinnamon.jpeg',
+            'Ultimate Chocolate Cookies': 'bakeryimages/chocolatcookie.jpeg',
+            'Butter Shortbread Biscuits': 'bakeryimages/butterbiscuit.jpeg',
+            'Oatmeal Raisin Cookies': 'bakeryimages/oatmlcookie.jpeg',
+            'Classic Butter Croissant': 'bakeryimages/butter.jpeg',
+            'Pain au Chocolat': 'bakeryimages/Chocolat.jpeg',
+            'Strawberry Custard Danish': 'bakeryimages/Danish.jpeg',
+            'Classic Glazed Donuts': 'bakeryimages/GlazedDonuts.jpeg',
+            'Rich Chocolate Donuts': 'bakeryimages/Chocolatdounts.jpeg',
+            'Creamy Filled Donuts': 'bakeryimages/filledDounts.jpeg',
+            'Vanilla Bean Macarons': 'bakeryimages/vanillamacron.jpeg',
+            'Raspberry Macarons': 'bakeryimages/RaspberryMacarons.jpeg',
+            'Pistachio Macarons': 'bakeryimages/PistachioMacarons.jpeg',
 
-            // 3. Mapping titles to local image paths
-            // 3. Mapping recipe IDs/Titles to local image paths
-            const imageMap = {
-                // Bread
-                'Baguette': 'bakeryimages/Baguette.jpeg',
-                'Natural Sourdough': 'bakeryimages/Sourdough.jpeg',
-                'Herbed Focaccia': 'bakeryimages/Focaccia1.jpeg',
+            // Desserts 
+            'Tiramisu': 'dessertimages/tiramisu.jpg',
+            'Black Forest Cheesecake': 'dessertimages/blackforest.jpg',
+            'Brownies': 'dessertimages/brownie.jpg',
+            'Strawberry Cake': 'dessertimages/strawberrycake.jpg',
+            'Crème Caramel': 'dessertimages/creamecramel.jpg',
+            'Cup Cake': 'dessertimages/cupcake.jpg',
 
-                'Classic Cinnamon Rolls': 'bakeryimages/classicCinnamon.jpeg',
-                'Pecan Cinnamon Rolls': 'bakeryimages/PecanCinnamon.jpeg',
-                'Chocolate Cinnamon Rolls': 'bakeryimages/ChocolateCinnamon.jpeg',
+            // Appetizers
+            'Deviled Eggs': 'appetizersimgs/pic1.jpg',
+            'Spinach Artichoke Dip': 'appetizersimgs/pic2.jpg',
+            'Chicken Wings': 'appetizersimgs/pic3.jpg',
+            'Jalapeno Poppers': 'appetizersimgs/pic4.jpg',
+            'Stuffed Mushrooms': 'appetizersimgs/mushroom.jpeg',
+            'Crostini': 'appetizersimgs/pic5.jpeg',
+            'Charcuterie Board': 'appetizersimgs/pic7.jpeg',
+            'Sliders': 'appetizersimgs/pic6.jpeg',
+            'Shrimp Cocktail': 'appetizersimgs/pic8.jpeg',
 
-                // Cookies 
-                'Ultimate Chocolate Cookies': 'bakeryimages/chocolatcookie.jpeg',
-                'Butter Shortbread Biscuits': 'bakeryimages/butterbiscuit.jpeg',
-                'Oatmeal Raisin Cookies': 'bakeryimages/oatmlcookie.jpeg',
+            // Drinks 
+            'French Vanilla Cappuccino': 'drinksimages/Cappuccino.jpeg',
+            'Arab Coffee': 'drinksimages/arabcoffe.jpeg',
+            'Caramel Hazelnut Iced Coffee': 'drinksimages/Caramel Hazelnut Iced Coffee.jpeg',
+            'Berry Blast Smoothie': 'drinksimages/Smoothie.jpeg',
+            'Strawberry Lemonade': 'drinksimages/Strawberry Lemonade.jpeg',
+            'Pineapple Mango Smoothie': 'drinksimages/Pineapple Mango Smoothie.jpeg',
+            'Hot Chocolate': 'drinksimages/Hot Chocolate.jpeg',
+            'Turkish Tea': 'drinksimages/Turkishtea.jpeg',
+            'Herbal Hibiscus Tea': 'drinksimages/Hibiscustea.jpeg'
+        };
 
-                // Croissant
-                'Classic Butter Croissant': 'bakeryimages/butter.jpeg',
-                'Pain au Chocolat': 'bakeryimages/Chocolat.jpeg',
-                'Strawberry Custard Danish': 'bakeryimages/Danish.jpeg',
+        if (favorites.length > 0) {
+            emptyState.classList.add('hidden');
+            favoritesContainer.innerHTML = '';
+favorites.forEach(recipe => {
+    const recipeCard = document.createElement('div');
+    recipeCard.className = "recipe-card";
+const bgColor = "#FFF8F1";   
+    const borderColor = "#A0522D"; 
+    const textColor = "#A0522D";
 
-                // Donuts
-                'Classic Glazed Donuts': 'bakeryimages/GlazedDonuts.jpeg',
-                'Rich Chocolate Donuts': 'bakeryimages/Chocolatdounts.jpeg',
-                'Creamy Filled Donuts': 'bakeryimages/filledDounts.jpeg',
+    const titleText = recipe.title || recipe.id || "Delicious Recipe";
+    const cleanTitle = titleText.replace(/[^\x00-\x7F]/g, "").trim(); 
+    const imageSrc = imageMap[titleText] || imageMap[cleanTitle];
 
-                // Macarons
-                'Vanilla Bean Macarons': 'bakeryimages/vanillamacron.jpeg',
-                'Raspberry Macarons': 'bakeryimages/RaspberryMacarons.jpeg',
-                'Pistachio Macarons': 'bakeryimages/PistachioMacarons.jpeg',
+    if (imageSrc) {
+        recipeCard.style.backgroundImage = `url('${imageSrc}')`;
+        recipeCard.style.border = "none";
+    } else {
+        recipeCard.style.backgroundImage = "none";
+        recipeCard.style.backgroundColor = bgColor; 
+        
+        
+        recipeCard.style.borderTop = `10px solid ${borderColor}`; 
+        recipeCard.style.borderBottom = `10px solid ${borderColor}`;
+        
+        recipeCard.style.borderRadius = "40px"; 
+    }
 
-                // --- Desserts Section ---
-                'Tiramisu': 'dessertimages/tiramisu.jpg',
-                'Black Forest Cheesecake': 'dessertimages/blackforest.jpg',
-                'Brownies': 'dessertimages/brownie.jpg',
-                'Strawberry Cake': 'dessertimages/strawberrycake.jpg',
-                'Crème Caramel': 'dessertimages/creamecramel.jpg',
-                'Cup Cake': 'dessertimages/cupcake.jpg',
+    const isNoImage = !imageSrc;
+    const currentTextColor = isNoImage ? textColor : "white";
 
-                // --- Appetizers Section ---
-                'Deviled Eggs': 'appetizersimgs/pic1.jpg',
-                'Spinach Artichoke Dip': 'appetizersimgs/pic2.jpg',
-                'Chicken Wings': 'appetizersimgs/pic3.jpg',
-                'Jalapeno Poppers': 'appetizersimgs/pic4.jpg',
-                'Stuffed Mushrooms': 'appetizersimgs/mushroom.jpeg',
-                'Crostini': 'appetizersimgs/pic5.jpeg',
-                'Charcuterie Board': 'appetizersimgs/pic7.jpeg',
-                'Sliders': 'appetizersimgs/pic6.jpeg',
-                'Shrimp Cocktail': 'appetizersimgs/pic8.jpeg',
-                // --- Drinks ---
-                'French Vanilla Cappuccino': 'drinksimages/Cappuccino.jpeg',
-                'Arab Coffee': 'drinksimages/arabcoffe.jpeg',
-                'Caramel Hazelnut Iced Coffee': 'drinksimages/Caramel Hazelnut Iced Coffee.jpeg',
-                'Berry Blast Smoothie': 'drinksimages/Smoothie.jpeg',
-                'Strawberry Lemonade': 'drinksimages/Strawberry Lemonade.jpeg',
-                'Pineapple Mango Smoothie': 'drinksimages/Pineapple Mango Smoothie.jpeg',
-                'Hot Chocolate': 'drinksimages/Hot Chocolate.jpeg',
-                'Turkish Tea': 'drinksimages/Turkishtea.jpeg',
-                'Herbal Hibiscus Tea': 'drinksimages/Hibiscustea.jpeg'
-            };
-
-            if (favorites.length > 0) {
-                // 4. Hide empty state message
-                emptyState.classList.add('hidden');
-                favoritesContainer.innerHTML = '';
-
-                // 5. Generate a card for each favorite
-                favorites.forEach(recipe => {
-                    const recipeCard = document.createElement('div');
-                    recipeCard.className = "recipe-card";
-
-                    const titleText = recipe.title || recipe.id || "Delicious Recipe";
-
-                    // remove emojies
-                    const cleanTitle = titleText.replace(/[^\x00-\x7F]/g, "").trim();
-
-
-                    const imageSrc = imageMap[titleText] || imageMap[cleanTitle] || 'bakeryimages/placeholder.jpeg';
-
-                    recipeCard.style.backgroundImage = `url('${imageSrc}')`;
-                    recipeCard.innerHTML = `
-        <h2>${titleText}</h2>
+    recipeCard.innerHTML = `
+       <h2 style="color: ${currentTextColor}; margin-top: 0; font-weight: bold;">${titleText}</h2>
         <a href="javascript:void(0)" 
-           class="btn-main" 
+           class="btn-remove" 
            onclick="removeFavorite('${titleText}')" 
-           style="margin-top: auto; background-color: #4b1f11; color: #dcb8a0; padding: 10px; border-radius: 20px; text-decoration: none;">
+           style="margin-top: auto; 
+                  background-color: ${borderColor}; 
+                  color: white !important; 
+                  padding: 10px 22px; 
+                  border-radius: 20px; 
+                  text-decoration: none; 
+                  font-weight: bold;
+                  font-size: 13px;
+                  border: none;
+                  display: inline-block;">
            REMOVE
         </a>
     `;
-                    favoritesContainer.appendChild(recipeCard);
-                });
-            } else {
-                emptyState.classList.remove('hidden');
-            }
-        });
-
-        // Function to remove item and refresh the view
-        function removeFavorite(title) {
-            let favorites = JSON.parse(localStorage.getItem('myFavorites')) || [];
-            favorites = favorites.filter(fav => (fav.title || fav.id) !== title);
-            localStorage.setItem('myFavorites', JSON.stringify(favorites));
-            location.reload();
+    favoritesContainer.appendChild(recipeCard);
+});
+        } else {
+            emptyState.classList.remove('hidden');
         }
-    </script>
+    });
+
+    function removeFavorite(title) {
+        let favorites = JSON.parse(localStorage.getItem('myFavorites')) || [];
+        favorites = favorites.filter(fav => (fav.title || fav.id) !== title);
+        localStorage.setItem('myFavorites', JSON.stringify(favorites));
+        location.reload();
+    }
+</script>
 </body>
 
 </html>
