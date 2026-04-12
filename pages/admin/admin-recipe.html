@@ -39,10 +39,9 @@
     </div>
 
     <script>
-        // 1. Static Recipes List (All your original recipes)
         const staticRecipes = [
             // Main Dishes
-            { id: "BeefSteakcard", name: "Beef Steak 🥩", course: "pages/main_dish/beef.html" },
+            { id: "BeefSteakcard", name: "Beef Steak 🥩", course: "maindish/beef" },
             { id: "BeefTacoscard", name: "Beef Tacos 🌮", course: "maindish/beef" },
             { id: "BeefStewcard", name: "Beef Stew 🍲", course: "maindish/beef" },
             { id: "FriedChickencard", name: "Fried Chicken 🍗", course: "maindish/chicken" },
@@ -73,19 +72,38 @@
             { id: "Focacciacard", name: "Herbed Focaccia 🍪", course: "Bakery/Bread" },
             { id: "ButterCroissantcard", name: "Butter Croissant", course: "Bakery/Croissant" },
             { id: "PainauChocolatcard", name: "Pain au Chocolat", course: "Bakery/Croissant" },
+            { id: "StrawberryCustardDanishcard", name: "Strawberry Custard Danish", course: "Bakery/Croissant" },
             { id: "ClassicCinnamoncard", name: "Classic Cinnamon Rolls", course: "Bakery/Cinnamon" },
+            { id: "PecanCinnamoncard", name: "Pecan Cinnamon Rolls", course: "Bakery/Cinnamon" },
+            { id: "ChocolateCinnamoncard", name: "Chocolate Cinnamon Rolls", course: "Bakery/Cinnamon" },
             { id: "ChocolateCookiescard", name: "Chocolate Cookies 🍪", course: "Bakery/Cookies" },
+            { id: "ButterBiscuitscard", name: "Butter Shortbread Biscuits 🧈", course: "Bakery/Cookies" },
+            { id: "Oatmealcard", name: "Oatmeal Raisin Cookies 🌾", course: "Bakery/Cookies" },  
             { id: "GlazedDonutscard", name: "Glazed Donuts 🍩", course: "Bakery/Donuts" },
+            { id: "ChocolateDonutscard", name: "Chocolate Donuts 🍩", course: "Bakery/Donuts" },
+            { id: "FilledDonutscard", name: "Filled Donuts 🍩", course: "Bakery/Donuts" },        
             { id: "VanillaMacaronscard", name: "Vanilla Macarons", course: "Bakery/Macarons" },
+            { id: "PistachioMacaronscard", name: "Pistachio Macarons", course: "Bakery/Macarons" },
+            { id: "RaspberryMacronsscard", name: "Raspberry Macarons", course: "Bakery/Macarons" },
 
             // Dessert
             { id: "tiramisucard", name: "Tiramisu ☕", course: "Dessert" },
+            { id: "blackforest-cheesecakecard", name: "Black Forest Cheesecake", course: "Dessert" },
             { id: "browniecard", name: "Brownies 🍫", course: "Dessert" },
-            { id: "CremeCaramelcard", name: "Crème Caramel 🍮", course: "Dessert" },
+            { id: "strawberryCakecard", name: "Strawberry Cake 🍓", course: "Dessert" },
+            { id: "CremeCaramelcard", name: "Crème Caramel 🍮", course: "Dessert" },           
+            { id: "cupcakecard", name: "Cupcakes 🧁", course: "Dessert" },
+           
 
             // Appetizers
             { id: "DeviledEggscard", name: "Deviled Eggs", course: "appetizers" },
+            { id: "SpinachArtichokecard", name: "Spinach Artichoke Dip", course: "appetizers" },
             { id: "ChickenWingscard", name: "Chicken Wings", course: "appetizers" },
+            { id: "JalapenoPopperscard", name: "Jalapeno Poppers", course: "appetizers" },
+            { id: "StuffedMushroomscard", name: "Stuffed Mushrooms", course: "appetizers" },
+            { id: "Crostinicard", name: "Crostini", course: "appetizers" },
+            { id: "Charcuteriecard", name: "Charcuterie", course: "appetizers" },
+            { id: "Sliderscard", name: "Sliders", course: "appetizers" },
             { id: "ShrimpCocktailcard", name: "Shrimp Cocktail", course: "appetizers" },
 
             // Drinks
