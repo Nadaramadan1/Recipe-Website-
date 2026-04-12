@@ -10,14 +10,14 @@
         <nav class="main-nav">
             <div class="logo">Yummy 🍲</div>
             <ul class="nav-links">
-                <li><a href="../cover.html">Team</a></li>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../search.html">Search</a></li>
-                <li><a href="../favorites.html">Favorites</a></li>
-                <li><a href="../admin/admin-recipe.html">Admin</a></li>
-                <li><a href="../admin/add-recipe.html">Add Recipe</a></li>
-                <li><a href="../auth/login.html">Login</a></li>
-                <li><a href="../auth/signup.html">Sign Up</a></li>
+                <li><a href="../../cover.html">Team</a></li>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../search.html">Search</a></li>
+                <li><a href="../../favorites.html">Favorites</a></li>
+                <li><a href="../../pages/admin/admin-recipe.html">Admin</a></li>
+                <li><a href="../../pages/admin/add-recipe.html">Add Recipe</a></li>
+                <li><a href="../../pages/auth/login.html">Login</a></li>
+                <li><a href="../../pages/auth/signup.html">Sign Up</a></li>
             </ul>
         </nav>
     </div>
@@ -171,8 +171,6 @@
 
             { id: "Hibiscus-teacard", name: "Herbal Hibiscus Tea🌺🌹", course: "Drinks/Hot drinks" }
 
-
-
         ];
 
 
@@ -212,8 +210,8 @@
         // View Function: This focuses on the target page and the specific card
         function viewRecipe(id, course) {
             const categoryPages = {
-                "appetizers": "../appetizers/appetizers.html",
-                "dessert": "../desserts/dessert.html",
+                "appetizers": "../../pages/appetizers/appetizers.html",
+                "dessert": "../../pages/desserts/dessert.html",
                 "healthy": "../../pages/healthy/Healthy Food.html",
                 "maindish/beef": "../../pages/main_dish/beef.html",
                 "maindish/chicken": "../../pages/main_dish/chicken.html",
@@ -232,7 +230,7 @@
                 "drinks/hot drinks": "../../pages/drinks/hot-drinks.html"
             };
 
-            let targetPage = "../index.html";
+            let targetPage = "../../index.html";
             const courseLower = course.toLowerCase();
             
             for (let key in categoryPages) {
