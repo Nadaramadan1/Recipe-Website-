@@ -6,8 +6,6 @@
     <title>Vegetarian Recipes</title>
     <link rel="stylesheet" href="../../src/css/maindish.css">
     <script src="../../src/js/maindish.js"></script>
-    <script src="../../src/js/search-js.js"></script>
-
 </head>
 
 <body>
@@ -15,9 +13,6 @@
         <nav class="main-nav">
             <div class="logo">Yummy 🍲</div>
             <ul class="nav-links">
-                <button id="backbutton" class="big-arrow-btn" type="button" aria-label="Go Back">
-                    &#8592;
-                </button>
                 <li><a href="../../cover.html">Team</a></li>
                 <li><a href="../../index.html">Home</a></li>
                 <li><a href="../../search.html">Search</a></li>
@@ -37,20 +32,26 @@
     <h2 class="h2">Our Vegetarian Recipes</h2>
 
     <div class="recipes-container">
+ 
         <div class="recipe-card" id="veggieStirFry" data-id="veggieStirFry"
             onclick="openCard(event,'veggieStirFry-card')">
+ 
             <h2>Veggie Stir-Fry 🥗</h2>
             <p>Colorful vegetables stir-fried with a light sauce.</p>
             <a href="javascript:void(0)" onclick="openCard(event,'veggieStirFry-card')">View Recipes</a>
         </div>
 
+ 
         <div class="recipe-card" id="vaggieCurry" data-id="vaggieCurry" onclick="openCard(event,'vaggieCurry-card')">
+ 
             <h2>Vegetable Curry 🍛</h2>
             <p>Rich and creamy curry with mixed veggies.</p>
             <a href="javascript:void(0)" onclick="openCard(event,'vaggieCurry-card')">View Recipes</a>
         </div>
 
+ 
         <div class="recipe-card" id="quinoaSalad" data-id="quinoaSalad" onclick="openCard(event,'quinoaSalad-card')">
+ 
             <h2>Quinoa Salad 🥗</h2>
             <p>Healthy quinoa salad with fresh veggies and herbs.</p>
             <a href="javascript:void(0)" onclick="openCard(event,'quinoaSalad-card')">View Recipes</a>

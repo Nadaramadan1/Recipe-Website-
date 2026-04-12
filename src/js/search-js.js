@@ -15,34 +15,38 @@ let recipes = [
     { id: "Hibiscus-tea", name: "Herbal Hibiscus Tea", ingredients: ["hibiscus", "water", "honey"], page: "pages/drinks/hot-drinks.html" },
 
     // Main Dish - Beef
-    { id: "beefSteak", name: "Beef Steak", ingredients: ["beef", "salt", "pepper", "oil"], page: "pages/main_dish/beef.html" },
-    { id: "beefTacos", name: "Beef Tacos", ingredients: ["beef", "taco shells", "lettuce", "cheese", "salsa"], page: "pages/main_dish/beef.html" },
-    { id: "beefStew", name: "Beef Stew", ingredients: ["beef", "carrots", "potatoes", "onion", "broth"], page: "pages/main_dish/beef.html" },
+    { id: "beef_steak", name: "Beef Steak", ingredients: ["beef", "salt", "pepper", "oil"], page: "pages/main_dish/beef.html" },
+    { id: "beef_tacos", name: "Beef Tacos", ingredients: ["beef", "taco shells", "lettuce", "cheese", "salsa"], page: "pages/main_dish/beef.html" },
+    { id: "beef_stew", name: "Beef Stew", ingredients: ["beef", "carrots", "potatoes", "onion", "broth"], page: "pages/main_dish/beef.html" },
 
     // Main Dish - Chicken
+ 
     { id: "friedChicken", name: "Fried Chicken", ingredients: ["chicken", "flour", "oil", "spices"], page: "pages/main_dish/chicken.html" },
     { id: "chickenCurry", name: "Chicken Curry", ingredients: ["chicken", "onion", "garlic", "curry powder", "coconut milk"], page: "pages/main_dish/chicken.html" },
     { id: "grilledChicken", name: "Grilled Chicken", ingredients: ["chicken", "salt", "pepper", "olive oil"], page: "pages/main_dish/chicken.html" },
+ 
 
     // Main Dish - Pasta
-    { id: "spaghettiCarbonara", name: "Spaghetti Carbonara", ingredients: ["spaghetti", "egg", "bacon", "parmesan cheese"], page: "pages/main_dish/pasta.html" },
-    { id: "pastaPesto", name: "Pasta Pesto", ingredients: ["pasta", "basil", "pine nuts", "parmesan cheese", "olive oil"], page: "pages/main_dish/pasta.html" },
+    { id: "spaghetti_carbonara", name: "Spaghetti Carbonara", ingredients: ["spaghetti", "egg", "bacon", "parmesan cheese"], page: "pages/main_dish/pasta.html" },
+    { id: "pasta_pesto", name: "Pasta Pesto", ingredients: ["pasta", "basil", "pine nuts", "parmesan cheese", "olive oil"], page: "pages/main_dish/pasta.html" },
     { id: "lasagna", name: "Lasagna", ingredients: ["lasagna noodles", "ground beef", "tomato sauce", "cheese"], page: "pages/main_dish/pasta.html" },
 
     // Main Dish - Seafood
-    { id: "grilledSalmon", name: "Grilled Salmon", ingredients: ["salmon", "lemon", "olive oil", "salt", "pepper"], page: "pages/main_dish/seafood.html" },
-    { id: "shrimpPasta", name: "Shrimp Pasta", ingredients: ["shrimp", "pasta", "garlic", "olive oil", "parmesan"], page: "pages/main_dish/seafood.html" },
-    { id: "fishCurry", name: "Fish Curry", ingredients: ["fish", "onion", "curry powder", "coconut milk"], page: "pages/main_dish/seafood.html" },
+    { id: "grilled_salmon", name: "Grilled Salmon", ingredients: ["salmon", "lemon", "olive oil", "salt", "pepper"], page: "pages/main_dish/seafood.html" },
+    { id: "shrimp_pasta", name: "Shrimp Pasta", ingredients: ["shrimp", "pasta", "garlic", "olive oil", "parmesan"], page: "pages/main_dish/seafood.html" },
+    { id: "fish_curry", name: "Fish Curry", ingredients: ["fish", "onion", "curry powder", "coconut milk"], page: "pages/main_dish/seafood.html" },
 
     // Main Dish - Fast Food
     { id: "burger", name: "Burger", ingredients: ["bun", "beef patty", "lettuce", "tomato", "cheese"], page: "pages/main_dish/fastfood.html" },
-    { id: "fries", name: "French Fries", ingredients: ["potatoes", "oil", "salt"], page: "pages/main_dish/fastfood.html" },
+    { id: "french_fries", name: "French Fries", ingredients: ["potatoes", "oil", "salt"], page: "pages/main_dish/fastfood.html" },
     { id: "pizza", name: "Pizza", ingredients: ["pizza dough", "tomato sauce", "cheese", "toppings"], page: "pages/main_dish/fastfood.html" },
 
     // Main Dish - Vegetarian
+ 
     { id: "veggieStirFry", name: "Veggie Stir-Fry", ingredients: ["mixed vegetables", "soy sauce", "garlic", "oil"], page: "pages/main_dish/Vegetarian.html" },
     { id: "vaggieCurry", name: "Vegetable Curry", ingredients: ["mixed vegetables", "onion", "garlic", "curry powder"], page: "pages/main_dish/Vegetarian.html" },
     { id: "quinoaSalad", name: "Quinoa Salad", ingredients: ["quinoa", "vegetables", "olive oil", "lemon juice"], page: "pages/main_dish/Vegetarian.html" },
+ 
 
     // Healthy
     { id: "grilled_salmon_avocado", name: "Grilled Salmon & Avocado", ingredients: ["salmon", "avocado", "olive oil", "lemon"], page: "pages/healthy/Healthy Food.html" },
@@ -89,7 +93,7 @@ let recipes = [
     { id: "cupcake", name: "Cupcake", ingredients: ["flour", "sugar", "butter", "eggs"], page: "pages/desserts/dessert.html" },
 
     // Appetizers
-    { id: "DeviledEggs", name: "Deviled Eggs", ingredients: ["eggs", "mayonnaise", "mustard"], page: "pages/appetizers/appetizers.html" },
+    { id: "DeviledEggs", name: "Deviled Eggs", ingredients: ["eggs", "mayonnaise", "mustard"], page: "pages/appetizers/appetizers.html"},
     { id: "SpinachArtichokeDip", name: "Spinach Artichoke Dip", ingredients: ["spinach", "artichoke", "cream cheese", "sour cream"], page: "pages/appetizers/appetizers.html" },
     { id: "ChickenWings", name: "Chicken Wings", ingredients: ["chicken wings", "hot sauce", "butter"], page: "pages/appetizers/appetizers.html" },
     { id: "JalapenoPoppers", name: "Jalapeno Poppers", ingredients: ["jalapenos", "cheese", "bacon"], page: "pages/appetizers/appetizers.html" },
