@@ -82,7 +82,7 @@ body {
 
 /* Main Banner Section */
 .main {
-    background-image: url("bakeryimages/bakery12.png");
+    background-image: url("../../photos/bakeryimages/bakery12.png");
     background-color: #e2d8ce;
     text-align: center;
     height: 630px;
@@ -197,123 +197,123 @@ body {
 
 /* Main Categories Backgrounds */
 #Bread {
-    background-image: url(bakeryimages/Breads.jpeg);
+    background-image: url(../../photos/bakeryimages/Breads.jpeg);
 }
 
 #Croissants {
-    background-image: url(bakeryimages/Croissants.jpeg);
+    background-image: url(../../photos/bakeryimages/Croissants.jpeg);
 }
 
 #Cookies {
-    background-image: url(bakeryimages/cookies.jpeg);
+    background-image: url(../../photos/bakeryimages/cookies.jpeg);
 }
 
 #Donuts {
-    background-image: url(bakeryimages/Dounts.png);
+    background-image: url(../../photos/bakeryimages/Dounts.png);
 }
 
 #Macarons {
-    background-image: url(bakeryimages/macron.jpeg);
+    background-image: url(../../photos/bakeryimages/macron.jpeg);
 }
 
 #Cinnamon {
-    background-image: url(bakeryimages/Cinnamon.png);
+    background-image: url(../../photos/bakeryimages/Cinnamon.png);
 }
 
 /* Bread Section */
 #Baguette,
 #Baguette-card {
-    background-image: url(bakeryimages/Baguette.jpeg);
+    background-image: url(../../photos/bakeryimages/Baguette.jpeg);
 }
 
 #Sourdough,
 #Sourdough-card {
-    background-image: url(bakeryimages/Sourdough.jpeg);
+    background-image: url(../../photos/bakeryimages/Sourdough.jpeg);
 }
 
 #Focaccia,
 #Focaccia-card {
-    background-image: url(bakeryimages/Focaccia1.jpeg);
+    background-image: url(../../photos/bakeryimages/Focaccia1.jpeg);
 }
 
 /* Cinnamon Section */
 #ClassicCinnamon,
 #ClassicCinnamon-card {
-    background-image: url(bakeryimages//classicCinnamon.jpeg);
+    background-image: url(../../photos/bakeryimages/classicCinnamon.jpeg);
 }
 
 #PecanCinnamon,
 #PecanCinnamon-card {
-    background-image: url(bakeryimages/PecanCinnamon.jpeg);
+    background-image: url(../../photos/bakeryimages/PecanCinnamon.jpeg);
 }
 
 #ChocolateCinnamon,
 #ChocolateCinnamon-card {
-    background-image: url(bakeryimages/ChocolateCinnamon.jpeg);
+    background-image: url(../../photos/bakeryimages/ChocolateCinnamon.jpeg);
 }
 
 /* Cookies Section */
 #ChocolateCookies,
 #ChocolateCookies-card {
-    background-image: url(bakeryimages/chocolatcookie.jpeg);
+    background-image: url(../../photos/bakeryimages/chocolatcookie.jpeg);
 }
 
 #ButterBiscuits,
 #ButterBiscuits-card {
-    background-image: url(bakeryimages/butterbiscuit.jpeg);
+    background-image: url(../../photos/bakeryimages/butterbiscuit.jpeg);
 }
 
 #OatmealCookies,
 #OatmealCookies-card {
-    background-image: url(bakeryimages/oatmlcookie.jpeg);
+    background-image: url(../../photos/bakeryimages/oatmlcookie.jpeg);
 }
 
 /* Croissant Section */
 #ButterCroissant,
 #ButterCroissant-card {
-    background-image: url(bakeryimages/butter.jpeg);
+    background-image: url(../../photos/bakeryimages/butter.jpeg);
 }
 
 #PainauChocolat,
 #PainauChocolat-card {
-    background-image: url(bakeryimages/Chocolat.jpeg);
+    background-image: url(../../photos/bakeryimages/Chocolat.jpeg);
 }
 
 #StrawberryDanish,
 #StrawberryDanish-card {
-    background-image: url(bakeryimages/Danish.jpeg);
+    background-image: url(../../photos/bakeryimages/Danish.jpeg);
 }
 
 /* Donuts Section */
 #GlazedDonuts,
 #GlazedDonuts-card {
-    background-image: url(bakeryimages/GlazedDonuts.jpeg);
+    background-image: url(../../photos/bakeryimages/GlazedDonuts.jpeg);
 }
 
 #ChocolateDonuts,
 #ChocolateDonuts-card {
-    background-image: url(bakeryimages/Chocolatdounts.jpeg);
+    background-image: url(../../photos/bakeryimages/Chocolatdounts.jpeg);
 }
 
 #FilledDonuts,
 #FilledDonuts-card {
-    background-image: url(bakeryimages/filledDounts.jpeg);
+    background-image: url(../../photos/bakeryimages/filledDounts.jpeg);
 }
 
 /* Macarons Section */
 #VanillaMacarons,
 #VanillaMacarons-card {
-    background-image: url(bakeryimages/vanillamacron.jpeg);
+    background-image: url(../../photos/bakeryimages/vanillamacron.jpeg);
 }
 
 #RaspberryMacrons,
 #RaspberryMacrons-card {
-    background-image: url(bakeryimages/RaspberryMacarons.jpeg);
+    background-image: url(../../photos/bakeryimages/RaspberryMacarons.jpeg);
 }
 
 #PistachioMacarons,
 #PistachioMacarons-card {
-    background-image: url(bakeryimages/PistachioMacarons.jpeg);
+    background-image: url(../../photos/bakeryimages/PistachioMacarons.jpeg);
 }
 
 
