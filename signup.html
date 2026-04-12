@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Yummy - Sign Up</title>
-<<<<<<< HEAD
     <link rel="stylesheet" href="Style.css">
-=======
+
     <meta name="description" content="This is our Recipes Finder Website!">
-    <link rel="stylesheet" href="src/css/style.css"> <style>
-      
+    <link rel="stylesheet" href="src/css/style.css">
+    <style>
+
     </style>
->>>>>>> 4112ca3a3e83ff1209c686a7a6c946b41b9098ee
+
 </head>
 
 <body style="background-color: #f2e7df; text-align: center;">
@@ -21,19 +21,16 @@
         <nav class="main-nav">
             <div class="logo">Yummy</div>
             <ul class="nav-links">
-<<<<<<< HEAD
+
                 <li><a href="cover.html">Team</a></li>
                 <li><a href="home.html">Home</a></li>
-=======
-               <li><a href="cover.html">Team</a></li>
-                <li><a href="index.html">Home</a></li>
->>>>>>> 4112ca3a3e83ff1209c686a7a6c946b41b9098ee
+
                 <li><a href="search.html">Search</a></li>
                 <li><a href="favorites.html">Favorites</a></li>
-                <li><a href="pages/admin/admin-recipe.html">Admin</a></li>
-                <li><a href="pages/admin/add-recipe.html">Add Recipe</a></li>
-                <li><a href="pages/auth/login.html">Login</a></li>
-                <li><a href="pages/auth/signup.html">Sign Up</a></li>
+                <li><a href="admin-recipe.html">Admin</a></li>
+                <li><a href="add-recipe.html">Add Recipe</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
             </ul>
         </nav>
     </div>
@@ -44,104 +41,104 @@
 
         <div class="signup-container">
 
-<<<<<<< HEAD
             <div class="signup-image">
                 <img src="photos/siggnup.jpg" alt="Food">
             </div>
-=======
-        <div class="form-section">
-            <form action="index.html" method="GET">
-                <div class="form-group">
-                    <label>Username</label>
-                    <input type="text" class="form-input" required placeholder="Enter your username" name="user">
-                </div>
->>>>>>> 4112ca3a3e83ff1209c686a7a6c946b41b9098ee
 
             <div class="form-section">
-
-                <!-- ✅ مهم: مفيش action -->
-                <form id="signupForm">
-
+                <form action="index.html" method="GET">
                     <div class="form-group">
                         <label>Username</label>
-                        <input type="text" class="form-input" name="user" required placeholder="Enter your username">
+                        <input type="text" class="form-input" required placeholder="Enter your username" name="user">
                     </div>
 
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" class="form-input" name="password" required minlength="5"
-                            placeholder="Min 5 characters">
+
+                    <div class="form-section">
+
+                        <!-- ✅ مهم: مفيش action -->
+                        <form id="signupForm">
+
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input type="text" class="form-input" name="user" required
+                                    placeholder="Enter your username">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" class="form-input" name="password" required minlength="5"
+                                    placeholder="Min 5 characters">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Confirm Password</label>
+                                <input type="password" class="form-input" name="confirm_password" required
+                                    placeholder="Confirm password">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-input" name="email" placeholder="Enter your email">
+                            </div>
+
+                            <button type="submit" class="btn-main">Create Account</button>
+
+                            <div class="Login-link">
+                                <span>Already have an account? <a href="login.html">Login</a></span>
+                            </div>
+
+                        </form>
                     </div>
-
-                    <div class="form-group">
-                        <label>Confirm Password</label>
-                        <input type="password" class="form-input" name="confirm_password" required
-                            placeholder="Confirm password">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" class="form-input" name="email" placeholder="Enter your email">
-                    </div>
-
-                    <button type="submit" class="btn-main">Create Account</button>
-
-                    <div class="Login-link">
-                        <span>Already have an account? <a href="login.html">Login</a></span>
-                    </div>
-
-                </form>
             </div>
         </div>
-    </div>
 
-    <!-- 🔥 JavaScript -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        <!-- 🔥 JavaScript -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
 
-            let form = document.getElementById("signupForm");
+                let form = document.getElementById("signupForm");
 
-            form.addEventListener("submit", function (e) {
-                e.preventDefault();
+                form.addEventListener("submit", function (e) {
+                    e.preventDefault();
 
-                let username = document.querySelector('input[name="user"]').value;
-                let password = document.querySelector('input[name="password"]').value;
-                let confirmPassword = document.querySelector('input[name="confirm_password"]').value;
-                let email = document.querySelector('input[name="email"]').value;
+                    let username = document.querySelector('input[name="user"]').value;
+                    let password = document.querySelector('input[name="password"]').value;
+                    let confirmPassword = document.querySelector('input[name="confirm_password"]').value;
+                    let email = document.querySelector('input[name="email"]').value;
 
-                // Validation
-                if (!username || !password || !confirmPassword) {
-                    alert("Please fill all required fields ❗");
-                    return;
-                }
+                    // Validation
+                    if (!username || !password || !confirmPassword) {
+                        alert("Please fill all required fields ❗");
+                        return;
+                    }
 
-                if (password !== confirmPassword) {
-                    alert("Passwords do not match ❌");
-                    return;
-                }
+                    if (password !== confirmPassword) {
+                        alert("Passwords do not match ❌");
+                        return;
+                    }
 
-                // Check if user exists
-                if (localStorage.getItem(username)) {
-                    alert("Username already exists ⚠️");
-                    return;
-                }
+                    // Check if user exists
+                    if (localStorage.getItem(username)) {
+                        alert("Username already exists ⚠️");
+                        return;
+                    }
 
-                // Save user
-                let userData = {
-                    password: password,
-                    email: email
-                };
+                    // Save user
+                    let userData = {
+                        password: password,
+                        email: email
+                    };
 
-                localStorage.setItem(username, JSON.stringify(userData));
+                    localStorage.setItem(username, JSON.stringify(userData));
 
-                alert("Account created successfully ✅");
+                    alert("Account created successfully ✅");
 
-                // Redirect to login
-                window.location.href = "login.html";
+                    // Redirect to login
+                    window.location.href = "login.html";
+                });
+
             });
-
-        });
-    </script>
+        </script>
 
 </body>
 

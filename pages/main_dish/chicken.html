@@ -6,6 +6,8 @@
     <title>Chicken Recipes</title>
     <link rel="stylesheet" href="../../src/css/maindish.css">
     <script src="../../src/js/maindish.js"></script>
+    <script src="../../src/js/search-js.js"></script>
+
 </head>
 
 <body>
@@ -32,19 +34,20 @@
     <h2 class="h2">Our Chicken Recipes</h2>
 
     <div class="recipes-container">
-        <div class="recipe-card" id="grilledChicken" onclick="openCard(event,'grilledChickenCard')">
+        <div class="recipe-card" id="grilledChicken" data-id="grilledChicken"
+            onclick="openCard(event,'grilledChickenCard')">
             <h2>Grilled Chicken 🍗</h2>
             <p>Juicy chicken grilled to perfection with herbs and spices.</p>
             <a href="javascript:void(0)" onclick="openCard(event,'grilledChickenCard')">View Recipes</a>
         </div>
 
-        <div class="recipe-card" id="chickenCurry" onclick="openCard(event,'chickenCurryCard')">
+        <div class="recipe-card" id="chickenCurry" data-id="chickenCurry" onclick="openCard(event,'chickenCurryCard')">
             <h2>Chicken Curry 🍛</h2>
             <p>Classic chicken curry with rich, flavorful sauce.</p>
             <a href="javascript:void(0)" onclick="openCard(event,'chickenCurryCard')">View Recipes</a>
         </div>
 
-        <div class="recipe-card" id="friedChicken" onclick="openCard(event,'friedChickenCard')">
+        <div class="recipe-card" id="friedChicken" data-id="friedChicken" onclick="openCard(event,'friedChickenCard')">
             <h2>Fried Chicken 🍗</h2>
             <p>Crispy golden chicken bites with perfect seasoning.</p>
             <a href="javascript:void(0)" onclick="openCard(event,'friedChickenCard')">View Recipes</a>

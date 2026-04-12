@@ -6,6 +6,8 @@
     <title>Fast Food Recipes</title>
     <link rel="stylesheet" href="../../src/css/maindish.css">
     <script src="../../src/js/maindish.js"></script>
+    <script src="../../src/js/search-js.js"></script>
+
 </head>
 
 <body>
@@ -32,19 +34,19 @@
     <h2 class="h2">Our Fast Food Recipes</h2>
 
     <div class="recipes-container">
-        <div class="recipe-card" id="burger" onclick="openCard(event,'burgerCard')">
+        <div class="recipe-card" id="burger" data-id="burger" onclick="openCard(event,'burgerCard')">
             <h2>Burger 🍔</h2>
             <p>Juicy beef burger with fresh toppings.</p>
             <a href="javascript:void(0)" onclick="openCard(event,'burgerCard')">View Recipes</a>
         </div>
 
-        <div class="recipe-card" id="fries" onclick="openCard(event,'friesCard')">
+        <div class="recipe-card" id="fries" data-id="fries" onclick="openCard(event,'friesCard')">
             <h2>French Fries 🍟</h2>
             <p>Crispy golden fries with a pinch of salt.</p>
             <a href="javascript:void(0)" onclick="openCard(event,'friesCard')">View Recipes</a>
         </div>
 
-        <div class="recipe-card" id="pizza" onclick="openCard(event,'pizzaCard')">
+        <div class="recipe-card" id="pizza" data-id="pizza" onclick="openCard(event,'pizzaCard')">
             <h2>Pizza 🍕</h2>
             <p>Classic pizza with tomato, cheese, and toppings.</p>
             <a href="javascript:void(0)" onclick="openCard(event,'pizzaCard')">View Recipes</a>

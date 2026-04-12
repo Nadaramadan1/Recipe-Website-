@@ -6,6 +6,8 @@
     <title>Pasta Recipes</title>
     <link rel="stylesheet" href="../../src/css/maindish.css">
     <script src="../../src/js/maindish.js"></script>
+    <script src="../../src/js/search-js.js"></script>
+
 </head>
 
 <body>
@@ -32,19 +34,20 @@
     <h2 class="h2">Our Pasta Recipes</h2>
 
     <div class="recipes-container">
-        <div class="recipe-card" id="spaghettiCarbonara" onclick="openCard(event,'spaghettiCarbonaraCard')">
+        <div class="recipe-card" id="spaghettiCarbonara" data-id="spaghettiCarbonara"
+            onclick="openCard(event,'spaghettiCarbonaraCard')">
             <h2>Spaghetti Carbonara 🍝</h2>
             <p>Creamy spaghetti with bacon and parmesan.</p>
             <a href="javascript:void(0)" onclick="openCard(event,'spaghettiCarbonaraCard')">View Recipes</a>
         </div>
 
-        <div class="recipe-card" id="pastaPesto" onclick="openCard(event,'pastaPestoCard')">
+        <div class="recipe-card" id="pastaPesto" data-id="pastaPesto" onclick="openCard(event,'pastaPestoCard')">
             <h2>Pasta Pesto 🌿</h2>
             <p>Fresh basil pesto with pasta noodles.</p>
             <a href="javascript:void(0)" onclick="openCard(event,'pastaPestoCard')">View Recipes</a>
         </div>
 
-        <div class="recipe-card" id="lasagna" onclick="openCard(event,'lasagnaCard')">
+        <div class="recipe-card" id="lasagna" data-id="lasagna"="openCard(event,'lasagnaCard')">
             <h2>Lasagna 🍲</h2>
             <p>Layers of pasta, cheese, and tomato sauce.</p>
             <a href="javascript:void(0)" onclick="openCard(event,'lasagnaCard')">View Recipes</a>

@@ -6,6 +6,8 @@
     <title>Seafood Recipes</title>
     <link rel="stylesheet" href="../../src/css/maindish.css">
     <script src="../../src/js/maindish.js"></script>
+    <script src="../../src/js/search-js.js"></script>
+
 </head>
 
 <body>
@@ -32,19 +34,20 @@
     <h2 class="h2">Our Seafood Recipes</h2>
 
     <div class="recipes-container">
-        <div class="recipe-card" id="grilledSalmon" onclick="openCard(event,'grilledSalmonCard')">
-            <h2>Grilled Salmon 🐟</h2>
-            <p>Fresh salmon fillets grilled with lemon and herbs.</p>
-            <a href="javascript:void(0)" onclick="openCard(event,'grilledSalmonCard')">View Recipes</a>
+        <div class="recipe-card" id="grilledSalmon" data-id="girrledsalmon"
+            onclick="openCard(event,'grilledSalmonCard')">
+            <h2>Grilled Salmon 🐟</h>
+                <p>Fresh salmon fillets grilled with lemon and herbs.</p>
+                <a href="javascript:void(0)" onclick="openCard(event,'grilledSalmonCard')">View Recipes</a>
         </div>
 
-        <div class="recipe-card" id="shrimpPasta" onclick="openCard(event,'shrimpPastaCard')">
+        <div class="recipe-card" id="shrimpPasta" data-id="shrimpPasta" onclick="openCard(event,'shrimpPastaCard')">
             <h2>Shrimp Pasta 🍤</h2>
             <p>Delicious pasta tossed with juicy shrimp and creamy sauce.</p>
             <a href="javascript:void(0)" onclick="openCard(event,'shrimpPastaCard')">View Recipes</a>
         </div>
 
-        <div class="recipe-card" id="fishCurry" onclick="openCard(event,'fishCurryCard')">
+        <div class="recipe-card" id="fishCurry" data-id="fishcurry" onclick="openCard(event,'fishCurryCard')">
             <h2>Fish Curry 🐠</h2>
             <p>Spicy seafood curry with tender fish chunks.</p>
             <a href="javascript:void(0)" onclick="openCard(event,'fishCurryCard')">View Recipes</a>
