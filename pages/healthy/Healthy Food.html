@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yummy - Healthy Life 🥗</title>
-    <link rel="stylesheet" href="Health_Style.css">
+    <link rel="stylesheet" href="../../src/css/Health_Style.css">
 </head>
 <body class="healthy-page">
 
@@ -12,14 +12,14 @@
         <nav class="main-nav">
             <div class="logo">Yummy 🍲</div>
             <ul class="nav-links">
-            <li><a href="cover.html">Team</a></li>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="search.html">Search</a></li>
-            <li><a href="favorites.html">Favorites</a></li>
-            <li><a href="admin-recipe.html">Admin</a></li>
-            <li><a href="add-recipe.html">Add Recipe</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="../../cover.html">Team</a></li>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../search.html">Search</a></li>
+            <li><a href="../../favorites.html">Favorites</a></li>
+            <li><a href="../../admin/admin-recipe.html">Admin</a></li>
+            <li><a href="../../admin/add-recipe.html">Add Recipe</a></li>
+            <li><a href="../../auth/login.html">Login</a></li>
+            <li><a href="../../auth/signup.html">Sign Up</a></li>
             <button id="backbutton" class="big-arrow-btn" type="button" aria-label="Go Back" onclick="history.back()">
     &#8592;
 </button>
@@ -55,7 +55,7 @@
         <div class="healthy-recipes-grid" id="recipes-container">
             
             <div class="recipe-card keto" id="grilled_salmon_avocado">
-                <div class="card-image" style="background-image: url('Healthy_images/Healthy\ Salmon\ &\ Avocado\ Salad.jfif');">
+                <div class="card-image" style="background-image: url('../../Healthy_images/Healthy Salmon & Avocado Salad.jfif');">
                     <span class="diet-badge">Keto</span>
                     <button class="grid-heart-btn" onclick="changecolor(this)" aria-label="Favorite">❤</button>
                 </div>
@@ -71,7 +71,7 @@
             </div>
 
             <div class="recipe-card vegan" id="quinoa_buddha_bowl">
-                <div class="card-image" style="background-image: url('Healthy_images/Spiced\ Tofu\ &\ Roasted\ Veggie\ Quinoa\ Bowl.jfif');">
+                <div class="card-image" style="background-image: url('../../Healthy_images/Spiced Tofu & Roasted Veggie Quinoa Bowl.jfif');">
                     <span class="diet-badge">Vegan</span>
                     <button class="grid-heart-btn" onclick="changecolor(this)" aria-label="Favorite">❤</button>
                 </div>
@@ -87,7 +87,7 @@
             </div>
 
             <div class="recipe-card protein" id="lemon_herb_chicken">
-                <div class="card-image" style="background-image: url('Healthy_images/Herb-Roasted\ Golden\ Chicken\ with\ Lemon\ Essence.jfif');">
+                <div class="card-image" style="background-image: url('../../Healthy_images/Herb-Roasted Golden Chicken with Lemon Essence.jfif');">
                     <span class="diet-badge">High Protein</span>
                     <button class="grid-heart-btn" onclick="changecolor(this)" aria-label="Favorite">❤</button>
                 </div>
@@ -103,7 +103,7 @@
             </div>
 
             <div class="recipe-card gluten-free" id="zucchini_noodles">
-                <div class="card-image" style="background-image: url('Healthy_images/Low\ Carb\ Zucchini\ Noodles\ with\ Pesto\ Sauce.jfif');">
+                <div class="card-image" style="background-image: url('../../Healthy_images/Low Carb Zucchini Noodles with Pesto Sauce.jfif');">
                     <span class="diet-badge">Gluten-Free</span>
                     <button class="grid-heart-btn" onclick="changecolor(this)" aria-label="Favorite">❤</button>
                 </div>
@@ -122,13 +122,16 @@
 
         <!-- Recipe Detail Modal (Pop-up) -->
         <div id="recipeModal" class="modal">
-    <div class="modal-content glass-card">
-        <span class="close-btn">&times;</span>
-        <div id="modalBody">
+            <div class="modal-content glass-card">
+                <!-- Stationery close btn for fallback, though script generates a dynamic one -->
+                <span class="close-btn">&times;</span>
+                <div id="modalBody">
+                    <!-- Dynamic Content Goes Here -->
+                </div>
             </div>
-    </div>
+        </div>
 
 
-    <script src="Health_Script.js"></script>
+    <script src="../../src/js/Health_Script.js"></script>
 </body>
 </html>
