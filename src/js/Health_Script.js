@@ -95,12 +95,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!viewBtn) return;
             
             e.preventDefault();
+            e.stopPropagation(); // Stop event from bubbling further
             const card = viewBtn.closest('.recipe-card');
             const titleElement = card.querySelector('h3');
             const title = titleElement ? titleElement.innerText.trim() : "";
             const bgImage = card.querySelector('.card-image').style.backgroundImage;
 
-            console.log("🔍 View button clicked for:", title);
+            console.log("🔍 [Health_Script] View button clicked for:", title);
 
             // --- Database Search ---
             // Look in localStorage first, then fallback to defaults

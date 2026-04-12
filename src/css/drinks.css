@@ -111,19 +111,19 @@
 
 /* صور مختلفة لكل صفحة */
 .drinks-hero {
-  background-image: url("drinksimages/drink2.png");
+  background-image: url("../../photos/drinksimages/drink2.png");
 }
 
 .coffee-hero {
-  background-image: url("drinksimages/cof.png");
+  background-image: url("../../photos/drinksimages/cof.png");
 }
 
 .juice-hero {
-  background-image: url("drinksimages/juce.png");
+  background-image: url("../../photos/drinksimages/juce.png");
 }
 
 .hot-drinks-hero {
-  background-image: url(drinksimages/hotdrinksh.png);
+  background-image: url("../../photos/drinksimages/hotdrinksh.png");
 }
 
 body {
@@ -164,70 +164,70 @@ h2 {
 
 
 #coffee {
-  background-image: url(drinksimages/cof2.png);
+  background-image: url("../../photos/drinksimages/cof2.png");
 
 }
 
 #juices {
-  background-image: url(drinksimages/juices.jpeg);
+  background-image: url("../../photos/drinksimages/juices.jpeg");
 
 }
 
 #hot_drinks {
-  background-image: url(drinksimages/hotdrinks.jpeg);
+  background-image: url("../../photos/drinksimages/hotdrinks.jpeg");
 
 }
 
 
 #Cappuccino,
 #Cappuccino-card {
-  background-image: url(drinksimages/Cappuccino.jpeg);
+  background-image: url("../../photos/drinksimages/Cappuccino.jpeg");
 
 }
 
 #icedcoffee,
 #icedcoffee-card {
-  background-image: url(drinksimages/Caramel\ Hazelnut\ Iced\ Coffee.jpeg);
+  background-image: url("../../photos/drinksimages/Caramel\ Hazelnut\ Iced\ Coffee.jpeg");
 
 }
 
 #arabcoffee,
 #arabcoffee-card {
-  background-image: url(drinksimages/arabcoffe.jpeg);
+  background-image: url("../../photos/drinksimages/arabcoffe.jpeg");
 
 }
 
 #Smoothie,
 #Smoothie-card {
-  background-image: url(drinksimages/Smoothie.jpeg);
+  background-image: url("../../photos/drinksimages/Smoothie.jpeg");
 
 }
 
 #smothie2,
 #smothie2-card {
-  background-image: url(drinksimages/Pineapple\ Mango\ Smoothie.jpeg);
+  background-image: url("../../photos/drinksimages/Pineapple\ Mango\ Smoothie.jpeg");
 
 }
 
 #strawberrylemo,
 #strawberrylemo-card {
-  background-image: url(drinksimages/Strawberry\ Lemonade.jpeg);
+  background-image: url("../../photos/drinksimages/Strawberry\ Lemonade.jpeg");
 
 }
 
 #hot-chocolate,
 #hot-chocolate-card {
-  background-image: url(drinksimages/Hot\ Chocolate.jpeg);
+  background-image: url("../../photos/drinksimages/Hot\ Chocolate.jpeg");
 }
 
 #turkish-tea,
 #turkish-tea-card {
-  background-image: url(drinksimages/Turkishtea.jpeg);
+  background-image: url("../../photos/drinksimages/Turkishtea.jpeg");
 }
 
 #Hibiscus-tea,
 #Hibiscus-tea-card {
-  background-image: url(drinksimages/Hibiscustea.jpeg);
+  background-image: url("../../photos/drinksimages/Hibiscustea.jpeg");
 }
 
 #recipesss {
