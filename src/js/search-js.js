@@ -20,15 +20,9 @@ let recipes = [
     { id: "beef_stew", name: "Beef Stew", ingredients: ["beef", "carrots", "potatoes", "onion", "broth"], page: "pages/main_dish/beef.html" },
 
     // Main Dish - Chicken
-<<<<<<< HEAD:search-js.js
-    { id: "friedchicken", name: "Fried Chicken", ingredients: ["chicken", "flour", "oil", "spices"], page: "maindish/chicken" },
-    { id: "chickencurry", name: "Chicken Curry", ingredients: ["chicken", "onion", "garlic", "curry powder", "coconut milk"], page: "maindish/chicken" },
-    { id: "grilledchicken", name: "Grilled Chicken", ingredients: ["chicken", "salt", "pepper", "olive oil"], page: "maindish/chicken" },
-=======
     { id: "fried_chicken", name: "Fried Chicken", ingredients: ["chicken", "flour", "oil", "spices"], page: "pages/main_dish/chicken.html" },
     { id: "chicken_curry", name: "Chicken Curry", ingredients: ["chicken", "onion", "garlic", "curry powder", "coconut milk"], page: "pages/main_dish/chicken.html" },
     { id: "grilled_chicken", name: "Grilled Chicken", ingredients: ["chicken", "salt", "pepper", "olive oil"], page: "pages/main_dish/chicken.html" },
->>>>>>> 4112ca3a3e83ff1209c686a7a6c946b41b9098ee:src/js/search-js.js
 
     // Main Dish - Pasta
     { id: "spaghetti_carbonara", name: "Spaghetti Carbonara", ingredients: ["spaghetti", "egg", "bacon", "parmesan cheese"], page: "pages/main_dish/pasta.html" },
@@ -41,15 +35,9 @@ let recipes = [
     { id: "fish_curry", name: "Fish Curry", ingredients: ["fish", "onion", "curry powder", "coconut milk"], page: "pages/main_dish/seafood.html" },
 
     // Main Dish - Fast Food
-<<<<<<< HEAD:search-js.js
-    { id: "burger", name: "Burger", ingredients: ["bun", "beef patty", "lettuce", "tomato", "cheese"], page: "maindish/fastfood" },
-    { id: "fries", name: "French Fries", ingredients: ["potatoes", "oil", "salt"], page: "maindish/fastfood" },
-    { id: "pizza", name: "Pizza", ingredients: ["pizza dough", "tomato sauce", "cheese", "toppings"], page: "maindish/fastfood" },
-=======
     { id: "burger", name: "Burger", ingredients: ["bun", "beef patty", "lettuce", "tomato", "cheese"], page: "pages/main_dish/fastfood.html" },
     { id: "french_fries", name: "French Fries", ingredients: ["potatoes", "oil", "salt"], page: "pages/main_dish/fastfood.html" },
     { id: "pizza", name: "Pizza", ingredients: ["pizza dough", "tomato sauce", "cheese", "toppings"], page: "pages/main_dish/fastfood.html" },
->>>>>>> 4112ca3a3e83ff1209c686a7a6c946b41b9098ee:src/js/search-js.js
 
     // Main Dish - Vegetarian
     { id: "veggie_stir_fry", name: "Veggie Stir-Fry", ingredients: ["mixed vegetables", "soy sauce", "garlic", "oil"], page: "pages/main_dish/Vegetarian.html" },
@@ -101,19 +89,6 @@ let recipes = [
     { id: "cupcake", name: "Cupcake", ingredients: ["flour", "sugar", "butter", "eggs"], page: "pages/desserts/dessert.html" },
 
     // Appetizers
-<<<<<<< HEAD:search-js.js
-
-    { id: "deviledeggs", name: "Deviled Eggs", ingredients: ["eggs", "mayonnaise", "mustard"], page: "appetizers.html" },
-    { id: "spinachartichokedip", name: "Spinach Artichoke Dip", ingredients: ["spinach", "artichoke", "cream cheese", "sour cream"], page: "appetizers.html" },
-    { id: "chickenwings", name: "Chicken Wings", ingredients: ["chicken wings", "hot sauce", "butter"], page: "appetizers.html" },
-    { id: "jalapenopoppers", name: "Jalapeno Poppers", ingredients: ["jalapenos", "cheese", "bacon"], page: "appetizers.html" },
-    { id: "stuffedmushrooms", name: "Stuffed Mushrooms", ingredients: ["mushrooms", "cheese", "breadcrumbs"], page: "appetizers.html" },
-
-    { id: "Crostini", name: "Crostini", ingredients: ["bread", "toppings", "olive oil"], page: "appetizers.html" },
-    { id: "CharcuterieBoard", name: "Charcuterie Board", ingredients: ["meats", "cheese", "fruits", "nuts"], page: "appetizers.html" },
-    { id: "Sliders", name: "Sliders", ingredients: ["mini buns", "beef patties", "lettuce", "cheese"], page: "appetizers.html" },
-    { id: "ShrimpCocktail", name: "Shrimp Cocktail", ingredients: ["shrimp", "cocktail sauce"], page: "appetizers.html" }
-=======
     { id: "DeviledEggs", name: "Deviled Eggs", ingredients: ["eggs", "mayonnaise", "mustard"], page: "pages/appetizers/appetizers.html"},
     { id: "SpinachArtichokeDip", name: "Spinach Artichoke Dip", ingredients: ["spinach", "artichoke", "cream cheese", "sour cream"], page: "pages/appetizers/appetizers.html" },
     { id: "ChickenWings", name: "Chicken Wings", ingredients: ["chicken wings", "hot sauce", "butter"], page: "pages/appetizers/appetizers.html" },
@@ -123,7 +98,6 @@ let recipes = [
     { id: "CharcuterieBoard", name: "Charcuterie Board", ingredients: ["meats", "cheese", "fruits", "nuts"], page: "pages/appetizers/appetizers.html" },
     { id: "Sliders", name: "Sliders", ingredients: ["mini buns", "beef patties", "lettuce", "cheese"], page: "pages/appetizers/appetizers.html" },
     { id: "ShrimpCocktail", name: "Shrimp Cocktail", ingredients: ["shrimp", "cocktail sauce"], page: "pages/appetizers/appetizers.html" }
->>>>>>> 4112ca3a3e83ff1209c686a7a6c946b41b9098ee:src/js/search-js.js
 ];
 
 function searchdata(mode) {
