@@ -3,6 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <title>Yummy - My Favorites</title>
+<<<<<<< HEAD
+    <link rel="stylesheet" href="bakery-style.css">
+    <link rel="stylesheet" href="Style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+    <style>
+        /* Container for cards - Set to row to display them side by side */
+        #favorites-list {
+            display: flex;
+            flex-direction: row;
+            /* Horizontal layout */
+            flex-wrap: wrap;
+            /* Wrap cards to the next line if needed */
+            justify-content: center;
+            /* Center cards horizontally */
+            gap: 25px;
+            padding: 40px 20px;
+            width: 100%;
+        }
+
+        /* Card styling with a width suitable for horizontal layout */
+        .recipe-card {
+            width: 360px;
+            /* Fixed width for each card */
+            height: 400px;
+            /* Fixed height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 40px;
+            padding: 25px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+=======
     <link rel="stylesheet" href="src/css/bakery-style.css" />
     <link rel="stylesheet" href="src/css/style.css" />
 
@@ -29,6 +68,7 @@
       /* Card styling with a width suitable for horizontal layout */
       .recipe-card {
         width: 360px;
+>>>>>>> 4112ca3a3e83ff1209c686a7a6c946b41b9098ee
 
         height: 400px;
 
@@ -68,7 +108,26 @@
     </div>
 
     <div id="favorites-view">
+<<<<<<< HEAD
+        <h1 class="fav" style="margin-top: 20px;">MY FAVORITES</h1>
+
+        <div id="empty-state">
+            <div>
+                <img class="favimg" src="bakeryimages/favorite.png" width="400">
+            </div>
+            <h2 class="fav">Your favorites haven’t arrived yet...</h2>
+            <p class="P-fav">
+                Your personal collection of recipes is ready to grow.<br>
+                Start saving the recipes you love and build your delicious collection!
+            </p>
+            <br>
+            <a href="recipes.html" style="text-decoration: none;">
+                <span class="favbutton">DISCOVER DELIGHTFUL RECIPES</span>
+            </a>
+        </div>
+=======
       <h1 class="fav" style="margin-top: 20px">MY FAVORITES</h1>
+>>>>>>> 4112ca3a3e83ff1209c686a7a6c946b41b9098ee
 
       <div id="empty-state">
         <div>
@@ -90,13 +149,157 @@
     </div>
 
     <script>
+<<<<<<< HEAD
+        document.addEventListener('DOMContentLoaded', () => {
+            const favoritesContainer = document.getElementById('favorites-list');
+            const emptyState = document.getElementById('empty-state');
+
+            // 1. Fetch saved favorites from LocalStorage
+            let favorites = JSON.parse(localStorage.getItem('myFavorites')) || [];
+=======
       document.addEventListener("DOMContentLoaded", () => {
         const favoritesContainer = document.getElementById("favorites-list");
         const emptyState = document.getElementById("empty-state");
+>>>>>>> 4112ca3a3e83ff1209c686a7a6c946b41b9098ee
 
         let favorites = JSON.parse(localStorage.getItem("myFavorites")) || [];
         favorites = favorites.filter((fav) => fav && (fav.title || fav.id));
 
+<<<<<<< HEAD
+            // 3. Mapping titles to local image paths
+            // 3. Mapping recipe IDs/Titles to local image paths
+            const imageMap = {
+                // Bread
+                'Baguette': 'bakeryimages/Baguette.jpeg',
+                'Natural Sourdough': 'bakeryimages/Sourdough.jpeg',
+                'Herbed Focaccia': 'bakeryimages/Focaccia1.jpeg',
+
+                'Classic Cinnamon Rolls': 'bakeryimages/classicCinnamon.jpeg',
+                'Pecan Cinnamon Rolls': 'bakeryimages/PecanCinnamon.jpeg',
+                'Chocolate Cinnamon Rolls': 'bakeryimages/ChocolateCinnamon.jpeg',
+
+                // Cookies 
+                'Ultimate Chocolate Cookies': 'bakeryimages/chocolatcookie.jpeg',
+                'Butter Shortbread Biscuits': 'bakeryimages/butterbiscuit.jpeg',
+                'Oatmeal Raisin Cookies': 'bakeryimages/oatmlcookie.jpeg',
+
+                // Croissant
+                'Classic Butter Croissant': 'bakeryimages/butter.jpeg',
+                'Pain au Chocolat': 'bakeryimages/Chocolat.jpeg',
+                'Strawberry Custard Danish': 'bakeryimages/Danish.jpeg',
+
+                // Donuts
+                'Classic Glazed Donuts': 'bakeryimages/GlazedDonuts.jpeg',
+                'Rich Chocolate Donuts': 'bakeryimages/Chocolatdounts.jpeg',
+                'Creamy Filled Donuts': 'bakeryimages/filledDounts.jpeg',
+
+                // Macarons
+                'Vanilla Bean Macarons': 'bakeryimages/vanillamacron.jpeg',
+                'Raspberry Macarons': 'bakeryimages/RaspberryMacarons.jpeg',
+                'Pistachio Macarons': 'bakeryimages/PistachioMacarons.jpeg',
+
+                // --- Desserts Section ---
+                'Tiramisu': 'dessertimages/tiramisu.jpg',
+                'Black Forest Cheesecake': 'dessertimages/blackforest.jpg',
+                'Brownies': 'dessertimages/brownie.jpg',
+                'Strawberry Cake': 'dessertimages/strawberrycake.jpg',
+                'Crème Caramel': 'dessertimages/creamecramel.jpg',
+                'Cup Cake': 'dessertimages/cupcake.jpg',
+
+                // --- Appetizers Section ---
+                'Deviled Eggs': 'appetizersimgs/pic1.jpg',
+                'Spinach Artichoke Dip': 'appetizersimgs/pic2.jpg',
+                'Chicken Wings': 'appetizersimgs/pic3.jpg',
+                'Jalapeno Poppers': 'appetizersimgs/pic4.jpg',
+                'Stuffed Mushrooms': 'appetizersimgs/mushroom.jpeg',
+                'Crostini': 'appetizersimgs/pic5.jpeg',
+                'Charcuterie Board': 'appetizersimgs/pic7.jpeg',
+                'Sliders': 'appetizersimgs/pic6.jpeg',
+                'Shrimp Cocktail': 'appetizersimgs/pic8.jpeg',
+                // --- Drinks ---
+
+                'French Vanilla Cappuccino': 'drinksimages/Cappuccino.jpeg',
+                'Caramel Hazelnut Iced ': 'drinksimages/Caramel Hazelnut Iced Coffee.jpeg',
+                'Arab Coffee': 'drinksimages/arabcoffe.jpeg',
+                'Berry Blast Smoothie🍸': 'drinksimages/Smoothie.jpeg',
+                'Pineapple Mango Smoothie 🥭🍍': 'drinksimages/Pineapple Mango Smoothie.jpeg',
+                'Strawberry LemonadeStrawberry Lemonade🍓🍋': 'drinksimages/Strawberry Lemonade.jpeg',
+                'Hot Chocolate🍫': 'drinksimages/Hot Chocolate.jpeg',
+                'Turkish Tea🍃 ': 'drinksimages/Turkishtea.jpeg',
+                'Herbal Hibiscus Tea🌺🌹': 'drinksimages/Hibiscustea.jpeg'
+
+
+    //--- main course--//
+    
+    'beefSteak': 'maindish/steak2.jfif',
+                'beefSteakCard': 'maindish/steak2.jfif',
+
+                'beefStew': 'maindish/swtea1.jfif',
+                'beefStewCard': 'maindish/swtea1.jfif',
+
+                'beefTacos': 'maindish/tacos2.jfif',
+                'beefTacosCard': 'maindish/tacos2.jfif',
+
+                'grilledChicken': 'maindish/girrled.jfif',
+                'grilledChickencard': 'maindish/girrled.jfif',
+
+                'chickenCurry': 'maindish/chickencurry.jfif',
+                'chickenCurryCard': 'maindish/chickencurry.jfif',
+
+                'friedChicken': 'maindish/fried.jfif',
+                'friedChickenCard': 'maindish/fried.jfif',
+
+                'grilledSalmon': 'maindish/salmon.jfif',
+                'grilledSalmonCard': 'maindish/salmon.jfif',
+
+                'shrimpPasta': 'maindish/pastash.jfif',
+                'shrimpPastaCard': 'maindish/pastash.jfif',
+
+                'fishCurry': 'maindish/fishcurry.jfif',
+                'fishCurryCard': 'maindish/fishcurry.jfif',
+
+                'veggieStirFry': 'maindish/salad.jfif',
+                'veggieStirFryCard': 'maindish/salad.jfif',
+
+                'veggieCurry': 'maindish/currysalad.jfif',
+                'veggieCurryCard': 'maindish/currysalad.jfif',
+
+                'quinoaSalad': 'maindish/quinoa.jfif',
+                'quinoaSaladCard': 'maindish/quinoa.jfif',
+
+                'burger': 'maindish/burger.jfif',
+                'burgerCard': 'maindish/burger.jfif',
+
+                'pizza': 'maindish/pizza.jfif',
+                'pizzaCard': 'maindish/pizza.jfif',
+
+                'fries': 'maindish/frensh fries.jfif',
+                'friesCard': 'maindish/frensh fries.jfif',
+
+                'spaghettiCarbonara': 'maindish/macrona.jfif',
+                'spaghettiCarbonaraCard': 'maindish/macrona.jfif',
+
+                'pastaPesto': 'maindish/pesto.jfif',
+                'pastaPestoCard': 'maindish/pesto.jfif',
+
+                'lasagna': 'maindish/lasania.jfif',
+                'lasagnaCard': 'maindish/lasania.jfif'
+
+            };
+
+            if (favorites.length > 0) {
+                // 4. Hide empty state message
+                emptyState.classList.add('hidden');
+                favoritesContainer.innerHTML = '';
+
+                // 5. Generate a card for each favorite
+                favorites.forEach(recipe => {
+                    const recipeCard = document.createElement('div');
+                    recipeCard.className = "recipe-card";
+
+                    const titleText = recipe.title || recipe.id || "Delicious Recipe";
+                    const imageSrc = imageMap[titleText] || recipe.image || 'bakeryimages/placeholder.jpeg';
+=======
         const imageMap = {
           // Bakery
           Baguette: "photos/bakeryimages/Baguette.jpeg",
@@ -167,6 +370,7 @@
             const bgColor = "#FFF8F1";
             const borderColor = "#A0522D";
             const textColor = "#A0522D";
+>>>>>>> 4112ca3a3e83ff1209c686a7a6c946b41b9098ee
 
             const titleText = recipe.title || recipe.id || "Delicious Recipe";
             const cleanTitle = titleText.replace(/[^\x00-\x7F]/g, "").trim();
@@ -179,6 +383,14 @@
               recipeCard.style.backgroundImage = "none";
               recipeCard.style.backgroundColor = bgColor;
 
+<<<<<<< HEAD
+        // Function to remove item and refresh the view
+        function removeFavorite(title) {
+            let favorites = JSON.parse(localStorage.getItem('myFavorites')) || [];
+            favorites = favorites.filter(fav => (fav.title || fav.id) !== title);
+            localStorage.setItem('myFavorites', JSON.stringify(favorites));
+            location.reload();
+=======
               recipeCard.style.borderTop = `10px solid ${borderColor}`;
               recipeCard.style.borderBottom = `10px solid ${borderColor}`;
 
@@ -210,6 +422,7 @@
           });
         } else {
           emptyState.classList.remove("hidden");
+>>>>>>> 4112ca3a3e83ff1209c686a7a6c946b41b9098ee
         }
       });
 
@@ -220,5 +433,11 @@
         location.reload();
       }
     </script>
+<<<<<<< HEAD
+</body>
+
+</html>
+=======
   </body>
 </html>
+>>>>>>> 4112ca3a3e83ff1209c686a7a6c946b41b9098ee

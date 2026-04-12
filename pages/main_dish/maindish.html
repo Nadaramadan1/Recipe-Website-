@@ -13,6 +13,9 @@
     <div id="navbar">
         <nav class="main-nav">
             <div class="logo">Yummy 🍲</div>
+            <button id="backbutton" class="big-arrow-btn" type="button" aria-label="Go Back">
+                &#8592;
+            </button>
             <ul class="nav-links">
                 <li><a href="../../cover.html">Team</a></li>
                 <li><a href="../../index.html">Home</a></li>
@@ -76,7 +79,121 @@
         </div>
     </section>
 
+<<<<<<< HEAD:maindish.html
+    <!-- ================= JS (FIXED LOCATION ONLY) ================= -->
+    <script src="maindish.js"></script>
+
+    <script>
+        // Scroll لما تدوسي على View Recipes
+        function onClick() {
+            const section = document.getElementById("recipes");
+
+            if (section) {
+                section.scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
+        }
+
+        // تغيير لون القلب (Favorites)
+        function changecolor(element) {
+            if (element.style.color == "red") {
+                element.style.color = "white";
+                element.title = "add to favorite";
+            } else {
+                element.style.color = "red";
+                element.title = "Added Successfully! ✨";
+            }
+        }
+
+        // فتح الكارد
+        let currentCard = null;
+
+        function openCard(event, cardId) {
+            if (event) event.stopPropagation();
+
+            if (currentCard) {
+                currentCard.style.display = "none";
+            }
+
+            const targetCard = document.getElementById(cardId);
+
+            if (targetCard) {
+                targetCard.style.display = "block";
+                currentCard = targetCard;
+            }
+        }
+
+        // قفل الكارد لما تدوسي بره
+        window.onclick = function (event) {
+            if (currentCard && currentCard.style.display === "block") {
+                if (event.target !== currentCard && !currentCard.contains(event.target)) {
+                    currentCard.style.display = "none";
+                    currentCard = null;
+                }
+            }
+        }
+
+        // Go Back
+        document.addEventListener("DOMContentLoaded", () => {
+            const backBtn = document.getElementById("backbutton");
+
+            if (backBtn) {
+                backBtn.onclick = function (event) {
+                    event.preventDefault();
+
+                    if (window.history.length > 1) {
+                        window.history.back();
+                    } else {
+                        window.location.href = "home.html";
+                    }
+                };
+            }
+        });
+
+        // Admin Features
+        window.addEventListener("load", function () {
+            let recipeId = window.location.hash.substring(1);
+
+            if (recipeId && recipeId.endsWith('card')) {
+                recipeId = recipeId.replace('card', '');
+            }
+
+            if (recipeId) {
+                setTimeout(function () {
+                    const detailsCardId = recipeId + 'card';
+                    const detailsCard = document.getElementById(detailsCardId);
+
+                    if (detailsCard) {
+                        if (currentCard) {
+                            currentCard.style.display = "none";
+                        }
+
+                        detailsCard.style.display = "block";
+                        currentCard = detailsCard;
+
+                        const element = document.getElementById(recipeId);
+                        if (element) {
+                            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                            element.style.transition = "all 0.3s ease";
+                            element.style.transform = "translateY(-10px)";
+                            element.style.boxShadow = "0 5px 15px rgba(0,0,0,0.3)";
+
+                            setTimeout(function () {
+                                element.style.transform = "";
+                                element.style.boxShadow = "";
+                            }, 1000);
+                        }
+                    }
+                }, 500);
+            }
+        });
+    </script>
+
+=======
     <script src="../../src/js/maindish.js"></script>
+>>>>>>> 4112ca3a3e83ff1209c686a7a6c946b41b9098ee:pages/main_dish/maindish.html
 </body>
 
 </html>
