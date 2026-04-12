@@ -328,8 +328,13 @@ h2.h2 {
 }
 
 #fries,
+<<<<<<< Updated upstream
 #fries-card {
     background-image: url('../../photos/maindish/frenshfries.jfif');
+=======
+#friesCard {
+    background-image: url('../../photos/maindish/ff.webp');
+>>>>>>> Stashed changes
 }
 
 #spaghettiCarbonara,

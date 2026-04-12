@@ -1,9 +1,11 @@
+// ============================== SCROLL BUTTON ==============================
 function onClick() {
     window.scrollBy({
         top: 740,
         behavior: 'smooth'
     });
 }
+
 
 // ============================== HEART BUTTON ==============================
 function changecolor(heartIcon) {
@@ -32,13 +34,13 @@ function changecolor(heartIcon) {
     } else {
         heartIcon.style.color = "white";
 
-        // remove from favorites
         if (title) {
             favorites = favorites.filter(fav => fav.title !== title);
             localStorage.setItem('myFavorites', JSON.stringify(favorites));
         }
     }
 }
+
 
 // ============================== OPEN CARD ==============================
 let currentCard = null;
@@ -60,6 +62,7 @@ function openCard(event, cardId) {
     }
 }
 
+
 // ============================== CLOSE OUTSIDE CARD ==============================
 window.onclick = function (event) {
     if (currentCard && currentCard.style.display === "block") {
@@ -70,7 +73,8 @@ window.onclick = function (event) {
     }
 };
 
-// ============================== GO BACK ==============================
+
+// ============================== BACK BUTTON ==============================
 document.addEventListener("DOMContentLoaded", () => {
     const backBtn = document.getElementById("backbutton");
 
@@ -78,53 +82,50 @@ document.addEventListener("DOMContentLoaded", () => {
         backBtn.onclick = function (event) {
             event.preventDefault();
 
+            // Check if there is actually a page to go back to in this tab
             if (window.history.length > 1) {
                 window.history.back();
             } else {
-                window.location.href = "home.html";
+
+                window.location.href = "../../index.html";
             }
         };
     }
 });
 
-// ============================== ADMIN FEATURES ==============================
-window.addEventListener("load", function () {
-    let recipeId = window.location.hash.substring(1);
+// ============================== ADMIN VIEW (OPEN FROM LINK) ==============================
+document.addEventListener("DOMContentLoaded", function () {
 
-    if (recipeId && recipeId.endsWith('card')) {
-        recipeId = recipeId.replace('card', '');
-    }
+    const hash = window.location.hash.substring(1);
 
-    if (recipeId) {
-        setTimeout(function () {
-            const detailsCardId = recipeId + 'card';
-            const detailsCard = document.getElementById(detailsCardId);
+    if (hash) {
 
-            if (detailsCard) {
-                if (currentCard) {
-                    currentCard.style.display = "none";
-                }
+        const card = document.getElementById(hash);
 
-                detailsCard.style.display = "block";
-                currentCard = detailsCard;
+        if (card) {
+            card.scrollIntoView({ behavior: "smooth", block: "center" });
 
-                const element = document.getElementById(recipeId);
+            // ✨ Highlight effect
+            card.style.transition = "all 0.3s ease";
+            card.style.transform = "translateY(-10px)";
+            card.style.boxShadow = "0 5px 15px rgba(0,0,0,0.3)";
 
-                if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            setTimeout(() => {
+                card.style.transform = "";
+                card.style.boxShadow = "";
+            }, 1000);
+        }
 
-                    element.style.transition = "all 0.3s ease";
-                    element.style.transform = "translateY(-10px)";
-                    element.style.boxShadow = "0 5px 15px rgba(0,0,0,0.3)";
+        // 🔥 OPEN DETAILS CARD
+        const details = document.getElementById(hash + "Card");
 
-                    setTimeout(function () {
-                        element.style.transform = "";
-                        element.style.boxShadow = "";
-                    }, 1000);
-                }
-            } else {
-                console.log("Card not found:", detailsCardId);
+        if (details) {
+            if (currentCard) {
+                currentCard.style.display = "none";
             }
-        }, 500);
+
+            details.style.display = "block";
+            currentCard = details;
+        }
     }
 });

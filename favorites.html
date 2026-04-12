@@ -1,214 +1,212 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Yummy - My Favorites</title>
-    <link rel="stylesheet" href="src/css/bakery-style.css" />
-    <link rel="stylesheet" href="src/css/style.css" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <title>Yummy - My Favorites</title>
+  <link rel="stylesheet" href="src/css/bakery-style.css" />
+  <link rel="stylesheet" href="src/css/style.css" />
 
-    <style>
-      /* Container for cards - Set to row to display them side by side */
-      #favorites-list {
-        display: flex;
-        flex-direction: row;
-        /* Horizontal layout */
-        flex-wrap: wrap;
-        /* Wrap cards to the next line if needed */
-        justify-content: center;
-        /* Center cards horizontally */
-        gap: 25px;
-        padding: 40px 20px;
-        width: 100%;
-      }
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
 
-      /* Card styling with a width suitable for horizontal layout */
-      .recipe-card {
-        width: 360px;
+  <style>
+    /* Container for cards - Set to row to display them side by side */
+    #favorites-list {
+      display: flex;
+      flex-direction: row;
+      /* Horizontal layout */
+      flex-wrap: wrap;
+      /* Wrap cards to the next line if needed */
+      justify-content: center;
+      /* Center cards horizontally */
+      gap: 25px;
+      padding: 40px 20px;
+      width: 100%;
+    }
 
-        height: 400px;
+    /* Card styling with a width suitable for horizontal layout */
+    .recipe-card {
+      width: 360px;
 
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        border-radius: 40px;
-        padding: 25px;
-        background-size: cover;
-        background-position: center;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        color: white;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-      }
+      height: 400px;
 
-      .hidden {
-        display: none !important;
-      }
-    </style>
-  </head>
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 40px;
+      padding: 25px;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
 
-  <body style="background-color: #f2e7df; text-align: center">
-    <div id="navbar">
-      <nav class="main-nav">
-        <div class="logo">Yummy</div>
-        <ul class="nav-links">
-          <li><a href="cover.html">Team</a></li>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="search.html">Search</a></li>
-          <li><a href="favorites.html">Favorites</a></li>
-          <li><a href="pages/admin/admin-recipe.html">Admin</a></li>
-          <li><a href="pages/admin/add-recipe.html">Add Recipe</a></li>
-          <li><a href="pages/auth/login.html">Login</a></li>
-          <li><a href="pages/auth/signup.html">Sign Up</a></li>
-        </ul>
-      </nav>
-    </div>
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
 
-    <div id="favorites-view">
-      <h1 class="fav" style="margin-top: 20px">MY FAVORITES</h1>
+<body style="background-color: #f2e7df; text-align: center">
+  <div id="navbar">
+    <nav class="main-nav">
+      <div class="logo">Yummy</div>
+      <ul class="nav-links">
+        <li><a href="cover.html">Team</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="favorites.html">Favorites</a></li>
+        <li><a href="pages/admin/admin-recipe.html">Admin</a></li>
+        <li><a href="pages/admin/add-recipe.html">Add Recipe</a></li>
+        <li><a href="pages/auth/login.html">Login</a></li>
+        <li><a href="pages/auth/signup.html">Sign Up</a></li>
+      </ul>
+    </nav>
+  </div>
 
-      <div id="empty-state">
-        <div>
-          <img class="favimg" src="photos/bakeryimages/favorite.png" width="400" />
-          <img class="favimg" src="photos/bakeryimages/favorite.png" width="400" />
-        </div>
-        <h2 class="fav">Your favorites haven’t arrived yet...</h2>
-        <p class="P-fav">
-          Your personal collection of recipes is ready to grow.<br />
-          Start saving the recipes you love and build your delicious collection!
-        </p>
-        <br />
-        <a href="recipes.html" style="text-decoration: none">
-          <span class="favbutton">DISCOVER DELIGHTFUL RECIPES</span>
-        </a>
+  <div id="favorites-view">
+    <h1 class="fav" style="margin-top: 20px">MY FAVORITES</h1>
+
+    <div id="empty-state">
+      <div>
+        <img class="favimg" src="photos/bakeryimages/favorite.png" width="400" />
+        <img class="favimg" src="photos/bakeryimages/favorite.png" width="400" />
       </div>
-
-      <div id="favorites-list"></div>
+      <h2 class="fav">Your favorites haven’t arrived yet...</h2>
+      <p class="P-fav">
+        Your personal collection of recipes is ready to grow.<br />
+        Start saving the recipes you love and build your delicious collection!
+      </p>
+      <br />
+      <a href="recipes.html" style="text-decoration: none">
+        <span class="favbutton">DISCOVER DELIGHTFUL RECIPES</span>
+      </a>
     </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const favoritesContainer = document.getElementById("favorites-list");
-        const emptyState = document.getElementById("empty-state");
+    <div id="favorites-list"></div>
+  </div>
 
-        let favorites = JSON.parse(localStorage.getItem("myFavorites")) || [];
-        favorites = favorites.filter((fav) => fav && (fav.title || fav.id));
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const favoritesContainer = document.getElementById("favorites-list");
+      const emptyState = document.getElementById("empty-state");
 
-        const imageMap = {
-          // Bakery
-          Baguette: "photos/bakeryimages/Baguette.jpeg",
-          "Natural Sourdough": "photos/bakeryimages/Sourdough.jpeg",
-          "Herbed Focaccia": "photos/bakeryimages/Focaccia1.jpeg",
-          "Classic Cinnamon Rolls": "photos/bakeryimages/classicCinnamon.jpeg",
-          "Pecan Cinnamon Rolls": "photos/bakeryimages/PecanCinnamon.jpeg",
-          "Chocolate Cinnamon Rolls": "photos/bakeryimages/ChocolateCinnamon.jpeg",
-          "Ultimate Chocolate Cookies": "photos/bakeryimages/chocolatcookie.jpeg",
-          "Butter Shortbread Biscuits": "photos/bakeryimages/butterbiscuit.jpeg",
-          "Oatmeal Raisin Cookies": "photos/bakeryimages/oatmlcookie.jpeg",
-          "Classic Butter Croissant": "photos/bakeryimages/butter.jpeg",
-          "Pain au Chocolat": "photos/bakeryimages/Chocolat.jpeg",
-          "Strawberry Custard Danish": "photos/bakeryimages/Danish.jpeg",
-          "Classic Glazed Donuts": "photos/bakeryimages/GlazedDonuts.jpeg",
-          "Rich Chocolate Donuts": "photos/bakeryimages/Chocolatdounts.jpeg",
-          "Creamy Filled Donuts": "photos/bakeryimages/filledDounts.jpeg",
-          "Vanilla Bean Macarons": "photos/bakeryimages/vanillamacron.jpeg",
-          "Raspberry Macarons": "photos/bakeryimages/RaspberryMacarons.jpeg",
-          "Pistachio Macarons": "photos/bakeryimages/PistachioMacarons.jpeg",
+      let favorites = JSON.parse(localStorage.getItem("myFavorites")) || [];
+      favorites = favorites.filter((fav) => fav && (fav.title || fav.id));
 
-          // Desserts
-          Tiramisu: "photos/dessertimages/tiramisu.jpg",
-          "Black Forest Cheesecake": "photos/dessertimages/blackforest.jpg",
-          Brownies: "photos/dessertimages/brownie.jpg",
-          "Strawberry Cake": "photos/dessertimages/strawberrycake.jpg",
-          "Crème Caramel": "photos/dessertimages/creamecramel.jpg",
-          "Cup Cake": "photos/dessertimages/cupcake.jpg",
+      const imageMap = {
+        // Bakery
+        Baguette: "photos/bakeryimages/Baguette.jpeg",
+        "Natural Sourdough": "photos/bakeryimages/Sourdough.jpeg",
+        "Herbed Focaccia": "photos/bakeryimages/Focaccia1.jpeg",
+        "Classic Cinnamon Rolls": "photos/bakeryimages/classicCinnamon.jpeg",
+        "Pecan Cinnamon Rolls": "photos/bakeryimages/PecanCinnamon.jpeg",
+        "Chocolate Cinnamon Rolls": "photos/bakeryimages/ChocolateCinnamon.jpeg",
+        "Ultimate Chocolate Cookies": "photos/bakeryimages/chocolatcookie.jpeg",
+        "Butter Shortbread Biscuits": "photos/bakeryimages/butterbiscuit.jpeg",
+        "Oatmeal Raisin Cookies": "photos/bakeryimages/oatmlcookie.jpeg",
+        "Classic Butter Croissant": "photos/bakeryimages/butter.jpeg",
+        "Pain au Chocolat": "photos/bakeryimages/Chocolat.jpeg",
+        "Strawberry Custard Danish": "photos/bakeryimages/Danish.jpeg",
+        "Classic Glazed Donuts": "photos/bakeryimages/GlazedDonuts.jpeg",
+        "Rich Chocolate Donuts": "photos/bakeryimages/Chocolatdounts.jpeg",
+        "Creamy Filled Donuts": "photos/bakeryimages/filledDounts.jpeg",
+        "Vanilla Bean Macarons": "photos/bakeryimages/vanillamacron.jpeg",
+        "Raspberry Macarons": "photos/bakeryimages/RaspberryMacarons.jpeg",
+        "Pistachio Macarons": "photos/bakeryimages/PistachioMacarons.jpeg",
 
-          // Appetizers
-          "Deviled Eggs": "photos/appetizersimgs/pic1.jpg",
-          "Spinach Artichoke Dip": "photos/appetizersimgs/pic2.jpg",
-          "Chicken Wings": "photos/appetizersimgs/pic3.jpg",
-          "Jalapeno Poppers": "photos/appetizersimgs/pic4.jpg",
-          "Stuffed Mushrooms": "photos/appetizersimgs/mushroom.jpeg",
-          Crostini: "photos/appetizersimgs/pic5.jpeg",
-          "Charcuterie Board": "photos/appetizersimgs/pic7.jpeg",
-          Sliders: "photos/appetizersimgs/pic6.jpeg",
-          "Shrimp Cocktail": "photos/appetizersimgs/pic8.jpeg",
+        // Desserts
+        Tiramisu: "photos/dessertimages/tiramisu.jpg",
+        "Black Forest Cheesecake": "photos/dessertimages/blackforest.jpg",
+        Brownies: "photos/dessertimages/brownie.jpg",
+        "Strawberry Cake": "photos/dessertimages/strawberrycake.jpg",
+        "Crème Caramel": "photos/dessertimages/creamecramel.jpg",
+        "Cup Cake": "photos/dessertimages/cupcake.jpg",
 
-          // Drinks
-          "French Vanilla Cappuccino": "photos/drinksimages/Cappuccino.jpeg",
-          "Arab Coffee": "photos/drinksimages/arabcoffe.jpeg",
-          "French Vanilla Cappuccino": "photos/drinksimages/Cappuccino.jpeg",
-          "Arab Coffee": "photos/drinksimages/arabcoffe.jpeg",
-          "Caramel Hazelnut Iced Coffee":
-            "photos/drinksimages/Caramel Hazelnut Iced Coffee.jpeg",
-          "Berry Blast Smoothie": "photos/drinksimages/Smoothie.jpeg",
-          "Strawberry Lemonade": "photos/drinksimages/Strawberry Lemonade.jpeg",
-          "Pineapple Mango Smoothie": "photos/drinksimages/Pineapple Mango Smoothie.jpeg",
-          "Hot Chocolate": "photos/drinksimages/Hot Chocolate.jpeg",
-          "Turkish Tea": "photos/drinksimages/Turkishtea.jpeg",
-          "Herbal Hibiscus Tea": "photos/drinksimages/Hibiscustea.jpeg",
+        // Appetizers
+        "Deviled Eggs": "photos/appetizersimgs/pic1.jpg",
+        "Spinach Artichoke Dip": "photos/appetizersimgs/pic2.jpg",
+        "Chicken Wings": "photos/appetizersimgs/pic3.jpg",
+        "Jalapeno Poppers": "photos/appetizersimgs/pic4.jpg",
+        "Stuffed Mushrooms": "photos/appetizersimgs/mushroom.jpeg",
+        Crostini: "photos/appetizersimgs/pic5.jpeg",
+        "Charcuterie Board": "photos/appetizersimgs/pic7.jpeg",
+        Sliders: "photos/appetizersimgs/pic6.jpeg",
+        "Shrimp Cocktail": "photos/appetizersimgs/pic8.jpeg",
 
-           // Healthy Food
-                'Grilled Salmon & Avocado': 'photos/Healthy_images/Healthy Salmon & Avocado Salad.jfif',
-                'Quinoa Buddha Bowl': 'photos/Healthy_images/Spiced Tofu & Roasted Veggie Quinoa Bowl.jfif',
-                'Lemon Herb Chicken': 'photos/Healthy_images/Herb-Roasted Golden Chicken with Lemon Essence.jfif',
-                'Zucchini Noodles (Zoodles)': 'photos/Healthy_images/Low Carb Zucchini Noodles with Pesto Sauce.jfif',
+        // Drinks
+        "French Vanilla Cappuccino": "photos/drinksimages/Cappuccino.jpeg",
+        "Arab Coffee": "photos/drinksimages/arabcoffe.jpeg",
+        "French Vanilla Cappuccino": "photos/drinksimages/Cappuccino.jpeg",
+        "Arab Coffee": "photos/drinksimages/arabcoffe.jpeg",
+        "Caramel Hazelnut Iced Coffee":
+          "photos/drinksimages/Caramel Hazelnut Iced Coffee.jpeg",
+        "Berry Blast Smoothie": "photos/drinksimages/Smoothie.jpeg",
+        "Strawberry Lemonade": "photos/drinksimages/Strawberry Lemonade.jpeg",
+        "Pineapple Mango Smoothie": "photos/drinksimages/Pineapple Mango Smoothie.jpeg",
+        "Hot Chocolate": "photos/drinksimages/Hot Chocolate.jpeg",
+        "Turkish Tea": "photos/drinksimages/Turkishtea.jpeg",
+        "Herbal Hibiscus Tea": "photos/drinksimages/Hibiscustea.jpeg",
 
-                // Main Dish
-                'Beef Steak': 'photos/maindish/steak2.jfif',
-                'Beef Stew': 'photos/maindish/swtea1.jfif',
-                'Beef Tacos': 'photos/maindish/tacos2.jfif',
-                'Grilled Chicken': 'photos/maindish/girrled.jfif',
-                'Chicken Curry': 'photos/maindish/chickencurry.jfif',
-                'Fried Chicken': 'photos/maindish/fried.jfif',
-                'Grilled Salmon': 'photos/maindish/salmon.jfif',
-                'Shrimp Pasta': 'photos/maindish/pastash.jfif',
-                'Fish Curry': 'photos/maindish/fishcurry.jfif',
-                'Veggie Stir-Fry': 'photos/maindish/salad.jfif',
-                'Vegetable Curry': 'photos/maindish/currysalad.jfif',
-                'Quinoa Salad': 'photos/maindish/quinoa.jfif',
-                'Burger': 'photos/maindish/burger.jfif',
-                'Pizza': 'photos/maindish/pizza.jfif',
-                'Fries': 'photos/maindish/frenshfries.jfif',
-                'Spaghetti Carbonara': 'photos/maindish/macrona.jfif',
-                'Pasta Pesto': 'photos/maindish/pesto.jfif',
-                'Lasagna': 'photos/maindish/lasania.jfif'
-        };
+        // Healthy Food
+        'Grilled Salmon & Avocado': 'photos/Healthy_images/Healthy Salmon & Avocado Salad.jfif',
+        'Quinoa Buddha Bowl': 'photos/Healthy_images/Spiced Tofu & Roasted Veggie Quinoa Bowl.jfif',
+        'Lemon Herb Chicken': 'photos/Healthy_images/Herb-Roasted Golden Chicken with Lemon Essence.jfif',
+        'Zucchini Noodles (Zoodles)': 'photos/Healthy_images/Low Carb Zucchini Noodles with Pesto Sauce.jfif',
 
-        if (favorites.length > 0) {
-          emptyState.classList.add("hidden");
-          favoritesContainer.innerHTML = "";
-          favorites.forEach((recipe) => {
-            const recipeCard = document.createElement("div");
-            recipeCard.className = "recipe-card";
-            const bgColor = "#FFF8F1";
-            const borderColor = "#A0522D";
-            const textColor = "#A0522D";
+        // Main Dish
+        'Beef Steak': 'photos/maindish/steak2.jfif',
+        'Beef Stew': 'photos/maindish/swtea1.jfif',
+        'Beef Tacos': 'photos/maindish/tacos2.jfif',
+        'Grilled Chicken': 'photos/maindish/girrled.jfif',
+        'Chicken Curry': 'photos/maindish/chickencurry.jfif',
+        'Fried Chicken': 'photos/maindish/fried.jfif',
+        'Grilled Salmon': 'photos/maindish/salmon.jfif',
+        'Shrimp Pasta': 'photos/maindish/pastash.jfif',
+        'Fish Curry': 'photos/maindish/fishcurry.jfif',
+        'Veggie Stir-Fry': 'photos/maindish/salad.jfif',
+        'Vegetable Curry': 'photos/maindish/currysalad.jfif',
+        'Quinoa Salad': 'photos/maindish/quinoa.jfif',
+        'Burger': 'photos/maindish/burger.jfif',
+        'Pizza': 'photos/maindish/pizza.jfif',
+        'Fries': 'photos/maindish/frenshfries.jfif',
+        'Spaghetti Carbonara': 'photos/maindish/macrona.jfif',
+        'Pasta Pesto': 'photos/maindish/pesto.jfif',
+        'Lasagna': 'photos/maindish/lasania.jfif'
+      };
 
-            const titleText = recipe.title || recipe.id || "Delicious Recipe";
-            const cleanTitle = titleText.replace(/[^\x00-\x7F]/g, "").trim();
-            const imageSrc = imageMap[titleText] || imageMap[cleanTitle];
+      if (favorites.length > 0) {
+        emptyState.classList.add("hidden");
+        favoritesContainer.innerHTML = "";
+        favorites.forEach((recipe) => {
+          const recipeCard = document.createElement("div");
+          recipeCard.className = "recipe-card";
+          const bgColor = "#FFF8F1";
+          const borderColor = "#A0522D";
+          const textColor = "#A0522D";
 
-            if (imageSrc) {
-              recipeCard.style.backgroundImage = `url('${imageSrc}')`;
-              recipeCard.style.border = "none";
-            } else {
-              recipeCard.style.backgroundImage = "none";
-              recipeCard.style.backgroundColor = bgColor;
+          const titleText = recipe.title || recipe.id || "Delicious Recipe";
+          const cleanTitle = titleText.replace(/[^\x00-\x7F]/g, "").trim();
+          const imageSrc = imageMap[titleText] || imageMap[cleanTitle];
 
-              recipeCard.style.borderTop = `10px solid ${borderColor}`;
-              recipeCard.style.borderBottom = `10px solid ${borderColor}`;
+          if (imageSrc) {
+            recipeCard.style.backgroundImage = `url('${imageSrc}')`;
+            recipeCard.style.border = "none";
+          } else {
+            recipeCard.style.backgroundImage = "none";
+            recipeCard.style.backgroundColor = bgColor;
 
-              recipeCard.style.borderRadius = "40px";
-            }
+            recipeCard.style.borderTop = `10px solid ${borderColor}`;
+            recipeCard.style.borderBottom = `10px solid ${borderColor}`;
 
-            const isNoImage = !imageSrc;
-            const currentTextColor = isNoImage ? textColor : "white";
+            recipeCard.style.borderRadius = "40px";
+          }
 
-            recipeCard.innerHTML = `
+          const isNoImage = !imageSrc;
+          const currentTextColor = isNoImage ? textColor : "white";
+
+          recipeCard.innerHTML = `
        <h2 style="color: ${currentTextColor}; margin-top: 0; font-weight: bold;">${titleText}</h2>
         <a href="javascript:void(0)" 
            class="btn-remove" 
@@ -226,19 +224,20 @@
            REMOVE
         </a>
     `;
-            favoritesContainer.appendChild(recipeCard);
-          });
-        } else {
-          emptyState.classList.remove("hidden");
-        }
-      });
-
-      function removeFavorite(title) {
-        let favorites = JSON.parse(localStorage.getItem("myFavorites")) || [];
-        favorites = favorites.filter((fav) => (fav.title || fav.id) !== title);
-        localStorage.setItem("myFavorites", JSON.stringify(favorites));
-        location.reload();
+          favoritesContainer.appendChild(recipeCard);
+        });
+      } else {
+        emptyState.classList.remove("hidden");
       }
-    </script>
-  </body>
+    });
+
+    function removeFavorite(title) {
+      let favorites = JSON.parse(localStorage.getItem("myFavorites")) || [];
+      favorites = favorites.filter((fav) => (fav.title || fav.id) !== title);
+      localStorage.setItem("myFavorites", JSON.stringify(favorites));
+      location.reload();
+    }
+  </script>
+</body>
+
 </html>
