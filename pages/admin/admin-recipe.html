@@ -116,9 +116,14 @@
             // 3. Combine both lists (Static + User Added)
             let allRecipes = [...staticRecipes];
             userAddedRecipes.forEach(userRecipe => {
-                // Prevent duplicate IDs if the user adds something already in static
-                if (!staticRecipes.some(s => s.id === userRecipe.id)) {
-                    allRecipes.push(userRecipe);
+                // Prevent duplicate IDs or names if the user adds something already in static
+                let inStatic = staticRecipes.some(s => s.id === userRecipe.id || s.name.trim().toLowerCase() === userRecipe.name.trim().toLowerCase());
+                if (!inStatic) {
+                    // Check if it's already added to prevent duplicates from within userAddedRecipes itself
+                    let inAll = allRecipes.some(a => a.id === userRecipe.id || a.name.trim().toLowerCase() === userRecipe.name.trim().toLowerCase());
+                    if (!inAll) {
+                        allRecipes.push(userRecipe);
+                    }
                 }
             });
 
