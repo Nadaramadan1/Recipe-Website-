@@ -14,8 +14,8 @@
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../search.html">Search</a></li>
                 <li><a href="../favorites.html">Favorites</a></li>
-                <li><a href="admin-recipe.html">Admin</a></li>
-                <li><a href="add-recipe.html">Add Recipe</a></li>
+                <li><a href="../admin/admin-recipe.html">Admin</a></li>
+                <li><a href="../admin/add-recipe.html">Add Recipe</a></li>
                 <li><a href="../auth/login.html">Login</a></li>
                 <li><a href="../auth/signup.html">Sign Up</a></li>
             </ul>
@@ -131,21 +131,21 @@
         // View Function: This focuses on the target page and the specific card
         function viewRecipe(id, course) {
             const categoryPages = {
-                "appetizers": "appetizers.html",
-                "dessert": "dessert.html",
-                "healthy": "../pages/healthy/Healthy Food.html",
-                "maindish/beef": "beef.html",
-                "maindish/chicken": "chicken.html",
-                "maindish/pasta": "pasta.html",
-                "maindish/fastfood": "fastfood.html",
-                "maindish/seafood": "seafood.html",
-                "maindish/vegetarian": "Vegetarian.html",
-                "bakery/bread": "Bread .html",
-                "bakery/croissant": "Croissants .html",
-                "bakery/cookies": "cookies.html",
-                "drinks/coffee": "coffee.html",
-                "drinks/fresh juices& smoothie": "juices.html",
-                "drinks/hot drinks": "hot-drinks.html"
+                "appetizers": "../../pages/appetizers.html",
+                "dessert": "../../pages/dessert.html",
+                "healthy": "../../pages/healthy/Healthy Food.html",
+                "maindish/beef": "../../pages/main-dish/beef.html",
+                "maindish/chicken": "../../pages/main-dish/chicken.html",
+                "maindish/pasta": "../../pages/main-dish/pasta.html",
+                "maindish/fastfood": "../../pages/main-dish/fastfood.html",
+                "maindish/seafood": "../../pages/main-dish/seafood.html",
+                "maindish/vegetarian": "../../pages/main-dish/Vegetarian.html",
+                "bakery/bread": "../../pages/bakery/Bread .html",
+                "bakery/croissant": "../../pages/bakery/Croissants .html",
+                "bakery/cookies": "../../pages/bakery/cookies.html",
+                "drinks/coffee": "../../pages/drinks/coffee.html",
+                "drinks/fresh juices& smoothie": "../../pages/drinks/fresh-juices-smoothie.html",
+                "drinks/hot drinks": "../../pages/drinks/hot-drinks.html"
             };
 
             let targetPage = "../index.html";
@@ -181,7 +181,7 @@
         }
 
         function editRecipe(id) {
-            window.location.href = `edit-recipe.html?id=${id}`;
+            window.location.href = `../../pages/admin/edit-recipe.html?id=${id}`;
         }
 
         // Initialize table on load
