@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Yummy - Admin Recipes</title>
-    <link rel="stylesheet" href="../src/css/style.css">
+    <link rel="stylesheet" href="../../src/css/style.css">
 </head>
 <body>
     <div id="navbar">
@@ -42,7 +42,7 @@
         // 1. Static Recipes List (All your original recipes)
         const staticRecipes = [
             // Main Dishes
-            { id: "BeefSteakcard", name: "Beef Steak 🥩", course: "maindish/beef" },
+            { id: "BeefSteakcard", name: "Beef Steak 🥩", course: "pages/main_dish/beef.html" },
             { id: "BeefTacoscard", name: "Beef Tacos 🌮", course: "maindish/beef" },
             { id: "BeefStewcard", name: "Beef Stew 🍲", course: "maindish/beef" },
             { id: "FriedChickencard", name: "Fried Chicken 🍗", course: "maindish/chicken" },
@@ -134,15 +134,18 @@
                 "appetizers": "../appetizers/appetizers.html",
                 "dessert": "../desserts/dessert.html",
                 "healthy": "../../pages/healthy/Healthy Food.html",
-                "maindish/beef": "../main-dish/beef.html",
-                "maindish/chicken": "../../main-dish/chicken.html",
-                "maindish/pasta": "../../pages/main-dish/pasta.html",
-                "maindish/fastfood": "../../pages/main-dish/fastfood.html",
-                "maindish/seafood": "../../pages/main-dish/seafood.html",
-                "maindish/vegetarian": "../../pages/main-dish/Vegetarian.html",
+                "maindish/beef": "../../pages/main_dish/beef.html",
+                "maindish/chicken": "../../pages/main_dish/chicken.html",
+                "maindish/pasta": "../../pages/main_dish/pasta.html",
+                "maindish/fastfood": "../../pages/main_dish/fastfood.html",
+                "maindish/seafood": "../../pages/main_dish/seafood.html",
+                "maindish/vegetarian": "../../pages/main_dish/Vegetarian.html",
                 "bakery/bread": "../../pages/bakery/Bread .html",
                 "bakery/croissant": "../../pages/bakery/Croissants .html",
+                "bakery/cinnamon": "../../pages/bakery/Cinnamon.html",
                 "bakery/cookies": "../../pages/bakery/cookies.html",
+                "bakery/donuts": "../../pages/bakery/Donuts .html",
+                "bakery/macarons": "../../pages/bakery/macrons.html",
                 "drinks/coffee": "../../pages/drinks/coffee.html",
                 "drinks/fresh juices& smoothie": "../../pages/drinks/juices.html",
                 "drinks/hot drinks": "../../pages/drinks/hot-drinks.html"
@@ -181,7 +184,7 @@
         }
 
         function editRecipe(id) {
-            window.location.href = `../../pages/admin/edit-recipe.html?id=${id}`;
+            window.location.href = `edit-recipe.html?id=${id}`;
         }
 
         // Initialize table on load
