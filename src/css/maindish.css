@@ -95,7 +95,7 @@ h2.h2 {
 
 /* --- Hero Section --- */
 .main {
-    background: url('photos/maindish/main.jpg') center/cover no-repeat;
+    background: url('../../photos/maindish/main.jpg') center/cover no-repeat;
     height: 80vh;
     display: flex;
     justify-content: center;
@@ -113,9 +113,7 @@ h2.h2 {
     font-size: large;
     margin-bottom: 40px;
     color: #3c5024;
-    text-shadow: 3px 3px 0 black,
-
-
+    text-shadow: 3px 3px 0 black;
 }
 
 .main a.btn-main {
@@ -199,27 +197,27 @@ h2.h2 {
 
 /* Main Categories Backgrounds */
 #chicken {
-    background-image: url(photos/maindish/chicken.jpg);
+    background-image: url('../../photos/maindish/chicken.jpg');
 }
 
 #beef {
-    background-image: url(photos/maindish/meat.jpg);
+    background-image: url('../../photos/maindish/meat.jpg');
 }
 
 #seafood {
-    background-image: url(photos/maindish/seafood.jfif);
+    background-image: url('../../photos/maindish/seafood.jfif');
 }
 
 #vegetarian {
-    background-image: url(photos/maindish/Vegetarian.jpg);
+    background-image: url('../../photos/maindish/Vegetarian.jpg');
 }
 
 #pasta {
-    background-image: url(photos/maindish/pasta.jfif);
+    background-image: url('../../photos/maindish/pasta.jfif');
 }
 
 #fast-food {
-    background-image: url(photos/maindish/fastfood.jpg);
+    background-image: url('../../photos/maindish/fastfood.jpg');
 }
 
 
@@ -261,92 +259,92 @@ h2.h2 {
 /* ✅ تصحيح أسماء IDs */
 #beefSteak,
 #beefSteakCard {
-    background-image: url(photos/maindish/steak2.jfif);
+    background-image: url('../../photos/maindish/steak2.jfif');
 }
 
 #beefStew,
 #beefStewCard {
-    background-image: url(photos/maindish/swtea1.jfif);
+    background-image: url('../../photos/maindish/swtea1.jfif');
 }
 
 #beefTacos,
 #beefTacosCard {
-    background-image: url(photos/maindish/tacos2.jfif);
+    background-image: url('../../photos/maindish/tacos2.jfif');
 }
 
 #grilledChicken,
 #grilledChickencard {
-    background-image: url(photos/maindish/girrled.jfif);
+    background-image: url('../../photos/maindish/girrled.jfif');
 }
 
 #chickenCurry,
 #chickenCurryCard {
-    background-image: url(photos/maindish/chickencurry.jfif);
+    background-image: url('../../photos/maindish/chickencurry.jfif');
 }
 
 #friedChicken,
 #friedChickenCard {
-    background-image: url(photos/maindish/fried.jfif);
+    background-image: url('../../photos/maindish/fried.jfif');
 }
 
 #grilledSalmon,
 #grilledSalmonCard {
-    background-image: url(photos/maindish/salmon.jfif);
+    background-image: url('../../photos/maindish/salmon.jfif');
 }
 
 #shrimpPasta,
 #shrimpPastaCard {
-    background-image: url(photos/maindish/pastash.jfif);
+    background-image: url('../../photos/maindish/pastash.jfif');
 }
 
 #fishCurry,
 #fishCurryCard {
-    background-image: url(photos/maindish/fishcurry.jfif);
+    background-image: url('../../photos/maindish/fishcurry.jfif');
 }
 
 #veggieStirFry,
 #veggieStirFryCard {
-    background-image: url(photos/maindish/salad.jfif);
+    background-image: url('../../photos/maindish/salad.jfif');
 }
 
 #veggieCurry,
 #veggieCurryCard {
-    background-image: url(photos/maindish/currysalad.jfif);
+    background-image: url('../../photos/maindish/currysalad.jfif');
 }
 
 #quinoaSalad,
 #quinoaSaladCard {
-    background-image: url(photos/maindish/quinoa.jfif);
+    background-image: url('../../photos/maindish/quinoa.jfif');
 }
 
 #burger,
 #burgerCard {
-    background-image: url(photos/maindish/burger.jfif);
+    background-image: url('../../photos/maindish/burger.jfif');
 }
 
 #pizza,
 #pizzaCard {
-    background-image: url(photos/maindish/pizza.jfif);
+    background-image: url('../../photos/maindish/pizza.jfif');
 }
 
 #fries,
 #friesCard {
-    background-image: url(photos/maindish/frenshfries.jfif);
+    background-image: url('../../photos/maindish/frenshfries.jfif');
 }
 
 #spaghettiCarbonara,
 #spaghettiCarbonaraCard {
-    background-image: url(photos/maindish/macrona.jfif);
+    background-image: url('../../photos/maindish/macrona.jfif');
 }
 
 #pastaPesto,
 #pastaPestoCard {
-    background-image: url(photos/maindish/pesto.jfif);
+    background-image: url('../../photos/maindish/pesto.jfif');
 }
 
 #lasagna,
 #lasagnaCard {
-    background-image: url(photos/maindish/lasania.jfif);
+    background-image: url('../../photos/maindish/lasania.jfif');
 }
 
 

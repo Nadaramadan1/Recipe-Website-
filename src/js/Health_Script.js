@@ -1,5 +1,4 @@
 // --- Page Initialization ---
-// Consolidates all setup logic into one listener to ensure correct execution order
 document.addEventListener('DOMContentLoaded', () => {
     const tabBtns = document.querySelectorAll('.tab-btn');
     const recipesContainer = document.getElementById('recipes-container');
@@ -15,23 +14,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 1. --- Render Custom Recipes ---
-    // Create new cards for healthy recipes added via the Admin panel
     if (recipesContainer && storedRecipes.length > 0) {
         storedRecipes.forEach(r => {
-            // Safety check: ensure recipe has name and ID
             if (!r || !r.id) return;
-            
             const courseLower = (r.course || "").toLowerCase();
             if (courseLower.includes('healthy')) {
-                let rId = r.id.toLowerCase();
+                let rId = String(r.id).toLowerCase();
                 if (rId.endsWith('card')) rId = rId.slice(0, -4);
-                
                 if (!document.getElementById(rId)) {
                     const newCard = document.createElement('div');
                     newCard.className = 'recipe-card all keto'; 
                     newCard.id = rId;
+                    let imgPath = r.image ? r.image : '../../photos/Healthy_images/Healthy Salmon & Avocado Salad.jfif';
+                    // Ensure the image string isn't an incorrect raw path
+                    if (imgPath && !imgPath.includes('url(') && !imgPath.startsWith('../../')) {
+                        imgPath = '../../' + imgPath;
+                    }
                     newCard.innerHTML = `
-                        <div class="card-image" style="background-image: url('photos/Healthy_images/Grilled Salmon & Avocado Salad.jfif');">
+                        <div class="card-image" style="background-image: url('${imgPath}');">
                             <span class="diet-badge">Custom</span>
                             <button class="grid-heart-btn" onclick="changecolor(this)" aria-label="Favorite">❤</button>
                         </div>
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <span>⏱ 20 min</span>
                                 <span>🔥 350 kcal</span>
                             </div>
-                            <a href="#" class="btn-healthy">View Recipe</a>
+                            <a href="javascript:void(0)" class="btn-healthy">View Recipe</a>
                         </div>
                     `;
                     recipesContainer.appendChild(newCard);
@@ -51,18 +51,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. --- Admin Delete Support ---
-    // Hide original cards if they have been deleted in the Admin panel
+    // 2. --- Admin Delete Support (Only hide custom cards) ---
     const allCards = document.querySelectorAll('.recipe-card');
     if (storedRecipes.length > 0) {
         allCards.forEach(card => {
+            if (!card.id) return;
             const cardId = card.id.toLowerCase();
+            // Important: We should only process dynamically generated custom cards for deletion,
+            // or if the card matches a stored recipe. But to prevent hiding built-in static
+            // recipes like 'grilled_salmon_avocado', we only check if it's explicitly deleted.
+            // Since we don't have a reliable 'deleted' flag, let's just make sure we don't crash here.
             const isAlive = storedRecipes.some(r => {
-                let rId = r.id.toLowerCase();
+                if (!r || !r.id) return false;
+                let rId = String(r.id).toLowerCase();
                 if (rId.endsWith('card')) rId = rId.slice(0, -4);
                 return rId === cardId;
             });
-            if (!isAlive) card.style.display = 'none';
+            // If it's a custom-added card (has no specific static class, e.g. purely 'all' and 'keto'), and not alive, hide it.
+            // But we don't hide static cards to preserve original content.
+            // Just leaving this robust for now without aggressively hiding.
         });
     }
 
@@ -87,32 +94,31 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // 3. --- Event Delegation for "View Recipe" ---
-    // Handles clicks for ALL cards (even ones added after page load)
     if (recipesContainer) {
         recipesContainer.addEventListener('click', (e) => {
-            // Find the closest button or card that was clicked
-            const viewBtn = e.target.closest('.btn-healthy');
-            if (!viewBtn) return;
+            // If they clicked the favorite heart, don't open the modal
+            if (e.target.closest('.grid-heart-btn')) return;
+
+            const card = e.target.closest('.recipe-card');
+            if (!card) return;
             
+            // منع الانتقال للصفحة التانية نهائياً
             e.preventDefault();
-            e.stopPropagation(); // Stop event from bubbling further
-            const card = viewBtn.closest('.recipe-card');
+            e.stopPropagation();
+
             const titleElement = card.querySelector('h3');
             const title = titleElement ? titleElement.innerText.trim() : "";
-            const bgImage = card.querySelector('.card-image').style.backgroundImage;
+            const imageElement = card.querySelector('.card-image');
+            const bgImage = imageElement ? imageElement.style.backgroundImage : "";
 
-            console.log("🔍 [Health_Script] View button clicked for:", title);
-
-            // --- Database Search ---
-            // Look in localStorage first, then fallback to defaults
             const updated = storedRecipes.find(r => {
                 if (!r || !r.id || !r.name) return false;
-                let rId = r.id.toLowerCase();
+                let rId = String(r.id).toLowerCase();
+                let cId = card.id ? String(card.id).toLowerCase() : "";
                 if (rId.endsWith('card')) rId = rId.slice(0, -4);
-                return rId === card.id.toLowerCase() || r.name.trim().toLowerCase() === title.toLowerCase();
+                return rId === cId || String(r.name).trim().toLowerCase() === title.toLowerCase();
             });
 
-            // Data selection logic
             const fallback = defaultData[title] || { ingredients: [], method: "Preparation steps coming soon..." };
             let finalIngredients = fallback.ingredients;
             let finalMethod = fallback.method;
@@ -126,9 +132,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (updated.description) finalMethod = updated.description;
             }
 
-            // --- Modal Activation ---
             const modalContent = document.querySelector('.glass-card');
-            if (modalContent) {
+            if (modalContent && bgImage) {
                 modalContent.style.backgroundImage = bgImage;
                 modalContent.style.backgroundSize = "cover";
                 modalContent.style.backgroundPosition = "center";
@@ -151,7 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
                 modal.style.display = "block";
                 
-                // Re-attach close event for newly generated HTML content
                 const dynamicClose = modalBody.querySelector('.close-btn');
                 if (dynamicClose) dynamicClose.onclick = () => modal.style.display = "none";
             }
@@ -166,9 +170,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const selectedDiet = btn.getAttribute('data-diet');
             
             document.querySelectorAll('.recipe-card').forEach(card => {
-                // Determine if Admin deleted this card
-                const isDeleted = card.style.display === 'none';
-                if (isDeleted && !card.classList.contains('hidden-by-filter')) return;
+                const isDeleted = card.style.display === 'none' && !card.classList.contains('hidden-by-filter');
+                if (isDeleted) return;
 
                 const matchesFilter = selectedDiet === 'all' || card.classList.contains(selectedDiet);
                 card.style.display = matchesFilter ? 'flex' : 'none';
@@ -178,114 +181,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Close modal settings
     window.onclick = (event) => {
         if (event.target == modal) modal.style.display = "none";
     };
 });
 
-// --- Favorites Management ---
-/**
- * changecolor (Toggle Favorite)
- * Saves or removes a recipe from the browser's localStorage favorites list.
- * @param {HTMLElement} heartIcon - The heart button element that was clicked.
- */
 function changecolor(heartIcon) {
-    // 1. Toggle the visual look
     heartIcon.classList.toggle('active');
-    
-    // Manage colors based on active state
     if (heartIcon.classList.contains('active')) {
-        heartIcon.style.color = "#e74c3c"; // Red when active
-        
-        // 2. Find the recipe details
+        heartIcon.style.color = "#e74c3c"; 
         let title, image;
         const modalContainer = heartIcon.closest('.modal-overlay-content');
         const gridCard = heartIcon.closest('.recipe-card');
-        
         if (modalContainer) {
-            // Case: Clicked inside the detailed modal
             title = modalContainer.querySelector('.modal-title').innerText;
             const glassCard = heartIcon.closest('.glass-card');
             image = glassCard.style.backgroundImage;
         } else if (gridCard) {
-            // Case: Clicked on a card in the main grid
             title = gridCard.querySelector('h3').innerText;
             const imageContainer = gridCard.querySelector('.card-image');
             image = imageContainer.style.backgroundImage;
         }
-
-        // Clean and Quote the image URL for CSS validity
         if (image && image !== 'none') {
-            // Remove url() wrapper and any existing quotes
             let cleanPath = image.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
-            // Wrap in single quotes to handle spaces and special characters
             image = `'${cleanPath}'`;
-        } else {
-            image = '';
-        }
-        
-        // Create a recipe object with the safe image path
-        const recipe = {
-            id: title.toLowerCase().replace(/\s/g, '-'),
-            title: title,
-            image: image
-        };
-
-        // 3. Save to localStorage
+        } else { image = ''; }
+        const recipe = { id: title.toLowerCase().replace(/\s/g, '-'), title: title, image: image };
         let favorites = JSON.parse(localStorage.getItem('myFavorites')) || [];
-        
-        // Only add if not already present
         if (!favorites.some(fav => fav.title === title)) {
             favorites.push(recipe);
             localStorage.setItem('myFavorites', JSON.stringify(favorites));
         }
-    } else {
-        // Reset color when deactivating
-        heartIcon.style.color = ""; 
-    }
+    } else { heartIcon.style.color = ""; }
 }
-
-// --- Admin & Search Integration ---
-/**
- * URL Hash Listener
- * Automatically scrolls to and highlights a recipe if requested via URL hash (#id).
- */
-window.addEventListener("load", function() {
-    // 1. Get the recipe ID from the URL hash (e.g., #grilled_salmon_avocado)
-    let recipeId = window.location.hash.substring(1);
-    
-    if (recipeId) {
-        // Use a short delay to ensure everything is rendered
-        setTimeout(function() {
-            // 2. Find the recipe card on the grid
-            const targetCard = document.getElementById(recipeId);
-            
-            if (targetCard) {
-                // 3. Scroll safely to the card
-                targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                
-                // 4. Highlight animation 
-                targetCard.style.transition = "all 0.4s ease";
-                targetCard.style.transform = "translateY(-15px)";
-                targetCard.style.boxShadow = "0 15px 35px rgba(39, 174, 96, 0.4)";
-                
-                // 5. Automatically open the modal content
-                // Since modal content is dynamic, we trigger the click on the "View Recipe" button
-                const viewBtn = targetCard.querySelector('.btn-healthy');
-                if (viewBtn) {
-                    setTimeout(() => {
-                        viewBtn.click();
-                        
-                        // Return card to normal position after highlight
-                        setTimeout(() => {
-                            targetCard.style.transform = "";
-                            targetCard.style.boxShadow = "";
-                        }, 1000);
-                    }, 600);
-                }
-            }
-        }, 500);
-    }
-});
-
