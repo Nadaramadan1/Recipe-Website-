@@ -16,9 +16,8 @@
                 <li><a href="../../index.html">Home</a></li>
                 <li><a href="../../search.html">Search</a></li>
                 <li><a href="../../favorites.html">Favorites</a></li>
-                <li><a href="../../pages/admin/admin-recipe.html">Admin</a></li>
-                <li><a href="../../pages/admin/add-recipe.html">Add Recipe</a></li>
-               
+                <li><a href="../admin/admin-recipe.html">Admin</a></li>
+                <li><a href="../admin/add-recipe.html">Add Recipe</a></li>
             </ul>
         </nav>
     </div>
@@ -27,63 +26,23 @@
     <div class="edit-card">
         <h2>Add New Recipe</h2>
         <form id="addRecipeForm">
-            <div class="form-grid form-input ingredients-section">
+            <div class="form-grid">
                 <input type="text" id="recipeName" class="form-input" placeholder="Recipe Name" required>
                 <select id="recipeCourse" class="form-input">
-                    <option value="MainCourse">Main-course</option>
+                    <option value="Main-course">Main-course</option>
                     <option value="Dessert">Dessert</option>
                     <option value="Appetizers">Appetizers</option>
-                    <option value="Bakery">Bakery</option>
-                    <option value="Drinks">Drinks</option>
-                    <option value="Healthy">Healthy</option>
+                    <option value="Healthy">Healthy Food</option>
                 </select>
-              
-                <select id="subcategory" class="form-input" style="display: none;">
-                    <option value="">Choose Type</option>
-                </select>
-
-            </div>
-            
-            <div class="ingredient-row form-input ingredients-section">
-                 <input type="text" id="id1" class="form-input" placeholder="Ingredient id" required>
-                 <input type="text" id="ingredientname1" class="form-input" placeholder="Ingredient Name" required>
-                 <input type="text" id="qty1" class="form-input" placeholder="Quantity" required>
-            </div>
-
-            <div class="ingredient-row form-input ingredients-section">
-                 <input type="text" id="id2" class="form-input" placeholder="Ingredient id" required>
-                 <input type="text" id="ingredientname2" class="form-input" placeholder="Ingredient Name" required>
-                 <input type="text" id="qty2" class="form-input" placeholder="Quantity" required>
-            </div>
-
-            <div class="ingredient-row form-input ingredients-section">
-                 <input type="text" id="id3" class="form-input" placeholder="Ingredient id" required>
-                 <input type="text" id="ingredientname3" class="form-input" placeholder="Ingredient Name" required>
-                 <input type="text" id="qty3" class="form-input" placeholder="Quantity" required>
-            </div>
-
-            <div class="ingredient-row form-input ingredients-section">
-                 <input type="text" id="id4" class="form-input" placeholder="Ingredient id" >
-                 <input type="text" id="ingredientname4" class="form-input" placeholder="Ingredient Name" >
-                 <input type="text" id="qty4" class="form-input" placeholder="Quantity" >
-            </div>
-
-            <div class="ingredient-row form-input ingredients-section">
-                 <input type="text" id="id5" class="form-input" placeholder="Ingredient id" >
-                 <input type="text" id="ingredientname5" class="form-input" placeholder="Ingredient Name" >
-                 <input type="text" id="qty5" class="form-input" placeholder="Quantity" >
             </div>
             
             <div class="ingredients-section">
-                <h4>Description</h4>
-                <textarea id="recipeIngredients" class="form-input" placeholder="Enter the recipe description here..."></textarea>
+                <h4>Ingredients</h4>
+                <textarea id="recipeIngredients" class="form-input" placeholder="List ingredients here..."></textarea>
             </div>
-            <label class="btn-main">Choose Image
-            <input type="file" id="recipeImage" accept="image/*"hidden> </label>
-            <button type="submit" class="btn-main">Save Recipe</button>
-            
-        </form>
 
+            <button type="submit" id="saveBtn" class="btn-main">Save Recipe</button>
+        </form>
     </div>
 </div>
 
@@ -91,113 +50,111 @@
     document.getElementById('addRecipeForm').onsubmit = function(e) {
         e.preventDefault();
         
-        const imageInput = document.getElementById("recipeImage");
-        const imageFile=imageInput.files[0];
-        function processAndSave(imageData){
-        
-       
+        // Prevent multiple clicks
+        const saveBtn = document.getElementById('saveBtn');
+        saveBtn.disabled = true;
+        saveBtn.innerText = "Saving...";
+
+        // 1. Get existing recipes
+        let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
         
         // 2. Build the new recipe object with ingredients
-        const ingredients=[
-           {id:document.getElementById("id1").value, 
-           name:document.getElementById("ingredientname1").value,
-           qty:document.getElementById("qty1").value},
-
-           {id:document.getElementById("id2").value, 
-           name:document.getElementById("ingredientname2").value,
-           qty:document.getElementById("qty2").value},
-
-           {id:document.getElementById("id3").value, 
-           name:document.getElementById("ingredientname3").value,
-           qty:document.getElementById("qty3").value},
-
-           {id:document.getElementById("id4").value, 
-           name:document.getElementById("ingredientname4").value,
-           qty:document.getElementById("qty4").value},
-
-           {id:document.getElementById("id5").value, 
-           name:document.getElementById("ingredientname5").value,
-           qty:document.getElementById("qty5").value},
-
-        ];
-
         const newRecipe = {
-            id: Date.now(),
+            id: Date.now().toString(), // Using string for consistency
             name: document.getElementById('recipeName').value,
             course: document.getElementById('recipeCourse').value,
-            subcategory: document.getElementById('subcategory').value,
-            ingredients:ingredients,
-            description: document.getElementById('recipeIngredients').value,
-            image: imageData // Added this
+            ingredients: document.getElementById('recipeIngredients').value
         };
 
         // 3. Save to localStorage
-        let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
-         recipes.push(newRecipe);
-         localStorage.setItem('recipes', JSON.stringify(recipes));
-
-       //send AJAX to server
-        const xhr = new XMLHttpRequest();
-        xhr.open("POST","recipes.txt",true);
-        xhr.setRequestHeader("Content-Type","application/json");
-        xhr.onload=function(){alert("Recipe Sent Successfully!")
-
+        recipes.push(newRecipe);
+        localStorage.setItem('recipes', JSON.stringify(recipes));
+        
         // 4. Go to Admin page
-        window.location.href = 'admin-recipe.html';};
-       xhr.send(JSON.stringify(newRecipe)) ;
-    }
-    //check if an image is selected and convert it to a base64 string
-    if(imageFile){
-        const reader=new FileReader();
-        reader.onload=function(){
-            processAndSave(reader.result);  //pass the converted image data to the save function
-        };
-        reader.readAsDataURL(imageFile);}
-        //if no image ,proceed with an empty string for the image field
-    else{
-        processAndSave("");
-    }    
-
+        window.location.href = 'admin-recipe.html';
     };
-
-
-//==========subcategories==============
-    
-
-const recipeCourse = document.getElementById("recipeCourse");
-const subcategory = document.getElementById("subcategory");
-const data = {
-    MainCourse: ["Chicken", "Beef", "Seafood", "Vegetarian", "Pasta", "Fast Food"],
-    Bakery: ["Artisan Breads", "Croissants & Danish", "Cookies & Biscuits"],
-    Drinks: ["coffee", "fresh juices & smoothie", "Hot drinks"],
-    Healthy: ["Keto Friendly", "Vegan", "High Protein", "Gluten Free"]
-};
-function updateSub() {
-    const value = recipeCourse.value;
-
-    subcategory.innerHTML = '<option value="">Choose Type</option>';
-
-    if (data[value]) {
-        subcategory.style.display = "block";
-
-        data[value].forEach(item => {
-            const option = document.createElement("option");
-            option.textContent = item;
-            option.value = item;
-            subcategory.appendChild(option);
-        });
-
-    } 
-    else {
-        subcategory.style.display = "none";
-    }
-}
-recipeCourse.addEventListener("change", updateSub);
-recipeCourse.dispatchEvent(new Event("change"));
-     
 </script>
 
 
+
+
+    <!--*************************************************************************** -->
+    <!-- <div class="page-wrapper">
+        <div class="add-recipe-card">
+            <h1>Add New Recipe</h1>
+            <form id="recipe-form">
+                <div class="form-row">
+                    <label for="recipe_id">Recipe ID:</label>
+                    <input id="recipe_id" type="number" name="id" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="recipe_name">Recipe Name:</label>
+                    <input id="recipe_name" type="text" name="name" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="dish_type">Select Dish Type:</label>
+                    <select id="dish_type" name="course" required>
+                        <option value="healthy">Healthy Food</option>
+                        <option value="appetizers">Appetizers</option>
+                        <option value="main-course">Main-course</option>
+                        <option value="dessert">Dessert</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="recipe_time">Time (mins):</label>
+                    <input id="recipe_time" type="number" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="recipe_calories">Calories (kcal):</label>
+                    <input id="recipe_calories" type="number" required>
+                </div>
+
+                <hr>
+                <h2>Ingredients</h2>
+
+                <div class="ingredient_group">
+                    <label>ID:</label> <input type="number" name="ingredient id">
+                    <label>Name:</label> <input type="text" name="ingredient name">
+                    <label>Qty:</label> <input type="text" name="ingredient quantity">
+                </div>
+
+                <div class="ingredient_group">
+                    <label>ID:</label> <input type="number" name="ingredient id">
+                    <label>Name:</label> <input type="text" name="ingredient name">
+                    <label>Qty:</label> <input type="text" name="ingredient quantity">
+                </div>
+
+                <div class="ingredient_group">
+                    <label>ID:</label> <input type="number" name="ingredient id">
+                    <label>Name:</label> <input type="text" name="ingredient name">
+                    <label>Qty:</label> <input type="text" name="ingredient quantity">
+                </div>
+
+                <hr>
+                <div class="description_section">
+                    <label for="recipe_ingredients">Ingredients (Separator with commas):</label>
+                    <textarea rows="3" id="recipe_ingredients" placeholder="e.g. Tomato, Lettuce, Olive Oil..."></textarea>
+                </div>
+
+                <hr>
+                <div class="description_section">
+                    <label for="discription">Recipe Description:</label>
+                    <textarea rows="5" name="discription" id="discription"></textarea>
+                </div>
+                <div class="form-actions">
+                    <input type="submit" value="Add Recipe" class="btn-main">
+                    <input type="reset" value="Reset" class="btn-main" style="background: #ccc; border: none;">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script> -->
 </body>
 
 </html>
+               
