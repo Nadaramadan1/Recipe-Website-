@@ -21,7 +21,7 @@ let recipes = [
 
     // Main Dish - Chicken
     { id: "friedChicken", name: "Fried Chicken", ingredients: ["chicken", "flour", "oil", "spices"], page: "pages/main_dish/chicken.html" },
-    { id: "chickencCurry", name: "Chicken Curry", ingredients: ["chicken", "onion", "garlic", "curry powder", "coconut milk"], page: "pages/main_dish/chicken.html" },
+    { id: "chickenCurry", name: "Chicken Curry", ingredients: ["chicken", "onion", "garlic", "curry powder", "coconut milk"], page: "pages/main_dish/chicken.html" },
     { id: "grilledChicken", name: "Grilled Chicken", ingredients: ["chicken", "salt", "pepper", "olive oil"], page: "pages/main_dish/chicken.html" },
 
     // Main Dish - Pasta
@@ -41,7 +41,7 @@ let recipes = [
 
     // Main Dish - Vegetarian
     { id: "veggieStirFry", name: "Veggie Stir-Fry", ingredients: ["mixed vegetables", "soy sauce", "garlic", "oil"], page: "pages/main_dish/Vegetarian.html" },
-    { id: "vegetableCurry", name: "Vegetable Curry", ingredients: ["mixed vegetables", "onion", "garlic", "curry powder"], page: "pages/main_dish/Vegetarian.html" },
+    { id: "vaggieCurry", name: "Vegetable Curry", ingredients: ["mixed vegetables", "onion", "garlic", "curry powder"], page: "pages/main_dish/Vegetarian.html" },
     { id: "quinoaSalad", name: "Quinoa Salad", ingredients: ["quinoa", "vegetables", "olive oil", "lemon juice"], page: "pages/main_dish/Vegetarian.html" },
 
     // Healthy
