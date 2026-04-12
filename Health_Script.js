@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             recipeCards.forEach(card => {
                 if (selectedDiet === 'all' || card.classList.contains(selectedDiet)) {
                     card.style.display = 'flex';
-                    
+
                     card.style.animation = 'fadeIn 0.5s ease forwards';
                 } else {
                     card.style.display = 'none';
@@ -48,9 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.querySelector('.close-btn');
     const viewButtons = document.querySelectorAll('.btn-healthy');
 
-    
+
     const recipes = {
-        "Grilled Salmon & Avocado": { 
+        "Grilled Salmon & Avocado": {
             ingredients: ["150g Salmon fillet", "1 tbsp Olive oil", "Minced garlic", "Lemon slices", "Steamed asparagus"],
             method: "1. Season salmon with garlic and pepper. 2. Grill for 4-5 minutes each side. 3. Serve with asparagus and lemon."
         },
@@ -68,8 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
- 
-viewButtons.forEach(btn => {
+
+    viewButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             const card = btn.closest('.recipe-card');
@@ -80,7 +80,7 @@ viewButtons.forEach(btn => {
             if (data) {
                 const modalContent = document.querySelector('.glass-card');
                 modalContent.style.backgroundImage = bgImage;
-                
+
                 document.getElementById('modalBody').innerHTML = `
                     <div class="modal-overlay-content">
                         <span class="close-btn">&times;</span> 
@@ -95,14 +95,14 @@ viewButtons.forEach(btn => {
                     </div>
                 `;
                 modal.style.display = "block";
-                
-               
+
+
                 document.querySelector('.close-btn').onclick = () => modal.style.display = "none";
             }
         });
     });
 
-   
+
     window.toggleHeart = (btn) => {
         btn.classList.toggle('active');
         btn.style.color = btn.classList.contains('active') ? '#e74c3c' : 'white';

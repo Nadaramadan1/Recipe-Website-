@@ -24,6 +24,7 @@
 .nav-links {
     display: flex;
     list-style: none;
+    margin-left: 0;
 }
 
 .nav-links li {
@@ -36,6 +37,41 @@
     text-decoration: none;
     font-weight: 500;
     transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links li button#backbutton:hover {
+    transform: translateY(-1.5px);
+
+    text-shadow: 0 0 15px rgb(255, 255, 255, 0.5);
+}
+
+.big-arrow-btn {
+    font-size: 24px;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgb(48, 27, 11);
+    transition: transform 0.2s;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+
+.big-arrow-btn:hover {
+    transform: translateY(-1.5px);
+
+    text-shadow: 0 0 15px rgb(255, 255, 255, 0.5);
+    transform: scale(1.2);
+}
+
+
+/* General Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links a:hover {
@@ -295,7 +331,7 @@ h2.h2 {
 
 #fries,
 #friesCard {
-    background-image: url(maindish/frenshfries.jfif);
+    background-image: url(maindish/frensh\ fries.jfif);
 }
 
 #spaghettiCarbonara,

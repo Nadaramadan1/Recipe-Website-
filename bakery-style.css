@@ -1,7 +1,7 @@
 /* ============================================================
    . NAVIGATION BAR
    ============================================================ */
-   
+
 #navbar {
 
     padding: 13px;
@@ -41,20 +41,20 @@
 }
 
 .nav-links a:hover,
-.nav-links li button#backbutton:hover{
+.nav-links li button#backbutton:hover {
     transform: translateY(-1.5px);
 
     text-shadow: 0 0 15px rgb(255, 255, 255, 0.5);
 }
 
 .big-arrow-btn {
-    font-size: 24px;        
-    font-weight: bold;       
-    background: none;        
-    border: none;           
-    cursor: pointer;        
+    font-size: 24px;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
     color: rgb(234, 221, 212);
-    transition: transform 0.2s; 
+    transition: transform 0.2s;
     padding: 0 10px;
     display: flex;
     align-items: center;
@@ -62,10 +62,11 @@
 
 
 .big-arrow-btn:hover {
-        transform: translateY(-1.5px);
+    transform: translateY(-1.5px);
 
-    text-shadow: 0 0 15px rgb(255, 255, 255, 0.5);   
-    transform: scale(1.2);   }
+    text-shadow: 0 0 15px rgb(255, 255, 255, 0.5);
+    transform: scale(1.2);
+}
 
 /* General Reset & Base Styles */
 * {

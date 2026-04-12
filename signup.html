@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Yummy - Sign Up</title>
-    <meta name="description" content="This is our Recipes Finder Website!">
-    <link rel="stylesheet" href="Style.css"> <style>
-      
-    </style>
+    <link rel="stylesheet" href="Style.css">
 </head>
+
 <body style="background-color: #f2e7df; text-align: center;">
-    <div id="navbar" >
+
+    <!-- Navbar -->
+    <div id="navbar">
         <nav class="main-nav">
-            <div class="logo" >Yummy </div>
+            <div class="logo">Yummy</div>
             <ul class="nav-links">
-               <li><a href="cover.html">Team</a></li>
+                <li><a href="cover.html">Team</a></li>
                 <li><a href="home.html">Home</a></li>
                 <li><a href="search.html">Search</a></li>
                 <li><a href="favorites.html">Favorites</a></li>
@@ -25,41 +26,102 @@
         </nav>
     </div>
 
+    <!-- Sign Up Section -->
     <div class="signup-page-wrapper">
-    <h1 class="welcome-msg">Welcome to YUMMY! 😊</h1>
+        <h1 class="welcome-msg">Welcome to YUMMY! 😊</h1>
 
-    <div class="signup-container">
-        <div class="signup-image">
-            <img src="photos/siggnup.jpg" alt="Delicious Food">
-        </div>
+        <div class="signup-container">
 
-        <div class="form-section">
-            <form action="home.html" method="GET">
-                <div class="form-group">
-                    <label>Username</label>
-                    <input type="text" class="form-input" required placeholder="Enter your username" name="user">
-                </div>
+            <div class="signup-image">
+                <img src="photos/siggnup.jpg" alt="Food">
+            </div>
 
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" class="form-input" placeholder="Min 5 characters" name="password" required minlength="5" maxlength="8">
-                </div>
+            <div class="form-section">
 
-                <div class="form-group">
-                    <label>Confirm Password</label>
-                    <input type="password" class="form-input" name="confirm_password" required placeholder="Confirm your password">
-                </div>
+                <!-- ✅ مهم: مفيش action -->
+                <form id="signupForm">
 
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" class="form-input" name="email" placeholder="Enter your email">
-                </div>
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" class="form-input" name="user" required placeholder="Enter your username">
+                    </div>
 
-                <button type="submit" class="btn-main">Create Account</button>
-                <div class = "Login-link">
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-input" name="password" required minlength="5"
+                            placeholder="Min 5 characters">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input type="password" class="form-input" name="confirm_password" required
+                            placeholder="Confirm password">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-input" name="email" placeholder="Enter your email">
+                    </div>
+
+                    <button type="submit" class="btn-main">Create Account</button>
+
+                    <div class="Login-link">
                         <span>Already have an account? <a href="login.html">Login</a></span>
-                </div>
-            </form>
+                    </div>
+
+                </form>
+            </div>
         </div>
     </div>
-</div>
+
+    <!-- 🔥 JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            let form = document.getElementById("signupForm");
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                let username = document.querySelector('input[name="user"]').value;
+                let password = document.querySelector('input[name="password"]').value;
+                let confirmPassword = document.querySelector('input[name="confirm_password"]').value;
+                let email = document.querySelector('input[name="email"]').value;
+
+                // Validation
+                if (!username || !password || !confirmPassword) {
+                    alert("Please fill all required fields ❗");
+                    return;
+                }
+
+                if (password !== confirmPassword) {
+                    alert("Passwords do not match ❌");
+                    return;
+                }
+
+                // Check if user exists
+                if (localStorage.getItem(username)) {
+                    alert("Username already exists ⚠️");
+                    return;
+                }
+
+                // Save user
+                let userData = {
+                    password: password,
+                    email: email
+                };
+
+                localStorage.setItem(username, JSON.stringify(userData));
+
+                alert("Account created successfully ✅");
+
+                // Redirect to login
+                window.location.href = "login.html";
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
