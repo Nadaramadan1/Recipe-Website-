@@ -4,14 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Yummy - Sign Up</title>
-<<<<<<< HEAD
-    <link rel="stylesheet" href="Style.css">
-=======
     <meta name="description" content="This is our Recipes Finder Website!">
-    <link rel="stylesheet" href="src/css/style.css"> <style>
-      
-    </style>
->>>>>>> 4112ca3a3e83ff1209c686a7a6c946b41b9098ee
+    <link rel="stylesheet" href="src/css/style.css">
 </head>
 
 <body style="background-color: #f2e7df; text-align: center;">
@@ -21,13 +15,8 @@
         <nav class="main-nav">
             <div class="logo">Yummy</div>
             <ul class="nav-links">
-<<<<<<< HEAD
                 <li><a href="cover.html">Team</a></li>
-                <li><a href="home.html">Home</a></li>
-=======
-               <li><a href="cover.html">Team</a></li>
                 <li><a href="index.html">Home</a></li>
->>>>>>> 4112ca3a3e83ff1209c686a7a6c946b41b9098ee
                 <li><a href="search.html">Search</a></li>
                 <li><a href="favorites.html">Favorites</a></li>
                 <li><a href="pages/admin/admin-recipe.html">Admin</a></li>
@@ -44,22 +33,11 @@
 
         <div class="signup-container">
 
-<<<<<<< HEAD
             <div class="signup-image">
-                <img src="photos/siggnup.jpg" alt="Food">
+                <img src="photos/signup.jpg" alt="Food">
             </div>
-=======
-        <div class="form-section">
-            <form action="index.html" method="GET">
-                <div class="form-group">
-                    <label>Username</label>
-                    <input type="text" class="form-input" required placeholder="Enter your username" name="user">
-                </div>
->>>>>>> 4112ca3a3e83ff1209c686a7a6c946b41b9098ee
 
             <div class="form-section">
-
-                <!-- ✅ مهم: مفيش action -->
                 <form id="signupForm">
 
                     <div class="form-group">
@@ -95,7 +73,7 @@
         </div>
     </div>
 
-    <!-- 🔥 JavaScript -->
+    <!-- JavaScript -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
 
@@ -109,7 +87,6 @@
                 let confirmPassword = document.querySelector('input[name="confirm_password"]').value;
                 let email = document.querySelector('input[name="email"]').value;
 
-                // Validation
                 if (!username || !password || !confirmPassword) {
                     alert("Please fill all required fields ❗");
                     return;
@@ -120,13 +97,11 @@
                     return;
                 }
 
-                // Check if user exists
                 if (localStorage.getItem(username)) {
                     alert("Username already exists ⚠️");
                     return;
                 }
 
-                // Save user
                 let userData = {
                     password: password,
                     email: email
@@ -136,7 +111,6 @@
 
                 alert("Account created successfully ✅");
 
-                // Redirect to login
                 window.location.href = "login.html";
             });
 
