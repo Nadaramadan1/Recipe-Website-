@@ -57,19 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
         allCards.forEach(card => {
             if (!card.id) return;
             const cardId = card.id.toLowerCase();
-            // Important: We should only process dynamically generated custom cards for deletion,
-            // or if the card matches a stored recipe. But to prevent hiding built-in static
-            // recipes like 'grilled_salmon_avocado', we only check if it's explicitly deleted.
-            // Since we don't have a reliable 'deleted' flag, let's just make sure we don't crash here.
             const isAlive = storedRecipes.some(r => {
                 if (!r || !r.id) return false;
                 let rId = String(r.id).toLowerCase();
                 if (rId.endsWith('card')) rId = rId.slice(0, -4);
                 return rId === cardId;
             });
-            // If it's a custom-added card (has no specific static class, e.g. purely 'all' and 'keto'), and not alive, hide it.
-            // But we don't hide static cards to preserve original content.
-            // Just leaving this robust for now without aggressively hiding.
         });
     }
 
@@ -102,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = e.target.closest('.recipe-card');
             if (!card) return;
             
-            // منع الانتقال للصفحة التانية نهائياً
             e.preventDefault();
             e.stopPropagation();
 

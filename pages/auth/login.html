@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Yummy - Login</title>
-    <link rel="stylesheet" href="../../src/css/style.css"><style>
-        
-    </style>
+    <link rel="stylesheet" href="../../src/css/style.css">
 </head>
+
 <body style="background-color: #f2e7df; text-align: center;">
-    <div id="navbar" >
+
+    <!-- Navbar -->
+    <div id="navbar">
         <nav class="main-nav">
-            <div class="logo" >Yummy </div>
+            <div class="logo">Yummy</div>
             <ul class="nav-links">
-                  <li><a href="../../cover.html">Team</a></li>
+                <li><a href="../../cover.html">Team</a></li>
                 <li><a href="../../index.html">Home</a></li>
                 <li><a href="../../search.html">Search</a></li>
                 <li><a href="../../favorites.html">Favorites</a></li>
@@ -23,43 +25,97 @@
             </ul>
         </nav>
     </div>
-    <div class ="login-page-wrapper">
+
+    <!-- Login Section -->
+    <div class="login-page-wrapper">
         <h1 class="welcome-msg">Welcome Back to YUMMY! 😊</h1>
 
         <div class="login-container">
+
             <div class="login-image">
-                <img src="../../photos/login.jpg" alt="Delicious Food">
+                <img src="../../photos/login.jpg" alt="Food">
             </div>
 
             <div class="form-section">
-                <form action="../../index.html" method="GET">
+
+                <form id="loginForm">
+
                     <div class="form-group">
                         <label>Username</label>
-                        <input type="text" class="form-input" required placeholder="Enter your username" name="user">
+                        <input type="text" class="form-input" name="user" required placeholder="Enter your username">
                     </div>
+
                     <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" class="form-input" placeholder="Min 5 characters" name="password" required minlength="5" maxlength="8">
-                    </div> 
-                    <div class="form-group" >
+                        <label>Password</label>
+                        <input type="password" class="form-input" name="password" required minlength="5"
+                            placeholder="Enter your password">
+                    </div>
+
+                    <div class="form-group">
                         <label>Type of User</label>
                         <select class="form-input" name="user_type">
                             <option value="user">User</option>
                             <option value="admin">Admin</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn-main" href="home.html">Login</button>
-                    </div>
-                    <div class = "Signup-link">
+
+                    <button type="submit" class="btn-main">Login</button>
+
+                    <div class="Signup-link">
                         <span>Don't have an account? <a href="signup.html">Sign Up</a></span>
                     </div>
+
                 </form>
+
             </div>
-        </div>                
+        </div>
     </div>
 
-    <main>  
-    </main>
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            let form = document.getElementById("loginForm");
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                let username = document.querySelector('input[name="user"]').value;
+                let password = document.querySelector('input[name="password"]').value;
+                let userType = document.querySelector('select[name="user_type"]').value;
+
+                let storedUser = localStorage.getItem(username);
+
+                // user not found
+                if (!storedUser) {
+                    alert("User not found ❌\nPlease create an account first ✨");
+                    window.location.href = "signup.html";
+                    return;
+                }
+
+                let userData = JSON.parse(storedUser);
+
+                // password check
+                if (userData.password !== password) {
+                    alert("Wrong password ❌");
+                    return;
+                }
+
+                alert("Login successful ✅");
+
+                localStorage.setItem("loggedInUser", username);
+                if (userType === "admin") {
+                    alert("Admin login not supported in this version ❗");
+                    return;
+                }
+
+                window.location.href = "../../index.html";
+
+            });
+
+        });
+    </script>
+
 </body>
+
 </html>
